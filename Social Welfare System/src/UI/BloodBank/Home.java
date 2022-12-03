@@ -1,4 +1,4 @@
-package userinterface.BloodBank;
+package UI.BloodBank;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
