@@ -9,31 +9,33 @@ package Business.Person;
  *
  * @author Pranali
  */
-public abstract class Person {
+public class Person {
+      private String name;
+    private int id;
+    private static int count = 1;
 
-    private String name;
-
-    public Person(String name) {
-        this.name = name;
+    public Person() {
+        id = count;
+        count++;
     }
 
-    /**
-     * @return the name
-     */
-    public String getName() {
-        return name;
+    public int getId() {
+        return id;
     }
 
-    /**
-     * @param name the name to set
-     */
     public void setName(String name) {
         this.name = name;
     }
 
-    @Override
-    public String toString() {
-        return this.getName();
+    
+    public String getName() {
+        return name;
     }
 
+    @Override
+    public String toString() {
+        return name;
+    }
+    
+    
 }
