@@ -11,17 +11,17 @@ import Business.Network.NetworkSystem;
 import Business.Organization.Org;
 import Business.UserAccount.User_Account;
 import javax.swing.JPanel;
-import UI.LabAssistantRole.LabAssistantWorkAreaJPanel;
+import UI.DruggistRole.DruggistWorkAreaJPanel;
 
 /**
  *
  * @author Makarand
  */
-public class LabAssistRole extends Role {
+public class DruggistRole extends Role {
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, User_Account account, Org organization, Enterprise enterprise, Ecosystem business, NetworkSystem network) {
-        return new LabAssistantWorkAreaJPanel(userProcessContainer, account, organization, enterprise, network);
+        return new DruggistWorkAreaJPanel(userProcessContainer, account, organization, enterprise, network);
     }
 
     @Override
