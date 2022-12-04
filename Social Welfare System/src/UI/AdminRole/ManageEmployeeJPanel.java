@@ -5,9 +5,9 @@
 package UI.AdminRole;
 
 
-import Health.Organization.Org;
-import Health.Organization.OrgDirectory;
-import Health.Person.Individual;
+import Business.Organization.Org;
+import Business.Organization.OrgDirectory;
+import Business.Human.Person;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -54,7 +54,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         
         model.setRowCount(0);
         
-        for (Individual employee : organization.getPersonDirectory().getPersonList()){
+        for (Person employee : organization.getPersonDirectory().getPersonList()){
             Object[] row = new Object[2];
             row[0] = employee.getId();
             row[1] = employee.getName();

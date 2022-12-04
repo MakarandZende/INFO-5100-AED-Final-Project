@@ -47,7 +47,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
     public void populateEmployeeComboBox(Org organization){
         employeeJComboBox.removeAllItems();
         
-        for (Individual person : organization.getPersonDirectory().getPersonList()){
+        for (Person person : organization.getPersonDirectory().getPersonList()){
             employeeJComboBox.addItem(person);
         }
     }
@@ -269,7 +269,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         String password = passwordJTextField.getText();
         String email =  "sojitradharti15@gmail.com";
         Org organization = (Org) organizationJComboBox.getSelectedItem();
-        Individual employee = (Individual) employeeJComboBox.getSelectedItem();
+        Person employee = (Person) employeeJComboBox.getSelectedItem();
         Role role = (Role) roleJComboBox.getSelectedItem();
         
         organization.getUserAccountDirectory().createUserAccount(userName, password, employee, role,email);

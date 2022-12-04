@@ -7,7 +7,7 @@ package Business.UserAccount;
 
 import Business.Human.Person;
 import Business.Role.Role;
-import Business.WorkQueue.Work_Queue;
+import Business.WorkStream.WorkStream;
 
 /**
  *
@@ -36,10 +36,10 @@ public class User_Account {
     }
     private Person Human;
     private Role role;
-    private Work_Queue workQueue;
+    private WorkStream workStream;
 
     public User_Account() {
-        workQueue = new Work_Queue();
+        workStream = new WorkStream();
     }
     
     
@@ -76,8 +76,8 @@ public class User_Account {
         return Human;
     }
 
-    public Work_Queue getWorkQueue() {
-        return workQueue;
+    public WorkStream getWorkQueue() {
+        return workStream;
     }
 
     

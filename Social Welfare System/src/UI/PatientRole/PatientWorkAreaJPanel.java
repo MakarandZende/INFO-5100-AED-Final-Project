@@ -11,7 +11,7 @@ import Business.Organization.Org;
 import Business.Organization.PatientPersonOrg;
 import Business.UserAccount.User_Account;
 import Business.WorkQueue.PatientAppRequest;
-import Business.WorkQueue.WorkRequest;
+import Business.WorkStream.WorkRequest;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -153,7 +153,7 @@ public class PatientWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(appointmentJTable);
 
-        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 593, 96));
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 520, 130));
 
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, 630, 310));
 

@@ -8,7 +8,7 @@ package UI.PatientRole;
 import Business.Enterprises.Enterprise;
 import Business.Organization.Org;
 import Business.UserAccount.User_Account;
-import Business.WorkQueue.PatientAppRequest;
+import Business.WorkStream.PatientAppRequest;
 import java.awt.CardLayout;
 import java.awt.Component;
 import java.text.DateFormat;
