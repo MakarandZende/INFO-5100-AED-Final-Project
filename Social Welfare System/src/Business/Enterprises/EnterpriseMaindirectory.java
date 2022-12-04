@@ -12,7 +12,7 @@ import java.util.ArrayList;
  *
  * @author Makarand
  */
-public class EnterpriseMaindirectory {
+public class EnterpriseMainDirectory {
 
     private ArrayList<Enterprise> enterpriseList;
 
@@ -24,7 +24,7 @@ public class EnterpriseMaindirectory {
         this.enterpriseList = enterpriseList;
     }
 
-    public EnterpriseMaindirectory() {
+    public EnterpriseMainDirectory() {
         enterpriseList = new ArrayList<Enterprise>();
     }
 
@@ -33,19 +33,19 @@ public class EnterpriseMaindirectory {
         Enterprise enterprise = null;
 
         if (type == Enterprise.EnterpriseType.Hospital) {
-            enterprise = new Hospitalenterprises(name);
+            enterprise = new HospitalEnterprises(name);
             enterpriseList.add(enterprise);
         }
         if (type == Enterprise.EnterpriseType.RehabCenters) {
             enterprise = new RehabEnterprises(name);
             enterpriseList.add(enterprise);
         }
-        if (type == Enterprise.EnterpriseType.Drugstores) {
-            enterprise = new DrugEnterprises(name);
+        if (type == Enterprise.EnterpriseType.DrugStores) {
+            enterprise = new DrugStoresEnterprises(name);
             enterpriseList.add(enterprise);
         }
-        if (type == Enterprise.EnterpriseType.Suppliers) {
-            enterprise = new SuppliersEnterprises(name);
+        if (type == Enterprise.EnterpriseType.Distributors) {
+            enterprise = new DistributorsEnterprises(name);
             enterpriseList.add(enterprise);
         }
         return enterprise;

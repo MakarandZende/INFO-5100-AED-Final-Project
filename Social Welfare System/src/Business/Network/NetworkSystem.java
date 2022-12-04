@@ -5,7 +5,7 @@
  */
 package Business.Network;
 
-import Business.Enterprises.EnterpriseMaindirectory;
+import Business.Enterprises.EnterpriseMainDirectory;
 
 /**
  *
@@ -13,10 +13,10 @@ import Business.Enterprises.EnterpriseMaindirectory;
  */
 public class NetworkSystem {
      private String name;
-    private EnterpriseMaindirectory enterpriseDirectory;
+    private EnterpriseMainDirectory enterpriseDirectory;
     
     public NetworkSystem(){
-        enterpriseDirectory=new EnterpriseMaindirectory();
+        enterpriseDirectory=new EnterpriseMainDirectory();
     }
     public String getName() {
         return name;
@@ -26,7 +26,7 @@ public class NetworkSystem {
         this.name = name;
     }
 
-    public EnterpriseMaindirectory getEnterpriseDirectory() {
+    public EnterpriseMainDirectory getEnterpriseDirectory() {
         return enterpriseDirectory;
     }
     
