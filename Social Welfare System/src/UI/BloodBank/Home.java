@@ -1,4 +1,4 @@
-package userinterface.BloodBank;
+package UI.BloodBank;
 
 import javax.swing.JOptionPane;
 
