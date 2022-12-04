@@ -4,19 +4,74 @@
  */
 package UI.SystemAdminWorkArea;
 
+import Business.Ecosystem.Ecosystem;
+
+import Business.Enterprises.Enterprise;
+import Business.Network.NetworkSystem;
+import Business.Human.Person;
+import Business.Role.AdminmainRole;
+import Business.Role.Doctor_Role;
+
+import Business.UserAccount.User_Account;
+import java.awt.CardLayout;
+import java.awt.Component;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+        
 /**
  *
  * @author Makarand
  */
 public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
 
+    private JPanel userProcessContainer;
+    private Ecosystem system;
     /**
      * Creates new form ManageEnterpriseAdminJPanel
      */
-    public ManageEnterpriseAdminJPanel() {
+    public ManageEnterpriseAdminJPanel(JPanel userProcessContainer, Ecosystem system) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.system = system;
+
+        populateTable();
+        populateNetworkComboBox();
     }
 
+    private void populateTable() {
+        DefaultTableModel model = (DefaultTableModel) enterpriseJTable.getModel();
+
+        model.setRowCount(0);
+        for (NetworkSystem network : system.getNetworkList()) {
+            for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
+                for (User_Account userAccount : enterprise.getUserAccountDirectory().getUserAccountList()) {
+                    Object[] row = new Object[3];
+                    row[0] = enterprise.getName();
+                    row[1] = network.getName();
+                    row[2] = userAccount.getUsername();
+
+                    model.addRow(row);
+                }
+            }
+        }
+    }
+    
+    private void populateNetworkComboBox() {
+        networkJComboBox.removeAllItems();
+
+        for (NetworkSystem network : system.getNetworkList()) {
+            networkJComboBox.addItem(network);
+        }
+    }
+
+    private void populateEnterpriseComboBox(NetworkSystem network) {
+        enterpriseJComboBox.removeAllItems();
+
+        for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
+            enterpriseJComboBox.addItem(enterprise);
+        }
+
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -277,7 +332,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         String password = String.valueOf(passwordJPasswordField.getPassword());
         String name = nameJTextField.getText();
 
-        Individual employee = enterprise.getPersonDirectory().createPerson(name);
+        Person employee = enterprise.getPersonDirectory().createPerson(name);
 
         User_Account account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new AdminmainRole(),"");
         populateTable();
