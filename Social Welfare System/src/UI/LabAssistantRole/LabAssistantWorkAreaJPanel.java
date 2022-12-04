@@ -11,7 +11,7 @@ import Business.Network.NetworkSystem;
 import Business.Organization.LaboratoryOrg;
 import Business.Organization.Org;
 import Business.UserAccount.User_Account;
-import Business.WorkStream.Doctor_LabRequest;
+import Business.WorkStream.DocLabRequest;
 import Business.WorkStream.WorkRequest;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
@@ -211,7 +211,7 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
         }
 
 
-        Doctor_LabRequest request = (Doctor_LabRequest) labWorkRequestJTable.getValueAt(selectedRow, 0);
+        DocLabRequest request = (DocLabRequest) labWorkRequestJTable.getValueAt(selectedRow, 0);
 
 
         request.setStatus("Processing Req");
