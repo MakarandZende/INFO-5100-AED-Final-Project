@@ -4,19 +4,50 @@
  */
 package UI.DoctorRole;
 
+import Business.Enterprises.Enterprise;
+import Business.Network.NetworkSystem;
+import Business.Organization.DoctorConsultantOrg;
+import Business.Organization.LaboratoryOrg;
+import Business.Organization.Org;
+import Business.UserAccount.User_Account;
+import Business.WorkStream.Doctor_LabRequest;
+import Business.WorkStream.PatientAppRequest;
+import Business.WorkStream.WorkRequest;
+import java.awt.CardLayout;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author Makarand
  */
 public class DoctorAppointmentRequestsJPanel extends javax.swing.JPanel {
 
+    private JPanel userProcessContainer;
+    private DoctorConsultantOrg organization;
+    private Enterprise enterprise;
+    private User_Account userAccount;
+    private NetworkSystem network;
     /**
      * Creates new form DoctorAppointmentRequestsJPanel
      */
     public DoctorAppointmentRequestsJPanel() {
         initComponents();
+        populateRequestTable();
     }
 
+    public DoctorAppointmentRequestsJPanel(JPanel userProcessContainer, User_Account account, Org organization, Enterprise enterprise, NetworkSystem network) {
+        initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.organization = (DoctorConsultantOrg) organization;
+        this.enterprise = enterprise;
+        this.userAccount = account;
+        this.network = network;
+
+        //valueLabel.setText(enterprise.getName());
+        populateRequestTable();
+
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -318,6 +349,28 @@ public class DoctorAppointmentRequestsJPanel extends javax.swing.JPanel {
         populateRequestTable();
     }//GEN-LAST:event_btnViewlabresultActionPerformed
 
+    public void populateRequestTable() {
+
+        DefaultTableModel model = (DefaultTableModel) docWorkRequestJTable.getModel();
+
+        model.setRowCount(0);
+        for (WorkRequest request : organization.getWorkStream().getWorkRequestList()) {
+            Object[] row = new Object[5];
+            //    row[0] = request.getMessage();
+            row[0] = request;
+            row[1] = request.getSender().getUsername();
+            row[2] = request.getReceiver();
+            String result = request.getStatus();
+            // System.out.println(result);
+            row[3] = result == null ? "Waiting" : result;
+
+            row[4] = request.getRequestDate();
+
+            model.addRow(row);
+
+        }
+
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton assignJButton;
