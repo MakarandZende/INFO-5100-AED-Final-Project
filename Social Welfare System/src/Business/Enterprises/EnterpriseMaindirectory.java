@@ -39,7 +39,7 @@ public class EnterpriseMainDirectory {
         if (type == Enterprise.EnterpriseType.RehabCenters) {
             enterprise = new RehabEnterprises(name);
             enterpriseList.add(enterprise);
-        }
+        } 
         if (type == Enterprise.EnterpriseType.DrugStores) {
             enterprise = new DrugStoresEnterprises(name);
             enterpriseList.add(enterprise);
