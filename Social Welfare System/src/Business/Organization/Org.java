@@ -8,7 +8,7 @@ import Business.Enterprises.Enterprise;
 import Business.Human.PersonDirectory;
 import Business.Role.Role;
 import Business.UserAccount.UserAcctDirectory;
-import Business.WorkQueue.Work_Queue;
+import Business.WorkStream.WorkStream;
 import java.util.ArrayList;
 
 /**
@@ -18,7 +18,7 @@ import java.util.ArrayList;
 public abstract class Org {
 
     private String name;
-    private Work_Queue workQueue;
+    private WorkStream workStream;
     private PersonDirectory personDirectory;
     private UserAcctDirectory userAccountDirectory;
     private int organizationID;
@@ -51,7 +51,7 @@ public abstract class Org {
 
     public Org(String name) {
         this.name = name;
-        workQueue = new Work_Queue();
+        workStream = new WorkStream();
         personDirectory = new PersonDirectory();
         userAccountDirectory = new UserAcctDirectory();
         organizationID = counter;
@@ -76,16 +76,16 @@ public abstract class Org {
         return name;
     }
 
-    public Work_Queue getWorkQueue() {
-        return workQueue;
+    public WorkStream getWorkStream() {
+        return workStream;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setWorkQueue(Work_Queue workQueue) {
-        this.workQueue = workQueue;
+    public void setWorkQueue(WorkStream workStream) {
+        this.workStream = workStream;
     }
 
     @Override
