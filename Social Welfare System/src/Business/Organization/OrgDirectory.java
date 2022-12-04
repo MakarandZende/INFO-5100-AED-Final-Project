@@ -36,7 +36,7 @@ public class OrgDirectory {
                     organizationList.add(organization);
                     break;
                 case Lab:
-                    organization = new LabOrg();
+                    organization = new LaboratoryOrg();
                     organizationList.add(organization);
                     break;
                 case Druggist:
