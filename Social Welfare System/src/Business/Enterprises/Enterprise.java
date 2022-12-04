@@ -25,7 +25,7 @@ public abstract class Enterprise extends Org{
     public enum EnterpriseType{
         Hospital("Hospital"),
         RehabCenters("RehabCenters"),
-        Drugstores("Drugstores"),
+        DrugStores("DrugStores"),
         Distributors("Distributors");
         
         private String value;
