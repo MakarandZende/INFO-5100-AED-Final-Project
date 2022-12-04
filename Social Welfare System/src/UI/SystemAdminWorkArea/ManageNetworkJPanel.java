@@ -4,19 +4,42 @@
  */
 package UI.SystemAdminWorkArea;
 
+import Business.Ecosystem.Ecosystem;
+import Business.Network.NetworkSystem;
+import java.awt.CardLayout;
+import java.awt.Component;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author Makarand
  */
 public class ManageNetworkJPanel extends javax.swing.JPanel {
 
+    private JPanel userProcessContainer;
+    private Ecosystem system;
     /**
      * Creates new form ManageNetworkJPanel
      */
-    public ManageNetworkJPanel() {
+    public ManageNetworkJPanel(JPanel userProcessContainer, Ecosystem system) {
         initComponents();
+        
+        this.userProcessContainer = userProcessContainer;
+        this.system = system;
+
+        populateNetworkTable();
     }
 
+    private void populateNetworkTable() {
+        DefaultTableModel model = (DefaultTableModel) networkJTable.getModel();
+
+        model.setRowCount(0);
+        for (NetworkSystem network : system.getNetworkList()) {
+            Object[] row = new Object[1];
+            row[0] = network.getName();
+            model.addRow(row);
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

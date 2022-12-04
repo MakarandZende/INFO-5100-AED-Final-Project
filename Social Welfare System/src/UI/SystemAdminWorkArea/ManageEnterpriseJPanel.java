@@ -4,19 +4,64 @@
  */
 package UI.SystemAdminWorkArea;
 
+import Business.Ecosystem.Ecosystem;
+import Business.Enterprises.Enterprise;
+import Business.Network.NetworkSystem;
+import java.awt.CardLayout;
+import java.awt.Component;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author Makarand
  */
 public class ManageEnterpriseJPanel extends javax.swing.JPanel {
 
+    private JPanel userProcessContainer;
+    private Ecosystem system;
     /**
      * Creates new form ManageEnterpriseJPanel
      */
-    public ManageEnterpriseJPanel() {
+    public ManageEnterpriseJPanel(JPanel userProcessContainer, Ecosystem system) {
         initComponents();
+        
+        this.userProcessContainer = userProcessContainer;
+        this.system = system;
+
+        populateTable();
+        populateComboBox();
     }
 
+    private void populateTable() {
+        DefaultTableModel model = (DefaultTableModel) enterpriseJTable.getModel();
+
+        model.setRowCount(0);
+        for (NetworkSystem network : system.getNetworkList()) {
+            for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
+                Object[] row = new Object[3];
+                row[0] = enterprise.getName();
+                row[1] = network.getName();
+                row[2] = enterprise.getEnterpriseType().getValue();
+
+                model.addRow(row);
+            }
+        }
+    }
+    
+    private void populateComboBox() {
+        networkJComboBox.removeAllItems();
+        enterpriseTypeJComboBox.removeAllItems();
+
+        for (NetworkSystem network : system.getNetworkList()) {
+            networkJComboBox.addItem(network);
+        }
+
+        for (Enterprise.EnterpriseType type : Enterprise.EnterpriseType.values()) {
+            enterpriseTypeJComboBox.addItem(type);
+        }
+
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
