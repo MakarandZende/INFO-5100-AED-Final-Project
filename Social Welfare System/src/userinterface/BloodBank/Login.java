@@ -64,6 +64,7 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(632, 268, 208, -1));
 
         btnLogin.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/BloodBank/btnLogin.png"))); // NOI18N
         btnLogin.setText("Login");
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,40 +74,42 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(632, 329, -1, -1));
 
         btnClose.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/BloodBank/Exit application.png"))); // NOI18N
         btnClose.setText("Close");
         btnClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCloseActionPerformed(evt);
             }
         });
-        getContentPane().add(btnClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(745, 329, -1, -1));
+        getContentPane().add(btnClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 330, 100, 30));
 
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/BloodBank/blood2.jpg"))); // NOI18N
         jLabel3.setText("jLabel3");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1990, 1080));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsernameActionPerformed
-
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
         if(txtUsername.getText().equals("BBMS")&& txtPassword.getText().equals("admin"))
         {
-           setVisible(false);
-           new Home().setVisible(true);
-        }      
+            setVisible(false);
+            new Home().setVisible(true);
+        }
         else
-            JOptionPane.showMessageDialog(null,"Incorrect Username or Pass");
+        JOptionPane.showMessageDialog(null,"Incorrect Username or Pass");
     }//GEN-LAST:event_btnLoginActionPerformed
+
+    private void txtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsernameActionPerformed
 
     private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
         // TODO add your handling code here:
         int a =JOptionPane.showConfirmDialog(null,"Do you really want to close the Application","Select",JOptionPane.YES_NO_OPTION);
-        if(a==0)  
-            System.exit(0);
+        if(a==0)
+        System.exit(0);
     }//GEN-LAST:event_btnCloseActionPerformed
 
     /**
