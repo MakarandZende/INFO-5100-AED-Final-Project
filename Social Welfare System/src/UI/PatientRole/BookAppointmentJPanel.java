@@ -6,6 +6,7 @@
 package UI.PatientRole;
 
 import Business.Enterprises.Enterprise;
+import Business.Organization.DoctorConsultantOrg;
 import Business.Organization.Org;
 import Business.UserAccount.User_Account;
 import Business.WorkStream.PatientAppRequest;
@@ -160,8 +161,8 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
             }
         }
         if (org != null) {
-            int a = org.getWorkQueue().getWorkRequestList().hashCode();
-            org.getWorkQueue().getWorkRequestList().add(request);
+            int a = org.getWorkStream().getWorkRequestList().hashCode();
+            org.getWorkStream().getWorkRequestList().add(request);
             userAccount.getWorkQueue().getWorkRequestList().add(request);
         }
         JOptionPane.showMessageDialog(null, "Appointment booked successfully");

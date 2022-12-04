@@ -5,7 +5,7 @@
  */
 package UI.PatientRole;
 
-import Health.WorkQueue.WorkRequest;
+import Business.WorkStream.WorkRequest;
 import javax.swing.JPanel;
 
 /**
