@@ -5,7 +5,7 @@
  */
 package UI.PsychiatristDocRole;
 
-import Business.WorkQueue.PatientAppRequest;
+import Business.WorkStream.PatientAppRequest;
 import Business.WorkStream.WorkRequest;
 import java.awt.CardLayout;
 import java.text.DateFormat;
