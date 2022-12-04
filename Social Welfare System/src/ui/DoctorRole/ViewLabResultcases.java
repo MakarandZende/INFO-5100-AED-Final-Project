@@ -4,17 +4,60 @@
  */
 package ui.DoctorRole;
 
+import Business.Enterprises.Enterprise;
+import Business.Enterprises.RehabEnterprises;
+import Business.Network.NetworkSystem;
+import Business.Organization.DoctorConsultantOrg;
+import Business.Organization.Org;
+import Business.Organization.PhysiotherapistOrg;
+import Business.Organization.PsychiatristOrg;
+import Business.UserAccount.User_Account;
+import Business.WorkStream.WorkRequest;
+import java.awt.CardLayout;
+import java.util.Properties;
+import java.util.regex.Pattern;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
+import com.sun.jdi.connect.Transport;
+import java.io.FileOutputStream;
+import java.net.PasswordAuthentication;
+import javax.swing.text.Document;
 /**
  *
  * @author Makarand
  */
 public class ViewLabResultcases extends javax.swing.JPanel {
 
+    JPanel userProcessContainer;
+    WorkRequest patientrequest;
+    NetworkSystem network;
+    Enterprise enterprise;
+    User_Account userAccount;
+
+     String emailId=null;
     /**
      * Creates new form ViewLabResultcases
      */
-    public ViewLabResultcases() {
+    public ViewLabResultcases(JPanel userProcessContainer, WorkRequest request, NetworkSystem network, Enterprise enterprise, User_Account userAccount) {
         initComponents();
+        this.patientrequest = request;
+        this.userProcessContainer = userProcessContainer;
+        this.network = network;
+        this.enterprise = enterprise;
+        this.userAccount = userAccount;
+        popupResult();
     }
 
     /**
@@ -231,21 +274,173 @@ public class ViewLabResultcases extends javax.swing.JPanel {
 
     private void btnPsycActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPsycActionPerformed
         // TODO add your handling code here:
+        Org org = null;
+        for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
+            if (enterprise instanceof RehabEnterprises) {
+                for (Org organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
+                    if (organization instanceof PsychiatristOrg) {
+                        org = organization;
+                        break;
+                    }
+                }
+            }
+        }
+        if (org != null) {
+            //int a =org.getWorkQueue().getWorkRequestList().hashCode();
+            org.getWorkStream().getWorkRequestList().add(patientrequest);
+            patientrequest.setReceiver(null);
+            userAccount.getWorkQueue().getWorkRequestList().add(patientrequest);
+        }
+        patientrequest.setStatus("Assigned to psychiatrist");
+         JOptionPane.showMessageDialog(null, "Request sent to psychiatrist");
+          popupResult();
     }//GEN-LAST:event_btnPsycActionPerformed
 
     private void btnphrmacoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnphrmacoActionPerformed
         // TODO add your handling code here:
+        System.out.println("aaa");
+// emailId = "kunwar.chopra@gmail.com";
+//
+// String emailRegex = "^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$";
+//
+// Pattern pat = Pattern.compile(emailRegex);
+// if (emailId == null)
+// {
+// JOptionPane.showMessageDialog(null, "Please enter a valid email id. It should not start with _ and must contain an email Id with _, . and @ only!!");
+// return;
+// }
+//
+// else
+// {
+// if(!(pat.matcher(emailId).matches()) )
+// {
+// JOptionPane.showMessageDialog(null, "Please enter a valid email id. It should not start with _ and must contain an email Id with _, . and @ !!");
+// return;
+// }
+//
+// }
+//
+// if(emailId.equalsIgnoreCase(""))
+// {
+// JOptionPane.showMessageDialog(null, "Please enter an email id before buying the product");
+// return;
+// }
+//
+// sendMail(emailId);
+// //Email Sending part
+//
+//
+// //pdf part
+        //pdf part
+        Document document = new Document();
+     
+        //pdf part
+        Org org = null;
+     for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()){
+          if (enterprise instanceof RehabEnterprises){     
+        for (Org organization : enterprise.getOrganizationDirectory().getOrganizationList()){
+            if (organization instanceof PhysiotherapistOrg){
+                org = organization;               
+                     
+            } 
+          }
+        }      
+     }   
+     if(org!=null)
+     {
+      org.getWorkStream().getWorkRequestList().add(patientrequest);
+            patientrequest.setReceiver(null);
+            userAccount.getWorkQueue().getWorkRequestList().add(patientrequest);
+     }
+     JOptionPane.showMessageDialog(null, "Requested to Pharmacotherapist");
+       userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnphrmacoActionPerformed
 
+    public void sendMail(String emailId)
+    {
+    final String username = "bookmymovie13@gmail.com";
+		final String password = "ijklmn786@";
+
+		Properties props = new Properties();
+		props.put("mail.smtp.auth", "true");
+		props.put("mail.smtp.starttls.enable", "true");
+		props.put("mail.smtp.host", "smtp.gmail.com");
+		props.put("mail.smtp.port", "587");
+
+		Session session = Session.getInstance(props,
+		  new javax.mail.Authenticator() {
+			protected PasswordAuthentication getPasswordAuthentication() {
+				return new PasswordAuthentication(username, password);
+			}
+		  });
+
+		try {
+
+			Message message = new MimeMessage(session);
+			message.setFrom(new InternetAddress("sojitradharti15@gmail.com"));
+			message.setRecipients(Message.RecipientType.TO,
+				InternetAddress.parse(emailId));
+			message.setSubject("pharmacotherapist Request");
+			message.setText("pharmacotherapist Request sent successfuly.");
+
+			Transport.send(message);
+
+			//System.out.println("Done");
+
+		} catch (MessagingException e) {
+			throw new RuntimeException(e);
+		}
+                 patientrequest.setStatus("Assigned to pharmacotherapist");
+                 popupResult();
+	}
+    
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void btnPrescriptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrescriptionActionPerformed
         // TODO add your handling code here:
+        RequestDruggistForMedicineJPanel medPanel = new RequestDruggistForMedicineJPanel(userProcessContainer, patientrequest, network, userAccount,  enterprise);
+        
+       
+            userProcessContainer.add("processWorkRequestJPanel", medPanel);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+
+            layout.next(userProcessContainer);
+            JOptionPane.showMessageDialog(null, "Request sent back to Doctor");
+            popupResult();
     }//GEN-LAST:event_btnPrescriptionActionPerformed
 
 
+    private void popupResult() {
+        
+        txtName.setText(patientrequest.getSender().getUsername());
+        txt.setText(patientrequest.getLabresult());
+        txtResultType.setText(patientrequest.getResulttype());
+        txtResultbyLab.setText(patientrequest.getSolution());
+        String category = txtResultType.getText();
+           if(category.contains("Pharmacotherapist"))
+           {
+               btnPsyc.setEnabled(false);
+               btnPrescription.setEnabled(false);
+           }
+           else if(category.contains("Psychiatrist"))
+           {
+               btnphrmaco.setEnabled(false);
+               btnPrescription.setEnabled(false);
+           }
+           else if(category.contains("Not Overdose"))
+           {
+               btnphrmaco.setEnabled(false);
+               btnPsyc.setEnabled(false);
+           }
+
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnPrescription;
     private javax.swing.JButton btnPsyc;

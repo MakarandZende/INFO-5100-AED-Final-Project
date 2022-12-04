@@ -5,7 +5,10 @@
  */
 package ui.DoctorRole;
 
-
+import Business.Enterprises.Enterprise;
+import Business.Network.NetworkSystem;
+import Business.Organization.DoctorConsultantOrg;
+import Business.Organization.Org;
 import Business.UserAccount.User_Account;
 import java.awt.CardLayout;
 import javax.swing.JPanel;

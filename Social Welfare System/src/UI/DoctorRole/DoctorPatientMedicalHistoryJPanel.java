@@ -4,17 +4,172 @@
  */
 package UI.DoctorRole;
 
+import Business.Enterprises.Enterprise;
+import Business.Organization.LaboratoryOrg;
+import Business.Organization.Org;
+import Business.UserAccount.User_Account;
+import Business.WorkStream.Doctor_LabRequest;
+import Business.WorkStream.PatientAppRequest;
+import java.awt.CardLayout;
+import java.awt.Component;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 /**
  *
  * @author Makarand
  */
 public class DoctorPatientMedicalHistoryJPanel extends javax.swing.JPanel {
 
+   JPanel userProcessContainer;
+   PatientAppRequest request;
+   User_Account useraccount;
+   Enterprise enterprise;
+   String gender[] = {"Male","Female","Other"};
+   HashMap<String, String> heart_rate = new HashMap<String, String>();
+   HashMap<String, String> temp_range = new HashMap<String, String>();
+   HashMap<String, String> bp_range = new HashMap<String, String>();
+   HashMap<String, String> resp_range = new HashMap<String, String>();
+   HashMap<String, String> med_range = new HashMap<String, String>();
+   String inj_opioid_use[] = {"On Hands","On Feet", "On Neck"};
+   String opioid_intoxication[] = {"Pin Point Pupil", "Nodding Off", "Drowsiness", "Sweating"};
+   String opioid_withdrawal[] = {"Restlessness", "Lacrimation", "Hypertension", "Muscle Tenderness"};
+   String liver_disease[] = {"Jaundice","Hepatosplenomegaly","Ascites"};
     /**
      * Creates new form DoctorPatientMedicalHistoryJPanel
      */
-    public DoctorPatientMedicalHistoryJPanel() {
+    public DoctorPatientMedicalHistoryJPanel(JPanel userProcessContainer, PatientAppRequest request,User_Account useraccount,  Enterprise enterprise) {
         initComponents();
+    
+        this.userProcessContainer = userProcessContainer;
+       this.request = request;
+       this.useraccount =useraccount;
+       this.enterprise = enterprise;
+       for(String str: gender)
+       {
+           genderCombo.addItem(str);
+       }
+       for(int i=1; i<=110; i++)
+       {
+           ageCombo.addItem(i);
+       }
+       // heart beat range
+       heart_rate.put("30bpm-70bpm", "low");
+       heart_rate.put("71bpm-100bpm","normal");
+       heart_rate.put("101bpm-150bpm","high");
+       
+       // Getting a Set of Key-value pairs
+       Set hb_entrySet = heart_rate.entrySet();
+ 
+       // Obtaining an iterator for the entry set
+       Iterator hb_it = hb_entrySet.iterator();
+       
+       while(hb_it.hasNext())
+       {
+           Map.Entry hb_me = (Map.Entry)hb_it.next();
+           heartRateCombo.addItem(hb_me.getKey());
+      }
+       
+       // temperature range
+      
+      temp_range.put("normal", "97.7 - 99.5°F");
+      temp_range.put("high", ">99.5 or 100.9°F");
+      temp_range.put("low", "<95.0°F");
+      
+      // Getting a Set of Key-value pairs
+       Set temp_entrySet = temp_range.entrySet();
+ 
+       // Obtaining an iterator for the entry set
+       Iterator t_it = temp_entrySet.iterator();
+       
+       while(t_it.hasNext())
+       {
+           Map.Entry t_me = (Map.Entry)t_it.next();
+           tempCombo.addItem(t_me.getValue());
+      }
+       
+        // blood pressure range
+      
+      
+      bp_range.put("low", "<120 bp");
+      bp_range.put("normal", "120-129 bp");
+      bp_range.put("stage2", ">120 bp");
+      
+      // Getting a Set of Key-value pairs
+       Set bp_entrySet = bp_range.entrySet();
+ 
+       // Obtaining an iterator for the entry set
+       Iterator bp_it = bp_entrySet.iterator();
+       
+       while(bp_it.hasNext())
+       {
+           Map.Entry bp_me = (Map.Entry)bp_it.next();
+           bpCombo.addItem(bp_me.getValue());
+      }
+       
+        // respiratory rate range
+      
+      
+      resp_range.put("low", "< 12 bpm");
+      resp_range.put("normal", "12-20 bpM");
+      resp_range.put("high", "> 20 bpm");
+     
+      // Getting a Set of Key-value pairs
+       Set resp_entrySet = resp_range.entrySet();
+ 
+       // Obtaining an iterator for the entry set
+       Iterator resp_it = resp_entrySet.iterator();
+       
+       while(resp_it.hasNext())
+       {
+           Map.Entry resp_me = (Map.Entry)resp_it.next();
+           respCombo.addItem(resp_me.getValue());
+      }
+      med_range.put("low", "10-20 mg/mL");
+      med_range.put("normL", "20-40 mg/mL");
+      med_range.put("high", "40-80 mg/mL");
+      
+      
+      // Getting a Set of Key-value pairs
+       Set oxcy_entrySet = med_range.entrySet();
+ 
+       // Obtaining an iterator for the entry set
+       Iterator oxcy_it = oxcy_entrySet.iterator();
+       
+       while(oxcy_it.hasNext())
+       {
+           Map.Entry oxcy_me = (Map.Entry)oxcy_it.next();
+           oxycCombo.addItem(oxcy_me.getValue());
+           fenCombo.addItem(oxcy_me.getValue());
+           bupCombo.addItem(oxcy_me.getValue());
+           metCombo.addItem(oxcy_me.getValue());
+           oxymCombo.addItem(oxcy_me.getValue());
+      }
+       
+       for(String str: inj_opioid_use)
+       {
+           injCombo.addItem(str);
+       }
+       
+       
+        for(String str: opioid_intoxication)
+       {
+           intoCombo.addItem(str);
+       }
+        
+       for(String str: opioid_withdrawal)
+       {
+           withCombo.addItem(str);
+       }
+       
+               
+        for(String str: liver_disease)
+       {
+           livCombo.addItem(str);
+       }
     }
 
     /**

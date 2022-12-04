@@ -4,6 +4,17 @@
  */
 package UI.DoctorRole;
 
+import Business.Enterprises.Enterprise;
+import Business.Enterprises.DrugStoresEnterprises;
+import Business.Network.NetworkSystem;
+import Business.Organization.DoctorConsultantOrg;
+import Business.Organization.Org;
+import Business.Organization.DruggistOrg;
+import Business.UserAccount.User_Account;
+import Business.WorkStream.WorkRequest;
+import java.awt.CardLayout;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 /**
  *
  * @author Makarand
@@ -268,16 +279,16 @@ public class RequestDruggistForMedicineJPanel extends javax.swing.JPanel {
 
         Org org = null;
         for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()){
-            if (enterprise instanceof PharmacyEnterprises){
+            if (enterprise instanceof DrugStoresEnterprises){
                 for (Org organization : enterprise.getOrganizationDirectory().getOrganizationList()){
-                    if (organization instanceof PharmacistOrg){
+                    if (organization instanceof DruggistOrg){
                         org = organization;
                         break;
                     }
                 }
             }
             if (org!=null){
-                org.getWorkQueue().getWorkRequestList().add(patientrequest);
+                org.getWorkStream().getWorkRequestList().add(patientrequest);
                 patientrequest.setReceiver(null);
                 userAccount.getWorkQueue().getWorkRequestList().add(patientrequest);
             }

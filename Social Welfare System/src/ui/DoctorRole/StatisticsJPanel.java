@@ -4,17 +4,47 @@
  */
 package ui.DoctorRole;
 
+import Business.Enterprises.Enterprise;
+import Business.Network.NetworkSystem;
+import Business.Organization.DoctorConsultantOrg;
+import Business.Organization.Org;
+import Business.Human.Person;
+import Business.UserAccount.User_Account;
+import Business.WorkStream.WorkRequest;
+import java.awt.BorderLayout;
+import java.awt.CardLayout;
+import java.awt.Color;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.CategoryPlot;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.category.DefaultCategoryDataset;
 /**
  *
  * @author Makarand
  */
 public class StatisticsJPanel extends javax.swing.JPanel {
 
+   JPanel userProcessContainer;
+   WorkRequest patientrequest;
+   NetworkSystem network;
+   Enterprise enterprise;
+   User_Account userAccount;
+   DoctorConsultantOrg organization;
     /**
      * Creates new form StatisticsJPanel
      */
-    public StatisticsJPanel() {
+    public StatisticsJPanel(JPanel userProcessContainer, User_Account userAccount, DoctorConsultantOrg organization, Enterprise enterprise, NetworkSystem network) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.network = network;
+        this.enterprise = enterprise;
+        this.userAccount = userAccount;
+        this.organization = organization;
+        Loadbarchart();
     }
 
     /**
@@ -102,6 +132,72 @@ public class StatisticsJPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
 
+    private void Loadbarchart() {
+//        if (!(enterprise instanceof Enterprise)) {
+//            JOptionPane.showMessageDialog(null, "Please add Enterprises.");
+//            return;
+//        };
+           int count =0;
+       
+        int medhistcollected_count = 0;
+        int resultfound_count = 0;
+        int assigntodoc_count = 0;
+        int sent_count = 0;
+         int assigntophysio_count = 0;
+           int assigntopsy_count = 0;
+         //Assigned to psychiatrist
+         for(WorkRequest workreq :organization.getWorkStream().getWorkRequestList())
+        {
+            if(workreq.getStatus().equalsIgnoreCase("sent"))
+            {
+                sent_count++;
+            }
+            else if(workreq.getStatus().equalsIgnoreCase("result found"))
+            {
+                resultfound_count++;
+            }
+             else if(workreq.getStatus().equalsIgnoreCase("assigned to doc"))
+            {
+                assigntodoc_count++;
+            }
+             else if(workreq.getStatus().equalsIgnoreCase("Med Hist Collected For Lab"))
+            {
+                medhistcollected_count++;
+            }
+             else if(workreq.getStatus().equalsIgnoreCase("Assigned to pharmacotherapist"))
+            {
+                assigntophysio_count++;
+            }
+             else if(workreq.getStatus().equalsIgnoreCase("Assigned to psychiatrist"))
+            {
+                assigntopsy_count++;
+            }
+            
+           // workreq
+        }
+        DefaultCategoryDataset DCategorydata = new DefaultCategoryDataset();
+
+        DCategorydata.setValue(sent_count, "sent", "sent");        
+        DCategorydata.setValue(assigntodoc_count, "assignedto doc", "assignedto doc");
+        DCategorydata.setValue(resultfound_count, "Result Found", "Result Found");
+        DCategorydata.setValue(medhistcollected_count, "Med hist collected lab", "Med hist collected lab");
+        DCategorydata.setValue(assigntophysio_count, "Assigned to pharmacotherapist", "Assigned to pharmacotherapist");
+        DCategorydata.setValue(assigntophysio_count, "Assigned to psychiatrist", "Assigned to psychiatrist");
+
+
+        JFreeChart jfreechart = ChartFactory.createBarChart3D("PATIENT REQUEST STATISTICS", "ENTITIES", "COUNT", DCategorydata, PlotOrientation.VERTICAL, true, true, false);
+
+        CategoryPlot plot = jfreechart.getCategoryPlot();
+        plot.setRangeGridlinePaint(Color.BLACK);
+
+        ChartPanel chartp = new ChartPanel(jfreechart, true);
+
+        chartp.setVisible(true);
+        barchartRequeststatistics.removeAll();
+        barchartRequeststatistics.setLayout(new java.awt.BorderLayout());
+        barchartRequeststatistics.add(chartp, BorderLayout.CENTER);
+        barchartRequeststatistics.validate();
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel barchartRequeststatistics;
