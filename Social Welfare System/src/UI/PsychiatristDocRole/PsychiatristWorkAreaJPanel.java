@@ -10,7 +10,7 @@ import Business.Network.NetworkSystem;
 import Business.Organization.Org;
 import Business.Organization.PsychiatristOrg;
 import Business.UserAccount.User_Account;
-import Business.WorkQueue.PatientAppRequest;
+import Business.WorkStream.PatientAppRequest;
 import Business.WorkStream.WorkRequest;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
