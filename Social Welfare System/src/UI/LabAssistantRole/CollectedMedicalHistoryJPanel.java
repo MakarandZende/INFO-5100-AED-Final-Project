@@ -9,7 +9,7 @@ import Business.Enterprises.Enterprise;
 import Business.Network.NetworkSystem;
 import Business.Organization.Org;
 import Business.UserAccount.User_Account;
-import Business.WorkStream.Doctor_LabRequest;
+import Business.WorkStream.DocLabRequest;
 import Business.WorkStream.WorkRequest;
 import java.awt.CardLayout;
 import java.awt.Component;
@@ -27,7 +27,7 @@ public class CollectedMedicalHistoryJPanel extends javax.swing.JPanel {
      */
     JPanel userProcessContainer;
 
-    Doctor_LabRequest request;
+    DocLabRequest request;
     User_Account useraccount;
     Enterprise enterprise;
     String result = "";
@@ -36,7 +36,7 @@ public class CollectedMedicalHistoryJPanel extends javax.swing.JPanel {
     // private EcoSystem system;
     // private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
 
-    public CollectedMedicalHistoryJPanel(JPanel userProcessContainer, Doctor_LabRequest request,
+    public CollectedMedicalHistoryJPanel(JPanel userProcessContainer, DocLabRequest request,
             User_Account useraccount, Enterprise enterprise) {
         initComponents();
         this.userProcessContainer = userProcessContainer;

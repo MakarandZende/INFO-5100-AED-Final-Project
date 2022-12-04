@@ -13,7 +13,7 @@ public class PatientAppRequest extends WorkRequest {
 
     private String doctormessage;
     private String appointmentdate;     
-    private finalResult pharmaresult;
+    private FinalResult pharmaresult;
 
 
     public String getdoctormessage() {

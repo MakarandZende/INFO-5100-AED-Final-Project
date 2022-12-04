@@ -14,7 +14,7 @@ public class WorkStream {
     
     private ArrayList<WorkRequest> workRequestList;
     private ArrayList<PatientAppRequest> patientAppointmentRequest;
-    private ArrayList<Doctor_LabRequest> doctorLabRequest;
+    private ArrayList<DocLabRequest> doctorLabRequest;
 
     
     public WorkStream() {
@@ -39,11 +39,11 @@ public class WorkStream {
     }
 
     
-    public ArrayList<Doctor_LabRequest> getDoctorLabRequest() {
+    public ArrayList<DocLabRequest> getDoctorLabRequest() {
         return doctorLabRequest;
     }
 
-    public void setDoctorLabRequest(ArrayList<Doctor_LabRequest> doctorLabRequest) {
+    public void setDoctorLabRequest(ArrayList<DocLabRequest> doctorLabRequest) {
         this.doctorLabRequest = doctorLabRequest;
     }
     }

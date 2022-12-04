@@ -9,7 +9,7 @@ import Business.Enterprises.Enterprise;
 import Business.Network.NetworkSystem;
 import Business.Organization.DoctorConsultantOrg;
 import Business.Organization.Org;
-import Business.Organization.SupplyManagerOrg;
+import Business.Organization.DistributorOrg;
 import Business.UserAccount.User_Account;
 import javax.swing.JPanel;
 
@@ -23,14 +23,14 @@ public class DistributorWorkAreaPanel extends javax.swing.JPanel {
      * Creates new form DistributorWorkAreaPanel
      */
     private JPanel userProcessContainer;
-    private SupplyManagerOrg organization;
+    private DistributorOrg organization;
     private Enterprise enterprise;
     private User_Account userAccount;
 
     public DistributorWorkAreaPanel(JPanel userProcessContainer, User_Account account, Org organization, Enterprise enterprise, NetworkSystem network) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
-        this.organization = (SupplyManagerOrg) organization;
+        this.organization = (DistributorOrg) organization;
         this.enterprise = enterprise;
         this.userAccount = account;
     }
