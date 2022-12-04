@@ -5,23 +5,17 @@
  */
 package UI.AdminRole;
 
-import Health.Enterprises.Enterprise;
-import Health.Organization.Org;
-import Health.Person.Individual;
-import Health.UserAccount.User_Account;
+import Business.Enterprises.Enterprise;
+import Business.Organization.Org;
+import Business.Human.Person;
+import Business.UserAccount.User_Account;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import org.jfree.chart.ChartFactory;
-import org.jfree.chart.ChartPanel;
-import org.jfree.chart.JFreeChart;
-import org.jfree.chart.plot.CategoryPlot;
-import org.jfree.chart.plot.PlotOrientation;
-import org.jfree.data.category.DefaultCategoryDataset;
-import org.jfree.data.general.DefaultPieDataset;
+
 
 /**
  *
@@ -192,7 +186,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         for (Org orgs : enterprise.getOrganizationDirectory().getOrganizationList()) {
             org_count++;
 
-            for (Individual person : orgs.getPersonDirectory().getPersonList()) {
+            for (Person person : orgs.getPersonDirectory().getPersonList()) {
                 per_count++;
             }
 
@@ -201,21 +195,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         }
 
-        DefaultCategoryDataset DCategorydata = new DefaultCategoryDataset();
-
-        DCategorydata.setValue(org_count, "Organizations", "Total of Organizations");
-        DCategorydata.setValue(per_count, "Persons", "Total Persons");
-        DCategorydata.setValue(user_count, "Users", "Total Accounts");
-
-        JFreeChart jfreechart = ChartFactory.createBarChart3D("ENTERPRISE STATISTICS", "ENTITIES", "COUNT", DCategorydata, PlotOrientation.VERTICAL, true, true, false);
-        CategoryPlot plot = jfreechart.getCategoryPlot();
-        plot.setRangeGridlinePaint(Color.BLACK);
-        ChartPanel chartp = new ChartPanel(jfreechart, true);
-        chartp.setVisible(true);
-        barchart.removeAll();
-        barchart.setLayout(new java.awt.BorderLayout());
-        barchart.add(chartp, BorderLayout.CENTER);
-        barchart.validate();
+        
 
     }
 }

@@ -4,10 +4,10 @@
  */
 package UI.AdminRole;
 
-import Health.Enterprises.Enterprise;
-import Health.Organization.Org;
-import Health.Organization.Org.Type;
-import Health.Organization.OrgDirectory;
+import Business.Enterprises.Enterprise;
+import Business.Organization.Org;
+import Business.Organization.Org.Type;
+import Business.Organization.OrgDirectory;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
