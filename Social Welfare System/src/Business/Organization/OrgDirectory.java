@@ -40,7 +40,7 @@ public class OrgDirectory {
                     organizationList.add(organization);
                     break;
                 case Druggist:
-                    organization = new DrugStoreOrg();
+                    organization = new DruggistOrg();
                     organizationList.add(organization);
                     break;
                 case Psychiatrist:
