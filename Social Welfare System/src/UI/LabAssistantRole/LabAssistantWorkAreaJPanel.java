@@ -8,11 +8,11 @@ package UI.LabAssistantRole;
 import Business.Ecosystem.Ecosystem;
 import Business.Enterprises.Enterprise;
 import Business.Network.NetworkSystem;
-import Business.Organization.LabOrg;
+import Business.Organization.LaboratoryOrg;
 import Business.Organization.Org;
 import Business.UserAccount.User_Account;
-import Business.WorkQueue.Doctor_LabRequest;
-import Business.WorkQueue.WorkRequest;
+import Business.WorkStream.Doctor_LabRequest;
+import Business.WorkStream.WorkRequest;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -31,7 +31,7 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
     private Ecosystem business;
     private User_Account userAccount;
     private Enterprise enterprise;
-    private LabOrg labOrganization;
+    private LaboratoryOrg labOrganization;
 
     public LabAssistantWorkAreaJPanel(JPanel userProcessContainer, User_Account account,
             Org organization, Enterprise enterprise, NetworkSystem network) {
@@ -41,7 +41,7 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
         this.userAccount = account;
         this.business = business;
 
-        this.labOrganization = (LabOrg)organization;
+        this.labOrganization = (LaboratoryOrg)organization;
        this.enterprise = enterprise;
 
         lblname.setText(userAccount.getEmployee().getName());
@@ -190,7 +190,7 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
 
-        for (WorkRequest request : labOrganization.getWorkQueue().getWorkRequestList()) {
+        for (WorkRequest request : labOrganization.getWorkStream().getWorkRequestList()) {
             Object[] row = new Object[5];
             row[0] = request;
             row[1] = request.getSender().getEmployee().getName();
