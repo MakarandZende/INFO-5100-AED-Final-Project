@@ -114,16 +114,15 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         jPanel1.setBackground(new java.awt.Color(204, 226, 249));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        backjButton1.setBackground(new java.awt.Color(51, 51, 51));
         backjButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         backjButton1.setForeground(new java.awt.Color(255, 255, 255));
-        backjButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/kindpng_78215511111.png"))); // NOI18N
+        backjButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/back_button.png"))); // NOI18N
         backjButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backjButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(backjButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 6, 35, 40));
+        jPanel1.add(backjButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, 60, 50));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white));
