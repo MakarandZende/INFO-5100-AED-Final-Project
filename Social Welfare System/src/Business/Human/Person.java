@@ -9,7 +9,7 @@ package Business.Human;
  *
  * @author Pranali
  */
-public class Person {
+public class Person extends BloodDonor{
       private String name;
     private int id;
     private static int count = 1;

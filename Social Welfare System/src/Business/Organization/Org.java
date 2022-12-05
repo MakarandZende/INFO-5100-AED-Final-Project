@@ -36,7 +36,8 @@ public abstract class Org {
         Psychiatrist("Psychiatrist Organization", Enterprise.EnterpriseType.RehabCenters),
         Volunteer("Volunteer Organization",Enterprise.EnterpriseType.NGO),
         FundsProvider("Funds Provider Organization", Enterprise.EnterpriseType.NGO),
-        MedicalCampOrganizer("Medical Camp Organizer", Enterprise.EnterpriseType.NGO);
+        MedicalCampOrganizer("Medical Camp Organizer", Enterprise.EnterpriseType.NGO),
+        BloodDonor("Blood Donor Organization", Enterprise.EnterpriseType.BloodBank);
         private String value;
         private Enterprise.EnterpriseType enterprise;
 
