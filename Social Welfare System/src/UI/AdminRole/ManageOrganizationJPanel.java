@@ -88,15 +88,14 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         jPanel1.setBackground(new java.awt.Color(204, 226, 249));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        backJButton.setBackground(new java.awt.Color(51, 51, 51));
         backJButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        backJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/kindpng_78215511111.png"))); // NOI18N
+        backJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/back_button.png"))); // NOI18N
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backJButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 18, 39, 27));
+        jPanel1.add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 60, -1));
 
         addJButton.setBackground(new java.awt.Color(51, 51, 51));
         addJButton.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
@@ -108,10 +107,10 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
                 addJButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(addJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, 160, 50));
+        jPanel1.add(addJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, 160, 50));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/admin2.png"))); // NOI18N
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, 100, 100));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, 100, 100));
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 233, 940));
 

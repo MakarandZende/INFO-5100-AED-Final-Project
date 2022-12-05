@@ -73,6 +73,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         addJButton = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
+        backJButton = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -103,10 +104,19 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
                 addJButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(addJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 158, 44));
+        jPanel1.add(addJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 158, 44));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/admin2.png"))); // NOI18N
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, 100, 100));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, 100, 100));
+
+        backJButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        backJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/back_button.png"))); // NOI18N
+        backJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backJButtonActionPerformed(evt);
+            }
+        });
+        jPanel1.add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, -1, 50));
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 210, 800));
 
@@ -210,8 +220,16 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_organizationJComboBoxActionPerformed
 
+    private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
+
+        userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_backJButtonActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addJButton;
+    private javax.swing.JButton backJButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
