@@ -207,7 +207,7 @@ public class PatientWorkAreaJPanel extends javax.swing.JPanel {
         //To change body of generated methods, choose Tools | Templates.
         DefaultTableModel model = (DefaultTableModel) appointmentJTable.getModel();
         model.setRowCount(0);
-        for (WorkRequest request : userAccount.getWorkQueue().getWorkRequestList()) {
+        for (WorkRequest request : userAccount.getWorkStream().getWorkRequestList()) {
             Object[] row = new Object[5];
             row[0] = request;
             String date = ((PatientAppRequest) request).getAppointmentdate();
