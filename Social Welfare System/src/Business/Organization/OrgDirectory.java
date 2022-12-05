@@ -55,6 +55,22 @@ public class OrgDirectory {
                     organization = new DistributorOrg();
                     organizationList.add(organization);
                     break;
+                case MedicalCampOrganizer:
+                    organization = new MedicalCampOrganization();
+                    organizationList.add(organization);
+                    break;
+                case Volunteer:
+                    organization = new VolunteerOrganization();
+                    organizationList.add(organization);
+                    break;
+                case FundsProvider:
+                    organization = new FundsProviderOrganization();
+                    organizationList.add(organization);
+                    break;
+                case CSR:
+                    organization = new CSROrganization();
+                    organizationList.add(organization);
+                    break;
                 default:
                     break;
             }

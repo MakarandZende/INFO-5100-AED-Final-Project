@@ -289,34 +289,34 @@ public class ViewLabResultcases extends javax.swing.JPanel {
     private void btnphrmacoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnphrmacoActionPerformed
         // TODO add your handling code here:
         System.out.println("aaa");
-// emailId = "makarand676@gmail.com";
-//
-// String emailRegex = "^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$";
-//
-// Pattern pat = Pattern.compile(emailRegex);
-// if (emailId == null)
-// {
-// JOptionPane.showMessageDialog(null, "Please enter a valid email id. It should not start with _ and must contain an email Id with _, . and @ only!!");
-// return;
-// }
-//
-// else
-// {
-// if(!(pat.matcher(emailId).matches()) )
-// {
-// JOptionPane.showMessageDialog(null, "Please enter a valid email id. It should not start with _ and must contain an email Id with _, . and @ !!");
-// return;
-// }
-//
-// }
-//
-// if(emailId.equalsIgnoreCase(""))
-// {
-// JOptionPane.showMessageDialog(null, "Please enter an email id before buying the product");
-// return;
-// }
-//
-// sendMail(emailId);
+ emailId = "code.crunch.sih@gmail.com";
+
+ String emailRegex = "^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$";
+
+ Pattern pat = Pattern.compile(emailRegex);
+ if (emailId == null)
+ {
+ JOptionPane.showMessageDialog(null, "Please enter a valid email id. It should not start with _ and must contain an email Id with _, . and @ only!!");
+ return;
+ }
+
+ else
+ {
+ if(!(pat.matcher(emailId).matches()) )
+ {
+ JOptionPane.showMessageDialog(null, "Please enter a valid email id. It should not start with _ and must contain an email Id with _, . and @ !!");
+ return;
+ }
+
+ }
+
+ if(emailId.equalsIgnoreCase(""))
+ {
+ JOptionPane.showMessageDialog(null, "Please enter an email id before buying the product");
+ return;
+ }
+
+ sendMail(emailId);
 // //Email Sending part
 //
 //
@@ -348,6 +348,44 @@ public class ViewLabResultcases extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnphrmacoActionPerformed
 
+    public void sendMail(String emailId)
+    {
+    final String username = "code.crunch.sih@gmail.com";
+		final String password = "pksqhbdswlwsllfr";
+
+		Properties props = new Properties();
+		props.put("mail.smtp.auth", "true");
+		props.put("mail.smtp.starttls.enable", "true");
+		props.put("mail.smtp.host", "smtp.gmail.com");
+		props.put("mail.smtp.port", "587");
+
+		Session session = Session.getInstance(props,
+		  new javax.mail.Authenticator() {
+			protected PasswordAuthentication getPasswordAuthentication() {
+				return new PasswordAuthentication(username, password);
+			}
+		  });
+
+		try {
+
+			Message message = new MimeMessage(session);
+			message.setFrom(new InternetAddress("code.crunch.sih@gmail.com"));
+			message.setRecipients(Message.RecipientType.TO,
+				InternetAddress.parse(emailId));
+			message.setSubject("pharmacotherapist Request");
+			message.setText("pharmacotherapist Request sent successfuly.");
+
+			Transport.send(message);
+
+			//System.out.println("Done");
+
+		} catch (MessagingException e) {
+			throw new RuntimeException(e);
+		}
+                 patientrequest.setStatus("Assigned to pharmacotherapist");
+                 popupResult();
+	}
+    
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         

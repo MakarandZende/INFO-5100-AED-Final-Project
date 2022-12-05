@@ -29,9 +29,14 @@ public abstract class Org {
         Doctor("Doctor Organization", Enterprise.EnterpriseType.Hospital),
         Lab("Lab Organization", Enterprise.EnterpriseType.Hospital),
         Patient("Patient Organization", Enterprise.EnterpriseType.Hospital),
+        CSR("CSR",Enterprise.EnterpriseType.Hospital),
         Druggist("Drugstore Organization", Enterprise.EnterpriseType.DrugStores),
-        Distributor("Supplier Manager Organization", Enterprise.EnterpriseType.Distributors), Physiotherapist("Pharmacotherapist Organization", Enterprise.EnterpriseType.RehabCenters),
-        Psychiatrist("Psychiatrist Organization", Enterprise.EnterpriseType.RehabCenters);
+        Distributor("Supplier Manager Organization", Enterprise.EnterpriseType.Distributors),
+        Physiotherapist("Pharmacotherapist Organization", Enterprise.EnterpriseType.RehabCenters),
+        Psychiatrist("Psychiatrist Organization", Enterprise.EnterpriseType.RehabCenters),
+        Volunteer("Volunteer Organization",Enterprise.EnterpriseType.NGO),
+        FundsProvider("Funds Provider Organization", Enterprise.EnterpriseType.NGO),
+        MedicalCampOrganizer("Medical Camp Organizer", Enterprise.EnterpriseType.NGO);
         private String value;
         private Enterprise.EnterpriseType enterprise;
 

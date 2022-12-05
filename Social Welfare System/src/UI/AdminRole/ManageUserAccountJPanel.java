@@ -117,7 +117,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         backjButton1.setBackground(new java.awt.Color(51, 51, 51));
         backjButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         backjButton1.setForeground(new java.awt.Color(255, 255, 255));
-        backjButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/user_interface/AdministrativeRole/kindpng_78215511111.png"))); // NOI18N
+        backjButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/kindpng_78215511111.png"))); // NOI18N
         backjButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backjButton1ActionPerformed(evt);
