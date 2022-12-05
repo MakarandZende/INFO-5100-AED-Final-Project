@@ -58,13 +58,11 @@ public class MainJFrame extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel1.setText("USERNAME");
 
-        userNameJTextField.setForeground(new java.awt.Color(255, 255, 255));
         userNameJTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         PASSWORD.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         PASSWORD.setText("PASSWORD");
 
-        passwordField.setForeground(new java.awt.Color(255, 255, 255));
         passwordField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         loginJButton.setBackground(new java.awt.Color(255, 255, 204));

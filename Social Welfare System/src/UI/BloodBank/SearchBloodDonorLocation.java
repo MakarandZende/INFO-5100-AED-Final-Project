@@ -9,7 +9,7 @@ import javax.swing.JTable;
 
 /**
  *
- * @author 18576
+ * @author Pranali
  */
 public class SearchBloodDonorLocation extends javax.swing.JFrame {
 

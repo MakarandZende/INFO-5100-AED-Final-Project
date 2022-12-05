@@ -26,7 +26,9 @@ public abstract class Enterprise extends Org{
         Hospital("Hospital"),
         RehabCenters("RehabCenters"),
         DrugStores("DrugStores"),
-        Distributors("Distributors");
+        Distributors("Distributors"),
+        NGO("NGO"),
+        BloodBank("Blood bank");
         
         private String value;
         

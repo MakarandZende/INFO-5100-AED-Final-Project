@@ -48,6 +48,14 @@ public class EnterpriseMainDirectory {
             enterprise = new DistributorsEnterprises(name);
             enterpriseList.add(enterprise);
         }
+        if (type == Enterprise.EnterpriseType.NGO) {
+            enterprise = new NGOEnterprise(name);
+            enterpriseList.add(enterprise);
+        }
+        if (type == Enterprise.EnterpriseType.BloodBank) {
+            enterprise = new DistributorsEnterprises(name);
+            enterpriseList.add(enterprise);
+        }
         return enterprise;
     }
     //deleting enterprises

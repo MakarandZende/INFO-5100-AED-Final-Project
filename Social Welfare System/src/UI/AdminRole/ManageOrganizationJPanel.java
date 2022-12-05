@@ -40,6 +40,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         organizationJComboBox.removeAllItems();
         for (Type type : Org.Type.values()) {
             if (type.getEType() == enterprise.getEnterpriseType()) {
+                System.out.println("Added type "+type.getEType());
                 organizationJComboBox.addItem(type);
             }
         }
@@ -89,7 +90,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
 
         backJButton.setBackground(new java.awt.Color(51, 51, 51));
         backJButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        backJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/user_interface/AdministrativeRole/kindpng_78215511111.png"))); // NOI18N
+        backJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/kindpng_78215511111.png"))); // NOI18N
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backJButtonActionPerformed(evt);
