@@ -8,7 +8,7 @@ import Business.Enterprises.Enterprise;
 import Business.Organization.LaboratoryOrg;
 import Business.Organization.Org;
 import Business.UserAccount.User_Account;
-import Business.WorkStream.Doctor_LabRequest;
+import Business.WorkStream.DocLabRequest;
 import Business.WorkStream.PatientAppRequest;
 import java.awt.CardLayout;
 import java.awt.Component;
@@ -764,7 +764,7 @@ public class DoctorPatientMedicalHistoryJPanel extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        Doctor_LabRequest labr = new Doctor_LabRequest();
+        DocLabRequest labr = new DocLabRequest();
         labr.setSender(useraccount);
 
         labr.setMessage("Lab Request");
@@ -889,7 +889,7 @@ public class DoctorPatientMedicalHistoryJPanel extends javax.swing.JPanel {
         //    Doctor_LabRequest labr = new Doctor_LabRequest();
         Org org = null;
         for (Org organization : enterprise.getOrganizationDirectory().getOrganizationList()){
-            if (organization instanceof LabOrg){
+            if (organization instanceof LaboratoryOrg){
                 org = organization;
                 //testing
                 System.out.println(request.hashCode());
@@ -902,8 +902,8 @@ public class DoctorPatientMedicalHistoryJPanel extends javax.swing.JPanel {
             request.setHashcode(a);//patient hashcode from db
             System.out.println(a);
             labr.setHashcode(a);
-            org.getWorkQueue().getWorkRequestList().add(labr);
-            useraccount.getWorkQueue().getWorkRequestList().add(labr);
+            org.getWorkStream().getWorkRequestList().add(labr);
+            useraccount.getWorkStream().getWorkRequestList().add(labr);
         }
 
         JOptionPane.showMessageDialog(null, "Report Submitted Successfully");

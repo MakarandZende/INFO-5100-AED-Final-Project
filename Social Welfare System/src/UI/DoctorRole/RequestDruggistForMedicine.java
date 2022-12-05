@@ -19,13 +19,27 @@ import javax.swing.JPanel;
  *
  * @author Makarand
  */
-public class RequestDruggistForMedicineJPanel extends javax.swing.JPanel {
+public class RequestDruggistForMedicine extends javax.swing.JPanel {
 
+    private JPanel userProcessContainer;
+    private DoctorConsultantOrg organization;
+    private Enterprise enterprise;
+    private User_Account userAccount;
+    private NetworkSystem network;
+    WorkRequest patientrequest;
+    String medlist="";
     /**
      * Creates new form RequestDruggistForMedicineJPanel
      */
-    public RequestDruggistForMedicineJPanel() {
+    public RequestDruggistForMedicine(JPanel userProcessContainer, WorkRequest request,NetworkSystem network, User_Account account, Enterprise enterprise ) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.organization = (DoctorConsultantOrg) organization;
+        this.enterprise = enterprise;
+        this.userAccount = account;
+        this.network = network;
+        this.patientrequest = request;
+        txtPatientName.setText(patientrequest.getSender().getUsername());
     }
 
     /**
@@ -290,7 +304,7 @@ public class RequestDruggistForMedicineJPanel extends javax.swing.JPanel {
             if (org!=null){
                 org.getWorkStream().getWorkRequestList().add(patientrequest);
                 patientrequest.setReceiver(null);
-                userAccount.getWorkQueue().getWorkRequestList().add(patientrequest);
+                userAccount.getWorkStream().getWorkRequestList().add(patientrequest);
             }
         }
         JOptionPane.showMessageDialog(null, "Medical prescription sent to pharmacist successfully.");

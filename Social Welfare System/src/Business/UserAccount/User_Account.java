@@ -76,7 +76,7 @@ public class User_Account {
         return Human;
     }
 
-    public WorkStream getWorkQueue() {
+    public WorkStream getWorkStream() {
         return workStream;
     }
 

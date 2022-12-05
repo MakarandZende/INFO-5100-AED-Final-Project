@@ -10,7 +10,7 @@ import Business.Organization.DoctorConsultantOrg;
 import Business.Organization.LaboratoryOrg;
 import Business.Organization.Org;
 import Business.UserAccount.User_Account;
-import Business.WorkStream.Doctor_LabRequest;
+import Business.WorkStream.DocLabRequest;
 import Business.WorkStream.PatientAppRequest;
 import Business.WorkStream.WorkRequest;
 import java.awt.CardLayout;
