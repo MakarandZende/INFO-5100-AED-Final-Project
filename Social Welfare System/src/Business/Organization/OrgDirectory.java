@@ -75,6 +75,10 @@ public class OrgDirectory {
                     organization = new BloodDonorOrganization();
                     organizationList.add(organization);
                     break;
+                case BloodReceiver:
+                    organization = new BloodReceiverOrganization();
+                    organizationList.add(organization);
+                    break;
                 default:
                     break;
             }
