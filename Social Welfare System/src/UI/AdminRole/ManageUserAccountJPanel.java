@@ -219,9 +219,9 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         jLabel7.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Manage User Account");
-        jPanel6.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 20, -1, -1));
+        jPanel6.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 10, -1, 30));
 
-        add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(337, 0, 1230, 60));
+        add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 890, 60));
 
         jPanel3.setBackground(new java.awt.Color(204, 226, 249));
         jPanel3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white));
@@ -256,12 +256,13 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
             userJTable.getColumnModel().getColumn(1).setResizable(false);
         }
 
-        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, 350, 170));
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 350, 250));
 
-        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 260, 520, 320));
+        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 200, 580, 450));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/hosp.jpg"))); // NOI18N
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, -50, 1210, 1020));
+        jLabel8.setPreferredSize(new java.awt.Dimension(790, 800));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, -50, 870, 1020));
     }// </editor-fold>//GEN-END:initComponents
 
     private void createUserJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createUserJButtonActionPerformed

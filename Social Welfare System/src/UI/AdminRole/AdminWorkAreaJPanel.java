@@ -63,14 +63,14 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
 
         enterpriseLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         enterpriseLabel.setText("ENTERPRISE :");
-        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 190, 200, 30));
+        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 190, 200, 30));
 
         valueLabel.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(419, 68, 130, -1));
 
         barchart.setBackground(new java.awt.Color(204, 226, 249));
         barchart.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white));
-        add(barchart, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 270, 570, 170));
+        add(barchart, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 290, 570, 170));
 
         jPanel2.setBackground(new java.awt.Color(204, 226, 249));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -122,13 +122,13 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         jLabel8.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("My Work: Administrative Role");
-        jPanel6.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, 330, -1));
+        jPanel6.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, 330, -1));
 
-        add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 0, 1220, 50));
+        add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 0, 890, 50));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/hosp.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, 890, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void userJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userJButtonActionPerformed
