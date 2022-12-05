@@ -163,7 +163,7 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
         if (org != null) {
             int a = org.getWorkStream().getWorkRequestList().hashCode();
             org.getWorkStream().getWorkRequestList().add(request);
-            userAccount.getWorkQueue().getWorkRequestList().add(request);
+            userAccount.getWorkStream().getWorkRequestList().add(request);
         }
         JOptionPane.showMessageDialog(null, "Appointment booked successfully");
         txtmessage.setText("");
