@@ -38,6 +38,7 @@ public class BloodDonorWorkAreaJPanel extends javax.swing.JPanel {
         this.userAccount = account;
         this.business = business;
         this.bloodDonorOrganization = (BloodDonorOrganization)organization;
+        populateTable();
     }
 
     /**
