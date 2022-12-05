@@ -180,7 +180,7 @@ public class PsychiatristWorkAreaJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) labWorkRequestJTable.getModel();
 
         model.setRowCount(0);
-        for (WorkRequest request : organization.getWorkQueue().getWorkRequestList()) {
+        for (WorkRequest request : organization.getWorkStream().getWorkRequestList()) {
             Object[] row = new Object[5];
             //    row[0] = request.getMessage();
             row[0] = request;
