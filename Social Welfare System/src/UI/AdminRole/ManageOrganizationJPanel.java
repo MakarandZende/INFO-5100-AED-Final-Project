@@ -108,10 +108,10 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
                 addJButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(addJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 160, 50));
+        jPanel1.add(addJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, 160, 50));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/admin2.png"))); // NOI18N
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, 100, 100));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, 100, 100));
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 233, 940));
 
@@ -121,9 +121,9 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         jLabel7.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Manage Organization Work Area");
-        jPanel6.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 20, -1, -1));
+        jPanel6.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, -1, -1));
 
-        add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, 1350, 60));
+        add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, 890, 60));
 
         jPanel2.setBackground(new java.awt.Color(204, 226, 249));
         jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white));
@@ -171,10 +171,10 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         organizationJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel2.add(organizationJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 144, -1));
 
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 240, 380, 320));
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 230, 380, 320));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/hosp.jpg"))); // NOI18N
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 1340, 880));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 890, 880));
     }// </editor-fold>//GEN-END:initComponents
 
     private void addJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButtonActionPerformed

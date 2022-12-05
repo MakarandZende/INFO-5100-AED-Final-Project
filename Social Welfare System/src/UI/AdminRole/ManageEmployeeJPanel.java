@@ -116,9 +116,9 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         jLabel8.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Manage Employee");
-        jPanel6.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 20, -1, -1));
+        jPanel6.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, -1, -1));
 
-        add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 0, 1310, 60));
+        add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 0, 890, 60));
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 430, 100, 80));
 
         jPanel2.setBackground(new java.awt.Color(204, 226, 249));
@@ -187,10 +187,10 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         jLabel2.setText("Name");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, -1, -1));
 
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 210, 500, 390));
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 170, 500, 390));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/hosp.jpg"))); // NOI18N
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, 1310, 770));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, 890, 770));
     }// </editor-fold>//GEN-END:initComponents
 
     private void addJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButtonActionPerformed
