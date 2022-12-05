@@ -29,8 +29,8 @@ public abstract class Org {
         Doctor("Doctor Organization", Enterprise.EnterpriseType.Hospital),
         Lab("Lab Organization", Enterprise.EnterpriseType.Hospital),
         Patient("Patient Organization", Enterprise.EnterpriseType.Hospital),
-        Druggist("Drugstore Organization", Enterprise.EnterpriseType.Drugstores),
-        Supplier("Supplier Manager Organization", Enterprise.EnterpriseType.Suppliers), Physiotherapist("Pharmacotherapist Organization", Enterprise.EnterpriseType.RehabCenters),
+        Druggist("Drugstore Organization", Enterprise.EnterpriseType.DrugStores),
+        Distributor("Supplier Manager Organization", Enterprise.EnterpriseType.Distributors), Physiotherapist("Pharmacotherapist Organization", Enterprise.EnterpriseType.RehabCenters),
         Psychiatrist("Psychiatrist Organization", Enterprise.EnterpriseType.RehabCenters);
         private String value;
         private Enterprise.EnterpriseType enterprise;

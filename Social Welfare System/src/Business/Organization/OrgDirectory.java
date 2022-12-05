@@ -51,8 +51,8 @@ public class OrgDirectory {
                     organization = new PhysiotherapistOrg();
                     organizationList.add(organization);
                     break;
-                case Supplier:
-                    organization = new SupplyManagerOrg();
+                case Distributor:
+                    organization = new DistributorOrg();
                     organizationList.add(organization);
                     break;
                 default:
