@@ -11,8 +11,7 @@ import Business.Network.NetworkSystem;
 import Business.Organization.Org;
 import Business.UserAccount.User_Account;
 import javax.swing.JPanel;
-import ui.DoctorRole.DoctorAppointmentRequestsJFrame;
-import ui.DoctorRole.DoctorWorkAreaJPanel;
+import UI.DoctorRole.DoctorWorkAreaJPanel;
 
 /**
  *
