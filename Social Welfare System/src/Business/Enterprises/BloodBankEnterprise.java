@@ -12,8 +12,8 @@ import java.util.ArrayList;
  *
  * @author Pranali
  */
-public class NGOEnterprise extends Enterprise {
-    public NGOEnterprise(String name) {
+public class BloodBankEnterprise extends Enterprise {
+    public BloodBankEnterprise(String name) {
         super(name, Enterprise.EnterpriseType.BloodBank);
     }
     @Override

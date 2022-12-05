@@ -53,7 +53,7 @@ public class EnterpriseMainDirectory {
             enterpriseList.add(enterprise);
         }
         if (type == Enterprise.EnterpriseType.BloodBank) {
-            enterprise = new DistributorsEnterprises(name);
+            enterprise = new BloodBankEnterprise(name);
             enterpriseList.add(enterprise);
         }
         return enterprise;
