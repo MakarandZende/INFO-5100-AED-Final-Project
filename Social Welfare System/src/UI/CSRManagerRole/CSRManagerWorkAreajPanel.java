@@ -10,9 +10,11 @@ import Business.Ecosystem.Ecosystem;
 import Business.Enterprises.Enterprise;
 import Business.Organization.CSROrganization;
 import Business.UserAccount.User_Account;
+import Business.WorkStream.MedicalCampWorkRequest;
 import Business.WorkStream.NgoMedCampWorkRequest;
 import Business.WorkStream.WorkRequest;
 import java.awt.CardLayout;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -40,31 +42,15 @@ public class CSRManagerWorkAreajPanel extends javax.swing.JPanel {
         populateRequestTable();
     }
  public void populateRequestTable(){
-//        DefaultTableModel model = (DefaultTableModel) workRequestJTable.getModel();
-//        
-//        model.setRowCount(0);
-//        System.out.println(userAccount.getWorkQueue().getWorkRequestList());
-//        for (WorkRequest request : userAccount.getWorkQueue().getWorkRequestList()){
-//            Object[] row = new Object[4];
-//            row[0] = request.getMessage();
-//            row[1] = request.getReceiver();
-//            row[2] = request.getStatus();
-//            String result = ((AmenitiesWorkRequest) request).getTestResult();
-//            row[3] = result == null ? "Waiting" : result;
-//            
-//            model.addRow(row);
-//        }
-        
-        DefaultTableModel model1 = (DefaultTableModel) wReqToNgoJTable.getModel();
+        DefaultTableModel model1 = (DefaultTableModel) ReqFromNGOMedicalCamp.getModel();
         
         model1.setRowCount(0);
-        System.out.println("wq1 "+ userAccount.getWorkStream().getWorkRequestList());
-        for (WorkRequest request : userAccount.getWorkStream().getWorkRequestList()){
+        for (WorkRequest request : organization.getWorkStream().getWorkRequestList()){
             Object[] row = new Object[4];
-            row[0] = request.getMessage();
+            row[0] = request;
             row[1] = request.getReceiver();
             row[2] = request.getStatus();
-            String result = ((NgoMedCampWorkRequest) request).getTestResult();
+            String result = ((MedicalCampWorkRequest) request).getCampResult();
             row[3] = result == null ? "Waiting" : result;
             
             model1.addRow(row);
@@ -82,9 +68,10 @@ public class CSRManagerWorkAreajPanel extends javax.swing.JPanel {
         refreshTestJButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        wReqToNgoJTable = new javax.swing.JTable();
+        ReqFromNGOMedicalCamp = new javax.swing.JTable();
         reqNgoBtn = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        assignBtn = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(204, 204, 255));
 
@@ -97,10 +84,10 @@ public class CSRManagerWorkAreajPanel extends javax.swing.JPanel {
         });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setText("RefugeeCM WorkArea JPanel");
+        jLabel1.setText("CSR Work Area Panel");
 
-        wReqToNgoJTable.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        wReqToNgoJTable.setModel(new javax.swing.table.DefaultTableModel(
+        ReqFromNGOMedicalCamp.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        ReqFromNGOMedicalCamp.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -126,7 +113,7 @@ public class CSRManagerWorkAreajPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(wReqToNgoJTable);
+        jScrollPane2.setViewportView(ReqFromNGOMedicalCamp);
 
         reqNgoBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         reqNgoBtn.setText("Request Ngo");
@@ -139,6 +126,14 @@ public class CSRManagerWorkAreajPanel extends javax.swing.JPanel {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/manager.gif"))); // NOI18N
         jLabel2.setText("jLabel2");
 
+        assignBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        assignBtn.setText("Assign to me");
+        assignBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                assignBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -146,39 +141,40 @@ public class CSRManagerWorkAreajPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(254, 254, 254)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(254, 254, 254)
-                                .addComponent(jLabel1))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(33, 33, 33)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 465, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(142, 142, 142)
-                                .addComponent(reqNgoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(71, 71, 71)
-                        .addComponent(refreshTestJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(20, Short.MAX_VALUE))
+                                .addComponent(refreshTestJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(assignBtn)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                                .addComponent(reqNgoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(125, 125, 125))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 465, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(8, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(42, 42, 42)
                 .addComponent(jLabel1)
-                .addGap(37, 37, 37)
-                .addComponent(refreshTestJButton)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(132, 132, 132)
+                        .addGap(197, 197, 197)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
+                        .addGap(108, 108, 108)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(40, 40, 40)
-                        .addComponent(reqNgoBtn)))
+                        .addGap(29, 29, 29)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(reqNgoBtn)
+                            .addComponent(assignBtn)
+                            .addComponent(refreshTestJButton))))
                 .addContainerGap(247, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -190,19 +186,46 @@ public class CSRManagerWorkAreajPanel extends javax.swing.JPanel {
 
     private void reqNgoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reqNgoBtnActionPerformed
         // TODO add your handling code here:
-        // go to NGO request Page
+        int selectedRow = ReqFromNGOMedicalCamp.getSelectedRow();
+
+        if (selectedRow < 0){
+            return;
+        }
+        
+        MedicalCampWorkRequest request= (MedicalCampWorkRequest)ReqFromNGOMedicalCamp.getValueAt(selectedRow, 0);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        userProcessContainer.add("RequestNgojPanel", new RequestMedicalCampjPanel(userProcessContainer, userAccount, enterprise,business));
+        userProcessContainer.add("Process CSR requests", new RequestCampsJPanel(userProcessContainer, userAccount, enterprise,request));
         layout.next(userProcessContainer);
     }//GEN-LAST:event_reqNgoBtnActionPerformed
 
+    private void assignBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignBtnActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = ReqFromNGOMedicalCamp.getSelectedRow();
+
+        if (selectedRow < 0){
+            return;
+        }
+
+        MedicalCampWorkRequest request = (MedicalCampWorkRequest)ReqFromNGOMedicalCamp.getValueAt(selectedRow, 0);
+        if(request.getReceiver() == null){
+            request.setReceiver(userAccount);
+            request.setStatus("Pending");
+            populateRequestTable();
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Already Assigned");
+            return;
+        }
+    }//GEN-LAST:event_assignBtnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable ReqFromNGOMedicalCamp;
+    private javax.swing.JButton assignBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton refreshTestJButton;
     private javax.swing.JButton reqNgoBtn;
-    private javax.swing.JTable wReqToNgoJTable;
     // End of variables declaration//GEN-END:variables
 }

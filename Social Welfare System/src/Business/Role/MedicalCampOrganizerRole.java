@@ -21,7 +21,7 @@ public class MedicalCampOrganizerRole extends Role{
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, User_Account account, Org organization, Enterprise enterprise, Ecosystem business, NetworkSystem network) {
-        return new MedicalCampOrganizerWorkAreaJPanel(userProcessContainer, account, organization, enterprise);
+        return new MedicalCampOrganizerWorkAreaJPanel(userProcessContainer, account, organization, enterprise, business,network);
     }
     
 }

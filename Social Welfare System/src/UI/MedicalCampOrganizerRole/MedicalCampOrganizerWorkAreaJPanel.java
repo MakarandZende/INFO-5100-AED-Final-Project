@@ -5,11 +5,15 @@
  */
 package UI.MedicalCampOrganizerRole;
 
+import Business.Ecosystem.Ecosystem;
+import UI.CSRManagerRole.RequestCampsJPanel;
 import Business.Enterprises.Enterprise;
+import Business.Network.NetworkSystem;
 import Business.Organization.Org;
 import Business.UserAccount.User_Account;
 import Business.WorkStream.HosMedCampWorkRequest;
 import Business.WorkStream.MedicalCampRequest;
+import Business.WorkStream.MedicalCampWorkRequest;
 import Business.WorkStream.WorkRequest;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
@@ -29,35 +33,22 @@ public class MedicalCampOrganizerWorkAreaJPanel extends javax.swing.JPanel {
     private Org organization;
     private Enterprise enterprise;
     private User_Account userAccount;
+    private Ecosystem business;
+    private NetworkSystem network;
     
-     public MedicalCampOrganizerWorkAreaJPanel(JPanel userProcessContainer, User_Account account, Org organization, Enterprise enterprise) {
+     public MedicalCampOrganizerWorkAreaJPanel(JPanel userProcessContainer, User_Account account, Org organization, Enterprise enterprise, Ecosystem business, NetworkSystem network) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.organization = organization;
         this.enterprise = enterprise;
         this.userAccount = account;
-        populateTable();
+        this.business = business;
+        this.network = network;
         populateTableReqFromVol();
     }
      
     public void populateTableReqFromVol(){
-        DefaultTableModel model = (DefaultTableModel)workRequestJTable1.getModel();
-        model.setRowCount(0);
-        System.out.println("organization in rr "+ organization);
-        for(WorkRequest request : organization.getWorkStream().getWorkRequestList()){
-            Object[] row = new Object[4];
-            row[0] = request;
-            row[1] = request.getSender().getEmployee().getName();
-            row[2] = request.getReceiver() == null ? null : request.getReceiver().getEmployee().getName();
-            row[3] = request.getStatus();
-
-            model.addRow(row);
-        }
-    }
-    
-     public void populateTable(){
-        DefaultTableModel model = (DefaultTableModel) workRequestJTable.getModel();
-        
+        DefaultTableModel model = (DefaultTableModel) workRequestJTable1.getModel();
         model.setRowCount(0);
         //System.out.print(userAccount.getWorkQueue1().getWorkRequestList());
         for (WorkRequest request : userAccount.getWorkStream().getWorkRequestList()){
@@ -65,13 +56,13 @@ public class MedicalCampOrganizerWorkAreaJPanel extends javax.swing.JPanel {
             row[0] = request.getMessage();
             row[1] = request.getReceiver();
             row[2] = request.getStatus();
-            String result = ((MedicalCampRequest) request).getTestResult();
+            String result = ((MedicalCampWorkRequest) request).getCampResult();
             row[3] = result == null ? "Waiting" : result;
             
             model.addRow(row);
         }
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -83,12 +74,9 @@ public class MedicalCampOrganizerWorkAreaJPanel extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        workRequestJTable = new javax.swing.JTable();
-        refreshJButton = new javax.swing.JButton();
         requestCampJButton = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         workRequestJTable1 = new javax.swing.JTable();
-        assignBtn = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -97,29 +85,8 @@ public class MedicalCampOrganizerWorkAreaJPanel extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Medical Camp Organizer Work Area");
 
-        workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Message", "Receiver", "Status", "Result"
-            }
-        ));
-        jScrollPane1.setViewportView(workRequestJTable);
-
-        refreshJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        refreshJButton.setText("Refresh");
-        refreshJButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                refreshJButtonActionPerformed(evt);
-            }
-        });
-
         requestCampJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        requestCampJButton.setText("Request for Doctor");
+        requestCampJButton.setText("Raise New Medical Camp Request");
         requestCampJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 requestCampJButtonActionPerformed(evt);
@@ -139,14 +106,6 @@ public class MedicalCampOrganizerWorkAreaJPanel extends javax.swing.JPanel {
         ));
         jScrollPane2.setViewportView(workRequestJTable1);
 
-        assignBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        assignBtn.setText("Assign to me");
-        assignBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                assignBtnActionPerformed(evt);
-            }
-        });
-
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/medicalcamp.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
 
@@ -160,17 +119,16 @@ public class MedicalCampOrganizerWorkAreaJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(89, 89, 89)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(refreshJButton)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(assignBtn)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(requestCampJButton))
-                            .addComponent(jScrollPane2)))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(requestCampJButton)
+                        .addGap(93, 93, 93)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -181,84 +139,39 @@ public class MedicalCampOrganizerWorkAreaJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1)
-                .addGap(50, 50, 50)
+                .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(refreshJButton)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(assignBtn)
-                    .addComponent(requestCampJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(88, Short.MAX_VALUE))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(52, 52, 52)
+                                .addComponent(requestCampJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(60, 60, 60)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(77, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void requestCampJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestCampJButtonActionPerformed
-        // TODO add your handling code here:
-        int selectedRow = workRequestJTable1.getSelectedRow();
-
-        if (selectedRow < 0){
-            JOptionPane.showMessageDialog(null, "Please select a Row");
-            return;
-        }
-        HosMedCampWorkRequest relatedReq = (HosMedCampWorkRequest)workRequestJTable1.getValueAt(selectedRow, 0);
-        if(relatedReq.getStatus().equals("Pending")){
-            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-            userProcessContainer.add("RequestCampsJPanel", new RequestCampsJPanel(userProcessContainer, userAccount, enterprise,relatedReq));
-            layout.next(userProcessContainer);
-        }
-        else{
-            JOptionPane.showMessageDialog(null, "Request is already completed or in progress");
-            return;
-        }
+        
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        userProcessContainer.add("RequestMedicalCampsJPanel", new RequestMedicalCampjPanel(userProcessContainer, userAccount, enterprise, business, network));
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_requestCampJButtonActionPerformed
-
-    private void refreshJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshJButtonActionPerformed
-        // TODO add your handling code here:
-        populateTable();
-        populateTableReqFromVol();
-    }//GEN-LAST:event_refreshJButtonActionPerformed
-
-    private void assignBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignBtnActionPerformed
-        // TODO add your handling code here:
-        int selectedRow = workRequestJTable1.getSelectedRow();
-        
-        if (selectedRow < 0){
-            return;
-        }
-        
-        WorkRequest request = (WorkRequest)workRequestJTable1.getValueAt(selectedRow, 0);
-        if(request.getReceiver() == null){
-            request.setReceiver(userAccount);
-            request.setStatus("Pending");
-            populateTableReqFromVol();
-        }
-        else{
-            JOptionPane.showMessageDialog(null, "Already Assigned");
-            return;
-        }
-    }//GEN-LAST:event_assignBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton assignBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JButton refreshJButton;
     private javax.swing.JButton requestCampJButton;
-    private javax.swing.JTable workRequestJTable;
     private javax.swing.JTable workRequestJTable1;
     // End of variables declaration//GEN-END:variables
 }
