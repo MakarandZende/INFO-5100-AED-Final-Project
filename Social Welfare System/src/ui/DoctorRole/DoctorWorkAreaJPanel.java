@@ -47,19 +47,20 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
+        medcampreqbtn = new javax.swing.JButton();
         btnViewStatistics = new javax.swing.JButton();
+        viewaptreqbtn = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1170, 1080));
 
-        jButton1.setBackground(new java.awt.Color(110, 89, 221));
-        jButton1.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("View Appointment Requests");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        medcampreqbtn.setBackground(new java.awt.Color(110, 89, 221));
+        medcampreqbtn.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        medcampreqbtn.setForeground(new java.awt.Color(255, 255, 255));
+        medcampreqbtn.setText("View Medical Camp request");
+        medcampreqbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                medcampreqbtnActionPerformed(evt);
             }
         });
 
@@ -73,6 +74,16 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        viewaptreqbtn.setBackground(new java.awt.Color(110, 89, 221));
+        viewaptreqbtn.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        viewaptreqbtn.setForeground(new java.awt.Color(255, 255, 255));
+        viewaptreqbtn.setText("View Appointment Requests");
+        viewaptreqbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewaptreqbtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -80,21 +91,24 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(440, 440, 440)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnViewStatistics, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(1193, Short.MAX_VALUE))
+                    .addComponent(medcampreqbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnViewStatistics, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(viewaptreqbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(443, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(344, 344, 344)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
+                .addGap(270, 270, 270)
+                .addComponent(medcampreqbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
+                .addComponent(viewaptreqbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
                 .addComponent(btnViewStatistics)
                 .addContainerGap(586, Short.MAX_VALUE))
         );
 
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnViewStatistics, jButton1});
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnViewStatistics, medcampreqbtn});
 
     }// </editor-fold>//GEN-END:initComponents
 
@@ -112,15 +126,15 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
 
      
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void medcampreqbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_medcampreqbtnActionPerformed
         // TODO add your handling code here:
-
-        DoctorAppointmentRequestsJPanel doctorAppointmentReq = new DoctorAppointmentRequestsJPanel(userProcessContainer, userAccount, organization, enterprise, network);
-        userProcessContainer.add("DoctorAppointmentJPanel", doctorAppointmentReq);
+        DoctorMedicalCampRequestJPanel doctorMedicalJPanel = new DoctorMedicalCampRequestJPanel(userProcessContainer, userAccount, organization, enterprise);
+        userProcessContainer.add("statisticsJPanel", doctorMedicalJPanel);
 
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-    }//GEN-LAST:event_jButton1ActionPerformed
+        
+    }//GEN-LAST:event_medcampreqbtnActionPerformed
 
     private void btnViewStatisticsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewStatisticsActionPerformed
         StatisticsJPanel statisticsJPanel = new StatisticsJPanel(userProcessContainer, userAccount, organization, enterprise, network);
@@ -130,9 +144,18 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnViewStatisticsActionPerformed
 
+    private void viewaptreqbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewaptreqbtnActionPerformed
+        DoctorAppointmentRequestsJPanel doctorAppointmentReq = new DoctorAppointmentRequestsJPanel(userProcessContainer, userAccount, organization, enterprise, network);
+        userProcessContainer.add("DoctorAppointmentJPanel", doctorAppointmentReq);
+
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_viewaptreqbtnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnViewStatistics;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton medcampreqbtn;
+    private javax.swing.JButton viewaptreqbtn;
     // End of variables declaration//GEN-END:variables
 }

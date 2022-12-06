@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UI.MedicalCampOrganizerRole;
+package UI.CSRManagerRole;
 
 import Business.Enterprises.Enterprise;
 import Business.Organization.DoctorConsultantOrg;
@@ -11,6 +11,8 @@ import Business.Organization.Org;
 import Business.UserAccount.User_Account;
 import Business.WorkStream.HosMedCampWorkRequest;
 import Business.WorkStream.MedicalCampRequest;
+import Business.WorkStream.MedicalCampWorkRequest;
+import UI.MedicalCampOrganizerRole.MedicalCampOrganizerWorkAreaJPanel;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JOptionPane;
@@ -28,14 +30,14 @@ public class RequestCampsJPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private Enterprise enterprise;
     private User_Account userAccount;
-    private HosMedCampWorkRequest Hmcrequest;
+    private MedicalCampWorkRequest medcampWReq;
     
-    public RequestCampsJPanel(JPanel userProcessContainer, User_Account userAccount, Enterprise enterprise, HosMedCampWorkRequest hmcworkReq) {
+    public RequestCampsJPanel(JPanel userProcessContainer, User_Account userAccount, Enterprise enterprise, MedicalCampWorkRequest medcampWReq) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.enterprise = enterprise;
         this.userAccount = userAccount;
-        this.Hmcrequest = hmcworkReq;
+        this.medcampWReq = medcampWReq;
         valueLabel.setText(enterprise.getName());
     }
 
@@ -67,7 +69,7 @@ public class RequestCampsJPanel extends javax.swing.JPanel {
         jLabel1.setText("Message");
 
         requestDoctorJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        requestDoctorJButton.setText("Send Request");
+        requestDoctorJButton.setText("Approve Request");
         requestDoctorJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 requestDoctorJButtonActionPerformed(evt);
@@ -124,14 +126,11 @@ public class RequestCampsJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         String message = messageJTextField.getText();
         
-        if(Hmcrequest.getStatus().equals("Pending")){
-            Hmcrequest.setStatus("Requested Doctor");
-            MedicalCampRequest request = new MedicalCampRequest();
-            request.setMessage(message);
+        if(medcampWReq.getStatus().equals("Pending")){
+            medcampWReq.setStatus("Requested Doctor by CSR");
+            medcampWReq.setMessage(message);
             System.out.println("user ac of mcr"+userAccount);
-            request.setSender(userAccount);
-            request.setStatus("Sent");
-            request.setHmcwr(Hmcrequest);
+            medcampWReq.setSender(userAccount);
 
             Org org = null;
             for (Org organization : enterprise.getOrganizationDirectory().getOrganizationList()){
@@ -141,8 +140,8 @@ public class RequestCampsJPanel extends javax.swing.JPanel {
                 }
             }
             if (org!=null){
-                org.getWorkStream().getWorkRequestList().add(request);
-                userAccount.getWorkStream().getWorkRequestList().add(request);
+                org.getWorkStream().getWorkRequestList().add(medcampWReq);
+                userAccount.getWorkStream().getWorkRequestList().add(medcampWReq);
             }
         }
         else{
@@ -157,9 +156,8 @@ public class RequestCampsJPanel extends javax.swing.JPanel {
         userProcessContainer.remove(this);
         Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
-        MedicalCampOrganizerWorkAreaJPanel mwjp = (MedicalCampOrganizerWorkAreaJPanel) component;
-        mwjp.populateTable();
-        mwjp.populateTableReqFromVol();
+        CSRManagerWorkAreajPanel csrmwp = (CSRManagerWorkAreajPanel) component;
+        csrmwp.populateRequestTable();
         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_backJButtonActionPerformed
