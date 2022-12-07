@@ -46,12 +46,13 @@ public class CSRManagerWorkAreajPanel extends javax.swing.JPanel {
         
         model1.setRowCount(0);
         for (WorkRequest request : organization.getWorkStream().getWorkRequestList()){
-            Object[] row = new Object[4];
+            Object[] row = new Object[5];
             row[0] = request;
-            row[1] = request.getReceiver();
-            row[2] = request.getStatus();
+            row[1] = request.getSender();
+            row[2] = request.getReceiver();
+            row[3] = request.getStatus();
             String result = ((MedicalCampWorkRequest) request).getCampResult();
-            row[3] = result == null ? "Waiting" : result;
+            row[4] = result == null ? "Waiting" : result;
             
             model1.addRow(row);
         }
@@ -89,30 +90,15 @@ public class CSRManagerWorkAreajPanel extends javax.swing.JPanel {
         ReqFromNGOMedicalCamp.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         ReqFromNGOMedicalCamp.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Message", "Receiver", "Status", "Result"
+                "Message", "Sender", "Assigned To", "Status", "Camp result"
             }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
+        ));
         jScrollPane2.setViewportView(ReqFromNGOMedicalCamp);
 
         reqNgoBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -147,14 +133,15 @@ public class CSRManagerWorkAreajPanel extends javax.swing.JPanel {
                         .addGap(33, 33, 33)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 519, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(refreshTestJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(assignBtn)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                                 .addComponent(reqNgoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(125, 125, 125))
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 465, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGap(125, 125, 125)))))
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(8, Short.MAX_VALUE))
         );
@@ -194,7 +181,7 @@ public class CSRManagerWorkAreajPanel extends javax.swing.JPanel {
         
         MedicalCampWorkRequest request= (MedicalCampWorkRequest)ReqFromNGOMedicalCamp.getValueAt(selectedRow, 0);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        userProcessContainer.add("Process CSR requests", new RequestCampsJPanel(userProcessContainer, userAccount, enterprise,request));
+        userProcessContainer.add("Process CSR requests", new RequestDoctorForMedCampJPanel(userProcessContainer, userAccount, enterprise,request));
         layout.next(userProcessContainer);
     }//GEN-LAST:event_reqNgoBtnActionPerformed
 
@@ -209,7 +196,7 @@ public class CSRManagerWorkAreajPanel extends javax.swing.JPanel {
         MedicalCampWorkRequest request = (MedicalCampWorkRequest)ReqFromNGOMedicalCamp.getValueAt(selectedRow, 0);
         if(request.getReceiver() == null){
             request.setReceiver(userAccount);
-            request.setStatus("Pending");
+            request.setStatus("Pending from CSR");
             populateRequestTable();
         }
         else{

@@ -158,6 +158,7 @@ public class RequestMedicalCampjPanel extends javax.swing.JPanel {
         request.setMessage(message);
         request.setSender(userAccount);
         request.setStatus("Sent from NGO");
+        request.setCampResult("Requested");
 
         Org org = null;
         for(NetworkSystem network: business.getNetworkList()){

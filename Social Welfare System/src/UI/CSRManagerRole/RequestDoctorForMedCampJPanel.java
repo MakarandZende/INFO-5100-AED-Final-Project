@@ -22,7 +22,7 @@ import javax.swing.JPanel;
  *
  * @author Pranali
  */
-public class RequestCampsJPanel extends javax.swing.JPanel {
+public class RequestDoctorForMedCampJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form RequestCampsJPanel
@@ -32,7 +32,7 @@ public class RequestCampsJPanel extends javax.swing.JPanel {
     private User_Account userAccount;
     private MedicalCampWorkRequest medcampWReq;
     
-    public RequestCampsJPanel(JPanel userProcessContainer, User_Account userAccount, Enterprise enterprise, MedicalCampWorkRequest medcampWReq) {
+    public RequestDoctorForMedCampJPanel(JPanel userProcessContainer, User_Account userAccount, Enterprise enterprise, MedicalCampWorkRequest medcampWReq) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.enterprise = enterprise;
@@ -126,7 +126,7 @@ public class RequestCampsJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         String message = messageJTextField.getText();
         
-        if(medcampWReq.getStatus().equals("Pending")){
+        if(medcampWReq.getStatus().equals("Pending from CSR")){
             medcampWReq.setStatus("Requested Doctor by CSR");
             medcampWReq.setMessage(message);
             System.out.println("user ac of mcr"+userAccount);
@@ -145,7 +145,7 @@ public class RequestCampsJPanel extends javax.swing.JPanel {
             }
         }
         else{
-            JOptionPane.showMessageDialog(null, "Already Raised Request");
+            JOptionPane.showMessageDialog(null, "If not Assigned then Already Completed!");
             return;
         }
         messageJTextField.setText("");
