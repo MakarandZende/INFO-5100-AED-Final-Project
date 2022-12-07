@@ -38,7 +38,6 @@
                                       <Component id="refreshJButton" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jScrollPane2" alignment="0" min="-2" pref="570" max="-2" attributes="0"/>
                       </Group>
@@ -98,15 +97,21 @@
         <Component class="javax.swing.JTable" name="campRequestJTable">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="4" rowCount="4">
+              <Table columnCount="5" rowCount="4">
                 <Column editable="true" title="Message" type="java.lang.Object"/>
                 <Column editable="true" title="Sender" type="java.lang.Object"/>
-                <Column editable="true" title="Receiver" type="java.lang.Object"/>
+                <Column editable="true" title="Assigned To" type="java.lang.Object"/>
                 <Column editable="true" title="Status" type="java.lang.Object"/>
+                <Column editable="true" title="Camp result" type="java.lang.Object"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
               <TableColumnModel selectionModel="0">
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
                 <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                   <Title/>
                   <Editor/>

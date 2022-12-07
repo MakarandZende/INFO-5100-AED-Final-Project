@@ -47,11 +47,12 @@ public class DoctorMedicalCampRequestJPanel extends javax.swing.JPanel {
         
         model.setRowCount(0);
         for (WorkRequest request : organization.getWorkStream().getWorkRequestList()){
-            Object[] row = new Object[4];
+            Object[] row = new Object[5];
             row[0] = request;
             row[1] = request.getSender().getEmployee().getName();
             row[2] = request.getReceiver() == null ? null : request.getReceiver().getEmployee().getName();
             row[3] = request.getStatus();
+            row[4] = ((MedicalCampWorkRequest)request).getCampResult();
             
             model.addRow(row);
         }
@@ -84,13 +85,13 @@ public class DoctorMedicalCampRequestJPanel extends javax.swing.JPanel {
 
         campRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Message", "Sender", "Receiver", "Status"
+                "Message", "Sender", "Assigned To", "Status", "Camp result"
             }
         ));
         jScrollPane2.setViewportView(campRequestJTable);
@@ -140,8 +141,7 @@ public class DoctorMedicalCampRequestJPanel extends javax.swing.JPanel {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(processJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(refreshJButton)))
-                                .addGap(97, 97, 97))
+                                        .addComponent(refreshJButton))))
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(117, 117, 117)
@@ -184,7 +184,7 @@ public class DoctorMedicalCampRequestJPanel extends javax.swing.JPanel {
             return;
         }
         request.setReceiver(userAccount);
-        request.setStatus("Pending");
+        request.setStatus("Pending from Doctor");
         populateCampTable();
     }//GEN-LAST:event_assignJButtonActionPerformed
 
@@ -197,13 +197,13 @@ public class DoctorMedicalCampRequestJPanel extends javax.swing.JPanel {
         }
 
         MedicalCampWorkRequest request = (MedicalCampWorkRequest)campRequestJTable.getValueAt(selectedRow, 0);
-        if(!("Pending".equals(request.getStatus()))){
+        if(!("Pending from Doctor".equals(request.getStatus()))){
             JOptionPane.showMessageDialog(null, "Should be Assigned Before Processing");
             return;
         }
         if(!request.getStatus().equals("Completed")){
             request.setStatus("Processing");
-            processWorkRequestJPanel processWorkRequestJPanel = new processWorkRequestJPanel(userProcessContainer, request,userAccount);
+            processMedicalCampRequestJPanel processWorkRequestJPanel = new processMedicalCampRequestJPanel(userProcessContainer, request,userAccount);
             userProcessContainer.add("processWorkRequestJPanel", processWorkRequestJPanel);
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
             layout.next(userProcessContainer);

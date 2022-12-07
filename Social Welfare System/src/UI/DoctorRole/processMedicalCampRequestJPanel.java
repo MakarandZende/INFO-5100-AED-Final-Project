@@ -9,13 +9,14 @@ import Business.UserAccount.User_Account;
 import Business.WorkStream.MedicalCampWorkRequest;
 import java.awt.CardLayout;
 import java.awt.Component;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
  *
  * @author Pranali
  */
-public class processWorkRequestJPanel extends javax.swing.JPanel {
+public class processMedicalCampRequestJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form processWorkRequestJPanel
@@ -24,7 +25,7 @@ public class processWorkRequestJPanel extends javax.swing.JPanel {
     MedicalCampWorkRequest request;
     private User_Account userAccount;
     
-    public processWorkRequestJPanel(JPanel userProcessContainer, MedicalCampWorkRequest request, User_Account account) {
+    public processMedicalCampRequestJPanel(JPanel userProcessContainer, MedicalCampWorkRequest request, User_Account account) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.request = request;
@@ -134,10 +135,17 @@ public class processWorkRequestJPanel extends javax.swing.JPanel {
 
     private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
         // TODO add your handling code here:
-        request.setCampResult(resultJTextField.getText());
-        request.setStatus("Completed");
-        request.setSender(userAccount);
-        resultJTextField.setText("");
+        if(request.getStatus() == "Processing"){
+            request.setMessage(resultJTextField.getText());
+            request.setStatus("Completed");
+            request.setSender(userAccount);
+            request.setCampResult("Medical Camp successful. Assigned a Doctor!");
+            resultJTextField.setText("");
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "If not Assigned then Already Completed!");
+            return;
+        }
     }//GEN-LAST:event_submitJButtonActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
