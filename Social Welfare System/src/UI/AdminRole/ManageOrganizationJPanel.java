@@ -54,7 +54,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         for (Org organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
             Object[] row = new Object[2];
             row[0] = organization.getOrganizationID();
-            row[1] = organization.getName();
+            row[1] = organization;
 
             model.addRow(row);
         }
@@ -71,8 +71,9 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         backJButton = new javax.swing.JButton();
-        addJButton = new javax.swing.JButton();
+        deleteOrgBtn = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        addJButton1 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -97,20 +98,32 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 60, -1));
 
-        addJButton.setBackground(new java.awt.Color(51, 51, 51));
-        addJButton.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        addJButton.setForeground(new java.awt.Color(255, 255, 255));
-        addJButton.setText("Add Organization");
-        addJButton.setBorder(null);
-        addJButton.addActionListener(new java.awt.event.ActionListener() {
+        deleteOrgBtn.setBackground(new java.awt.Color(51, 51, 51));
+        deleteOrgBtn.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        deleteOrgBtn.setForeground(new java.awt.Color(255, 255, 255));
+        deleteOrgBtn.setText("Delete Organization");
+        deleteOrgBtn.setBorder(null);
+        deleteOrgBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addJButtonActionPerformed(evt);
+                deleteOrgBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(addJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, 160, 50));
+        jPanel1.add(deleteOrgBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 490, 160, 50));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/admin2.png"))); // NOI18N
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, 100, 100));
+
+        addJButton1.setBackground(new java.awt.Color(51, 51, 51));
+        addJButton1.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        addJButton1.setForeground(new java.awt.Color(255, 255, 255));
+        addJButton1.setText("Add Organization");
+        addJButton1.setBorder(null);
+        addJButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addJButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(addJButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, 160, 50));
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 233, 940));
 
@@ -176,8 +189,26 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 890, 880));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void addJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButtonActionPerformed
+    private void deleteOrgBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteOrgBtnActionPerformed
+        int selectedRow = organizationJTable.getSelectedRow();
 
+        if (selectedRow < 0){
+            return;
+        }
+        
+        Org org = (Org) organizationJTable.getValueAt(selectedRow, 1);
+        enterprise.getOrganizationDirectory().deleteOrganization(org);
+        populateTable();
+    }//GEN-LAST:event_deleteOrgBtnActionPerformed
+
+    private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
+
+        userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_backJButtonActionPerformed
+
+    private void addJButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButton1ActionPerformed
         Type type = (Type) organizationJComboBox.getSelectedItem();
         enterprise.getOrganizationDirectory().createOrganization(type);
 //        for (Org org : directory.getOrganizationList()) {
@@ -190,18 +221,12 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
 //
 //        directory.createOrganization(type);
         populateTable();
-    }//GEN-LAST:event_addJButtonActionPerformed
-
-    private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
-
-        userProcessContainer.remove(this);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.previous(userProcessContainer);
-    }//GEN-LAST:event_backJButtonActionPerformed
+    }//GEN-LAST:event_addJButton1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton addJButton;
+    private javax.swing.JButton addJButton1;
     private javax.swing.JButton backJButton;
+    private javax.swing.JButton deleteOrgBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

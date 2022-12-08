@@ -19,6 +19,7 @@ import javax.swing.table.DefaultTableModel;
 public class ManageEmployeeJPanel extends javax.swing.JPanel {
 
     private OrgDirectory organizationDir;
+    private Org currentOrganizationInDD;
     private JPanel userProcessContainer;
     
     /**
@@ -50,6 +51,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
     }
 
     private void populateTable(Org organization){
+        currentOrganizationInDD = organization;
         DefaultTableModel model = (DefaultTableModel) organizationJTable.getModel();
         
         model.setRowCount(0);
@@ -57,7 +59,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         for (Person employee : organization.getPersonDirectory().getPersonList()){
             Object[] row = new Object[2];
             row[0] = employee.getId();
-            row[1] = employee.getName();
+            row[1] = employee;
           ((DefaultTableModel) organizationJTable.getModel()).addRow(row);
         }
     }
@@ -71,9 +73,10 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        addJButton = new javax.swing.JButton();
+        deleteEmpBtn = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         backJButton = new javax.swing.JButton();
+        addJButton1 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -94,17 +97,17 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         jPanel1.setBackground(new java.awt.Color(204, 226, 249));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        addJButton.setBackground(new java.awt.Color(51, 51, 51));
-        addJButton.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        addJButton.setForeground(new java.awt.Color(255, 255, 255));
-        addJButton.setText("Create Employee");
-        addJButton.setBorder(null);
-        addJButton.addActionListener(new java.awt.event.ActionListener() {
+        deleteEmpBtn.setBackground(new java.awt.Color(51, 51, 51));
+        deleteEmpBtn.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        deleteEmpBtn.setForeground(new java.awt.Color(255, 255, 255));
+        deleteEmpBtn.setText("Delete Employee");
+        deleteEmpBtn.setBorder(null);
+        deleteEmpBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addJButtonActionPerformed(evt);
+                deleteEmpBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(addJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 158, 44));
+        jPanel1.add(deleteEmpBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, 158, 44));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/admin2.png"))); // NOI18N
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, 100, 100));
@@ -117,6 +120,18 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
             }
         });
         jPanel1.add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, -1, 50));
+
+        addJButton1.setBackground(new java.awt.Color(51, 51, 51));
+        addJButton1.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        addJButton1.setForeground(new java.awt.Color(255, 255, 255));
+        addJButton1.setText("Create Employee");
+        addJButton1.setBorder(null);
+        addJButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addJButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(addJButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 158, 44));
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 210, 800));
 
@@ -203,15 +218,18 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, 890, 770));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void addJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButtonActionPerformed
+    private void deleteEmpBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteEmpBtnActionPerformed
+        int selectedRow = organizationJTable.getSelectedRow();
+
+        if (selectedRow < 0){
+            return;
+        }
         
-        Org organization = (Org) organizationEmpJComboBox.getSelectedItem();
-        String name = nameJTextField.getText();
+        Person employee = (Person) organizationJTable.getValueAt(selectedRow, 1);
+        currentOrganizationInDD.getPersonDirectory().deletePerson(employee);
+        populateTable(currentOrganizationInDD);
         
-        organization.getPersonDirectory().createPerson(name);
-        populateTable(organization);
-        
-    }//GEN-LAST:event_addJButtonActionPerformed
+    }//GEN-LAST:event_deleteEmpBtnActionPerformed
 
     private void organizationJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_organizationJComboBoxActionPerformed
         Org organization = (Org) organizationJComboBox.getSelectedItem();
@@ -227,9 +245,18 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_backJButtonActionPerformed
 
+    private void addJButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButton1ActionPerformed
+        Org organization = (Org) organizationEmpJComboBox.getSelectedItem();
+        String name = nameJTextField.getText();
+        
+        organization.getPersonDirectory().createPerson(name);
+        populateTable(organization);
+    }//GEN-LAST:event_addJButton1ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton addJButton;
+    private javax.swing.JButton addJButton1;
     private javax.swing.JButton backJButton;
+    private javax.swing.JButton deleteEmpBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
