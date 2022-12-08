@@ -55,4 +55,11 @@ public abstract class Enterprise extends Org{
         this.enterpriseType=type;
         organizationDirectory=new OrgDirectory();
     }
+
+    @Override
+    public String toString() {
+        return super.toString(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+    }
+    
+    
 }
