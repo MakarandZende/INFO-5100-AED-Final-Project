@@ -102,22 +102,19 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setPreferredSize(new java.awt.Dimension(1170, 70));
 
-        jPanel3.setBackground(new java.awt.Color(54, 33, 89));
+        jPanel3.setBackground(new java.awt.Color(204, 204, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Selected Node:");
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, -1, -1));
 
         lblSelectedNode.setFont(new java.awt.Font("Century Gothic", 1, 10)); // NOI18N
-        lblSelectedNode.setForeground(new java.awt.Color(255, 255, 255));
         lblSelectedNode.setText("<View_selected_node>");
         jPanel3.add(lblSelectedNode, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, -1, -1));
 
-        btnManageNetwork.setBackground(new java.awt.Color(110, 89, 221));
+        btnManageNetwork.setBackground(new java.awt.Color(255, 255, 204));
         btnManageNetwork.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        btnManageNetwork.setForeground(new java.awt.Color(255, 255, 255));
         btnManageNetwork.setText("Manage Network");
         btnManageNetwork.setBorder(null);
         btnManageNetwork.setBorderPainted(false);
@@ -128,9 +125,8 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         });
         jPanel3.add(btnManageNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 170, 64));
 
-        btnManageEnterprise.setBackground(new java.awt.Color(110, 89, 221));
+        btnManageEnterprise.setBackground(new java.awt.Color(255, 255, 204));
         btnManageEnterprise.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        btnManageEnterprise.setForeground(new java.awt.Color(255, 255, 255));
         btnManageEnterprise.setText("Manage Enterprise");
         btnManageEnterprise.setBorder(null);
         btnManageEnterprise.addActionListener(new java.awt.event.ActionListener() {
@@ -140,9 +136,8 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         });
         jPanel3.add(btnManageEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 0, 170, 64));
 
-        btnManageAdmin.setBackground(new java.awt.Color(110, 89, 221));
+        btnManageAdmin.setBackground(new java.awt.Color(255, 255, 204));
         btnManageAdmin.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        btnManageAdmin.setForeground(new java.awt.Color(255, 255, 255));
         btnManageAdmin.setText("Manage Admin");
         btnManageAdmin.setBorder(null);
         btnManageAdmin.addActionListener(new java.awt.event.ActionListener() {
@@ -160,7 +155,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jSplitPane.setLeftComponent(jPanel2);
