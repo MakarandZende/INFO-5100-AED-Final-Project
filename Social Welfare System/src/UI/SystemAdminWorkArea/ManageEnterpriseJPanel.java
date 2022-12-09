@@ -8,7 +8,9 @@ import Business.Ecosystem.Ecosystem;
 import Business.Enterprises.Enterprise;
 import Business.Network.NetworkSystem;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Component;
+import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -20,6 +22,8 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
     private Ecosystem system;
+    boolean emptyValidationStatus = true;
+    boolean validationCheck = true;
     /**
      * Creates new form ManageEnterpriseJPanel
      */
@@ -264,21 +268,77 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
 
     private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
 
-        NetworkSystem network = (NetworkSystem) networkJComboBox.getSelectedItem();
-        Enterprise.EnterpriseType type = (Enterprise.EnterpriseType) enterpriseTypeJComboBox.getSelectedItem();
+        try{
+            if(EmpytyFieldValidation()){
 
-        if (network == null || type == null) {
-            JOptionPane.showMessageDialog(null, "Invalid Input!");
-            return;
+                if(RegexValidation()){
+                    NetworkSystem network = (NetworkSystem) networkJComboBox.getSelectedItem();
+                    Enterprise.EnterpriseType type = (Enterprise.EnterpriseType) enterpriseTypeJComboBox.getSelectedItem();
+                    String name = nameJTextField.getText();
+                    Enterprise enterprise = network.getEnterpriseDirectory().createAndAddEnterprise(name, type);
+                    populateTable();
+                    JOptionPane.showMessageDialog(this,"Enterprise created successfully!");
+                }
+                else{
+                    JOptionPane.showMessageDialog(this,"Invalid Enterprise name");
+                    validationCheck=true;
+                }
+            }
+            else{
+                JOptionPane.showMessageDialog(this,"Enterprise name cannot be empty");
+                emptyValidationStatus=true;
+            }
         }
-
-        String name = nameJTextField.getText();
-
-        Enterprise enterprise = network.getEnterpriseDirectory().createAndAddEnterprise(name, type);
-
-        populateTable();
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this,"Enterprise not created, Try again");
+            System.out.println(e.toString());
+            emptyValidationStatus=true;
+        }
+        
+//        NetworkSystem network = (NetworkSystem) networkJComboBox.getSelectedItem();
+//        Enterprise.EnterpriseType type = (Enterprise.EnterpriseType) enterpriseTypeJComboBox.getSelectedItem();
+//
+//        if (network == null || type == null) {
+//            JOptionPane.showMessageDialog(null, "Invalid Input!");
+//            return;
+//        }
+//
+//        String name = nameJTextField.getText();
+//
+//        Enterprise enterprise = network.getEnterpriseDirectory().createAndAddEnterprise(name, type);
+//
+//        populateTable();
     }//GEN-LAST:event_submitJButtonActionPerformed
 
+    private boolean RegexValidation() {
+        if(!nameJTextField.getText().matches("^[a-zA-Z ]+$"))
+        {
+            nameJTextField.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            nameJTextField.setToolTipText("Please enter only characters and space.");
+            validationCheck=false;
+        }
+        
+        if(nameJTextField.getText().matches("^[a-zA-Z ]+$"))
+        {
+            nameJTextField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+        }
+        return validationCheck;
+    }
+    
+    private boolean EmpytyFieldValidation() {
+        if(nameJTextField.getText().equals(null) || nameJTextField.getText().trim().isEmpty() )
+        {
+            nameJTextField.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            nameJTextField.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        if(!nameJTextField.getText().equals(null) && !nameJTextField.getText().trim().isEmpty() )
+        {
+            nameJTextField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        return emptyValidationStatus;
+        
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;

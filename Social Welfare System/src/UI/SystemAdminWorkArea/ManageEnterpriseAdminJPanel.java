@@ -14,7 +14,10 @@ import Business.Role.Doctor_Role;
 
 import Business.UserAccount.User_Account;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Component;
+import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
         
@@ -26,6 +29,8 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
     private Ecosystem system;
+    boolean emptyValidationStatus = true;
+    boolean validationCheck = true;
     /**
      * Creates new form ManageEnterpriseAdminJPanel
      */
@@ -324,18 +329,98 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
 
     private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
 
-        Enterprise enterprise = (Enterprise) enterpriseJComboBox.getSelectedItem();
+        try{
+            if(EmpytyFieldValidation()){
 
-        String username = usernameJTextField.getText();
-        String password = String.valueOf(passwordJPasswordField.getPassword());
-        String name = nameJTextField.getText();
+                if(RegexValidation()){
+                    Enterprise enterprise = (Enterprise) enterpriseJComboBox.getSelectedItem();
 
-        Person employee = enterprise.getPersonDirectory().createPerson(name);
+                    String username = usernameJTextField.getText();
+                    String password = String.valueOf(passwordJPasswordField.getPassword());
+                    String name = nameJTextField.getText();
 
-        User_Account account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new AdminmainRole(),"");
-        populateTable();
+                    Person employee = enterprise.getPersonDirectory().createPerson(name);
+
+                    User_Account account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new AdminmainRole(),"");
+                    populateTable();
+//                    JOptionPane.showMessageDialog(this,"Enterprise Admin created successfully!");
+                }
+                else{
+                    JOptionPane.showMessageDialog(this,"Please check details again");
+                    validationCheck=true;
+                }
+            }
+            else{
+                JOptionPane.showMessageDialog(this,"Please check details again");
+                emptyValidationStatus=true;
+            }
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this,"Enterprise admin not created, Try again");
+            System.out.println(e.toString());
+            emptyValidationStatus=true;
+        }
+        
+//        Enterprise enterprise = (Enterprise) enterpriseJComboBox.getSelectedItem();
+//
+//        String username = usernameJTextField.getText();
+//        String password = String.valueOf(passwordJPasswordField.getPassword());
+//        String name = nameJTextField.getText();
+//
+//        Person employee = enterprise.getPersonDirectory().createPerson(name);
+//
+//        User_Account account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new AdminmainRole(),"");
+//        populateTable();
     }//GEN-LAST:event_submitJButtonActionPerformed
 
+    private boolean RegexValidation() {
+        if(!nameJTextField.getText().matches("^[a-zA-Z ]+$"))
+        {
+            nameJTextField.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            nameJTextField.setToolTipText("Please enter only characters and space.");
+            validationCheck=false;
+        }
+        
+        if(nameJTextField.getText().matches("^[a-zA-Z ]+$"))
+        {
+            nameJTextField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+        }
+        return validationCheck;
+    }
+    
+    private boolean EmpytyFieldValidation() {
+        if(nameJTextField.getText().equals(null) || nameJTextField.getText().trim().isEmpty() )
+        {
+            nameJTextField.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            nameJTextField.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        if(!nameJTextField.getText().equals(null) && !nameJTextField.getText().trim().isEmpty() )
+        {
+            nameJTextField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        if(usernameJTextField.getText().equals(null) || usernameJTextField.getText().trim().isEmpty() )
+        {
+            usernameJTextField.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            usernameJTextField.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        if(!usernameJTextField.getText().equals(null) && !usernameJTextField.getText().trim().isEmpty() )
+        {
+            usernameJTextField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        if(passwordJPasswordField.getPassword().equals(null) || passwordJPasswordField.getPassword().length == 0)
+        {
+            passwordJPasswordField.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            passwordJPasswordField.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        if(!passwordJPasswordField.getPassword().equals(null) )
+        {
+            usernameJTextField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        return emptyValidationStatus;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;
