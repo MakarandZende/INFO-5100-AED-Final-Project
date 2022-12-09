@@ -73,7 +73,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         backJButton = new javax.swing.JButton();
         deleteOrgBtn = new javax.swing.JButton();
         addJButton1 = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -86,7 +86,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(193, 212, 227));
+        jPanel1.setBackground(new java.awt.Color(239, 241, 228));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         backJButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -98,45 +98,43 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 60, -1));
 
-        deleteOrgBtn.setBackground(new java.awt.Color(193, 212, 227));
+        deleteOrgBtn.setBackground(new java.awt.Color(239, 241, 228));
         deleteOrgBtn.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        deleteOrgBtn.setForeground(new java.awt.Color(255, 255, 255));
         deleteOrgBtn.setText("Delete Organization");
-        deleteOrgBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        deleteOrgBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         deleteOrgBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteOrgBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(deleteOrgBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 490, 160, 50));
+        jPanel1.add(deleteOrgBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, 160, 50));
 
-        addJButton1.setBackground(new java.awt.Color(193, 212, 227));
+        addJButton1.setBackground(new java.awt.Color(239, 241, 228));
         addJButton1.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        addJButton1.setForeground(new java.awt.Color(255, 255, 255));
         addJButton1.setText("Add Organization");
-        addJButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        addJButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         addJButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addJButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(addJButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, 160, 50));
+        jPanel1.add(addJButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 160, 50));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/admin3.png"))); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 310, 100, 100));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/admin6.png"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 100, 100));
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 233, 940));
 
-        jPanel6.setBackground(new java.awt.Color(239, 241, 228));
+        jPanel6.setBackground(new java.awt.Color(193, 212, 227));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel7.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel7.setText("Manage Organization Work Area");
         jPanel6.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, -1, -1));
 
-        add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, 890, 60));
+        add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, 1000, 60));
 
-        jPanel2.setBackground(new java.awt.Color(193, 212, 227));
+        jPanel2.setBackground(new java.awt.Color(239, 241, 228));
         jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -226,7 +224,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
     private javax.swing.JButton deleteOrgBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
