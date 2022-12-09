@@ -74,9 +74,9 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         deleteEmpBtn = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
         backJButton = new javax.swing.JButton();
         addJButton1 = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -94,23 +94,20 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(204, 226, 249));
+        jPanel1.setBackground(new java.awt.Color(193, 212, 227));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        deleteEmpBtn.setBackground(new java.awt.Color(51, 51, 51));
+        deleteEmpBtn.setBackground(new java.awt.Color(193, 212, 227));
         deleteEmpBtn.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         deleteEmpBtn.setForeground(new java.awt.Color(255, 255, 255));
         deleteEmpBtn.setText("Delete Employee");
-        deleteEmpBtn.setBorder(null);
+        deleteEmpBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         deleteEmpBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteEmpBtnActionPerformed(evt);
             }
         });
         jPanel1.add(deleteEmpBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, 158, 44));
-
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/admin2.png"))); // NOI18N
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, 100, 100));
 
         backJButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         backJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/back_button.png"))); // NOI18N
@@ -121,11 +118,11 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, -1, 50));
 
-        addJButton1.setBackground(new java.awt.Color(51, 51, 51));
+        addJButton1.setBackground(new java.awt.Color(193, 212, 227));
         addJButton1.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         addJButton1.setForeground(new java.awt.Color(255, 255, 255));
         addJButton1.setText("Create Employee");
-        addJButton1.setBorder(null);
+        addJButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         addJButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addJButton1ActionPerformed(evt);
@@ -133,20 +130,22 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(addJButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 158, 44));
 
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/admin3.png"))); // NOI18N
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, 100, 100));
+
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 210, 800));
 
-        jPanel6.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel6.setBackground(new java.awt.Color(239, 241, 228));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel8.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Manage Employee");
         jPanel6.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, -1, -1));
 
         add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 0, 890, 60));
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 430, 100, 80));
 
-        jPanel2.setBackground(new java.awt.Color(204, 226, 249));
+        jPanel2.setBackground(new java.awt.Color(193, 212, 227));
         jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -213,8 +212,6 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, -1, -1));
 
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 170, 500, 390));
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/hosp.jpg"))); // NOI18N
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, 890, 770));
     }// </editor-fold>//GEN-END:initComponents
 
@@ -262,7 +259,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

@@ -102,7 +102,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 204));
+        jPanel1.setBackground(new java.awt.Color(239, 241, 228));
 
         backJButton.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         backJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/back_button.png"))); // NOI18N
@@ -149,7 +149,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
 
         nameJTextField.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
 
-        submitJButton.setBackground(new java.awt.Color(102, 204, 255));
+        submitJButton.setBackground(new java.awt.Color(83, 124, 142));
         submitJButton.setFont(new java.awt.Font("Century Gothic", 1, 11)); // NOI18N
         submitJButton.setText("Submit");
         submitJButton.setBorder(null);
@@ -234,7 +234,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 320, 960));
 
-        jPanel2.setBackground(new java.awt.Color(83, 124, 142));
+        jPanel2.setBackground(new java.awt.Color(193, 212, 227));
         jPanel2.setPreferredSize(new java.awt.Dimension(790, 110));
 
         jLabel10.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N

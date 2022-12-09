@@ -65,11 +65,12 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel1.setBackground(new java.awt.Color(193, 212, 227));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         backJButton.setBackground(new java.awt.Color(51, 51, 51));
         backJButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        backJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/back_button.png"))); // NOI18N
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backJButtonActionPerformed(evt);
@@ -94,7 +95,7 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
         txtmessage.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jPanel2.add(txtmessage, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 132, -1));
 
-        btnsave.setBackground(new java.awt.Color(0, 0, 0));
+        btnsave.setBackground(new java.awt.Color(83, 124, 142));
         btnsave.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnsave.setForeground(new java.awt.Color(255, 255, 255));
         btnsave.setText("Book Appointment");
@@ -106,14 +107,14 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
         });
         jPanel2.add(btnsave, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 154, 37));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 240, 210));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 250, 230));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/patient2.png"))); // NOI18N
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, 150, 150));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, 150, 150));
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 960));
 
-        jPanel6.setBackground(new java.awt.Color(255, 255, 204));
+        jPanel6.setBackground(new java.awt.Color(239, 241, 228));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
