@@ -26,7 +26,7 @@
     <Container class="javax.swing.JPanel" name="jPanel1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="e3" green="d4" red="c1" type="rgb"/>
+          <Color blue="e4" green="f1" red="ef" type="rgb"/>
         </Property>
       </Properties>
       <Constraints>
@@ -294,10 +294,10 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="jLabel10">
+        <Component class="javax.swing.JLabel" name="jLabel9">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/userinterface/images/admin3.png"/>
+              <Image iconType="3" name="/userinterface/images/admin6.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -311,7 +311,7 @@
     <Container class="javax.swing.JPanel" name="jPanel6">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="e4" green="f1" red="ef" type="rgb"/>
+          <Color blue="e3" green="d4" red="c1" type="rgb"/>
         </Property>
       </Properties>
       <Constraints>
@@ -342,7 +342,7 @@
     <Container class="javax.swing.JPanel" name="jPanel3">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="e3" green="d4" red="c1" type="rgb"/>
+          <Color blue="e4" green="f1" red="ef" type="rgb"/>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
