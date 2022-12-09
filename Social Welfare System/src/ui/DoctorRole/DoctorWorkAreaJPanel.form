@@ -53,7 +53,7 @@
     <Component class="javax.swing.JButton" name="medcampreqbtn">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="e3" green="d4" red="c1" type="rgb"/>
+          <Color blue="8e" green="7c" red="53" type="rgb"/>
         </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Century Gothic" size="18" style="1"/>
@@ -70,7 +70,7 @@
     <Component class="javax.swing.JButton" name="btnViewStatistics">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="e3" green="d4" red="c1" type="rgb"/>
+          <Color blue="8e" green="7c" red="53" type="rgb"/>
         </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Century Gothic" size="18" style="1"/>

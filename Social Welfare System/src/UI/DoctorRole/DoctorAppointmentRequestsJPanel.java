@@ -71,7 +71,7 @@ public class DoctorAppointmentRequestsJPanel extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(193, 212, 227));
+        jPanel1.setBackground(new java.awt.Color(239, 241, 228));
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/back_button.png"))); // NOI18N
@@ -81,43 +81,40 @@ public class DoctorAppointmentRequestsJPanel extends javax.swing.JPanel {
             }
         });
 
-        refreshJButton.setBackground(new java.awt.Color(193, 212, 227));
+        refreshJButton.setBackground(new java.awt.Color(239, 241, 228));
         refreshJButton.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        refreshJButton.setForeground(new java.awt.Color(255, 255, 255));
         refreshJButton.setText("Refresh");
-        refreshJButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        refreshJButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         refreshJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 refreshJButtonActionPerformed(evt);
             }
         });
 
-        processJButton.setBackground(new java.awt.Color(193, 212, 227));
+        processJButton.setBackground(new java.awt.Color(239, 241, 228));
         processJButton.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        processJButton.setForeground(new java.awt.Color(255, 255, 255));
         processJButton.setText("Collect Medical History");
-        processJButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        processJButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         processJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 processJButtonActionPerformed(evt);
             }
         });
 
-        assignJButton.setBackground(new java.awt.Color(249, 248, 248));
+        assignJButton.setBackground(new java.awt.Color(193, 212, 227));
         assignJButton.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         assignJButton.setText("Assign to me");
-        assignJButton.setBorder(null);
+        assignJButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         assignJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 assignJButtonActionPerformed(evt);
             }
         });
 
-        btnViewlabresult.setBackground(new java.awt.Color(193, 212, 227));
+        btnViewlabresult.setBackground(new java.awt.Color(239, 241, 228));
         btnViewlabresult.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        btnViewlabresult.setForeground(new java.awt.Color(255, 255, 255));
         btnViewlabresult.setText("View Lab Result");
-        btnViewlabresult.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        btnViewlabresult.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnViewlabresult.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnViewlabresultActionPerformed(evt);
@@ -164,7 +161,7 @@ public class DoctorAppointmentRequestsJPanel extends javax.swing.JPanel {
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 1080));
 
-        jPanel2.setBackground(new java.awt.Color(239, 241, 228));
+        jPanel2.setBackground(new java.awt.Color(193, 212, 227));
 
         jLabel6.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -177,7 +174,7 @@ public class DoctorAppointmentRequestsJPanel extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(278, 278, 278)
                 .addComponent(jLabel6)
-                .addContainerGap(290, Short.MAX_VALUE))
+                .addContainerGap(350, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -187,7 +184,7 @@ public class DoctorAppointmentRequestsJPanel extends javax.swing.JPanel {
                 .addContainerGap(42, Short.MAX_VALUE))
         );
 
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 0, 770, -1));
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 0, 830, -1));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -223,20 +220,20 @@ public class DoctorAppointmentRequestsJPanel extends javax.swing.JPanel {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(46, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(70, 70, 70)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 682, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42))
+                .addContainerGap(78, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(68, 68, 68)
+                .addGap(65, 65, 65)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(517, Short.MAX_VALUE))
+                .addContainerGap(520, Short.MAX_VALUE))
         );
 
-        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 100, 770, 980));
+        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 100, 830, 980));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

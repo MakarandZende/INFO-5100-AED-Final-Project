@@ -54,7 +54,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1170, 1080));
 
-        medcampreqbtn.setBackground(new java.awt.Color(193, 212, 227));
+        medcampreqbtn.setBackground(new java.awt.Color(83, 124, 142));
         medcampreqbtn.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         medcampreqbtn.setForeground(new java.awt.Color(255, 255, 255));
         medcampreqbtn.setText("View Medical Camp request");
@@ -64,7 +64,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnViewStatistics.setBackground(new java.awt.Color(193, 212, 227));
+        btnViewStatistics.setBackground(new java.awt.Color(83, 124, 142));
         btnViewStatistics.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         btnViewStatistics.setForeground(new java.awt.Color(255, 255, 255));
         btnViewStatistics.setText("View Statistics");
