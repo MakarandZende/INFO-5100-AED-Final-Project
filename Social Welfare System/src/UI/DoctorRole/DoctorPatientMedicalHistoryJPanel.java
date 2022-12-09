@@ -185,42 +185,24 @@ public class DoctorPatientMedicalHistoryJPanel extends javax.swing.JPanel {
         jLabel9 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
-        ageCombo = new javax.swing.JComboBox();
         fenChk = new javax.swing.JCheckBox();
         heartRateCombo = new javax.swing.JComboBox();
         bupChk = new javax.swing.JCheckBox();
-        txtpatientname = new javax.swing.JTextField();
         metChk = new javax.swing.JCheckBox();
-        jLabel11 = new javax.swing.JLabel();
         oxymChk = new javax.swing.JCheckBox();
-        drugChk = new javax.swing.JCheckBox();
         oxycCombo = new javax.swing.JComboBox();
-        alcoholChk = new javax.swing.JCheckBox();
         fenCombo = new javax.swing.JComboBox();
-        depressionChk = new javax.swing.JCheckBox();
         bupCombo = new javax.swing.JComboBox();
-        anxietyChk = new javax.swing.JCheckBox();
         metCombo = new javax.swing.JComboBox();
-        disruptSocialChk = new javax.swing.JCheckBox();
         jLabel12 = new javax.swing.JLabel();
         oxymCombo = new javax.swing.JComboBox();
         jLabel14 = new javax.swing.JLabel();
-        genderCombo = new javax.swing.JComboBox();
-        jLabel15 = new javax.swing.JLabel();
-        tempCombo = new javax.swing.JComboBox();
-        jLabel16 = new javax.swing.JLabel();
-        bpCombo = new javax.swing.JComboBox();
-        jLabel17 = new javax.swing.JLabel();
-        respCombo = new javax.swing.JComboBox();
-        jLabel1 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         oxycChk = new javax.swing.JCheckBox();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         injChk = new javax.swing.JCheckBox();
         injCombo = new javax.swing.JComboBox();
@@ -230,17 +212,34 @@ public class DoctorPatientMedicalHistoryJPanel extends javax.swing.JPanel {
         withCombo = new javax.swing.JComboBox();
         livChk = new javax.swing.JCheckBox();
         livCombo = new javax.swing.JComboBox();
-        jButton2 = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        respCombo = new javax.swing.JComboBox();
+        jLabel15 = new javax.swing.JLabel();
+        tempCombo = new javax.swing.JComboBox();
+        jLabel16 = new javax.swing.JLabel();
+        bpCombo = new javax.swing.JComboBox();
+        jButton1 = new javax.swing.JButton();
+        ageCombo = new javax.swing.JComboBox();
+        txtpatientname = new javax.swing.JTextField();
+        genderCombo = new javax.swing.JComboBox();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        drugChk = new javax.swing.JCheckBox();
+        alcoholChk = new javax.swing.JCheckBox();
+        depressionChk = new javax.swing.JCheckBox();
+        anxietyChk = new javax.swing.JCheckBox();
+        disruptSocialChk = new javax.swing.JCheckBox();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(54, 33, 89));
+        jPanel1.setBackground(new java.awt.Color(239, 241, 228));
         jPanel1.setPreferredSize(new java.awt.Dimension(1170, 100));
 
         jLabel9.setBackground(new java.awt.Color(255, 255, 255));
         jLabel9.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("Fill Patient Medical History & Symptoms");
 
@@ -265,272 +264,126 @@ public class DoctorPatientMedicalHistoryJPanel extends javax.swing.JPanel {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel3.setBackground(new java.awt.Color(153, 204, 255));
+        jPanel3.setBackground(new java.awt.Color(193, 212, 227));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setBackground(new java.awt.Color(49, 84, 140));
-        jButton1.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Submit  ");
-        jButton1.setBorder(null);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
+        jLabel10.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(49, 84, 140));
+        jLabel10.setText("General Information :");
+        jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 100, 230, 30));
+
+        jButton2.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/back_button.png"))); // NOI18N
+        jPanel3.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 13, 60, 40));
 
         jLabel19.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(49, 84, 140));
         jLabel19.setText("Medicine ");
+        jPanel3.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 360, 93, -1));
 
         jLabel20.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(49, 84, 140));
         jLabel20.setText("Range");
+        jPanel3.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 360, 152, -1));
 
-        ageCombo.setBackground(new java.awt.Color(153, 204, 255));
-
-        fenChk.setBackground(new java.awt.Color(153, 204, 255));
+        fenChk.setBackground(new java.awt.Color(193, 212, 227));
         fenChk.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         fenChk.setText("Fentanyl");
-        fenChk.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fenChkActionPerformed(evt);
-            }
-        });
+        jPanel3.add(fenChk, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 430, -1, -1));
 
-        heartRateCombo.setBackground(new java.awt.Color(153, 204, 255));
-        heartRateCombo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                heartRateComboActionPerformed(evt);
-            }
-        });
+        heartRateCombo.setBackground(new java.awt.Color(193, 212, 227));
+        jPanel3.add(heartRateCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 360, 114, -1));
 
-        bupChk.setBackground(new java.awt.Color(153, 204, 255));
+        bupChk.setBackground(new java.awt.Color(193, 212, 227));
         bupChk.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         bupChk.setText("Buprenorphine");
-        bupChk.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bupChkActionPerformed(evt);
-            }
-        });
+        jPanel3.add(bupChk, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 460, -1, -1));
 
-        txtpatientname.setBackground(new java.awt.Color(153, 204, 255));
-        txtpatientname.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        txtpatientname.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtpatientnameActionPerformed(evt);
-            }
-        });
-
-        metChk.setBackground(new java.awt.Color(153, 204, 255));
+        metChk.setBackground(new java.awt.Color(193, 212, 227));
         metChk.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         metChk.setText("Methadone");
-        metChk.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                metChkActionPerformed(evt);
-            }
-        });
+        jPanel3.add(metChk, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 490, -1, -1));
 
-        jLabel11.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(49, 84, 140));
-        jLabel11.setText("Medical History");
-
-        oxymChk.setBackground(new java.awt.Color(153, 204, 255));
+        oxymChk.setBackground(new java.awt.Color(193, 212, 227));
         oxymChk.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         oxymChk.setText("Oxymorphone");
-        oxymChk.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                oxymChkActionPerformed(evt);
-            }
-        });
-
-        drugChk.setBackground(new java.awt.Color(153, 204, 255));
-        drugChk.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        drugChk.setText("Drug History");
+        jPanel3.add(oxymChk, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 520, -1, -1));
 
         oxycCombo.setBackground(new java.awt.Color(153, 204, 255));
         oxycCombo.setEnabled(false);
-        oxycCombo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                oxycComboActionPerformed(evt);
-            }
-        });
-
-        alcoholChk.setBackground(new java.awt.Color(153, 204, 255));
-        alcoholChk.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        alcoholChk.setText("Alcohol History");
-        alcoholChk.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                alcoholChkActionPerformed(evt);
-            }
-        });
+        jPanel3.add(oxycCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 400, 123, -1));
 
         fenCombo.setBackground(new java.awt.Color(153, 204, 255));
         fenCombo.setEnabled(false);
-        fenCombo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fenComboActionPerformed(evt);
-            }
-        });
-
-        depressionChk.setBackground(new java.awt.Color(153, 204, 255));
-        depressionChk.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        depressionChk.setText("Depression History");
+        jPanel3.add(fenCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 430, 123, -1));
 
         bupCombo.setBackground(new java.awt.Color(153, 204, 255));
         bupCombo.setEnabled(false);
-        bupCombo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bupComboActionPerformed(evt);
-            }
-        });
-
-        anxietyChk.setBackground(new java.awt.Color(153, 204, 255));
-        anxietyChk.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        anxietyChk.setText("Anxiety History");
+        jPanel3.add(bupCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 460, 123, -1));
 
         metCombo.setBackground(new java.awt.Color(153, 204, 255));
         metCombo.setEnabled(false);
-        metCombo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                metComboActionPerformed(evt);
-            }
-        });
-
-        disruptSocialChk.setBackground(new java.awt.Color(153, 204, 255));
-        disruptSocialChk.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        disruptSocialChk.setText("Bad Social Relationships");
+        jPanel3.add(metCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 490, 123, -1));
 
         jLabel12.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(49, 84, 140));
         jLabel12.setText("Current Physical Symptoms");
+        jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 230, -1));
 
         oxymCombo.setBackground(new java.awt.Color(153, 204, 255));
         oxymCombo.setEnabled(false);
-        oxymCombo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                oxymComboActionPerformed(evt);
-            }
-        });
+        jPanel3.add(oxymCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 520, 123, -1));
 
         jLabel14.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel14.setText("Heart Rate");
-
-        genderCombo.setBackground(new java.awt.Color(153, 204, 255));
-        genderCombo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                genderComboActionPerformed(evt);
-            }
-        });
-
-        jLabel15.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jLabel15.setText("Temperature");
-
-        tempCombo.setBackground(new java.awt.Color(153, 204, 255));
-
-        jLabel16.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jLabel16.setText("Blood Pressure");
-
-        bpCombo.setBackground(new java.awt.Color(153, 204, 255));
-        bpCombo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bpComboActionPerformed(evt);
-            }
-        });
-
-        jLabel17.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jLabel17.setText("Respiratory Rate");
-
-        respCombo.setBackground(new java.awt.Color(153, 204, 255));
-
-        jLabel1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jLabel1.setText("Name");
+        jPanel3.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, -1, -1));
 
         jLabel18.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(49, 84, 140));
         jLabel18.setText("Medicine Consumption History");
+        jPanel3.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 330, 230, -1));
 
-        jLabel10.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(49, 84, 140));
-        jLabel10.setText("General Information");
-
-        oxycChk.setBackground(new java.awt.Color(153, 204, 255));
+        oxycChk.setBackground(new java.awt.Color(193, 212, 227));
         oxycChk.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         oxycChk.setText("Oxycodone");
-        oxycChk.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                oxycChkActionPerformed(evt);
-            }
-        });
-
-        jLabel13.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jLabel13.setText("Gender");
-
-        jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jLabel2.setText("Age");
+        jPanel3.add(oxycChk, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 400, -1, -1));
 
         jLabel21.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(49, 84, 140));
         jLabel21.setText("Additional Information ");
+        jPanel3.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 330, 230, -1));
 
-        injChk.setBackground(new java.awt.Color(153, 204, 255));
+        injChk.setBackground(new java.awt.Color(193, 212, 227));
         injChk.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         injChk.setText("Injection Opioid Use ");
-        injChk.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                injChkActionPerformed(evt);
-            }
-        });
+        jPanel3.add(injChk, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 360, -1, -1));
 
         injCombo.setBackground(new java.awt.Color(153, 204, 255));
         injCombo.setEnabled(false);
-        injCombo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                injComboActionPerformed(evt);
-            }
-        });
+        jPanel3.add(injCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 360, 123, -1));
 
-        intoChk.setBackground(new java.awt.Color(153, 204, 255));
+        intoChk.setBackground(new java.awt.Color(193, 212, 227));
         intoChk.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         intoChk.setText("Opioid Intoxication");
-        intoChk.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                intoChkActionPerformed(evt);
-            }
-        });
+        jPanel3.add(intoChk, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 390, -1, -1));
 
         intoCombo.setBackground(new java.awt.Color(153, 204, 255));
         intoCombo.setEnabled(false);
-        intoCombo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                intoComboActionPerformed(evt);
-            }
-        });
+        jPanel3.add(intoCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 420, 123, -1));
 
-        withChk.setBackground(new java.awt.Color(153, 204, 255));
+        withChk.setBackground(new java.awt.Color(193, 212, 227));
         withChk.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         withChk.setText("Opioid Withdrawal");
-        withChk.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                withChkActionPerformed(evt);
-            }
-        });
+        jPanel3.add(withChk, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 420, -1, -1));
 
         withCombo.setBackground(new java.awt.Color(153, 204, 255));
         withCombo.setEnabled(false);
-        withCombo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                withComboActionPerformed(evt);
-            }
-        });
+        jPanel3.add(withCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 390, 123, -1));
 
-        livChk.setBackground(new java.awt.Color(153, 204, 255));
+        livChk.setBackground(new java.awt.Color(193, 212, 227));
         livChk.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         livChk.setText("Liver Disease");
-        livChk.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                livChkActionPerformed(evt);
-            }
-        });
+        jPanel3.add(livChk, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 450, -1, -1));
 
         livCombo.setBackground(new java.awt.Color(153, 204, 255));
         livCombo.setEnabled(false);
@@ -539,535 +392,107 @@ public class DoctorPatientMedicalHistoryJPanel extends javax.swing.JPanel {
                 livComboActionPerformed(evt);
             }
         });
+        jPanel3.add(livCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 450, 123, -1));
 
-        jButton2.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/back_button.png"))); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(49, 84, 140));
+        jLabel11.setText("Medical History");
+        jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 260, 230, -1));
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtpatientname, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel13)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(genderCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel2)
-                        .addGap(18, 18, 18)
-                        .addComponent(ageCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(jPanel3Layout.createSequentialGroup()
-                                    .addComponent(jLabel17)
-                                    .addGap(26, 26, 26)
-                                    .addComponent(respCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel3Layout.createSequentialGroup()
-                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                            .addComponent(jLabel14)
-                                            .addGap(59, 59, 59))
-                                        .addGroup(jPanel3Layout.createSequentialGroup()
-                                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(jLabel15)
-                                                .addComponent(jLabel16))
-                                            .addGap(32, 32, 32)))
-                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(tempCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(bpCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(heartRateCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(drugChk)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(alcoholChk)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(depressionChk)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(bupChk)
-                                            .addComponent(metChk)
-                                            .addComponent(oxymChk)
-                                            .addComponent(oxycChk)
-                                            .addComponent(fenChk))
-                                        .addGap(9, 9, 9)
-                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(oxycCombo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(fenCombo, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(bupCombo, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(metCombo, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(oxymCombo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                                                .addGap(10, 10, 10)
-                                                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                                .addComponent(anxietyChk)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(disruptSocialChk)))))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(44, 44, 44)
-                                .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                                    .addComponent(withChk)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(intoCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                                    .addComponent(injChk)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(injCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                                    .addComponent(intoChk)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(withCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                                    .addComponent(livChk)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(livCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addComponent(jButton2))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(13, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(txtpatientname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel13)
-                    .addComponent(jLabel2)
-                    .addComponent(ageCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(genderCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel11)
-                .addGap(7, 7, 7)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(drugChk)
-                    .addComponent(alcoholChk)
-                    .addComponent(depressionChk)
-                    .addComponent(anxietyChk)
-                    .addComponent(disruptSocialChk))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel12)
-                            .addComponent(jLabel18))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel14)
-                            .addComponent(heartRateCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel19)
-                            .addComponent(jLabel20))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel15)
-                                    .addComponent(tempCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(bpCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel16))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(respCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel17)))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(oxycCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(oxycChk))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(fenChk)
-                                    .addComponent(fenCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(10, 10, 10)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(bupChk)
-                                    .addComponent(bupCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(metChk)
-                                    .addComponent(metCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(oxymChk)
-                                    .addComponent(oxymCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel21)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(injChk)
-                            .addComponent(injCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(intoChk)
-                            .addComponent(withCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(withChk)
-                            .addComponent(intoCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(livChk)
-                            .addComponent(livCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(171, 171, 171))
-        );
+        jLabel17.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jLabel17.setText("Respiratory Rate");
+        jPanel3.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 386, -1, 30));
+
+        respCombo.setBackground(new java.awt.Color(193, 212, 227));
+        jPanel3.add(respCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 390, 114, -1));
+
+        jLabel15.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jLabel15.setText("Temperature");
+        jPanel3.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, -1, -1));
+
+        tempCombo.setBackground(new java.awt.Color(193, 212, 227));
+        jPanel3.add(tempCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 420, 114, -1));
+
+        jLabel16.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jLabel16.setText("Blood Pressure");
+        jPanel3.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, -1, -1));
+
+        bpCombo.setBackground(new java.awt.Color(193, 212, 227));
+        jPanel3.add(bpCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 450, 114, -1));
+
+        jButton1.setBackground(new java.awt.Color(83, 124, 142));
+        jButton1.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Submit  ");
+        jButton1.setBorder(null);
+        jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 210, 81, 32));
+
+        ageCombo.setBackground(new java.awt.Color(193, 212, 227));
+        jPanel3.add(ageCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 160, -1, -1));
+
+        txtpatientname.setBackground(new java.awt.Color(193, 212, 227));
+        txtpatientname.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jPanel3.add(txtpatientname, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 160, 167, -1));
+
+        genderCombo.setBackground(new java.awt.Color(193, 212, 227));
+        jPanel3.add(genderCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 160, -1, -1));
+
+        jLabel1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jLabel1.setText("Name");
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, -1, 30));
+
+        jLabel13.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jLabel13.setText("Gender");
+        jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 160, -1, 30));
+
+        jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jLabel2.setText("Age");
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 160, -1, 20));
+
+        drugChk.setBackground(new java.awt.Color(193, 212, 227));
+        drugChk.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        drugChk.setText("Drug History");
+        jPanel3.add(drugChk, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 290, -1, -1));
+
+        alcoholChk.setBackground(new java.awt.Color(193, 212, 227));
+        alcoholChk.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        alcoholChk.setText("Alcohol History");
+        jPanel3.add(alcoholChk, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 290, -1, -1));
+
+        depressionChk.setBackground(new java.awt.Color(193, 212, 227));
+        depressionChk.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        depressionChk.setText("Depression History");
+        jPanel3.add(depressionChk, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 290, -1, -1));
+
+        anxietyChk.setBackground(new java.awt.Color(193, 212, 227));
+        anxietyChk.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        anxietyChk.setText("Anxiety History");
+        jPanel3.add(anxietyChk, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 290, -1, -1));
+
+        disruptSocialChk.setBackground(new java.awt.Color(193, 212, 227));
+        disruptSocialChk.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        disruptSocialChk.setText("Bad Social Relationships");
+        jPanel3.add(disruptSocialChk, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 290, -1, -1));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(113, 113, 113)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(157, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(118, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 1013, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(346, Short.MAX_VALUE))
+                .addGap(52, 52, 52)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(398, Short.MAX_VALUE))
         );
 
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 96, 1170, 1020));
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        DocLabRequest labr = new DocLabRequest();
-        labr.setSender(useraccount);
-
-        labr.setMessage("Lab Request");
-        labr.setStatus("Med Hist Collected For Lab");
-        request.setStatus("Med Hist Collected For Lab");
-        request.setDoc_med_history("");
-
-        //Setting patient's general information
-        labr.setName(txtpatientname.getText());
-        labr.setGender((String)genderCombo.getSelectedItem());
-        labr.setAge((Integer)ageCombo.getSelectedItem());
-
-        //Setting patients medical history
-        labr.setDrug_history(drugChk.isSelected());
-        labr.setAlcohol_history(alcoholChk.isSelected());
-        labr.setDepression_history(depressionChk.isSelected());
-        labr.setAnxiety_history(anxietyChk.isSelected());
-        labr.setDisrupt_history(disruptSocialChk.isSelected());
-
-        if((String)heartRateCombo.getSelectedItem() == "101bpm-150bpm")
-        {
-            labr.setHr_risk(true);
-        }
-        else
-        {
-            labr.setHr_risk(false);
-        }
-
-        if((String)tempCombo.getSelectedItem() == ">99.5 or 100.9°F")
-        {
-            labr.setTemp_risk(true);
-        }
-        else
-        {
-            labr.setTemp_risk(false);
-        }
-
-        if((String)bpCombo.getSelectedItem() == ">120 bp" ||
-            (String)bpCombo.getSelectedItem() == "<120 bp")
-        {
-            labr.setBp_risk(true);
-        }
-        else
-        {
-            labr.setBp_risk(false);
-        }
-
-        if((String)respCombo.getSelectedItem() == "> 20 bpm" ||
-            (String)respCombo.getSelectedItem() == "< 12 bpm")
-        {
-            labr.setResp_risk(true);
-        }
-        else
-        {
-            labr.setResp_risk(false);
-        }
-
-        //Setting patient's medicine consumption flag
-        labr.setOxycodone_taken(oxycChk.isSelected());
-        labr.setFantanyl_taken(fenChk.isSelected());
-        labr.setBupre_taken(bupChk.isSelected());
-        labr.setMethadone_taken(metChk.isSelected());
-        labr.setOxymorphone_taken(oxymChk.isSelected());
-
-        //Setting patient's medicine consumption dose risk
-        if((String)oxycCombo.getSelectedItem() == "40-80 mg/mL")
-        {
-            labr.setOxycodone_risk(true);
-        }
-        else
-        {
-            labr.setOxycodone_risk(false);
-        }
-        if((String)fenCombo.getSelectedItem() == "40-80 mg/mL")
-        {
-            labr.setFantanyl_risk(true);
-        }
-        else
-        {
-            labr.setFantanyl_risk(false);
-        }
-
-        if((String)bupCombo.getSelectedItem() == "40-80 mg/mL")
-        {
-            labr.setBupre_risk(true);
-        }
-        else
-        {
-            labr.setBupre_risk(false);
-        }
-
-        if((String)metCombo.getSelectedItem() == "40-80 mg/mL")
-        {
-            labr.setMethadone_risk(true);
-        }
-        else
-        {
-            labr.setMethadone_risk(false);
-        }
-
-        if((String)oxymCombo.getSelectedItem() == "40-80 mg/mL")
-        {
-            labr.setOxymorphone_risk(true);
-        }
-        else
-        {
-            labr.setOxymorphone_risk(false);
-        }
-
-        //Setting patient's additional consumption flag
-        labr.setInjection_checked(injChk.isSelected());
-        labr.setIntoxication_checked(intoChk.isSelected());
-        labr.setWithdrawal_checked(withChk.isSelected());
-        labr.setDisease_checked(livChk.isSelected());
-
-        //Setting patient's additional consumption flag
-        labr.setInjection_type((String)injCombo.getSelectedItem());
-        labr.setIntoxication_type((String)intoCombo.getSelectedItem());
-        labr.setWithdrawal_type((String)withCombo.getSelectedItem());
-        labr.setDisease_type((String)livCombo.getSelectedItem());
-
-        //    Doctor_LabRequest labr = new Doctor_LabRequest();
-        Org org = null;
-        for (Org organization : enterprise.getOrganizationDirectory().getOrganizationList()){
-            if (organization instanceof LaboratoryOrg){
-                org = organization;
-                //testing
-                System.out.println(request.hashCode());
-                //  org.setHashcode(request.hashCode());
-                break;
-            }
-        }
-        if (org!=null){
-            int a = request.hashCode();
-            request.setHashcode(a);//patient hashcode from db
-            System.out.println(a);
-            labr.setHashcode(a);
-            org.getWorkStream().getWorkRequestList().add(labr);
-            useraccount.getWorkStream().getWorkRequestList().add(labr);
-        }
-
-        JOptionPane.showMessageDialog(null, "Report Submitted Successfully");
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void fenChkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fenChkActionPerformed
-        // TODO add your handling code here:
-        if(fenChk.isSelected())
-        {
-            fenCombo.setEnabled(true);
-        }
-        else
-        {
-            fenCombo.setEnabled(false);
-        }
-    }//GEN-LAST:event_fenChkActionPerformed
-
-    private void heartRateComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_heartRateComboActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_heartRateComboActionPerformed
-
-    private void bupChkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bupChkActionPerformed
-        // TODO add your handling code here:
-        if(bupChk.isSelected())
-        {
-            bupCombo.setEnabled(true);
-        }
-        else
-        {
-            bupCombo.setEnabled(false);
-        }
-    }//GEN-LAST:event_bupChkActionPerformed
-
-    private void txtpatientnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtpatientnameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtpatientnameActionPerformed
-
-    private void metChkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_metChkActionPerformed
-        // TODO add your handling code here:
-        if(metChk.isSelected())
-        {
-            metCombo.setEnabled(true);
-        }
-        else
-        {
-            metCombo.setEnabled(false);
-        }
-    }//GEN-LAST:event_metChkActionPerformed
-
-    private void oxymChkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oxymChkActionPerformed
-        // TODO add your handling code here:
-        if(oxymChk.isSelected())
-        {
-            oxymCombo.setEnabled(true);
-        }
-        else
-        {
-            oxymCombo.setEnabled(false);
-        }
-    }//GEN-LAST:event_oxymChkActionPerformed
-
-    private void oxycComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oxycComboActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_oxycComboActionPerformed
-
-    private void alcoholChkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alcoholChkActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_alcoholChkActionPerformed
-
-    private void fenComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fenComboActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fenComboActionPerformed
-
-    private void bupComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bupComboActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bupComboActionPerformed
-
-    private void metComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_metComboActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_metComboActionPerformed
-
-    private void oxymComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oxymComboActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_oxymComboActionPerformed
-
-    private void genderComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_genderComboActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_genderComboActionPerformed
-
-    private void bpComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bpComboActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bpComboActionPerformed
-
-    private void oxycChkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oxycChkActionPerformed
-        // TODO add your handling code here:
-        if(oxycChk.isSelected())
-        {
-            oxycCombo.setEnabled(true);
-        }
-        else
-        {
-            oxycCombo.setEnabled(false);
-        }
-    }//GEN-LAST:event_oxycChkActionPerformed
-
-    private void injChkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_injChkActionPerformed
-        // TODO add your handling code here:
-        if(injChk.isSelected())
-        {
-            injCombo.setEnabled(true);
-        }
-        else
-        {
-            injCombo.setEnabled(false);
-        }
-    }//GEN-LAST:event_injChkActionPerformed
-
-    private void injComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_injComboActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_injComboActionPerformed
-
-    private void intoChkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_intoChkActionPerformed
-        // TODO add your handling code here:
-        if(intoChk.isSelected())
-        {
-            intoCombo.setEnabled(true);
-        }
-        else
-        {
-            intoCombo.setEnabled(false);
-        }
-    }//GEN-LAST:event_intoChkActionPerformed
-
-    private void intoComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_intoComboActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_intoComboActionPerformed
-
-    private void withChkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_withChkActionPerformed
-        // TODO add your handling code here:
-        if(withChk.isSelected())
-        {
-            withCombo.setEnabled(true);
-        }
-        else
-        {
-            withCombo.setEnabled(false);
-        }
-    }//GEN-LAST:event_withChkActionPerformed
-
-    private void withComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_withComboActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_withComboActionPerformed
-
-    private void livChkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_livChkActionPerformed
-        // TODO add your handling code here:
-        if(livChk.isSelected())
-        {
-            livCombo.setEnabled(true);
-        }
-        else
-        {
-            livCombo.setEnabled(false);
-        }
-    }//GEN-LAST:event_livChkActionPerformed
 
     private void livComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_livComboActionPerformed
         // TODO add your handling code here:

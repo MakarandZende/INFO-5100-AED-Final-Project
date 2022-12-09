@@ -54,7 +54,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1170, 1080));
 
-        medcampreqbtn.setBackground(new java.awt.Color(110, 89, 221));
+        medcampreqbtn.setBackground(new java.awt.Color(193, 212, 227));
         medcampreqbtn.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         medcampreqbtn.setForeground(new java.awt.Color(255, 255, 255));
         medcampreqbtn.setText("View Medical Camp request");
@@ -64,7 +64,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnViewStatistics.setBackground(new java.awt.Color(110, 89, 221));
+        btnViewStatistics.setBackground(new java.awt.Color(193, 212, 227));
         btnViewStatistics.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         btnViewStatistics.setForeground(new java.awt.Color(255, 255, 255));
         btnViewStatistics.setText("View Statistics");
@@ -74,9 +74,8 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        viewaptreqbtn.setBackground(new java.awt.Color(110, 89, 221));
+        viewaptreqbtn.setBackground(new java.awt.Color(249, 248, 248));
         viewaptreqbtn.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
-        viewaptreqbtn.setForeground(new java.awt.Color(255, 255, 255));
         viewaptreqbtn.setText("View Appointment Requests");
         viewaptreqbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
