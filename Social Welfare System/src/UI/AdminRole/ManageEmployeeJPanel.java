@@ -8,7 +8,11 @@ package UI.AdminRole;
 import Business.Organization.Org;
 import Business.Organization.OrgDirectory;
 import Business.Human.Person;
+import Business.Network.NetworkSystem;
 import java.awt.CardLayout;
+import java.awt.Color;
+import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -21,6 +25,8 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
     private OrgDirectory organizationDir;
     private Org currentOrganizationInDD;
     private JPanel userProcessContainer;
+    boolean emptyValidationStatus = true;
+    boolean validationCheck = true;
     
     /**
      * Creates new form ManageOrganizationJPanel
@@ -243,6 +249,34 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_backJButtonActionPerformed
 
     private void addJButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButton1ActionPerformed
+        
+        try{
+            if(EmpytyFieldValidation()){
+
+                if(RegexValidation()){
+                    Org organization = (Org) organizationEmpJComboBox.getSelectedItem();
+                    String name = nameJTextField.getText();
+        
+                    organization.getPersonDirectory().createPerson(name);
+                    populateTable(organization);
+//                    JOptionPane.showMessageDialog(this,"Admin created successfully!");
+                }
+                else{
+                    JOptionPane.showMessageDialog(this,"Invalid name");
+                    validationCheck=true;
+                }
+            }
+            else{
+                JOptionPane.showMessageDialog(this,"Name cannot be empty");
+                emptyValidationStatus=true;
+            }
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this,"Admin not created, Try again");
+            System.out.println(e.toString());
+            emptyValidationStatus=true;
+        }
+        
         Org organization = (Org) organizationEmpJComboBox.getSelectedItem();
         String name = nameJTextField.getText();
         
@@ -250,6 +284,35 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         populateTable(organization);
     }//GEN-LAST:event_addJButton1ActionPerformed
 
+    private boolean RegexValidation() {
+        if(!nameJTextField.getText().matches("^[a-zA-Z ]+$"))
+        {
+            nameJTextField.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            nameJTextField.setToolTipText("Please enter only characters and space.");
+            validationCheck=false;
+        }
+        
+        if(nameJTextField.getText().matches("^[a-zA-Z ]+$"))
+        {
+            nameJTextField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+        }
+        return validationCheck;
+    }
+    
+    private boolean EmpytyFieldValidation() {
+        if(nameJTextField.getText().equals(null) || nameJTextField.getText().trim().isEmpty() )
+        {
+            nameJTextField.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            nameJTextField.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        if(!nameJTextField.getText().equals(null) && !nameJTextField.getText().trim().isEmpty() )
+        {
+            nameJTextField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        return emptyValidationStatus;
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addJButton1;
     private javax.swing.JButton backJButton;
