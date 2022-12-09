@@ -37,27 +37,20 @@ public class patientViewResultJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         txtDiagnose = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         enterpriseLabel = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setBackground(new java.awt.Color(255, 255, 204));
-        jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        jLabel1.setText("View Diagnosis");
-        jLabel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jLabel1.setOpaque(true);
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 130, 100, 50));
-
         txtDiagnose.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         txtDiagnose.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        add(txtDiagnose, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 200, 418, 26));
+        add(txtDiagnose, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 200, 510, 150));
 
-        jPanel6.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel6.setBackground(new java.awt.Color(239, 241, 228));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         enterpriseLabel.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
@@ -65,6 +58,16 @@ public class patientViewResultJPanel extends javax.swing.JPanel {
         jPanel6.add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, 1080, 60));
 
         add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jPanel1.setBackground(new java.awt.Color(249, 248, 248));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setBackground(new java.awt.Color(249, 248, 248));
+        jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel1.setText("View Diagnosis :");
+        jLabel1.setOpaque(true);
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 80, 150, 50));
+
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1370, 630));
     }// </editor-fold>//GEN-END:initComponents
 

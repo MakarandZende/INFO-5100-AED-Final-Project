@@ -68,11 +68,10 @@ public class RequestDruggistForMedicine extends javax.swing.JPanel {
 
         setPreferredSize(new java.awt.Dimension(1170, 1080));
 
-        jPanel1.setBackground(new java.awt.Color(54, 33, 89));
+        jPanel1.setBackground(new java.awt.Color(239, 241, 228));
         jPanel1.setPreferredSize(new java.awt.Dimension(1170, 100));
 
         jLabel6.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Prescription");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -95,9 +94,10 @@ public class RequestDruggistForMedicine extends javax.swing.JPanel {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel3.setBackground(new java.awt.Color(153, 204, 255));
+        jPanel3.setBackground(new java.awt.Color(193, 212, 227));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        chkDis.setBackground(new java.awt.Color(153, 204, 255));
+        chkDis.setBackground(new java.awt.Color(193, 212, 227));
         chkDis.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         chkDis.setText("Disulfiram");
         chkDis.addActionListener(new java.awt.event.ActionListener() {
@@ -105,12 +105,14 @@ public class RequestDruggistForMedicine extends javax.swing.JPanel {
                 chkDisActionPerformed(evt);
             }
         });
+        jPanel3.add(chkDis, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 217, -1, -1));
 
-        chkCam.setBackground(new java.awt.Color(153, 204, 255));
+        chkCam.setBackground(new java.awt.Color(193, 212, 227));
         chkCam.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         chkCam.setText("Campral");
+        jPanel3.add(chkCam, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 272, -1, -1));
 
-        chkAnt.setBackground(new java.awt.Color(153, 204, 255));
+        chkAnt.setBackground(new java.awt.Color(193, 212, 227));
         chkAnt.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         chkAnt.setText("Antabuse");
         chkAnt.addActionListener(new java.awt.event.ActionListener() {
@@ -118,8 +120,9 @@ public class RequestDruggistForMedicine extends javax.swing.JPanel {
                 chkAntActionPerformed(evt);
             }
         });
+        jPanel3.add(chkAnt, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 322, -1, -1));
 
-        chkViv.setBackground(new java.awt.Color(153, 204, 255));
+        chkViv.setBackground(new java.awt.Color(193, 212, 227));
         chkViv.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         chkViv.setText(" Vivitrol");
         chkViv.addActionListener(new java.awt.event.ActionListener() {
@@ -127,27 +130,32 @@ public class RequestDruggistForMedicine extends javax.swing.JPanel {
                 chkVivActionPerformed(evt);
             }
         });
+        jPanel3.add(chkViv, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 374, -1, -1));
 
-        jButton1.setBackground(new java.awt.Color(54, 33, 89));
+        jButton1.setBackground(new java.awt.Color(193, 212, 227));
         jButton1.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Request Pharmacist");
-        jButton1.setBorder(null);
+        jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+        jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 440, 204, 48));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel1.setText("For Patient");
+        jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("For Patient :");
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 90, 180, 60));
 
-        txtPatientName.setBackground(new java.awt.Color(153, 204, 255));
+        txtPatientName.setBackground(new java.awt.Color(193, 212, 227));
         txtPatientName.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
         txtPatientName.setEnabled(false);
+        jPanel3.add(txtPatientName, new org.netbeans.lib.awtextra.AbsoluteConstraints(267, 121, 205, -1));
 
-        chkAca.setBackground(new java.awt.Color(153, 204, 255));
+        chkAca.setBackground(new java.awt.Color(193, 212, 227));
         chkAca.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         chkAca.setText("Acamprosate");
         chkAca.addActionListener(new java.awt.event.ActionListener() {
@@ -155,6 +163,7 @@ public class RequestDruggistForMedicine extends javax.swing.JPanel {
                 chkAcaActionPerformed(evt);
             }
         });
+        jPanel3.add(chkAca, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 164, -1, -1));
 
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/back_button.png"))); // NOI18N
@@ -163,61 +172,10 @@ public class RequestDruggistForMedicine extends javax.swing.JPanel {
                 jButton2ActionPerformed(evt);
             }
         });
+        jPanel3.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 17, -1, -1));
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(jButton2)
-                .addContainerGap(464, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(chkCam)
-                                .addComponent(chkDis)
-                                .addComponent(chkAca)
-                                .addComponent(chkViv)
-                                .addComponent(chkAnt))
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtPatientName, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(77, 77, 77))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(txtPatientName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(chkAca)
-                .addGap(30, 30, 30)
-                .addComponent(chkDis)
-                .addGap(32, 32, 32)
-                .addComponent(chkCam)
-                .addGap(27, 27, 27)
-                .addComponent(chkAnt)
-                .addGap(29, 29, 29)
-                .addComponent(chkViv)
-                .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(116, Short.MAX_VALUE))
-        );
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 80, 570, 520));
 
-        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 80, -1, -1));
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/druggist1.jpg"))); // NOI18N
         jLabel3.setText("jLabel3");
         jLabel3.setPreferredSize(new java.awt.Dimension(1170, 840));
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -229,11 +187,11 @@ public class RequestDruggistForMedicine extends javax.swing.JPanel {
             .addGap(0, 1449, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 139, Short.MAX_VALUE)
+                    .addGap(0, 0, Short.MAX_VALUE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 1170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(0, 140, Short.MAX_VALUE)))
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

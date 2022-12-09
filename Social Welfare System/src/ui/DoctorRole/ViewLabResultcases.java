@@ -85,10 +85,9 @@ public class ViewLabResultcases extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(54, 33, 89));
+        jPanel1.setBackground(new java.awt.Color(239, 241, 228));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Lab Process Result");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -112,52 +111,65 @@ public class ViewLabResultcases extends javax.swing.JPanel {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel3.setBackground(new java.awt.Color(153, 204, 255));
+        jPanel3.setBackground(new java.awt.Color(193, 212, 227));
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel3.setText("Result");
 
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel4.setText("Result Type");
 
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel5.setText("Name");
 
-        txtName.setBackground(new java.awt.Color(153, 204, 255));
+        txtName.setBackground(new java.awt.Color(193, 212, 227));
+        txtName.setForeground(new java.awt.Color(255, 255, 255));
+        txtName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         txtName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNameActionPerformed(evt);
             }
         });
 
-        txt.setBackground(new java.awt.Color(153, 204, 255));
+        txt.setBackground(new java.awt.Color(193, 212, 227));
+        txt.setForeground(new java.awt.Color(255, 255, 255));
+        txt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
-        txtResultType.setBackground(new java.awt.Color(153, 204, 255));
+        txtResultType.setBackground(new java.awt.Color(193, 212, 227));
+        txtResultType.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         txtResultType.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtResultTypeActionPerformed(evt);
             }
         });
 
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel6.setText("Solution By Lab");
 
-        txtResultbyLab.setBackground(new java.awt.Color(153, 204, 255));
+        txtResultbyLab.setBackground(new java.awt.Color(193, 212, 227));
+        txtResultbyLab.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
-        btnPsyc.setBackground(new java.awt.Color(153, 204, 255));
+        btnPsyc.setBackground(new java.awt.Color(249, 248, 248));
         btnPsyc.setText("Send To Psychiatrist");
+        btnPsyc.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         btnPsyc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPsycActionPerformed(evt);
             }
         });
 
-        btnphrmaco.setBackground(new java.awt.Color(153, 204, 255));
+        btnphrmaco.setBackground(new java.awt.Color(249, 248, 248));
         btnphrmaco.setText("Send To Pharmacotherapist");
+        btnphrmaco.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         btnphrmaco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnphrmacoActionPerformed(evt);
             }
         });
 
-        btnPrescription.setBackground(new java.awt.Color(153, 204, 255));
+        btnPrescription.setBackground(new java.awt.Color(249, 248, 248));
         btnPrescription.setText("Write Prescription");
+        btnPrescription.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         btnPrescription.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPrescriptionActionPerformed(evt);
@@ -176,43 +188,45 @@ public class ViewLabResultcases extends javax.swing.JPanel {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(jButton3)
-                .addGap(89, 89, 89)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
+                        .addGap(32, 32, 32)
+                        .addComponent(jButton3)
+                        .addGap(123, 123, 123)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
                             .addComponent(jLabel4)
                             .addComponent(jLabel6)
-                            .addComponent(jLabel5))
-                        .addGap(25, 25, 25))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(btnPsyc)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(txtName)
-                        .addComponent(txt)
-                        .addComponent(txtResultType)
-                        .addComponent(txtResultbyLab, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(25, 25, 25)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtName)
+                            .addComponent(txt)
+                            .addComponent(txtResultType)
+                            .addComponent(txtResultbyLab, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(btnphrmaco)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnPrescription)))
-                .addContainerGap(248, Short.MAX_VALUE))
+                        .addGap(224, 224, 224)
+                        .addComponent(btnPsyc, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(44, 44, 44)
+                        .addComponent(btnphrmaco, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(49, 49, 49)
+                        .addComponent(btnPrescription, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(153, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel5))
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(63, 63, 63)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(63, 63, 63))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(71, 71, 71)))
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(txt, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -228,9 +242,9 @@ public class ViewLabResultcases extends javax.swing.JPanel {
                     .addComponent(txtResultbyLab, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(45, 45, 45)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnPsyc)
-                    .addComponent(btnphrmaco)
-                    .addComponent(btnPrescription))
+                    .addComponent(btnPsyc, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnphrmaco, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnPrescription, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(43, Short.MAX_VALUE))
         );
 
@@ -241,14 +255,14 @@ public class ViewLabResultcases extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(136, 136, 136)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(150, Short.MAX_VALUE))
+                .addContainerGap(154, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(67, 67, 67)
+                .addGap(46, 46, 46)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(371, Short.MAX_VALUE))
+                .addContainerGap(372, Short.MAX_VALUE))
         );
 
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1170, 980));
@@ -261,92 +275,6 @@ public class ViewLabResultcases extends javax.swing.JPanel {
     private void txtResultTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtResultTypeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtResultTypeActionPerformed
-
-    private void btnPsycActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPsycActionPerformed
-        // TODO add your handling code here:
-        Org org = null;
-        for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
-            if (enterprise instanceof RehabEnterprises) {
-                for (Org organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
-                    if (organization instanceof PsychiatristOrg) {
-                        org = organization;
-                        break;
-                    }
-                }
-            }
-        }
-        if (org != null) {
-            //int a =org.getWorkQueue().getWorkRequestList().hashCode();
-            org.getWorkStream().getWorkRequestList().add(patientrequest);
-            patientrequest.setReceiver(null);
-            userAccount.getWorkStream().getWorkRequestList().add(patientrequest);
-        }
-        patientrequest.setStatus("Assigned to psychiatrist");
-         JOptionPane.showMessageDialog(null, "Request sent to psychiatrist");
-          popupResult();
-    }//GEN-LAST:event_btnPsycActionPerformed
-
-    private void btnphrmacoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnphrmacoActionPerformed
-        // TODO add your handling code here:
-        System.out.println("aaa");
- emailId = "code.crunch.sih@gmail.com";
-
- String emailRegex = "^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$";
-
- Pattern pat = Pattern.compile(emailRegex);
- if (emailId == null)
- {
- JOptionPane.showMessageDialog(null, "Please enter a valid email id. It should not start with _ and must contain an email Id with _, . and @ only!!");
- return;
- }
-
- else
- {
- if(!(pat.matcher(emailId).matches()) )
- {
- JOptionPane.showMessageDialog(null, "Please enter a valid email id. It should not start with _ and must contain an email Id with _, . and @ !!");
- return;
- }
-
- }
-
- if(emailId.equalsIgnoreCase(""))
- {
- JOptionPane.showMessageDialog(null, "Please enter an email id before buying the product");
- return;
- }
-
- sendMail(emailId);
-// //Email Sending part
-//
-//
-// //pdf part
-        //pdf part
-        Document document = new Document() {};
-     
-        //pdf part
-        Org org = null;
-     for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()){
-          if (enterprise instanceof RehabEnterprises){     
-        for (Org organization : enterprise.getOrganizationDirectory().getOrganizationList()){
-            if (organization instanceof PhysiotherapistOrg){
-                org = organization;               
-                     
-            } 
-          }
-        }      
-     }   
-     if(org!=null)
-     {
-      org.getWorkStream().getWorkRequestList().add(patientrequest);
-            patientrequest.setReceiver(null);
-            userAccount.getWorkStream().getWorkRequestList().add(patientrequest);
-     }
-     JOptionPane.showMessageDialog(null, "Requested to Pharmacotherapist");
-       userProcessContainer.remove(this);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.previous(userProcessContainer);
-    }//GEN-LAST:event_btnphrmacoActionPerformed
 
     public void sendMail(String emailId)
     {
@@ -394,15 +322,100 @@ public class ViewLabResultcases extends javax.swing.JPanel {
     private void btnPrescriptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrescriptionActionPerformed
         // TODO add your handling code here:
         RequestDruggistForMedicine medPanel = new RequestDruggistForMedicine(userProcessContainer, patientrequest, network, userAccount,  enterprise);
-        
-       
-            userProcessContainer.add("processWorkRequestJPanel", medPanel);
-            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
 
-            layout.next(userProcessContainer);
-            JOptionPane.showMessageDialog(null, "Request sent back to Doctor");
-            popupResult();
+        userProcessContainer.add("processWorkRequestJPanel", medPanel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+
+        layout.next(userProcessContainer);
+        JOptionPane.showMessageDialog(null, "Request sent back to Doctor");
+        popupResult();
     }//GEN-LAST:event_btnPrescriptionActionPerformed
+
+    private void btnphrmacoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnphrmacoActionPerformed
+        // TODO add your handling code here:
+        System.out.println("aaa");
+        emailId = "code.crunch.sih@gmail.com";
+
+        String emailRegex = "^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$";
+
+        Pattern pat = Pattern.compile(emailRegex);
+        if (emailId == null)
+        {
+            JOptionPane.showMessageDialog(null, "Please enter a valid email id. It should not start with _ and must contain an email Id with _, . and @ only!!");
+            return;
+        }
+
+        else
+        {
+            if(!(pat.matcher(emailId).matches()) )
+            {
+                JOptionPane.showMessageDialog(null, "Please enter a valid email id. It should not start with _ and must contain an email Id with _, . and @ !!");
+                return;
+            }
+
+        }
+
+        if(emailId.equalsIgnoreCase(""))
+        {
+            JOptionPane.showMessageDialog(null, "Please enter an email id before buying the product");
+            return;
+        }
+
+        sendMail(emailId);
+        // //Email Sending part
+        //
+        //
+        // //pdf part
+        //pdf part
+        Document document = new Document() {};
+
+        //pdf part
+        Org org = null;
+        for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()){
+            if (enterprise instanceof RehabEnterprises){
+                for (Org organization : enterprise.getOrganizationDirectory().getOrganizationList()){
+                    if (organization instanceof PhysiotherapistOrg){
+                        org = organization;
+
+                    }
+                }
+            }
+        }
+        if(org!=null)
+        {
+            org.getWorkStream().getWorkRequestList().add(patientrequest);
+            patientrequest.setReceiver(null);
+            userAccount.getWorkStream().getWorkRequestList().add(patientrequest);
+        }
+        JOptionPane.showMessageDialog(null, "Requested to Pharmacotherapist");
+        userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_btnphrmacoActionPerformed
+
+    private void btnPsycActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPsycActionPerformed
+        // TODO add your handling code here:
+        Org org = null;
+        for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
+            if (enterprise instanceof RehabEnterprises) {
+                for (Org organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
+                    if (organization instanceof PsychiatristOrg) {
+                        org = organization;
+                        break;
+                    }
+                }
+            }
+        }
+        if (org != null) {
+            //int a =org.getWorkQueue().getWorkRequestList().hashCode();
+            org.getWorkStream().getWorkRequestList().add(patientrequest);
+            patientrequest.setReceiver(null);
+            userAccount.getWorkStream().getWorkRequestList().add(patientrequest);
+        }
+        patientrequest.setStatus("Assigned to psychiatrist");
+        JOptionPane.showMessageDialog(null, "Request sent to psychiatrist");
+        popupResult();
+    }//GEN-LAST:event_btnPsycActionPerformed
 
     private void popupResult() {
         
