@@ -69,7 +69,7 @@ public class RequestDoctorForMedCampJPanel extends javax.swing.JPanel {
         jLabel1.setText("Message");
 
         requestDoctorJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        requestDoctorJButton.setText("Approve Request");
+        requestDoctorJButton.setText(" Request");
         requestDoctorJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 requestDoctorJButtonActionPerformed(evt);

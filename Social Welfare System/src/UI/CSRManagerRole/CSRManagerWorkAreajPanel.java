@@ -102,7 +102,7 @@ public class CSRManagerWorkAreajPanel extends javax.swing.JPanel {
         jScrollPane2.setViewportView(ReqFromNGOMedicalCamp);
 
         reqNgoBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        reqNgoBtn.setText("Request Ngo");
+        reqNgoBtn.setText("Request ");
         reqNgoBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 reqNgoBtnActionPerformed(evt);
@@ -179,9 +179,9 @@ public class CSRManagerWorkAreajPanel extends javax.swing.JPanel {
             return;
         }
         
-        MedicalCampWorkRequest request= (MedicalCampWorkRequest)ReqFromNGOMedicalCamp.getValueAt(selectedRow, 0);
+        MedicalCampWorkRequest medcampWReq= (MedicalCampWorkRequest)ReqFromNGOMedicalCamp.getValueAt(selectedRow, 0);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        userProcessContainer.add("Process CSR requests", new RequestDoctorForMedCampJPanel(userProcessContainer, userAccount, enterprise,request));
+        userProcessContainer.add("Process CSR requests", new RequestDoctorForMedCampJPanel(userProcessContainer, userAccount, enterprise,medcampWReq));
         layout.next(userProcessContainer);
     }//GEN-LAST:event_reqNgoBtnActionPerformed
 
@@ -193,10 +193,10 @@ public class CSRManagerWorkAreajPanel extends javax.swing.JPanel {
             return;
         }
 
-        MedicalCampWorkRequest request = (MedicalCampWorkRequest)ReqFromNGOMedicalCamp.getValueAt(selectedRow, 0);
-        if(request.getReceiver() == null){
-            request.setReceiver(userAccount);
-            request.setStatus("Pending from CSR");
+        MedicalCampWorkRequest medcampWReq = (MedicalCampWorkRequest)ReqFromNGOMedicalCamp.getValueAt(selectedRow, 0);
+        if(medcampWReq.getReceiver() == null){
+            medcampWReq.setReceiver(userAccount);
+            medcampWReq.setStatus("Pending from CSR");
             populateRequestTable();
         }
         else{

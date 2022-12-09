@@ -79,7 +79,6 @@ public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         totalFundsTxt = new javax.swing.JLabel();
         resReqBtn = new javax.swing.JButton();
-        reqMedCampBtn = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(204, 204, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -156,15 +155,6 @@ public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         add(resReqBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 330, -1, -1));
-
-        reqMedCampBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        reqMedCampBtn.setText("Request Med Camp");
-        reqMedCampBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                reqMedCampBtnActionPerformed(evt);
-            }
-        });
-        add(reqMedCampBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 370, 160, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void requestFundJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestFundJButtonActionPerformed
@@ -188,12 +178,6 @@ public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
         layout.next(userProcessContainer);
     }//GEN-LAST:event_resReqBtnActionPerformed
 
-    private void reqMedCampBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reqMedCampBtnActionPerformed
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        userProcessContainer.add("RequestMedCamp", new RequestMedicalCampjPanel(userProcessContainer, userAccount, enterprise, business));
-        layout.next(userProcessContainer);
-    }//GEN-LAST:event_reqMedCampBtnActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
@@ -201,7 +185,6 @@ public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton refreshTestJButton;
-    private javax.swing.JButton reqMedCampBtn;
     private javax.swing.JButton requestFundJButton;
     private javax.swing.JButton resReqBtn;
     private javax.swing.JLabel totalFundsTxt;

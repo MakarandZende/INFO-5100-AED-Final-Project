@@ -22,13 +22,13 @@ public class processMedicalCampRequestJPanel extends javax.swing.JPanel {
      * Creates new form processWorkRequestJPanel
      */
     JPanel userProcessContainer;
-    MedicalCampWorkRequest request;
+    MedicalCampWorkRequest medcampWReq;
     private User_Account userAccount;
     
-    public processMedicalCampRequestJPanel(JPanel userProcessContainer, MedicalCampWorkRequest request, User_Account account) {
+    public processMedicalCampRequestJPanel(JPanel userProcessContainer, MedicalCampWorkRequest medcampWReq, User_Account account) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
-        this.request = request;
+        this.medcampWReq = medcampWReq;
         this.userAccount = account;
     }
 
@@ -128,11 +128,11 @@ public class processMedicalCampRequestJPanel extends javax.swing.JPanel {
 
     private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
         // TODO add your handling code here:
-        if(request.getStatus() == "Processing"){
-            request.setMessage(resultJTextField.getText());
-            request.setStatus("Completed");
-            request.setSender(userAccount);
-            request.setCampResult("Medical Camp successful. Assigned a Doctor!");
+        if(medcampWReq.getStatus() == "Processing"){
+            medcampWReq.setMessage(resultJTextField.getText());
+            medcampWReq.setStatus("Completed");
+            medcampWReq.setSender(userAccount);
+            medcampWReq.setCampResult("Medical Camp successful. Assigned a Doctor!");
             resultJTextField.setText("");
         }
         else{

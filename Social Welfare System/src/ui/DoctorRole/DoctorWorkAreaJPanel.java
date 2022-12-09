@@ -128,7 +128,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
     private void medcampreqbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_medcampreqbtnActionPerformed
         // TODO add your handling code here:
         DoctorMedicalCampRequestJPanel doctorMedicalJPanel = new DoctorMedicalCampRequestJPanel(userProcessContainer, userAccount, organization, enterprise);
-        userProcessContainer.add("statisticsJPanel", doctorMedicalJPanel);
+        userProcessContainer.add("DoctorMedicalCampRequestJPanel", doctorMedicalJPanel);
 
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);

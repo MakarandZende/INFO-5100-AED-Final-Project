@@ -154,11 +154,11 @@ public class RequestMedicalCampjPanel extends javax.swing.JPanel {
             return;
         }
         
-        MedicalCampWorkRequest request = new MedicalCampWorkRequest();
-        request.setMessage(message);
-        request.setSender(userAccount);
-        request.setStatus("Sent from NGO");
-        request.setCampResult("Requested");
+        MedicalCampWorkRequest medcampWReq = new MedicalCampWorkRequest();
+        medcampWReq.setMessage(message);
+        medcampWReq.setSender(userAccount);
+        medcampWReq.setStatus("Sent from NGO");
+        medcampWReq.setCampResult("Requested");
 
         Org org = null;
         for(NetworkSystem network: business.getNetworkList()){
@@ -176,8 +176,8 @@ public class RequestMedicalCampjPanel extends javax.swing.JPanel {
         }
         if (org!=null){
             // adding req on user account of refugee camp manager
-            org.getWorkStream().getWorkRequestList().add(request);
-            userAccount.getWorkStream().getWorkRequestList().add(request);
+            org.getWorkStream().getWorkRequestList().add(medcampWReq);
+            userAccount.getWorkStream().getWorkRequestList().add(medcampWReq);
         }
         messageJTextField.setText("");
     }//GEN-LAST:event_requestTestJButtonActionPerformed

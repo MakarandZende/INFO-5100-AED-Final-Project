@@ -168,13 +168,13 @@ public class DoctorMedicalCampRequestJPanel extends javax.swing.JPanel {
             return;
         }
 
-        MedicalCampWorkRequest request = (MedicalCampWorkRequest)campRequestJTable.getValueAt(selectedRow, 0);
-        if(request.getStatus().equals("Assigned") || request.getStatus().equals("Completed")){
+        MedicalCampWorkRequest medcampWReq = (MedicalCampWorkRequest)campRequestJTable.getValueAt(selectedRow, 0);
+        if(medcampWReq.getStatus().equals("Assigned") || medcampWReq.getStatus().equals("Completed")){
             JOptionPane.showMessageDialog(null, "Time Conflict doctor is already in Process");
             return;
         }
-        request.setReceiver(userAccount);
-        request.setStatus("Pending from Doctor");
+        medcampWReq.setReceiver(userAccount);
+        medcampWReq.setStatus("Pending from Doctor");
         populateCampTable();
     }//GEN-LAST:event_assignJButtonActionPerformed
 
