@@ -7,7 +7,9 @@ package UI.SystemAdminWorkArea;
 import Business.Ecosystem.Ecosystem;
 import Business.Network.NetworkSystem;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Component;
+import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -19,6 +21,8 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
     private Ecosystem system;
+    boolean emptyValidationStatus = true;
+    boolean validationCheck = true;
     /**
      * Creates new form ManageNetworkJPanel
      */
@@ -213,18 +217,71 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
 
     private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
 
-        String name = nameJTextField.getText();
-        if(name == ""){
-            JOptionPane.showMessageDialog(this, "Please enter name for the network");
-            return;
+        try{
+            if(EmpytyFieldValidation()){
+
+                if(RegexValidation()){
+                    String name = nameJTextField.getText();
+                    NetworkSystem network = system.createAndAddNetwork();
+                    network.setName(name);
+                    populateNetworkTable();
+                    JOptionPane.showMessageDialog(this,"Network created successfully!");
+                }
+                else{
+                    JOptionPane.showMessageDialog(this,"Invalid name");
+                    validationCheck=true;
+                }
+            }
+            else{
+                JOptionPane.showMessageDialog(this,"Name cannot be empty");
+                emptyValidationStatus=true;
+            }
         }
-
-        NetworkSystem network = system.createAndAddNetwork();
-        network.setName(name);
-
-        populateNetworkTable();
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this,"Network not created, Try again");
+            System.out.println(e.toString());
+            emptyValidationStatus=true;
+        }
+//        String name = nameJTextField.getText();
+//        if(name == ""){
+//            JOptionPane.showMessageDialog(this, "Please enter name for the network");
+//            return;
+//        }
+//
+//        NetworkSystem network = system.createAndAddNetwork();
+//        network.setName(name);
+//
+//        populateNetworkTable();
     }//GEN-LAST:event_submitJButtonActionPerformed
 
+    private boolean RegexValidation() {
+        if(!nameJTextField.getText().matches("^[a-zA-Z ]+$"))
+        {
+            nameJTextField.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            nameJTextField.setToolTipText("Please enter only characters and space.");
+            validationCheck=false;
+        }
+        
+        if(nameJTextField.getText().matches("^[a-zA-Z ]+$"))
+        {
+            nameJTextField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+        }
+        return validationCheck;
+    }
+    
+    private boolean EmpytyFieldValidation() {
+        if(nameJTextField.getText().equals(null) || nameJTextField.getText().trim().isEmpty() )
+        {
+            nameJTextField.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            nameJTextField.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        if(!nameJTextField.getText().equals(null) && !nameJTextField.getText().trim().isEmpty() )
+        {
+            nameJTextField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        return emptyValidationStatus;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;
