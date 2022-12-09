@@ -41,6 +41,7 @@ public class patientViewResultJPanel extends javax.swing.JPanel {
         txtDiagnose = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         enterpriseLabel = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -50,10 +51,11 @@ public class patientViewResultJPanel extends javax.swing.JPanel {
         jLabel1.setText("View Diagnosis");
         jLabel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jLabel1.setOpaque(true);
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 110, 100, 50));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 130, 100, 50));
 
         txtDiagnose.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        add(txtDiagnose, new org.netbeans.lib.awtextra.AbsoluteConstraints(195, 92, 418, 26));
+        txtDiagnose.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        add(txtDiagnose, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 200, 418, 26));
 
         jPanel6.setBackground(new java.awt.Color(204, 204, 255));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -63,12 +65,14 @@ public class patientViewResultJPanel extends javax.swing.JPanel {
         jPanel6.add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, 1080, 60));
 
         add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1370, 630));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JLabel txtDiagnose;
     // End of variables declaration//GEN-END:variables
