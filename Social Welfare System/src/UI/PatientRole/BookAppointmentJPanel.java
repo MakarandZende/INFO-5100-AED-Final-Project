@@ -11,9 +11,11 @@ import Business.Organization.Org;
 import Business.UserAccount.User_Account;
 import Business.WorkStream.PatientAppRequest;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Component;
 import java.text.DateFormat;
 import java.util.Date;
+import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -30,6 +32,8 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private Enterprise enterprise;
     private User_Account userAccount;
+    boolean emptyValidationStatus = true;
+    boolean validationCheck = true;
 
     BookAppointmentJPanel(JPanel userProcessContainer, User_Account userAccount, Enterprise enterprise) {
         initComponents();
@@ -140,39 +144,105 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
 
     private void btnsaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsaveActionPerformed
         // TODO add your handling code here:
-        String message = txtmessage.getText();
-        // String date = txtdate.getText();
         
-        //chooing date from JDateChooser
-        Date date = dateChooserField.getDate();
-        String strDate = DateFormat.getDateInstance().format(date);
+        try{
+            if(EmpytyFieldValidation()){
 
-        PatientAppRequest request = new PatientAppRequest();
-        request.setMessage(message);
-        request.setAppointmentdate(strDate);
-        request.setSender(userAccount);
-        request.setStatus("Sent By Patient");
+                    String message = txtmessage.getText();
+        
+                    Date date = dateChooserField.getDate();
+                    String strDate = DateFormat.getDateInstance().format(date);
 
-        Org org = null;
-        for (Org organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
-            if (organization instanceof DoctorConsultantOrg) {
-                org = organization;
+                    PatientAppRequest request = new PatientAppRequest();
+                    request.setMessage(message);
+                    request.setAppointmentdate(strDate);
+                    request.setSender(userAccount);
+                    request.setStatus("Sent By Patient");
 
-                break;
+                    Org org = null;
+                    for (Org organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
+                    if (organization instanceof DoctorConsultantOrg) {
+                    org = organization;
+
+                    break;
+                }
             }
-        }
-        if (org != null) {
-            int a = org.getWorkStream().getWorkRequestList().hashCode();
-            org.getWorkStream().getWorkRequestList().add(request);
-            userAccount.getWorkStream().getWorkRequestList().add(request);
+            if (org != null) {
+                int a = org.getWorkStream().getWorkRequestList().hashCode();
+                org.getWorkStream().getWorkRequestList().add(request);
+                userAccount.getWorkStream().getWorkRequestList().add(request);
         }
         JOptionPane.showMessageDialog(null, "Appointment booked successfully");
         txtmessage.setText("");
+//                    JOptionPane.showMessageDialog(this,"Enterprise Admin created successfully!");
+             
+            }
+            else{
+                JOptionPane.showMessageDialog(this,"Please check details again");
+                emptyValidationStatus=true;
+            }
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this,"Error booking appointment, Try again");
+            System.out.println(e.toString());
+            emptyValidationStatus=true;
+        }
+        
+//        String message = txtmessage.getText();
+//        
+//        Date date = dateChooserField.getDate();
+//        String strDate = DateFormat.getDateInstance().format(date);
+//
+//        PatientAppRequest request = new PatientAppRequest();
+//        request.setMessage(message);
+//        request.setAppointmentdate(strDate);
+//        request.setSender(userAccount);
+//        request.setStatus("Sent By Patient");
+//
+//        Org org = null;
+//        for (Org organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
+//            if (organization instanceof DoctorConsultantOrg) {
+//                org = organization;
+//
+//                break;
+//            }
+//        }
+//        if (org != null) {
+//            int a = org.getWorkStream().getWorkRequestList().hashCode();
+//            org.getWorkStream().getWorkRequestList().add(request);
+//            userAccount.getWorkStream().getWorkRequestList().add(request);
+//        }
+//        JOptionPane.showMessageDialog(null, "Appointment booked successfully");
+//        txtmessage.setText("");
         
         
 
     }//GEN-LAST:event_btnsaveActionPerformed
 
+    
+    private boolean EmpytyFieldValidation() {
+        if(txtmessage.getText().equals(null) || txtmessage.getText().trim().isEmpty() )
+        {
+            txtmessage.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtmessage.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        if(!txtmessage.getText().equals(null) && !txtmessage.getText().trim().isEmpty() )
+        {
+            txtmessage.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        if(dateChooserField.getDate().equals(null) )
+        {
+            dateChooserField.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            dateChooserField.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        if(!dateChooserField.getDate().equals(null))
+        {
+            txtmessage.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        return emptyValidationStatus;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;
