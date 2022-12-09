@@ -83,8 +83,11 @@ public class DoctorMedicalCampRequestJPanel extends javax.swing.JPanel {
         enterpriseLabel.setText("Enterprise :");
         add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(117, 43, 127, 30));
 
+        valueLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         valueLabel.setText("<value>");
-        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(262, 47, 158, 26));
+        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, 140, 30));
+
+        jPanel1.setBackground(new java.awt.Color(193, 212, 227));
 
         assignJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         assignJButton.setText("Assign to me");

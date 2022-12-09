@@ -111,7 +111,7 @@ public class PatientWorkAreaJPanel extends javax.swing.JPanel {
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/patient2.png"))); // NOI18N
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 150, 150));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 720));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 790));
 
         jPanel6.setBackground(new java.awt.Color(239, 241, 228));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
