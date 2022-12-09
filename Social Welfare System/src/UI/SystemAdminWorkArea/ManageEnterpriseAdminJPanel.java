@@ -417,7 +417,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         }
         if(!passwordJPasswordField.getPassword().equals(null) )
         {
-            usernameJTextField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+            passwordJPasswordField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
         }
         return emptyValidationStatus;
     }

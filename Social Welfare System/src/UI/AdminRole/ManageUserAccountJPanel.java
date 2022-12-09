@@ -11,6 +11,9 @@ import Business.Human.Person;
 import Business.Role.Role;
 import Business.UserAccount.User_Account;
 import java.awt.CardLayout;
+import java.awt.Color;
+import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -25,6 +28,8 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
      */
     private JPanel container;
     private Enterprise enterprise;
+    boolean emptyValidationStatus = true;
+    boolean validationCheck = true;
 
     public ManageUserAccountJPanel(JPanel container, Enterprise enterprise) {
         initComponents();
@@ -92,7 +97,6 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        passwordJTextField = new javax.swing.JTextField();
         nameJTextField = new javax.swing.JTextField();
         roleJComboBox = new javax.swing.JComboBox();
         jLabel3 = new javax.swing.JLabel();
@@ -100,6 +104,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         organizationJComboBox = new javax.swing.JComboBox();
         createUserJButton = new javax.swing.JButton();
+        passwordJTextField = new javax.swing.JPasswordField();
         jLabel10 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -152,11 +157,8 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         jLabel4.setText("Role");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, -1, -1));
 
-        passwordJTextField.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jPanel2.add(passwordJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, 146, -1));
-
         nameJTextField.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jPanel2.add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 146, -1));
+        jPanel2.add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 140, -1));
 
         roleJComboBox.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         roleJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -204,6 +206,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
             }
         });
         jPanel2.add(createUserJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 320, 117, 38));
+        jPanel2.add(passwordJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, 140, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 300, 370));
 
@@ -263,16 +266,49 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void createUserJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createUserJButtonActionPerformed
-        String userName = nameJTextField.getText();
-        String password = passwordJTextField.getText();
-        String email =  "sojitradharti15@gmail.com";
-        Org organization = (Org) organizationJComboBox.getSelectedItem();
-        Person employee = (Person) employeeJComboBox.getSelectedItem();
-        Role role = (Role) roleJComboBox.getSelectedItem();
         
-        organization.getUserAccountDirectory().createUserAccount(userName, password, employee, role,email);
+        try{
+            if(EmpytyFieldValidation()){
+
+                if(RegexValidation()){
+                    String userName = nameJTextField.getText();
+                    String password = String.valueOf(passwordJTextField.getPassword());
+                    String email =  txtemail.getText();
+                    Org organization = (Org) organizationJComboBox.getSelectedItem();
+                    Person employee = (Person) employeeJComboBox.getSelectedItem();
+                    Role role = (Role) roleJComboBox.getSelectedItem();
         
-        popData();
+                    organization.getUserAccountDirectory().createUserAccount(userName, password, employee, role,email);
+        
+                    popData();
+//                  JOptionPane.showMessageDialog(this,"Admin created successfully!");
+                }
+                else{
+                    JOptionPane.showMessageDialog(this,"Please check details again");
+                    validationCheck=true;
+                }
+            }
+            else{
+                JOptionPane.showMessageDialog(this,"Please check details again");
+                emptyValidationStatus=true;
+            }
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this,"Enterprise admin not created, Try again");
+            System.out.println(e.toString());
+            emptyValidationStatus=true;
+        }
+        
+//        String userName = nameJTextField.getText();
+//        String password = passwordJTextField.getText();
+//        String email =  txtemail.getText();
+//        Org organization = (Org) organizationJComboBox.getSelectedItem();
+//        Person employee = (Person) employeeJComboBox.getSelectedItem();
+//        Role role = (Role) roleJComboBox.getSelectedItem();
+//        
+//        organization.getUserAccountDirectory().createUserAccount(userName, password, employee, role,email);
+//        
+//        popData();
     }//GEN-LAST:event_createUserJButtonActionPerformed
 
     private void backjButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backjButton1ActionPerformed
@@ -302,6 +338,66 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtemailActionPerformed
 
+    private boolean RegexValidation() {
+        if(!nameJTextField.getText().matches("^[a-zA-Z ]+$"))
+        {
+            nameJTextField.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            nameJTextField.setToolTipText("Please enter only characters and space.");
+            validationCheck=false;
+        }
+        
+        if(nameJTextField.getText().matches("^[a-zA-Z ]+$"))
+        {
+            nameJTextField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+        }
+        if(!txtemail.getText().matches("^[A-Za-z0-9+_.-]+@(.+)$"))
+        {
+            txtemail.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtemail.setToolTipText("Please enter a valid Email Address in the form abc@xyy.com");
+            validationCheck=false;
+        }
+        
+        if(txtemail.getText().matches("^[A-Za-z0-9+_.-]+@(.+)$"))
+        {
+            txtemail.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        return validationCheck;
+    }
+    
+    private boolean EmpytyFieldValidation() {
+        if(nameJTextField.getText().equals(null) || nameJTextField.getText().trim().isEmpty() )
+        {
+            nameJTextField.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            nameJTextField.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        if(!nameJTextField.getText().equals(null) && !nameJTextField.getText().trim().isEmpty() )
+        {
+            nameJTextField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        if(passwordJTextField.getPassword().equals(null) || passwordJTextField.getPassword().length == 0)
+        {
+            passwordJTextField.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            passwordJTextField.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        if(!passwordJTextField.getPassword().equals(null) )
+        {
+            passwordJTextField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        if(txtemail.getText().equals(null) || txtemail.getText().trim().isEmpty() )
+        {
+            txtemail.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtemail.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        if(!txtemail.getText().equals(null) && !txtemail.getText().trim().isEmpty() )
+        {
+            txtemail.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        return emptyValidationStatus;
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backjButton1;
     private javax.swing.JButton createUserJButton;
@@ -322,7 +418,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField nameJTextField;
     private javax.swing.JComboBox organizationJComboBox;
-    private javax.swing.JTextField passwordJTextField;
+    private javax.swing.JPasswordField passwordJTextField;
     private javax.swing.JComboBox roleJComboBox;
     private javax.swing.JTextField txtemail;
     private javax.swing.JTable userJTable;
