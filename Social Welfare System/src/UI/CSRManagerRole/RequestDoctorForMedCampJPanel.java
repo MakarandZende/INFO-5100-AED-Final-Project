@@ -14,7 +14,9 @@ import Business.WorkStream.MedicalCampRequest;
 import Business.WorkStream.MedicalCampWorkRequest;
 import UI.MedicalCampOrganizerRole.MedicalCampOrganizerWorkAreaJPanel;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Component;
+import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -31,7 +33,7 @@ public class RequestDoctorForMedCampJPanel extends javax.swing.JPanel {
     private Enterprise enterprise;
     private User_Account userAccount;
     private MedicalCampWorkRequest medcampWReq;
-    
+    boolean emptyValidationStatus = true;
     public RequestDoctorForMedCampJPanel(JPanel userProcessContainer, User_Account userAccount, Enterprise enterprise, MedicalCampWorkRequest medcampWReq) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
@@ -99,7 +101,10 @@ public class RequestDoctorForMedCampJPanel extends javax.swing.JPanel {
 
     private void requestDoctorJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestDoctorJButtonActionPerformed
         // TODO add your handling code here:
-        String message = messageJTextField.getText();
+        
+        try{
+            if(EmpytyFieldValidation()){
+                String message = messageJTextField.getText();
         
         if(medcampWReq.getStatus().equals("Pending from CSR")){
             medcampWReq.setStatus("Requested Doctor by CSR");
@@ -124,6 +129,43 @@ public class RequestDoctorForMedCampJPanel extends javax.swing.JPanel {
             return;
         }
         messageJTextField.setText("");
+            }
+            else{
+                JOptionPane.showMessageDialog(this,"Message cannot be empty");
+                emptyValidationStatus=true;
+            }
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this,"Message request not submitted, Try again");
+            System.out.println(e.toString());
+            emptyValidationStatus=true;
+        }
+        
+//        String message = messageJTextField.getText();
+//        
+//        if(medcampWReq.getStatus().equals("Pending from CSR")){
+//            medcampWReq.setStatus("Requested Doctor by CSR");
+//            medcampWReq.setMessage(message);
+//            System.out.println("user ac of mcr"+userAccount);
+//            medcampWReq.setSender(userAccount);
+//
+//            Org org = null;
+//            for (Org organization : enterprise.getOrganizationDirectory().getOrganizationList()){
+//                if (organization instanceof DoctorConsultantOrg){
+//                    org = organization;
+//                    break;
+//                }
+//            }
+//            if (org!=null){
+//                org.getWorkStream().getWorkRequestList().add(medcampWReq);
+//                userAccount.getWorkStream().getWorkRequestList().add(medcampWReq);
+//            }
+//        }
+//        else{
+//            JOptionPane.showMessageDialog(null, "If not Assigned then Already Completed!");
+//            return;
+//        }
+//        messageJTextField.setText("");
     }//GEN-LAST:event_requestDoctorJButtonActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
@@ -137,6 +179,19 @@ public class RequestDoctorForMedCampJPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_backJButtonActionPerformed
 
+    private boolean EmpytyFieldValidation() {
+        if(messageJTextField.getText().equals(null) || messageJTextField.getText().trim().isEmpty() )
+        {
+            messageJTextField.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            messageJTextField.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        if(!messageJTextField.getText().equals(null) && !messageJTextField.getText().trim().isEmpty() )
+        {
+            messageJTextField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        return emptyValidationStatus;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;
