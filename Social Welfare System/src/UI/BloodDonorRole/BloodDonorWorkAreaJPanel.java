@@ -50,19 +50,33 @@ public class BloodDonorWorkAreaJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         bloodRequestTable = new javax.swing.JTable();
         addBloodGrpDetails = new javax.swing.JButton();
+        refreshJButton1 = new javax.swing.JButton();
         assignJButton = new javax.swing.JButton();
         processJButton = new javax.swing.JButton();
-        refreshJButton1 = new javax.swing.JButton();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel1.setBackground(new java.awt.Color(239, 241, 228));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Blood Donor Work Area");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(253, 42, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, -1, -1));
+
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 80));
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel2.setBackground(new java.awt.Color(193, 212, 227));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         bloodRequestTable.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         bloodRequestTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -93,7 +107,7 @@ public class BloodDonorWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(bloodRequestTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(71, 115, 491, 142));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 491, 142));
 
         addBloodGrpDetails.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         addBloodGrpDetails.setText("Add Blood Details");
@@ -102,25 +116,7 @@ public class BloodDonorWorkAreaJPanel extends javax.swing.JPanel {
                 addBloodGrpDetailsActionPerformed(evt);
             }
         });
-        add(addBloodGrpDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, 180, 80));
-
-        assignJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        assignJButton.setText("Assign to me");
-        assignJButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                assignJButtonActionPerformed(evt);
-            }
-        });
-        add(assignJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(314, 297, 248, -1));
-
-        processJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        processJButton.setText("Process");
-        processJButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                processJButtonActionPerformed(evt);
-            }
-        });
-        add(processJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(314, 337, 248, -1));
+        jPanel2.add(addBloodGrpDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 180, 80));
 
         refreshJButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         refreshJButton1.setText("Refresh");
@@ -129,7 +125,29 @@ public class BloodDonorWorkAreaJPanel extends javax.swing.JPanel {
                 refreshJButton1ActionPerformed(evt);
             }
         });
-        add(refreshJButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(314, 263, 248, -1));
+        jPanel2.add(refreshJButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, 248, -1));
+
+        assignJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        assignJButton.setText("Assign to me");
+        assignJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                assignJButtonActionPerformed(evt);
+            }
+        });
+        jPanel2.add(assignJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 200, 248, -1));
+
+        processJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        processJButton.setText("Process");
+        processJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                processJButtonActionPerformed(evt);
+            }
+        });
+        jPanel2.add(processJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, 248, -1));
+
+        jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 50, 620, 430));
+
+        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1200, 710));
     }// </editor-fold>//GEN-END:initComponents
 
     public void populateTable(){
@@ -206,6 +224,9 @@ public class BloodDonorWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JButton assignJButton;
     private javax.swing.JTable bloodRequestTable;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton processJButton;
     private javax.swing.JButton refreshJButton1;
