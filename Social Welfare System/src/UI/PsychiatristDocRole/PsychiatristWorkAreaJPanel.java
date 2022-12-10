@@ -139,7 +139,7 @@ public class PsychiatristWorkAreaJPanel extends javax.swing.JPanel {
 
         jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 600, 220));
 
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 180, 690, 280));
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 180, 690, 280));
     }// </editor-fold>//GEN-END:initComponents
 
     private void assignJButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButton2ActionPerformed

@@ -40,26 +40,23 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        backJButton = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         resultJTextField = new javax.swing.JTextField();
         submitJButton1 = new javax.swing.JButton();
-        backJButton = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(204, 204, 255));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel1.setText("Result");
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        resultJTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-
-        submitJButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        submitJButton1.setText("Submit Result");
-        submitJButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submitJButton1ActionPerformed(evt);
-            }
-        });
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel2.setText("Process WorkRequest");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, -1, -1));
 
         backJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         backJButton.setText("<<Back");
@@ -68,42 +65,34 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
                 backJButtonActionPerformed(evt);
             }
         });
+        jPanel1.add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 103, -1));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel2.setText("Process WorkRequest");
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1050, 80));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(53, 53, 53)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(43, 43, 43)
-                            .addComponent(resultJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(submitJButton1))
-                        .addComponent(jLabel2))
-                    .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(378, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addComponent(jLabel2)
-                .addGap(36, 36, 36)
-                .addComponent(backJButton)
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(resultJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(submitJButton1))
-                .addContainerGap(409, Short.MAX_VALUE))
-        );
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setText("Result :");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 69, 30));
+
+        resultJTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jPanel2.add(resultJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, 201, 29));
+
+        submitJButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        submitJButton1.setText("Submit Result");
+        submitJButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitJButton1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(submitJButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, -1, -1));
+
+        jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 650, 110));
+
+        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1050, 510));
     }// </editor-fold>//GEN-END:initComponents
 
     private void submitJButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButton1ActionPerformed
@@ -170,6 +159,9 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
     private javax.swing.JButton backJButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JTextField resultJTextField;
     private javax.swing.JButton submitJButton1;
     // End of variables declaration//GEN-END:variables
