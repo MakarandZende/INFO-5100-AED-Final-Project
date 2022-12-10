@@ -69,15 +69,14 @@ public class PatientWorkAreaJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(193, 212, 227));
+        jPanel1.setBackground(new java.awt.Color(239, 241, 228));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnViewDiagnose.setBackground(new java.awt.Color(193, 212, 227));
+        btnViewDiagnose.setBackground(new java.awt.Color(239, 241, 228));
         btnViewDiagnose.setFont(new java.awt.Font("Century Gothic", 1, 11)); // NOI18N
-        btnViewDiagnose.setForeground(new java.awt.Color(255, 255, 255));
         btnViewDiagnose.setText("View Diagnose");
-        btnViewDiagnose.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        btnViewDiagnose.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnViewDiagnose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnViewDiagnoseActionPerformed(evt);
@@ -96,11 +95,10 @@ public class PatientWorkAreaJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(refreshTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 160, 60));
 
-        btnReqBookAppointment.setBackground(new java.awt.Color(193, 212, 227));
+        btnReqBookAppointment.setBackground(new java.awt.Color(239, 241, 228));
         btnReqBookAppointment.setFont(new java.awt.Font("Century Gothic", 1, 11)); // NOI18N
-        btnReqBookAppointment.setForeground(new java.awt.Color(255, 255, 255));
         btnReqBookAppointment.setText("Book Appointment");
-        btnReqBookAppointment.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        btnReqBookAppointment.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnReqBookAppointment.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnReqBookAppointmentActionPerformed(evt);
@@ -113,7 +111,7 @@ public class PatientWorkAreaJPanel extends javax.swing.JPanel {
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 790));
 
-        jPanel6.setBackground(new java.awt.Color(239, 241, 228));
+        jPanel6.setBackground(new java.awt.Color(193, 212, 227));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
@@ -125,7 +123,7 @@ public class PatientWorkAreaJPanel extends javax.swing.JPanel {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel3.setBackground(new java.awt.Color(193, 212, 227));
+        jPanel3.setBackground(new java.awt.Color(239, 241, 228));
         jPanel3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white));
         jPanel3.setForeground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
