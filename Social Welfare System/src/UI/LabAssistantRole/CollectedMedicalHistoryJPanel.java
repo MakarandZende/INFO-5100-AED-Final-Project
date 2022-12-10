@@ -12,7 +12,9 @@ import Business.UserAccount.User_Account;
 import Business.WorkStream.DocLabRequest;
 import Business.WorkStream.WorkRequest;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Component;
+import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -33,6 +35,7 @@ public class CollectedMedicalHistoryJPanel extends javax.swing.JPanel {
     String result = "";
     String solution = "";
     String type = "";
+    boolean emptyValidationStatus = true;
     // private EcoSystem system;
     // private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
 
@@ -112,6 +115,11 @@ public class CollectedMedicalHistoryJPanel extends javax.swing.JPanel {
         resBtn.setForeground(new java.awt.Color(255, 255, 255));
         resBtn.setText("Process & Send Result");
         resBtn.setBorder(null);
+        resBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                resBtnActionPerformed(evt);
+            }
+        });
         add(resBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 650, 198, 44));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 204));
@@ -212,6 +220,138 @@ public class CollectedMedicalHistoryJPanel extends javax.swing.JPanel {
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_backBtnActionPerformed
+
+    private void resBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resBtnActionPerformed
+        // TODO add your handling code here:
+        
+        try{
+            if(EmpytyFieldValidation()){
+
+                if (request.isDrug_history() || request.isAlcohol_history()
+                || request.isHr_risk() || request.isTemp_risk()
+                || (request.isOxycodone_taken() && request.isOxycodone_risk())
+                || (request.isFantanyl_taken() && request.isFantanyl_risk())
+                || (request.isBupre_taken() && request.isBupre_risk())
+                || (request.isMethadone_taken() && request.isMethadone_risk())
+                || (request.isOxymorphone_taken() && request.isOxymorphone_risk())
+                || (request.isInjection_checked()) || (request.isIntoxication_checked())
+                || request.isWithdrawal_checked() || request.isDisease_checked()) {
+            type = "Overdose [Pharmacotherapist]";
+            result = result + "This is an Opioid Overdose case.";
+            solution = "Patient is recommended for Pharmacotherapist.";
+            request.setStatus("Lab req done");
+
+        } // Send to Psychiatrist when the below criteria is true 
+        else if (request.isDepression_history() || request.isAnxiety_history()
+                || request.isDisrupt_history() || request.isBp_risk() || request.isResp_risk()) {
+            type = "Overdose [Psychiatrist]";
+            result = result + "This is an Opioid Overdose case.";
+            solution = "Patient is recommended for Psychiatrist.";
+            request.setStatus("Lab req done");
+
+        } // If not any above criteria then patient can be treated medically 
+        else {
+            type = "Not Overdose [Medical Treatment]";
+            result = result + "This is not an Opioid Overdose case." + "\n"
+                    + "Patient is recommended for medical treatment .";
+            solution = "Patient is recommended for medical treatm.";
+            request.setStatus("Lab req done");
+
+        }
+
+        txtResult.setText(result);
+        /*-----------------------*/
+        int b = request.getHashcode();
+        System.out.println("b" + b);
+        //Dharati
+        Enterprise inEnterprise = null;
+        Org inOrganization = null;
+        NetworkSystem inNetwork = null;
+        for (Org organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
+            if (organization.getName().equals("Doctor Organization")) {
+                for (WorkRequest work : organization.getWorkStream().getWorkRequestList()) {
+                    //                      System.out.println(work.getHashcode());
+                    if (work.getHashcode() == b) {
+                        work.setStatus("Lab req done");
+                        work.setLabresult(result);
+                        work.setResulttype(type);
+                        work.setSolution(solution);
+                    }
+
+                }
+            }
+        }
+
+        JOptionPane.showMessageDialog(null, "Results Sent Successfully");
+            }
+            else{
+                JOptionPane.showMessageDialog(this,"Lab Assessment result cannot be empty");
+                emptyValidationStatus=true;
+            }
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this,"Try again");
+            System.out.println(e.toString());
+            emptyValidationStatus=true;
+        }
+        
+//        if (request.isDrug_history() || request.isAlcohol_history()
+//                || request.isHr_risk() || request.isTemp_risk()
+//                || (request.isOxycodone_taken() && request.isOxycodone_risk())
+//                || (request.isFantanyl_taken() && request.isFantanyl_risk())
+//                || (request.isBupre_taken() && request.isBupre_risk())
+//                || (request.isMethadone_taken() && request.isMethadone_risk())
+//                || (request.isOxymorphone_taken() && request.isOxymorphone_risk())
+//                || (request.isInjection_checked()) || (request.isIntoxication_checked())
+//                || request.isWithdrawal_checked() || request.isDisease_checked()) {
+//            type = "Overdose [Pharmacotherapist]";
+//            result = result + "This is an Opioid Overdose case.";
+//            solution = "Patient is recommended for Pharmacotherapist.";
+//            request.setStatus("Lab req done");
+//
+//        } // Send to Psychiatrist when the below criteria is true 
+//        else if (request.isDepression_history() || request.isAnxiety_history()
+//                || request.isDisrupt_history() || request.isBp_risk() || request.isResp_risk()) {
+//            type = "Overdose [Psychiatrist]";
+//            result = result + "This is an Opioid Overdose case.";
+//            solution = "Patient is recommended for Psychiatrist.";
+//            request.setStatus("Lab req done");
+//
+//        } // If not any above criteria then patient can be treated medically 
+//        else {
+//            type = "Not Overdose [Medical Treatment]";
+//            result = result + "This is not an Opioid Overdose case." + "\n"
+//                    + "Patient is recommended for medical treatment .";
+//            solution = "Patient is recommended for medical treatm.";
+//            request.setStatus("Lab req done");
+//
+//        }
+//
+//        txtResult.setText(result);
+//        /*-----------------------*/
+//        int b = request.getHashcode();
+//        System.out.println("b" + b);
+//        //Dharati
+//        Enterprise inEnterprise = null;
+//        Org inOrganization = null;
+//        NetworkSystem inNetwork = null;
+//        for (Org organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
+//            if (organization.getName().equals("Doctor Organization")) {
+//                for (WorkRequest work : organization.getWorkStream().getWorkRequestList()) {
+//                    //                      System.out.println(work.getHashcode());
+//                    if (work.getHashcode() == b) {
+//                        work.setStatus("Lab req done");
+//                        work.setLabresult(result);
+//                        work.setResulttype(type);
+//                        work.setSolution(solution);
+//                    }
+//
+//                }
+//            }
+//        }
+//
+//        JOptionPane.showMessageDialog(null, "Result Sent Successfully");
+    }//GEN-LAST:event_resBtnActionPerformed
     public void populateMedicalHistory() {
 
         txtName.setText(request.getName());
@@ -296,6 +436,20 @@ public class CollectedMedicalHistoryJPanel extends javax.swing.JPanel {
 
     }
 
+    private boolean EmpytyFieldValidation() {
+        if(txtResult.getText().equals(null) || txtResult.getText().trim().isEmpty() )
+        {
+            txtResult.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtResult.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        if(!txtResult.getText().equals(null) && !txtResult.getText().trim().isEmpty() )
+        {
+            txtResult.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        return emptyValidationStatus;
+        
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backBtn;

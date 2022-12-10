@@ -7,7 +7,9 @@ package UI.VolunteerRole;
 
 import Business.WorkStream.NgoMedCampWorkRequest;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Component;
+import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -22,6 +24,7 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
      */
     JPanel userProcessContainer;
     NgoMedCampWorkRequest request;
+    boolean emptyValidationStatus = true;
     public ProcessWorkRequestJPanel(JPanel userProcessContainer, NgoMedCampWorkRequest request) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
@@ -104,16 +107,37 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void submitJButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButton1ActionPerformed
-        if(request.getHmcwr().getStatus().equals("Completed")){
+        
+        try{
+            if(EmpytyFieldValidation()){
+
+                if(request.getHmcwr().getStatus().equals("Completed")){
             request.setTestResult(resultJTextField.getText());
             request.setStatus("Completed");
-        }
-        else{
+            }
+            }
+            else{
             JOptionPane.showMessageDialog(null, "Cannot Process Request Yet");
             resultJTextField.setText("");
             return;
         }
-        resultJTextField.setText("");
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this,"Try again");
+            System.out.println(e.toString());
+            emptyValidationStatus=true;
+        }
+        
+//        if(request.getHmcwr().getStatus().equals("Completed")){
+//            request.setTestResult(resultJTextField.getText());
+//            request.setStatus("Completed");
+//        }
+//        else{
+//            JOptionPane.showMessageDialog(null, "Cannot Process Request Yet");
+//            resultJTextField.setText("");
+//            return;
+//        }
+//        resultJTextField.setText("");
     }//GEN-LAST:event_submitJButton1ActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
@@ -127,6 +151,20 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_backJButtonActionPerformed
 
+    private boolean EmpytyFieldValidation() {
+        if(resultJTextField.getText().equals(null) || resultJTextField.getText().trim().isEmpty() )
+        {
+            resultJTextField.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            resultJTextField.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        if(!resultJTextField.getText().equals(null) && !resultJTextField.getText().trim().isEmpty() )
+        {
+            resultJTextField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        return emptyValidationStatus;
+        
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;
