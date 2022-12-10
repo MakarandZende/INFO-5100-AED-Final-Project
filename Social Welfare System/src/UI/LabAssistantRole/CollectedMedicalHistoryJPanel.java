@@ -276,7 +276,7 @@ public class CollectedMedicalHistoryJPanel extends javax.swing.JPanel {
         /*-----------------------*/
         int b = request.getHashcode();
         System.out.println("b" + b);
-        //Dharati
+        
         Enterprise inEnterprise = null;
         Org inOrganization = null;
         NetworkSystem inNetwork = null;

@@ -207,7 +207,7 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
         int selectedRow = labWorkRequestJTable.getSelectedRow();
 
         if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(null, "Please select a lab request first", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Please select a lab request first");
             return;
         }
 

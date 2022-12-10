@@ -7,7 +7,7 @@ package UI.PhysiotherapistDocRole;
 
 import Business.Enterprises.Enterprise;
 import Business.Network.NetworkSystem;
-import Business.Organization.PhysiotherapistOrg;
+import Business.Organization.PharmacotherapistOrg;
 import Business.UserAccount.User_Account;
 import Business.WorkStream.WorkRequest;
 import javax.swing.JOptionPane;
@@ -26,13 +26,13 @@ public class treatJPanel extends javax.swing.JPanel {
 
     JPanel userProcessContainer;
     User_Account userAccount;
-    PhysiotherapistOrg organization;
+    PharmacotherapistOrg organization;
     Enterprise enterprise;
     NetworkSystem network; 
     WorkRequest request;
     String treatment_methods[] = {"Trauma-Informed Therapy", "Diet, Nutrition , & Wellness Therapy", "Group Therapy", "Individual Therapy","Come for Cognitive Behavioral Therapy"};
 
-    treatJPanel(JPanel userProcessContainer, User_Account userAccount, PhysiotherapistOrg organization, Enterprise enterprise, NetworkSystem network, WorkRequest request) {
+    treatJPanel(JPanel userProcessContainer, User_Account userAccount, PharmacotherapistOrg organization, Enterprise enterprise, NetworkSystem network, WorkRequest request) {
        // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     initComponents();
     this.userProcessContainer = userProcessContainer;

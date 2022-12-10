@@ -183,9 +183,21 @@ public class BloodDonorWorkAreaJPanel extends javax.swing.JPanel {
 
         WorkRequest request = (WorkRequest)bloodRequestTable.getValueAt(selectedRow, 0);
         if(request.getReceiver() == null){
-            request.setReceiver(userAccount);
-            request.setStatus("Pending");
-            populateTable();
+            if( ((BloodDonationWorkRequest)request).getBloodGroup() == userAccount.getHuman().getBloodGroup() &&
+                    ((BloodDonationWorkRequest)request).getBloodGroup() != null ){
+                request.setReceiver(userAccount);
+                request.setStatus("Pending");
+                populateTable();
+            }
+            else if (userAccount.getHuman().getBloodGroup() == null){
+                JOptionPane.showMessageDialog(null,"Add donor details first");
+                return;
+            }
+            else if(((BloodDonationWorkRequest)request).getBloodGroup() != userAccount.getHuman().getBloodGroup()){
+                JOptionPane.showMessageDialog(null,"Your Blood group does not match requested type! Please try with another request");
+                return;
+            }
+            
         }
         else{
             JOptionPane.showMessageDialog(null, "Already Assigned");

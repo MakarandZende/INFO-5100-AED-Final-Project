@@ -9,7 +9,7 @@ import Business.Enterprises.RehabEnterprises;
 import Business.Network.NetworkSystem;
 import Business.Organization.DoctorConsultantOrg;
 import Business.Organization.Org;
-import Business.Organization.PhysiotherapistOrg;
+import Business.Organization.PharmacotherapistOrg;
 import Business.Organization.PsychiatristOrg;
 import Business.UserAccount.User_Account;
 import Business.WorkStream.WorkRequest;
@@ -277,6 +277,7 @@ public class ViewLabResultcases extends javax.swing.JPanel {
     }//GEN-LAST:event_txtResultTypeActionPerformed
 
     public void sendMail(String emailId)
+            
     {
     final String username = "code.crunch.sih@gmail.com";
 		final String password = "pksqhbdswlwsllfr";
@@ -377,7 +378,7 @@ public class ViewLabResultcases extends javax.swing.JPanel {
         for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()){
             if (enterprise instanceof RehabEnterprises){
                 for (Org organization : enterprise.getOrganizationDirectory().getOrganizationList()){
-                    if (organization instanceof PhysiotherapistOrg){
+                    if (organization instanceof PharmacotherapistOrg){
                         org = organization;
 
                     }

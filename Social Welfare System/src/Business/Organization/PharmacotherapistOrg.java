@@ -6,7 +6,7 @@
 package Business.Organization;
 
 import Business.Role.AdminmainRole;
-import Business.Role.PhysioTherapistRole;
+import Business.Role.PharmacotherapistRole;
 import Business.Role.Role;
 import java.util.ArrayList;
 
@@ -14,15 +14,15 @@ import java.util.ArrayList;
  *
  * @author Pranali
  */
-public class PhysiotherapistOrg extends Org {
-       public PhysiotherapistOrg() {
-        super(Org.Type.Physiotherapist.getValue());
+public class PharmacotherapistOrg extends Org {
+       public PharmacotherapistOrg() {
+        super(Org.Type.Pharmacotherapist.getValue());
     }
 
     @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList();
-        roles.add(new PhysioTherapistRole());
+        roles.add(new PharmacotherapistRole());
         return roles;
     } 
 }
