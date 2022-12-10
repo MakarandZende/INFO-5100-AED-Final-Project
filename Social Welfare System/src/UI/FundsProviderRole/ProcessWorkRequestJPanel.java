@@ -171,11 +171,11 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
         if(!amountTxtField.getText().matches("^[0-9]{15}$"))
         {
             amountTxtField.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
-            amountTxtField.setToolTipText("Please enter a 10 digit number");
+            amountTxtField.setToolTipText("Please enter a valid amount");
             validationCheck=false;
         }
         
-        if(amountTxtField.getText().matches("^[0-9]{10}$"))
+        if(amountTxtField.getText().matches("^[0-9]{15}$"))
         {
             amountTxtField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
         }

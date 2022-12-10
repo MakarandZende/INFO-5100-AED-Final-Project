@@ -11,7 +11,10 @@ import Business.Organization.Org;
 import Business.UserAccount.User_Account;
 import Business.WorkStream.FundsWorkRequest;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Component;
+import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -26,6 +29,8 @@ public class RequestFundsJPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private Enterprise enterprise;
     private User_Account userAccount;
+    boolean emptyValidationStatus = true;
+    boolean validationCheck = true;
 
     public RequestFundsJPanel(JPanel userProcessContainer, User_Account userAccount, Enterprise enterprise) {
         initComponents();
@@ -149,7 +154,11 @@ public class RequestFundsJPanel extends javax.swing.JPanel {
 
     private void requestTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestTestJButtonActionPerformed
 
-        String message = messageJTextField.getText();
+        try{
+            if(EmpytyFieldValidation()){
+
+                if(RegexValidation()){
+                    String message = messageJTextField.getText();
         int amount = Integer.parseInt(amountTxtField.getText());
         FundsWorkRequest request = new FundsWorkRequest();
         request.setMessage(message);
@@ -170,6 +179,44 @@ public class RequestFundsJPanel extends javax.swing.JPanel {
         }
         messageJTextField.setText("");
         amountTxtField.setText("");
+                }
+                else{
+                    JOptionPane.showMessageDialog(this,"Invalid details");
+                    validationCheck=true;
+                }
+            }
+            else{
+                JOptionPane.showMessageDialog(this,"Invalid details");
+                emptyValidationStatus=true;
+            }
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this,"Request not created, Try again");
+            System.out.println(e.toString());
+            emptyValidationStatus=true;
+        }
+        
+//        String message = messageJTextField.getText();
+//        int amount = Integer.parseInt(amountTxtField.getText());
+//        FundsWorkRequest request = new FundsWorkRequest();
+//        request.setMessage(message);
+//        request.setSender(userAccount);
+//        request.setStatus("Sent");
+//        request.setAmount(amount);
+//
+//        Org org = null;
+//        for (Org organization : enterprise.getOrganizationDirectory().getOrganizationList()){
+//            if (organization instanceof FundsProviderOrganization){
+//                org = organization;
+//                break;
+//            }
+//        }
+//        if (org!=null){
+//            org.getWorkStream().getWorkRequestList().add(request);
+//            userAccount.getWorkStream().getWorkRequestList().add(request);
+//        }
+//        messageJTextField.setText("");
+//        amountTxtField.setText("");
     }//GEN-LAST:event_requestTestJButtonActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
@@ -184,6 +231,44 @@ public class RequestFundsJPanel extends javax.swing.JPanel {
 
     }//GEN-LAST:event_backJButtonActionPerformed
 
+    private boolean RegexValidation() {
+        if(!amountTxtField.getText().matches("^[0-9]{15}$"))
+        {
+            amountTxtField.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            amountTxtField.setToolTipText("Please enter a valid amount");
+            validationCheck=false;
+        }
+        
+        if(amountTxtField.getText().matches("^[0-9]{15}$"))
+        {
+            amountTxtField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        return validationCheck;
+    }
+    
+    private boolean EmpytyFieldValidation() {
+        if(messageJTextField.getText().equals(null) || messageJTextField.getText().trim().isEmpty() )
+        {
+            messageJTextField.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            messageJTextField.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        if(!messageJTextField.getText().equals(null) && !messageJTextField.getText().trim().isEmpty() )
+        {
+            messageJTextField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        if(amountTxtField.getText().equals(null) || amountTxtField.getText().trim().isEmpty() )
+        {
+            amountTxtField.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            amountTxtField.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        if(!amountTxtField.getText().equals(null) && !amountTxtField.getText().trim().isEmpty() )
+        {
+            amountTxtField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        return emptyValidationStatus;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField amountTxtField;

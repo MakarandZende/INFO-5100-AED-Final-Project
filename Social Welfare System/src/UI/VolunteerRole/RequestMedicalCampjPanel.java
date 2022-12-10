@@ -20,6 +20,8 @@ import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import UI.CSRManagerRole.CSRManagerWorkAreajPanel;
+import java.awt.Color;
+import javax.swing.BorderFactory;
 
 /**
  *
@@ -34,6 +36,7 @@ public class RequestMedicalCampjPanel extends javax.swing.JPanel {
     private Enterprise enterprise;
     private User_Account userAccount;
     private Ecosystem business;
+    boolean emptyValidationStatus = true;
     public RequestMedicalCampjPanel(JPanel userProcessContainer, User_Account userAccount, Enterprise enterprise, Ecosystem business) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
@@ -142,7 +145,10 @@ public class RequestMedicalCampjPanel extends javax.swing.JPanel {
 
     private void requestTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestTestJButtonActionPerformed
 
-        String message = messageJTextField.getText();
+        try{
+            if(EmpytyFieldValidation()){
+
+               String message = messageJTextField.getText();
         
         if(message.isEmpty()){
             JOptionPane.showMessageDialog(null, "Please enter text");
@@ -174,6 +180,50 @@ public class RequestMedicalCampjPanel extends javax.swing.JPanel {
             userAccount.getWorkStream().getWorkRequestList().add(request);
         }
         messageJTextField.setText("");
+            }
+            else{
+                JOptionPane.showMessageDialog(this,"Please check details again");
+                emptyValidationStatus=true;
+            }
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this,"Request not created, Try again");
+            System.out.println(e.toString());
+            emptyValidationStatus=true;
+        }
+        
+//        String message = messageJTextField.getText();
+//        
+//        if(message.isEmpty()){
+//            JOptionPane.showMessageDialog(null, "Please enter text");
+//            return;
+//        }
+//        
+//        NgoMedCampWorkRequest request = new NgoMedCampWorkRequest();
+//        request.setMessage(message);
+//        request.setSender(userAccount);
+//        request.setStatus("Sent");
+//
+//        Org org = null;
+//        for(NetworkSystem network: business.getNetworkList()){
+//            for(Enterprise enterprise: network.getEnterpriseDirectory().getEnterpriseList()){
+//                if(enterprise instanceof NGOEnterprise){
+//                    for (Org organization : enterprise.getOrganizationDirectory().getOrganizationList()){
+//                        // raising req to volunteer organization 
+//                        if (organization instanceof VolunteerOrganization){
+//                            org = organization;
+//                            break;
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//        if (org!=null){
+//            // adding req on user account of refugee camp manager
+//            org.getWorkStream().getWorkRequestList().add(request);
+//            userAccount.getWorkStream().getWorkRequestList().add(request);
+//        }
+//        messageJTextField.setText("");
     }//GEN-LAST:event_requestTestJButtonActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
@@ -187,6 +237,19 @@ public class RequestMedicalCampjPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_backJButtonActionPerformed
 
+    private boolean EmpytyFieldValidation() {
+        if(messageJTextField.getText().equals(null) || messageJTextField.getText().trim().isEmpty() )
+        {
+            messageJTextField.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            messageJTextField.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        if(!messageJTextField.getText().equals(null) && !messageJTextField.getText().trim().isEmpty() )
+        {
+            messageJTextField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        return emptyValidationStatus;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;
