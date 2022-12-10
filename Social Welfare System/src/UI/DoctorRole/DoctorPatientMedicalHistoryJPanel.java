@@ -519,7 +519,153 @@ public class DoctorPatientMedicalHistoryJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        DocLabRequest labr = new DocLabRequest();
+        labr.setSender(useraccount);
+
+        labr.setMessage("Lab Request");
+        labr.setStatus("Med Hist Collected For Lab");
+        request.setStatus("Med Hist Collected For Lab");
+         request.setDoc_med_history("");
+
+        //Setting patient's general information 
+        labr.setName(txtpatientname.getText());
+        labr.setGender((String)genderCombo.getSelectedItem());
+        labr.setAge((Integer)ageCombo.getSelectedItem());
+        
+        //Setting patients medical history
+        labr.setDrug_history(drugChk.isSelected());
+        labr.setAlcohol_history(alcoholChk.isSelected());
+        labr.setDepression_history(depressionChk.isSelected());
+        labr.setAnxiety_history(anxietyChk.isSelected());
+        labr.setDisrupt_history(disruptSocialChk.isSelected());
+        
+       
+        if((String)heartRateCombo.getSelectedItem() == "101bpm-150bpm")
+        {
+            labr.setHr_risk(true);
+        }
+        else
+        {
+            labr.setHr_risk(false);
+        }
+        
+        if((String)tempCombo.getSelectedItem() == ">99.5 or 100.9°F")
+        {
+            labr.setTemp_risk(true);
+        }
+        else
+        {
+            labr.setTemp_risk(false);
+        }
+        
+        if((String)bpCombo.getSelectedItem() == ">120 bp" ||
+            (String)bpCombo.getSelectedItem() == "<120 bp")    
+        {
+            labr.setBp_risk(true);
+        }
+        else
+        {
+            labr.setBp_risk(false);
+        }
+        
+        if((String)respCombo.getSelectedItem() == "> 20 bpm" ||
+           (String)respCombo.getSelectedItem() == "< 12 bpm")         
+        {
+            labr.setResp_risk(true);
+        }
+        else
+        {
+            labr.setResp_risk(false);
+        }
+        
+        //Setting patient's medicine consumption flag
+        labr.setOxycodone_taken(oxycChk.isSelected());
+        labr.setFantanyl_taken(fenChk.isSelected());
+        labr.setBupre_taken(bupChk.isSelected());
+        labr.setMethadone_taken(metChk.isSelected());
+        labr.setOxymorphone_taken(oxymChk.isSelected());
+        
+        //Setting patient's medicine consumption dose risk
+        if((String)oxycCombo.getSelectedItem() == "40-80 mg/mL")
+        {
+            labr.setOxycodone_risk(true);
+        }
+        else
+        {
+            labr.setOxycodone_risk(false);
+        }
+        if((String)fenCombo.getSelectedItem() == "40-80 mg/mL")
+        {
+            labr.setFantanyl_risk(true);
+        }
+        else
+        {
+            labr.setFantanyl_risk(false);
+        }
+        
+        if((String)bupCombo.getSelectedItem() == "40-80 mg/mL")
+        {
+            labr.setBupre_risk(true);
+        }
+        else
+        {
+            labr.setBupre_risk(false);
+        }
+        
+        if((String)metCombo.getSelectedItem() == "40-80 mg/mL")
+        {
+            labr.setMethadone_risk(true);
+        }
+        else
+        {
+            labr.setMethadone_risk(false);
+        }
+        
+        if((String)oxymCombo.getSelectedItem() == "40-80 mg/mL")
+        {
+            labr.setOxymorphone_risk(true);
+        }
+        else
+        {
+            labr.setOxymorphone_risk(false);
+        }
+        
+        //Setting patient's additional consumption flag
+        labr.setInjection_checked(injChk.isSelected());
+        labr.setIntoxication_checked(intoChk.isSelected());
+        labr.setWithdrawal_checked(withChk.isSelected());
+        labr.setDisease_checked(livChk.isSelected());
+        
+        
+        //Setting patient's additional consumption flag
+        labr.setInjection_type((String)injCombo.getSelectedItem());
+        labr.setIntoxication_type((String)intoCombo.getSelectedItem());
+        labr.setWithdrawal_type((String)withCombo.getSelectedItem());
+        labr.setDisease_type((String)livCombo.getSelectedItem());
+        
+    //    Doctor_LabRequest labr = new Doctor_LabRequest();
+      Org org = null;
+        for (Org organization : enterprise.getOrganizationDirectory().getOrganizationList()){
+            if (organization instanceof LaboratoryOrg){
+                org = organization;
+                //testing
+                System.out.println(request.hashCode());
+              //  org.setHashcode(request.hashCode());
+                break;
+            }
+        }
+        if (org!=null){
+              int a = request.hashCode();
+              request.setHashcode(a);//patient hashcode from db
+        System.out.println(a);
+        labr.setHashcode(a);
+            org.getWorkStream().getWorkRequestList().add(labr);
+            useraccount.getWorkStream().getWorkRequestList().add(labr);
+        }
+    
+         JOptionPane.showMessageDialog(null, "Report Submitted Successfully");
+               
+            // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private boolean RegexValidation() {
