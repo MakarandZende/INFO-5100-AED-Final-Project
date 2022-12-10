@@ -339,17 +339,6 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_txtemailActionPerformed
 
     private boolean RegexValidation() {
-        if(!nameJTextField.getText().matches("^[a-zA-Z ]+$"))
-        {
-            nameJTextField.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
-            nameJTextField.setToolTipText("Please enter only characters and space.");
-            validationCheck=false;
-        }
-        
-        if(nameJTextField.getText().matches("^[a-zA-Z ]+$"))
-        {
-            nameJTextField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
-        }
         if(!txtemail.getText().matches("^[A-Za-z0-9+_.-]+@(.+)$"))
         {
             txtemail.setBorder(BorderFactory.createLineBorder(Color.RED, 1));

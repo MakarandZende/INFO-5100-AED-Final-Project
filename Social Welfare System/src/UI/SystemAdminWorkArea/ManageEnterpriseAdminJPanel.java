@@ -141,6 +141,11 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         jLabel2.setText("Username");
 
         usernameJTextField.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        usernameJTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                usernameJTextFieldActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -372,6 +377,10 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
 //        User_Account account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new AdminmainRole(),"");
 //        populateTable();
     }//GEN-LAST:event_submitJButtonActionPerformed
+
+    private void usernameJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameJTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_usernameJTextFieldActionPerformed
 
     private boolean RegexValidation() {
         if(!nameJTextField.getText().matches("^[a-zA-Z ]+$"))
