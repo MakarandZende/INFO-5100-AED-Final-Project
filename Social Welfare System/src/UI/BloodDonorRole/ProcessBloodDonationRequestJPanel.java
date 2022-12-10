@@ -10,7 +10,10 @@ import UI.FundsProviderRole.*;
 import Business.WorkStream.FundsWorkRequest;
 import Business.WorkStream.FundsWorkRequest;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Component;
+import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -24,6 +27,7 @@ public class ProcessBloodDonationRequestJPanel extends javax.swing.JPanel {
      */
     JPanel userProcessContainer;
     BloodDonationWorkRequest request;
+    boolean emptyValidationStatus = true;
     ProcessBloodDonationRequestJPanel(JPanel userProcessContainer, BloodDonationWorkRequest request) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
@@ -96,9 +100,25 @@ public class ProcessBloodDonationRequestJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
-        request.setDonorComments(resultJTextField.getText());
-        request.setStatus("Completed");
-        resultJTextField.setText("");
+        
+        try{
+            if(EmpytyFieldValidation()){
+
+                request.setDonorComments(resultJTextField.getText());
+                request.setStatus("Completed");
+                resultJTextField.setText("");
+            }
+            else{
+                JOptionPane.showMessageDialog(this,"Result cannot be empty");
+                emptyValidationStatus=true;
+            }
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this,"Result not submitted, Try again");
+            System.out.println(e.toString());
+            emptyValidationStatus=true;
+        }
+        
     }//GEN-LAST:event_submitJButtonActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
@@ -112,6 +132,19 @@ public class ProcessBloodDonationRequestJPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_backJButtonActionPerformed
 
+    private boolean EmpytyFieldValidation() {
+        if(resultJTextField.getText().equals(null) || resultJTextField.getText().trim().isEmpty() )
+        {
+            resultJTextField.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            resultJTextField.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        if(!resultJTextField.getText().equals(null) && !resultJTextField.getText().trim().isEmpty() )
+        {
+            resultJTextField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        return emptyValidationStatus;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;
