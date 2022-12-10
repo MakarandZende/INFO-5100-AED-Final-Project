@@ -174,6 +174,7 @@ public class RequestBloodFormJPanel extends javax.swing.JPanel {
         if (org!=null){
             org.getWorkStream().getWorkRequestList().add(request);
             userAccount.getWorkStream().getWorkRequestList().add(request);
+            JOptionPane.showMessageDialog(null,"Blood Request sent successfully");
         }
         messageJTextField.setText("");
             }

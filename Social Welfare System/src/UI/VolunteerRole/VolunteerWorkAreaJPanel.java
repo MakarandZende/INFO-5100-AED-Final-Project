@@ -78,7 +78,6 @@ public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
         workRequestJTable = new javax.swing.JTable();
         requestFundJButton = new javax.swing.JButton();
         refreshTestJButton = new javax.swing.JButton();
-        resReqBtn = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
 
@@ -146,15 +145,6 @@ public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
         });
         jPanel2.add(refreshTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 200, 161, -1));
 
-        resReqBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        resReqBtn.setText("Resolve Request");
-        resReqBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                resReqBtnActionPerformed(evt);
-            }
-        });
-        jPanel2.add(resReqBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 240, -1, -1));
-
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel3.setText("Total Funds Available");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 180, 40));
@@ -178,14 +168,6 @@ public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
 
     }//GEN-LAST:event_refreshTestJButtonActionPerformed
 
-    private void resReqBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resReqBtnActionPerformed
-        // TODO add your handling code here:
-        // go to fundRequest Page
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        userProcessContainer.add("ResolveRequestsJPanel", new ResolveRequestsJPanel(userProcessContainer, userAccount,organization, enterprise, business));
-        layout.next(userProcessContainer);
-    }//GEN-LAST:event_resReqBtnActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
@@ -196,7 +178,6 @@ public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton refreshTestJButton;
     private javax.swing.JButton requestFundJButton;
-    private javax.swing.JButton resReqBtn;
     private javax.swing.JLabel totalFundsTxt;
     private javax.swing.JTable workRequestJTable;
     // End of variables declaration//GEN-END:variables
