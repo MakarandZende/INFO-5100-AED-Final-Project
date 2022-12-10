@@ -8,7 +8,10 @@ package UI.FundsProviderRole;
 import Business.WorkStream.FundsWorkRequest;
 import Business.WorkStream.FundsWorkRequest;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Component;
+import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -22,6 +25,8 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
      */
     JPanel userProcessContainer;
     FundsWorkRequest request;
+    boolean emptyValidationStatus = true;
+    boolean validationCheck = true;
     ProcessWorkRequestJPanel(JPanel userProcessContainer, FundsWorkRequest request) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
@@ -122,11 +127,33 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
-        request.setTestResult(resultJTextField.getText());
-        request.setAmountFunded(Integer.parseInt(amountTxtField.getText()));
-        request.setStatus("Completed");
-        resultJTextField.setText("");
-        amountTxtField.setText("");
+        
+        try{
+            if(EmpytyFieldValidation()){
+                if(RegexValidation()){
+                    request.setTestResult(resultJTextField.getText());
+                    request.setAmountFunded(Integer.parseInt(amountTxtField.getText()));
+                    request.setStatus("Completed");
+                    resultJTextField.setText("");
+                    amountTxtField.setText("");
+                }
+            }
+            else{
+                JOptionPane.showMessageDialog(this,"Result cannot be empty");
+                emptyValidationStatus=true;
+            }
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this,"Result not submitted, Try again");
+            System.out.println(e.toString());
+            emptyValidationStatus=true;
+        }
+        
+//        request.setTestResult(resultJTextField.getText());
+//        request.setAmountFunded(Integer.parseInt(amountTxtField.getText()));
+//        request.setStatus("Completed");
+//        resultJTextField.setText("");
+//        amountTxtField.setText("");
     }//GEN-LAST:event_submitJButtonActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
@@ -140,6 +167,44 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_backJButtonActionPerformed
 
+    private boolean RegexValidation() {
+        if(!amountTxtField.getText().matches("^[0-9]{15}$"))
+        {
+            amountTxtField.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            amountTxtField.setToolTipText("Please enter a 10 digit number");
+            validationCheck=false;
+        }
+        
+        if(amountTxtField.getText().matches("^[0-9]{10}$"))
+        {
+            amountTxtField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        return validationCheck;
+    }
+    
+    private boolean EmpytyFieldValidation() {
+        if(resultJTextField.getText().equals(null) || resultJTextField.getText().trim().isEmpty() )
+        {
+            resultJTextField.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            resultJTextField.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        if(!resultJTextField.getText().equals(null) && !resultJTextField.getText().trim().isEmpty() )
+        {
+            resultJTextField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        if(amountTxtField.getText().equals(null) || amountTxtField.getText().trim().isEmpty() )
+        {
+            amountTxtField.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            amountTxtField.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        if(!amountTxtField.getText().equals(null) && !amountTxtField.getText().trim().isEmpty() )
+        {
+            amountTxtField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        return emptyValidationStatus;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField amountTxtField;

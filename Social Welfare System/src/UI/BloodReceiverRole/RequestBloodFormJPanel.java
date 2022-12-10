@@ -11,7 +11,10 @@ import Business.Organization.Org;
 import Business.UserAccount.User_Account;
 import Business.WorkStream.BloodDonationWorkRequest;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Component;
+import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -26,6 +29,7 @@ public class RequestBloodFormJPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private Enterprise enterprise;
     private User_Account userAccount;
+    boolean emptyValidationStatus = true;
     public RequestBloodFormJPanel(JPanel userProcessContainer, User_Account userAccount, Enterprise enterprise) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
@@ -150,13 +154,15 @@ public class RequestBloodFormJPanel extends javax.swing.JPanel {
 
     private void requestTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestTestJButtonActionPerformed
 
-        String message = messageJTextField.getText();
-        BloodGroup bloodGroup = BloodGroup.valueOf(bloodGroupCombobox.getSelectedItem().toString());
-        BloodDonationWorkRequest request = new BloodDonationWorkRequest();
-        request.setMessage(message);
-        request.setSender(userAccount);
-        request.setStatus("Sent");
-        request.setBloodGroup(bloodGroup);
+        try{
+            if(EmpytyFieldValidation()){
+                String message = messageJTextField.getText();
+                BloodGroup bloodGroup = BloodGroup.valueOf(bloodGroupCombobox.getSelectedItem().toString());
+                BloodDonationWorkRequest request = new BloodDonationWorkRequest();
+                request.setMessage(message);
+                request.setSender(userAccount);
+                request.setStatus("Sent");
+                request.setBloodGroup(bloodGroup);
 
         Org org = null;
         for (Org organization : enterprise.getOrganizationDirectory().getOrganizationList()){
@@ -170,6 +176,38 @@ public class RequestBloodFormJPanel extends javax.swing.JPanel {
             userAccount.getWorkStream().getWorkRequestList().add(request);
         }
         messageJTextField.setText("");
+            }
+            else{
+                JOptionPane.showMessageDialog(this,"Message cannot be empty");
+                emptyValidationStatus=true;
+            }
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this,"Message not submitted, Try again");
+            System.out.println(e.toString());
+            emptyValidationStatus=true;
+        }
+        
+//        String message = messageJTextField.getText();
+//        BloodGroup bloodGroup = BloodGroup.valueOf(bloodGroupCombobox.getSelectedItem().toString());
+//        BloodDonationWorkRequest request = new BloodDonationWorkRequest();
+//        request.setMessage(message);
+//        request.setSender(userAccount);
+//        request.setStatus("Sent");
+//        request.setBloodGroup(bloodGroup);
+//
+//        Org org = null;
+//        for (Org organization : enterprise.getOrganizationDirectory().getOrganizationList()){
+//            if (organization instanceof BloodDonorOrganization){
+//                org = organization;
+//                break;
+//            }
+//        }
+//        if (org!=null){
+//            org.getWorkStream().getWorkRequestList().add(request);
+//            userAccount.getWorkStream().getWorkRequestList().add(request);
+//        }
+//        messageJTextField.setText("");
     }//GEN-LAST:event_requestTestJButtonActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
@@ -183,6 +221,19 @@ public class RequestBloodFormJPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_backJButtonActionPerformed
 
+    private boolean EmpytyFieldValidation() {
+        if(messageJTextField.getText().equals(null) || messageJTextField.getText().trim().isEmpty() )
+        {
+            messageJTextField.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            messageJTextField.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        if(!messageJTextField.getText().equals(null) && !messageJTextField.getText().trim().isEmpty() )
+        {
+            messageJTextField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        return emptyValidationStatus;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;
