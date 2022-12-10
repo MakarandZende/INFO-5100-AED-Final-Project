@@ -50,31 +50,18 @@ public class RequestDoctorForMedCampJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        enterpriseLabel = new javax.swing.JLabel();
-        valueLabel = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        backJButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         messageJTextField = new javax.swing.JTextField();
         requestDoctorJButton = new javax.swing.JButton();
-        backJButton = new javax.swing.JButton();
+        enterpriseLabel = new javax.swing.JLabel();
+        valueLabel = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(204, 204, 255));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        enterpriseLabel.setText("Enterprise :");
-
-        valueLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        valueLabel.setText("<value>");
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel1.setText("Message");
-
-        requestDoctorJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        requestDoctorJButton.setText(" Request");
-        requestDoctorJButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                requestDoctorJButtonActionPerformed(evt);
-            }
-        });
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         backJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         backJButton.setText("<<Back");
@@ -83,43 +70,31 @@ public class RequestDoctorForMedCampJPanel extends javax.swing.JPanel {
                 backJButtonActionPerformed(evt);
             }
         });
+        jPanel1.add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(129, 129, 129)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(requestDoctorJButton)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(enterpriseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(backJButton))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(valueLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(messageJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(369, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(62, 62, 62)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(enterpriseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(valueLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(messageJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(requestDoctorJButton)
-                .addGap(66, 66, 66)
-                .addComponent(backJButton)
-                .addContainerGap(308, Short.MAX_VALUE))
-        );
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setText("Message");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 135, 26));
+        jPanel1.add(messageJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 261, -1));
+
+        requestDoctorJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        requestDoctorJButton.setText(" Request");
+        requestDoctorJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                requestDoctorJButtonActionPerformed(evt);
+            }
+        });
+        jPanel1.add(requestDoctorJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 140, -1, -1));
+
+        enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        enterpriseLabel.setText("Enterprise :");
+        jPanel1.add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 120, 30));
+
+        valueLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        valueLabel.setText("<value>");
+        jPanel1.add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, 130, 30));
+
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 460, 400));
     }// </editor-fold>//GEN-END:initComponents
 
     private void requestDoctorJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestDoctorJButtonActionPerformed
@@ -167,6 +142,7 @@ public class RequestDoctorForMedCampJPanel extends javax.swing.JPanel {
     private javax.swing.JButton backJButton;
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField messageJTextField;
     private javax.swing.JButton requestDoctorJButton;
     private javax.swing.JLabel valueLabel;
