@@ -42,9 +42,9 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         backJButton = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -55,10 +55,6 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(204, 204, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel2.setText("Process WorkRequest");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, -1, -1));
 
         jPanel1.setBackground(new java.awt.Color(239, 241, 228));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -71,6 +67,10 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
             }
         });
         jPanel1.add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 70, 40));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel2.setText("Process WorkRequest");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, -1, -1));
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1160, 80));
 
@@ -103,7 +103,7 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
         });
         jPanel2.add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, -1, -1));
 
-        jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 550, 270));
+        jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, 550, 270));
 
         add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1160, 590));
     }// </editor-fold>//GEN-END:initComponents

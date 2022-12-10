@@ -57,7 +57,6 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblname = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         refreshJButton = new javax.swing.JButton();
         processJButton = new javax.swing.JButton();
@@ -68,20 +67,18 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         labWorkRequestJTable = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
+        lblname = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblname.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        add(lblname, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 738, 175, -1));
-
-        jPanel3.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel3.setBackground(new java.awt.Color(239, 241, 228));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        refreshJButton.setBackground(new java.awt.Color(255, 255, 204));
+        refreshJButton.setBackground(new java.awt.Color(239, 241, 228));
         refreshJButton.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         refreshJButton.setText("Refresh");
-        refreshJButton.setBorder(null);
+        refreshJButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         refreshJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 refreshJButtonActionPerformed(evt);
@@ -99,10 +96,10 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
         });
         jPanel3.add(processJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, 153, 43));
 
-        assignJButton.setBackground(new java.awt.Color(255, 255, 204));
+        assignJButton.setBackground(new java.awt.Color(239, 241, 228));
         assignJButton.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         assignJButton.setText("Assign to self");
-        assignJButton.setBorder(null);
+        assignJButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         assignJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 assignJButtonActionPerformed(evt);
@@ -112,7 +109,7 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
 
         add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 800));
 
-        jPanel6.setBackground(new java.awt.Color(255, 255, 204));
+        jPanel6.setBackground(new java.awt.Color(193, 212, 227));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel6.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
@@ -121,6 +118,7 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
 
         add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 0, 1290, 60));
 
+        jPanel1.setBackground(new java.awt.Color(239, 241, 228));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         labWorkRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -151,13 +149,16 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(labWorkRequestJTable);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 670, 210));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 670, 210));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setText("Lab Assitant Name");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
+        jLabel1.setText("Lab Assitant Name :");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, -1, -1));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 170, 760, 370));
+        lblname.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jPanel1.add(lblname, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 175, 20));
+
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 150, 760, 370));
     }// </editor-fold>//GEN-END:initComponents
 
     private void assignJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButtonActionPerformed
