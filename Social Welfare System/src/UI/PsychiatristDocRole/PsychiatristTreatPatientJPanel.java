@@ -72,16 +72,16 @@ public class PsychiatristTreatPatientJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel6.setBackground(new java.awt.Color(255, 255, 204));
+        jPanel6.setBackground(new java.awt.Color(193, 212, 227));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel8.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
         jLabel8.setText("Set Meeting With Patient");
-        jPanel6.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 10, 300, 30));
+        jPanel6.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, 300, 30));
 
         add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 0, 1180, 50));
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel1.setBackground(new java.awt.Color(239, 241, 228));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setBackground(new java.awt.Color(71, 120, 197));
@@ -130,7 +130,7 @@ public class PsychiatristTreatPatientJPanel extends javax.swing.JPanel {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 370, 350));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 790));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 970));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

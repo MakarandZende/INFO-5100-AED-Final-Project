@@ -63,10 +63,10 @@ public class treatJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel3.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel3.setBackground(new java.awt.Color(239, 241, 228));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel1.setText("Select meeting frequency");
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
 
@@ -77,9 +77,10 @@ public class treatJPanel extends javax.swing.JPanel {
         });
         jPanel3.add(ddlmeetings, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 199, -1));
 
-        btnsenddecision.setBackground(new java.awt.Color(255, 255, 204));
+        btnsenddecision.setBackground(new java.awt.Color(239, 241, 228));
         btnsenddecision.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         btnsenddecision.setText("Send Decision to patient");
+        btnsenddecision.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnsenddecision.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnsenddecisionActionPerformed(evt);
@@ -89,7 +90,7 @@ public class treatJPanel extends javax.swing.JPanel {
 
         add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 266, 869));
 
-        jPanel6.setBackground(new java.awt.Color(255, 255, 204));
+        jPanel6.setBackground(new java.awt.Color(193, 212, 227));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel7.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N

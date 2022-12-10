@@ -159,7 +159,7 @@ public class CollectedMedicalHistoryJPanel extends javax.swing.JPanel {
         txtMedicalHist.setRows(5);
         jScrollPane1.setViewportView(txtMedicalHist);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, 73));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 330, 90));
 
         jLabel11.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel11.setText("Medical History");
@@ -167,18 +167,19 @@ public class CollectedMedicalHistoryJPanel extends javax.swing.JPanel {
 
         jLabel12.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel12.setText("Current Health Risk Found");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 193, 31));
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 193, 31));
 
         txtHealthRisk.setColumns(20);
         txtHealthRisk.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         txtHealthRisk.setRows(5);
         jScrollPane2.setViewportView(txtHealthRisk);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 210, -1));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 340, -1));
 
-        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, 310, 290));
+        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 390, 290));
 
         jPanel4.setBackground(new java.awt.Color(239, 241, 228));
+        jPanel4.setPreferredSize(new java.awt.Dimension(360, 266));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtResult.setColumns(20);
@@ -186,7 +187,7 @@ public class CollectedMedicalHistoryJPanel extends javax.swing.JPanel {
         txtResult.setRows(5);
         jScrollPane4.setViewportView(txtResult);
 
-        jPanel4.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, -1));
+        jPanel4.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 330, -1));
 
         jLabel15.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel15.setText("Lab Assessment Result");
@@ -197,13 +198,13 @@ public class CollectedMedicalHistoryJPanel extends javax.swing.JPanel {
         txtMedConsum.setRows(5);
         jScrollPane3.setViewportView(txtMedConsum);
 
-        jPanel4.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 216, -1));
+        jPanel4.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 340, 90));
 
         jLabel14.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel14.setText("Medical Dose Consumption Details ");
         jPanel4.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 277, 31));
 
-        jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 240, 300, 290));
+        jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 230, 400, 300));
 
         resBtn.setBackground(new java.awt.Color(0, 0, 0));
         resBtn.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
@@ -215,7 +216,7 @@ public class CollectedMedicalHistoryJPanel extends javax.swing.JPanel {
                 resBtnActionPerformed(evt);
             }
         });
-        jPanel3.add(resBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 540, 198, 44));
+        jPanel3.add(resBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 560, 198, 44));
 
         jPanel5.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 980, 630));
 
