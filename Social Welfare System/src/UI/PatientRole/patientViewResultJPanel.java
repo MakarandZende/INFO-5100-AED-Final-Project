@@ -68,7 +68,7 @@ public class patientViewResultJPanel extends javax.swing.JPanel {
         jLabel1.setOpaque(true);
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 80, 150, 50));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1370, 630));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1370, 760));
     }// </editor-fold>//GEN-END:initComponents
 
 

@@ -63,7 +63,8 @@ public class CollectedMedicalHistoryJPanel extends javax.swing.JPanel {
         jPanel6 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         backBtn = new javax.swing.JButton();
-        resBtn = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
@@ -86,11 +87,12 @@ public class CollectedMedicalHistoryJPanel extends javax.swing.JPanel {
         jScrollPane3 = new javax.swing.JScrollPane();
         txtMedConsum = new javax.swing.JTextArea();
         jLabel14 = new javax.swing.JLabel();
+        resBtn = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel6.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel6.setBackground(new java.awt.Color(239, 241, 228));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel9.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
@@ -108,38 +110,32 @@ public class CollectedMedicalHistoryJPanel extends javax.swing.JPanel {
         });
         jPanel6.add(backBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 6, -1, -1));
 
-        add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1580, -1));
+        add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1640, -1));
 
-        resBtn.setBackground(new java.awt.Color(0, 0, 0));
-        resBtn.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        resBtn.setForeground(new java.awt.Color(255, 255, 255));
-        resBtn.setText("Process & Send Result");
-        resBtn.setBorder(null);
-        resBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                resBtnActionPerformed(evt);
-            }
-        });
-        add(resBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 650, 198, 44));
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 204));
+        jPanel3.setBackground(new java.awt.Color(193, 212, 227));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel2.setBackground(new java.awt.Color(239, 241, 228));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Century Gothic", 1, 10)); // NOI18N
         jLabel2.setText("Age");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, -1, 20));
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, -1, 20));
 
         txtName.setFont(new java.awt.Font("Century Gothic", 0, 10)); // NOI18N
         txtName.setEnabled(false);
-        jPanel2.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, 152, -1));
+        jPanel2.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, 152, -1));
 
         txtGender.setFont(new java.awt.Font("Century Gothic", 0, 10)); // NOI18N
         txtGender.setEnabled(false);
-        jPanel2.add(txtGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 152, -1));
+        jPanel2.add(txtGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 152, -1));
 
         txtAge.setFont(new java.awt.Font("Century Gothic", 0, 10)); // NOI18N
         txtAge.setEnabled(false);
-        jPanel2.add(txtAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, 152, -1));
+        jPanel2.add(txtAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 152, -1));
 
         jLabel10.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel10.setText("General Information");
@@ -147,15 +143,15 @@ public class CollectedMedicalHistoryJPanel extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 10)); // NOI18N
         jLabel1.setText("Name");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, -1, -1));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, -1, -1));
 
         jLabel13.setFont(new java.awt.Font("Century Gothic", 1, 10)); // NOI18N
         jLabel13.setText("Gender");
-        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, -1, -1));
+        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, -1, -1));
 
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 70, 420, 180));
+        jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, 420, 200));
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel1.setBackground(new java.awt.Color(239, 241, 228));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtMedicalHist.setColumns(20);
@@ -180,9 +176,9 @@ public class CollectedMedicalHistoryJPanel extends javax.swing.JPanel {
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 210, -1));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 280, 310, 290));
+        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, 310, 290));
 
-        jPanel4.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel4.setBackground(new java.awt.Color(239, 241, 228));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtResult.setColumns(20);
@@ -207,7 +203,23 @@ public class CollectedMedicalHistoryJPanel extends javax.swing.JPanel {
         jLabel14.setText("Medical Dose Consumption Details ");
         jPanel4.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 277, 31));
 
-        add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 280, 300, 290));
+        jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 240, 300, 290));
+
+        resBtn.setBackground(new java.awt.Color(0, 0, 0));
+        resBtn.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        resBtn.setForeground(new java.awt.Color(255, 255, 255));
+        resBtn.setText("Process & Send Result");
+        resBtn.setBorder(null);
+        resBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                resBtnActionPerformed(evt);
+            }
+        });
+        jPanel3.add(resBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 540, 198, 44));
+
+        jPanel5.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 980, 630));
+
+        add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 1640, 1030));
     }// </editor-fold>//GEN-END:initComponents
 
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
@@ -464,7 +476,9 @@ public class CollectedMedicalHistoryJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
