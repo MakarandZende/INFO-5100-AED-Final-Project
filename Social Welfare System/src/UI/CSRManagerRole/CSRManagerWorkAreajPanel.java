@@ -66,26 +66,33 @@ public class CSRManagerWorkAreajPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        refreshTestJButton = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         ReqFromNGOMedicalCamp = new javax.swing.JTable();
-        reqNgoBtn = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        refreshTestJButton = new javax.swing.JButton();
         assignBtn = new javax.swing.JButton();
+        reqNgoBtn = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(204, 204, 255));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        refreshTestJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        refreshTestJButton.setText("Refresh");
-        refreshTestJButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                refreshTestJButtonActionPerformed(evt);
-            }
-        });
+        jPanel1.setBackground(new java.awt.Color(239, 241, 228));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("CSR Work Area Panel");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 30, -1, -1));
+
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1260, 90));
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel2.setBackground(new java.awt.Color(193, 212, 227));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         ReqFromNGOMedicalCamp.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         ReqFromNGOMedicalCamp.setModel(new javax.swing.table.DefaultTableModel(
@@ -101,16 +108,16 @@ public class CSRManagerWorkAreajPanel extends javax.swing.JPanel {
         ));
         jScrollPane2.setViewportView(ReqFromNGOMedicalCamp);
 
-        reqNgoBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        reqNgoBtn.setText("Request ");
-        reqNgoBtn.addActionListener(new java.awt.event.ActionListener() {
+        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 519, 135));
+
+        refreshTestJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        refreshTestJButton.setText("Refresh");
+        refreshTestJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                reqNgoBtnActionPerformed(evt);
+                refreshTestJButtonActionPerformed(evt);
             }
         });
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/manager.gif"))); // NOI18N
-        jLabel2.setText("jLabel2");
+        jPanel2.add(refreshTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 175, -1));
 
         assignBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         assignBtn.setText("Assign to me");
@@ -119,51 +126,20 @@ public class CSRManagerWorkAreajPanel extends javax.swing.JPanel {
                 assignBtnActionPerformed(evt);
             }
         });
+        jPanel2.add(assignBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(254, 254, 254)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 519, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(refreshTestJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(assignBtn)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
-                                .addComponent(reqNgoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(125, 125, 125)))))
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(8, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(jLabel1)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(197, 197, 197)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(108, 108, 108)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(reqNgoBtn)
-                            .addComponent(assignBtn)
-                            .addComponent(refreshTestJButton))))
-                .addContainerGap(247, Short.MAX_VALUE))
-        );
+        reqNgoBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        reqNgoBtn.setText("Request ");
+        reqNgoBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reqNgoBtnActionPerformed(evt);
+            }
+        });
+        jPanel2.add(reqNgoBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 200, 141, -1));
+
+        jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 130, 580, 290));
+
+        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 1260, 770));
     }// </editor-fold>//GEN-END:initComponents
 
     private void refreshTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshTestJButtonActionPerformed
@@ -210,7 +186,9 @@ public class CSRManagerWorkAreajPanel extends javax.swing.JPanel {
     private javax.swing.JTable ReqFromNGOMedicalCamp;
     private javax.swing.JButton assignBtn;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton refreshTestJButton;
     private javax.swing.JButton reqNgoBtn;
