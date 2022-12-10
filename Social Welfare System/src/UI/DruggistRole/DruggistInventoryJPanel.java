@@ -40,34 +40,35 @@ public class DruggistInventoryJPanel extends javax.swing.JPanel {
         jPanel6 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jCheckBox6 = new javax.swing.JCheckBox();
-        jCheckBox5 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jLabel3 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jCheckBox1 = new javax.swing.JCheckBox();
+        jLabel5 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
+        jCheckBox2 = new javax.swing.JCheckBox();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jCheckBox3 = new javax.swing.JCheckBox();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jCheckBox4 = new javax.swing.JCheckBox();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jCheckBox5 = new javax.swing.JCheckBox();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jCheckBox6 = new javax.swing.JCheckBox();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(110, 89, 221));
+        jPanel1.setBackground(new java.awt.Color(239, 241, 228));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/back_button.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -76,13 +77,15 @@ public class DruggistInventoryJPanel extends javax.swing.JPanel {
             }
         });
 
+        jButton2.setBackground(new java.awt.Color(239, 241, 228));
         jButton2.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         jButton2.setText("Request Supplier ");
-        jButton2.setBorder(null);
+        jButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jButton3.setBackground(new java.awt.Color(239, 241, 228));
         jButton3.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         jButton3.setText("Accept Medicine Request");
-        jButton3.setBorder(null);
+        jButton3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -121,7 +124,7 @@ public class DruggistInventoryJPanel extends javax.swing.JPanel {
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 1080));
 
-        jPanel6.setBackground(new java.awt.Color(54, 33, 89));
+        jPanel6.setBackground(new java.awt.Color(193, 212, 227));
 
         jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -147,60 +150,43 @@ public class DruggistInventoryJPanel extends javax.swing.JPanel {
         add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(287, 0, 1640, 90));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel13.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setText("100");
+        jPanel3.setBackground(new java.awt.Color(239, 241, 228));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel12.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setText("Count");
+        jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Required Medicines are: ");
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 225, 50));
+
+        jLabel3.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel3.setText("jLabel3");
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 50, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setText("Drug List");
+        jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 141, 35));
+
+        jLabel12.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setText("Count");
+        jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 141, 35));
 
         jLabel10.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel10.setText("Check Meds to Request");
-
-        jLabel9.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("Drug E");
-
-        jLabel8.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("Drug F");
-
-        jLabel7.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("Drug C");
-
-        jLabel6.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Drug D");
-
-        jLabel5.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("Drug B");
+        jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 90, -1, 35));
 
         jLabel4.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Drug A");
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 141, 35));
 
-        jCheckBox6.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-
-        jCheckBox5.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-
-        jCheckBox4.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jCheckBox4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox4ActionPerformed(evt);
-            }
-        });
-
-        jCheckBox3.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-
-        jCheckBox2.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel13.setText("100");
+        jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 140, 141, 35));
 
         jCheckBox1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -208,147 +194,79 @@ public class DruggistInventoryJPanel extends javax.swing.JPanel {
                 jCheckBox1ActionPerformed(evt);
             }
         });
+        jPanel3.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 140, 80, 35));
 
-        jLabel3.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jLabel3.setText("jLabel3");
-
-        jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Required Medicines are: ");
-
-        jLabel19.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel19.setText("200");
-
-        jLabel18.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel18.setText("10");
-
-        jLabel17.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel17.setText("100");
-
-        jLabel16.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel16.setText("20");
+        jLabel5.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Drug B");
+        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 141, 35));
 
         jLabel15.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setText("50");
+        jPanel3.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 180, 141, 35));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(368, 368, 368)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel7)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel8))
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGap(97, 97, 97)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel13)
-                                            .addComponent(jLabel12))
-                                        .addGap(0, 0, Short.MAX_VALUE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.TRAILING)))))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel9)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel19)))
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(107, 107, 107)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jCheckBox1)
-                                    .addComponent(jCheckBox6)
-                                    .addComponent(jCheckBox2)
-                                    .addComponent(jCheckBox3)
-                                    .addComponent(jCheckBox5)
-                                    .addComponent(jCheckBox4)))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(41, 41, 41)
-                                .addComponent(jLabel10))))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(71, 71, 71)
-                        .addComponent(jLabel3)))
-                .addContainerGap(655, Short.MAX_VALUE))
-        );
+        jCheckBox2.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jPanel3.add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 180, 141, 35));
 
-        jPanel2Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jCheckBox1, jCheckBox2, jCheckBox3, jCheckBox4, jCheckBox5, jCheckBox6, jLabel10, jLabel11, jLabel12, jLabel13, jLabel15, jLabel16, jLabel17, jLabel18, jLabel19, jLabel4, jLabel5, jLabel6, jLabel7, jLabel8, jLabel9});
+        jLabel7.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("Drug C");
+        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 141, 35));
 
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(112, 112, 112)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(13, 13, 13)
-                        .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jCheckBox1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jCheckBox2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBox3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBox4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jCheckBox5)
-                        .addGap(12, 12, 12)
-                        .addComponent(jCheckBox6))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel12))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel13))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel15))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel16))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel17))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel19))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel18))))
-                .addContainerGap(508, Short.MAX_VALUE))
-        );
+        jLabel16.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel16.setText("20");
+        jPanel3.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, 141, 35));
 
-        jPanel2Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jCheckBox1, jCheckBox2, jCheckBox3, jCheckBox4, jCheckBox5, jCheckBox6, jLabel10, jLabel11, jLabel12, jLabel13, jLabel15, jLabel16, jLabel17, jLabel18, jLabel19, jLabel4, jLabel5, jLabel6, jLabel7, jLabel8, jLabel9});
+        jCheckBox3.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jPanel3.add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 220, 141, 35));
+
+        jLabel6.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("Drug D");
+        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, 141, 35));
+
+        jLabel17.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel17.setText("100");
+        jPanel3.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 270, 141, 35));
+
+        jCheckBox4.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jCheckBox4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox4ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jCheckBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 260, 141, 35));
+
+        jLabel9.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("Drug E");
+        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 141, 35));
+
+        jLabel19.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel19.setText("200");
+        jPanel3.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 310, 141, 35));
+
+        jCheckBox5.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jPanel3.add(jCheckBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 310, 141, 35));
+
+        jLabel8.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("Drug F");
+        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, 141, 35));
+
+        jLabel18.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel18.setText("10");
+        jPanel3.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 360, 141, 35));
+
+        jCheckBox6.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jPanel3.add(jCheckBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 350, 141, 35));
+
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 100, 650, 420));
 
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 1650, 990));
     }// </editor-fold>//GEN-END:initComponents
@@ -403,6 +321,7 @@ public class DruggistInventoryJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel6;
     // End of variables declaration//GEN-END:variables
 }
