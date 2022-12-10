@@ -8,7 +8,9 @@ package UI.DoctorRole;
 import Business.UserAccount.User_Account;
 import Business.WorkStream.MedicalCampWorkRequest;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Component;
+import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -24,6 +26,8 @@ public class processMedicalCampRequestJPanel extends javax.swing.JPanel {
     JPanel userProcessContainer;
     MedicalCampWorkRequest medcampWReq;
     private User_Account userAccount;
+    boolean emptyValidationStatus = true;
+//    boolean validationCheck = true;
     
     public processMedicalCampRequestJPanel(JPanel userProcessContainer, MedicalCampWorkRequest medcampWReq, User_Account account) {
         initComponents();
@@ -128,12 +132,15 @@ public class processMedicalCampRequestJPanel extends javax.swing.JPanel {
 
     private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
         // TODO add your handling code here:
-        if(medcampWReq.getStatus() == "Processing"){
-            medcampWReq.setMessage(resultJTextField.getText());
-            medcampWReq.setStatus("Completed");
-            medcampWReq.setSender(userAccount);
-            medcampWReq.setCampResult("Medical Camp successful. Assigned a Doctor!");
-            resultJTextField.setText("");
+        
+        if(EmpytyFieldValidation()){
+                if(medcampWReq.getStatus() == "Processing"){
+                medcampWReq.setMessage(resultJTextField.getText());
+                medcampWReq.setStatus("Completed");
+                medcampWReq.setSender(userAccount);
+                medcampWReq.setCampResult("Medical Camp successful. Assigned a Doctor!");
+                resultJTextField.setText("");
+            }
         }
         else{
             JOptionPane.showMessageDialog(null, "If not Assigned then Already Completed!");
@@ -152,6 +159,20 @@ public class processMedicalCampRequestJPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_backJButtonActionPerformed
 
+    
+    private boolean EmpytyFieldValidation() {
+        if(resultJTextField.getText().equals(null) || resultJTextField.getText().trim().isEmpty() )
+        {
+            resultJTextField.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            resultJTextField.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        if(!resultJTextField.getText().equals(null) && !resultJTextField.getText().trim().isEmpty() )
+        {
+            resultJTextField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        return emptyValidationStatus;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;

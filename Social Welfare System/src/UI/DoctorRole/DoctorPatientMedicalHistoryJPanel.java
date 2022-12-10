@@ -11,11 +11,13 @@ import Business.UserAccount.User_Account;
 import Business.WorkStream.DocLabRequest;
 import Business.WorkStream.PatientAppRequest;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Component;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
+import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 /**
@@ -38,6 +40,8 @@ public class DoctorPatientMedicalHistoryJPanel extends javax.swing.JPanel {
    String opioid_intoxication[] = {"Pin Point Pupil", "Nodding Off", "Drowsiness", "Sweating"};
    String opioid_withdrawal[] = {"Restlessness", "Lacrimation", "Hypertension", "Muscle Tenderness"};
    String liver_disease[] = {"Jaundice","Hepatosplenomegaly","Ascites"};
+   boolean emptyValidationStatus = true;
+   boolean validationCheck = true;
     /**
      * Creates new form DoctorPatientMedicalHistoryJPanel
      */
@@ -430,6 +434,11 @@ public class DoctorPatientMedicalHistoryJPanel extends javax.swing.JPanel {
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Submit  ");
         jButton1.setBorder(null);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 210, 81, 32));
 
         ageCombo.setBackground(new java.awt.Color(193, 212, 227));
@@ -509,6 +518,38 @@ public class DoctorPatientMedicalHistoryJPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private boolean RegexValidation() {
+        if(!txtpatientname.getText().matches("^[a-zA-Z ]+$"))
+        {
+            txtpatientname.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtpatientname.setToolTipText("Please enter only characters and space.");
+            validationCheck=false;
+        }
+        
+        if(txtpatientname.getText().matches("^[a-zA-Z ]+$"))
+        {
+            txtpatientname.setBorder(BorderFactory.createLineBorder(Color.BLUE, 0));
+        }
+        return validationCheck;
+    }
+    
+    private boolean EmpytyFieldValidation() {
+        if(txtpatientname.getText().equals(null) || txtpatientname.getText().trim().isEmpty() )
+        {
+            txtpatientname.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            txtpatientname.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        if(!txtpatientname.getText().equals(null) && !txtpatientname.getText().trim().isEmpty() )
+        {
+            txtpatientname.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        return emptyValidationStatus;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox ageCombo;

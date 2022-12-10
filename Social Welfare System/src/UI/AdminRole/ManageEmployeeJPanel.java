@@ -275,11 +275,11 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
             emptyValidationStatus=true;
         }
         
-        Org organization = (Org) organizationEmpJComboBox.getSelectedItem();
-        String name = nameJTextField.getText();
-        
-        organization.getPersonDirectory().createPerson(name);
-        populateTable(organization);
+//        Org organization = (Org) organizationEmpJComboBox.getSelectedItem();
+//        String name = nameJTextField.getText();
+//        
+//        organization.getPersonDirectory().createPerson(name);
+//        populateTable(organization);
     }//GEN-LAST:event_addJButton1ActionPerformed
 
     private boolean RegexValidation() {
