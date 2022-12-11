@@ -71,9 +71,9 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel2.setText("Process WorkRequest");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 20, -1, -1));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1160, 80));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1230, 80));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -109,13 +109,13 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
         });
         jPanel2.add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, -1, -1));
 
-        jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, 550, 270));
+        jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 260, 550, 270));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/fund1.jpg"))); // NOI18N
         jLabel4.setText("jLabel4");
-        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1260, -1));
 
-        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1160, 590));
+        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1240, 710));
     }// </editor-fold>//GEN-END:initComponents
 
     private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
