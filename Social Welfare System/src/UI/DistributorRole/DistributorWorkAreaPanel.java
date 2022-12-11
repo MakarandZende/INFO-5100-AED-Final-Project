@@ -57,11 +57,14 @@ public class DistributorWorkAreaPanel extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         assignBtn = new javax.swing.JButton();
         processDrugReq = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         drugDistributorRequestsTbl = new javax.swing.JTable();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -78,7 +81,7 @@ public class DistributorWorkAreaPanel extends javax.swing.JPanel {
                 assignBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(assignBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 161, 35));
+        jPanel1.add(assignBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 265, 161, 50));
 
         processDrugReq.setBackground(new java.awt.Color(239, 241, 228));
         processDrugReq.setFont(new java.awt.Font("Century Gothic", 1, 11)); // NOI18N
@@ -89,12 +92,28 @@ public class DistributorWorkAreaPanel extends javax.swing.JPanel {
                 processDrugReqActionPerformed(evt);
             }
         });
-        jPanel1.add(processDrugReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 161, 35));
+        jPanel1.add(processDrugReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 161, 50));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/dist_logo.png"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 110, 110));
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 226, 800));
 
+        jPanel3.setBackground(new java.awt.Color(193, 212, 227));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setText("Distributor Manager");
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, 300, 30));
+
+        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 1220, 80));
+
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jPanel2.setBackground(new java.awt.Color(239, 241, 228));
 
+        drugDistributorRequestsTbl.setBackground(new java.awt.Color(0, 0, 0));
+        drugDistributorRequestsTbl.setForeground(new java.awt.Color(255, 255, 255));
         drugDistributorRequestsTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -106,6 +125,7 @@ public class DistributorWorkAreaPanel extends javax.swing.JPanel {
                 "Message", "Sender", "Reciever", "Status"
             }
         ));
+        drugDistributorRequestsTbl.setShowGrid(true);
         jScrollPane2.setViewportView(drugDistributorRequestsTbl);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -113,28 +133,25 @@ public class DistributorWorkAreaPanel extends javax.swing.JPanel {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(25, 25, 25)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(48, 48, 48)
+                .addGap(54, 54, 54)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(92, Short.MAX_VALUE))
+                .addContainerGap(86, Short.MAX_VALUE))
         );
 
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 170, 610, 350));
+        jPanel4.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 690, -1));
 
-        jPanel3.setBackground(new java.awt.Color(193, 212, 227));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/distributor_back.jpg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setText("Distributor Manager");
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, 300, 30));
-
-        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 1220, 80));
+        add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 80, 1000, 720));
     }// </editor-fold>//GEN-END:initComponents
 
     public void populateDrugReq(){
@@ -197,9 +214,12 @@ public class DistributorWorkAreaPanel extends javax.swing.JPanel {
     private javax.swing.JButton assignBtn;
     private javax.swing.JTable drugDistributorRequestsTbl;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton processDrugReq;
     // End of variables declaration//GEN-END:variables

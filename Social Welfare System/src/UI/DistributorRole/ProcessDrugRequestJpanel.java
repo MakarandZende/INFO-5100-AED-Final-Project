@@ -74,7 +74,7 @@ public class ProcessDrugRequestJpanel extends javax.swing.JPanel {
         camTxt = new javax.swing.JTextField();
         disTxt = new javax.swing.JTextField();
         acaTxt = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(1170, 1080));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -199,10 +199,10 @@ public class ProcessDrugRequestJpanel extends javax.swing.JPanel {
 
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 110, 570, 520));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/doctor_backnew.jpg"))); // NOI18N
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/dist_back12.jpg"))); // NOI18N
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1180, 720));
 
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-4, 96, 1180, 990));
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-4, 96, 1180, 720));
     }// </editor-fold>//GEN-END:initComponents
     private void populateFields(){
         acaTxt.setVisible(drugDistributorWorkRequest.isIsAca());
@@ -322,8 +322,8 @@ public class ProcessDrugRequestJpanel extends javax.swing.JPanel {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

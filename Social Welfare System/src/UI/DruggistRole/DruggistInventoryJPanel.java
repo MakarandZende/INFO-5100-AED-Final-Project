@@ -109,7 +109,7 @@ public class DruggistInventoryJPanel extends javax.swing.JPanel {
 
         requestSuppllierBtn.setBackground(new java.awt.Color(239, 241, 228));
         requestSuppllierBtn.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        requestSuppllierBtn.setText("Request Supplier ");
+        requestSuppllierBtn.setText("Request Distributor ");
         requestSuppllierBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         requestSuppllierBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -239,7 +239,7 @@ public class DruggistInventoryJPanel extends javax.swing.JPanel {
 
         jPanel3.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 630, 210));
 
-        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 100, 650, 620));
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 650, 620));
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/drug.jpg"))); // NOI18N
         jLabel14.setText("jLabel14");

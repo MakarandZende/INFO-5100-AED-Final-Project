@@ -196,7 +196,7 @@ public class RequestSupplierJPanel extends javax.swing.JPanel {
 
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 110, 570, 520));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/doctor_backnew.jpg"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/drug.jpg"))); // NOI18N
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
 
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-4, 96, 1180, 990));
