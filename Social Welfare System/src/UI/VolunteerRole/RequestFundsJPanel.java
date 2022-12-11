@@ -180,6 +180,7 @@ public class RequestFundsJPanel extends javax.swing.JPanel {
         if (org!=null){
             org.getWorkStream().getWorkRequestList().add(request);
             userAccount.getWorkStream().getWorkRequestList().add(request);
+            JOptionPane.showMessageDialog(this,"Fund Request Raised!");
         }
         messageJTextField.setText("");
         amountTxtField.setText("");

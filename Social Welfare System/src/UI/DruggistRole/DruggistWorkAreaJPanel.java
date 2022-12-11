@@ -11,8 +11,10 @@ import Business.Organization.DoctorConsultantOrg;
 import Business.Organization.Org;
 import Business.Organization.DruggistOrg;
 import Business.UserAccount.User_Account;
+import Business.WorkStream.DrugDistributorWorkRequest;
 import Business.WorkStream.PatientAppRequest;
 import Business.WorkStream.WorkRequest;
+import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -41,8 +43,10 @@ public class DruggistWorkAreaJPanel extends javax.swing.JPanel {
         this.network = network;
         populateMedData();
     }
+    
+    
 
-    private void populateMedData() {
+    public void populateMedData() {
         DefaultTableModel model = (DefaultTableModel) DruggistMedRequestJTable.getModel();
 
         model.setRowCount(0);
@@ -213,7 +217,7 @@ public class DruggistWorkAreaJPanel extends javax.swing.JPanel {
         DruggistMedRequestJTable.setShowGrid(true);
         jScrollPane1.setViewportView(DruggistMedRequestJTable);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 740, -1));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 740, 180));
 
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 150, 850, 510));
 
@@ -223,7 +227,10 @@ public class DruggistWorkAreaJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void checkInventoryBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkInventoryBtnActionPerformed
-        // TODO add your handling code here:
+        DruggistInventoryJPanel druggistInventoryJPanel = new DruggistInventoryJPanel(userProcessContainer,network,enterprise,userAccount);
+        userProcessContainer.add("Check Inventory JPanel", druggistInventoryJPanel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_checkInventoryBtnActionPerformed
 
     private void sendDrugPatientBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sendDrugPatientBtnActionPerformed
@@ -238,7 +245,7 @@ public class DruggistWorkAreaJPanel extends javax.swing.JPanel {
         
         patientrequest.setSender(userAccount);
         patientrequest.setStatus("Drugs Sent to patient");
-        patientrequest.setDiagnose(patientrequest.getDiagnose()+"\nFollowing medicines have been sent by "+ userAccount);
+        patientrequest.setDiagnose(patientrequest.getDiagnose()+"\nFollowing medicines have been sent by "+ userAccount+"\n"+patientrequest.getMedlist());
         JOptionPane.showMessageDialog(null,"Drugs Sent to Patient");
         populateMedData();
     }//GEN-LAST:event_sendDrugPatientBtnActionPerformed
