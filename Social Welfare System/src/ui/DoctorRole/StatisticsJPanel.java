@@ -174,27 +174,27 @@ public class StatisticsJPanel extends javax.swing.JPanel {
          //Assigned to psychiatrist
          for(WorkRequest workreq :organization.getWorkStream().getWorkRequestList())
         {
-            if(workreq.getStatus().equalsIgnoreCase("sent"))
+            if(workreq.getStatus().equalsIgnoreCase("Sent"))
             {
                 sent_count++;
             }
-            else if(workreq.getStatus().equalsIgnoreCase("result found"))
+            else if(workreq.getStatus().equalsIgnoreCase("Results Found"))
             {
                 resultfound_count++;
             }
-             else if(workreq.getStatus().equalsIgnoreCase("assigned to doc"))
+             else if(workreq.getStatus().equalsIgnoreCase("Assigned to Doctor"))
             {
                 assigntodoc_count++;
             }
-             else if(workreq.getStatus().equalsIgnoreCase("Med Hist Collected For Lab"))
+             else if(workreq.getStatus().equalsIgnoreCase("Medical history collected by lab"))
             {
                 medhistcollected_count++;
             }
-             else if(workreq.getStatus().equalsIgnoreCase("Assigned to pharmacotherapist"))
+             else if(workreq.getStatus().equalsIgnoreCase("Assigned to Pharmacotherapist"))
             {
                 assigntophysio_count++;
             }
-             else if(workreq.getStatus().equalsIgnoreCase("Assigned to psychiatrist"))
+             else if(workreq.getStatus().equalsIgnoreCase("Assigned to Psychiatrist"))
             {
                 assigntopsy_count++;
             }
@@ -203,18 +203,18 @@ public class StatisticsJPanel extends javax.swing.JPanel {
         }
         DefaultCategoryDataset DCategorydata = new DefaultCategoryDataset();
 
-        DCategorydata.setValue(sent_count, "sent", "sent");        
-        DCategorydata.setValue(assigntodoc_count, "assignedto doc", "assignedto doc");
-        DCategorydata.setValue(resultfound_count, "Result Found", "Result Found");
-        DCategorydata.setValue(medhistcollected_count, "Med hist collected lab", "Med hist collected lab");
-        DCategorydata.setValue(assigntophysio_count, "Assigned to pharmacotherapist", "Assigned to pharmacotherapist");
-        DCategorydata.setValue(assigntophysio_count, "Assigned to psychiatrist", "Assigned to psychiatrist");
+        DCategorydata.setValue(sent_count, "Sent", "Sent");        
+        DCategorydata.setValue(assigntodoc_count, "Assigned to Doctor", "Assigned to Doctor");
+        DCategorydata.setValue(resultfound_count, "Results Found", "Results Found");
+        DCategorydata.setValue(medhistcollected_count, "Medical history collected by lab", "Medical history collected by lab");
+        DCategorydata.setValue(assigntophysio_count, "Assigned to Pharmacotherapist", "Assigned to Pharmacotherapist");
+        DCategorydata.setValue(assigntophysio_count, "Assigned to Psychiatrist", "Assigned to Psychiatrist");
 
 
-        JFreeChart jfreechart = ChartFactory.createBarChart3D("PATIENT REQUEST STATISTICS", "ENTITIES", "COUNT", DCategorydata, PlotOrientation.VERTICAL, true, true, false);
+        JFreeChart jfreechart = ChartFactory.createBarChart3D("REQUEST PATIENT DEMOGRAPHY (STATS)", "STATUS", "COUNT", DCategorydata, PlotOrientation.HORIZONTAL, true, true, false);
 
         CategoryPlot plot = jfreechart.getCategoryPlot();
-        plot.setRangeGridlinePaint(Color.BLACK);
+        plot.setRangeGridlinePaint(Color.blue);
 
         ChartPanel chartp = new ChartPanel(jfreechart, true);
 
