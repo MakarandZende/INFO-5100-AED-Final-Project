@@ -71,8 +71,8 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -133,9 +133,15 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
         jLabel3.setText("Book Doctor's Appointment");
         jPanel6.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 30, -1, -1));
 
-        add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, 1230, 86));
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 290, 120, 70));
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 1220, 800));
+        add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, 1230, 90));
+
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/patient_new.jpg"))); // NOI18N
+        jLabel5.setText("jLabel5");
+        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, 1220, 870));
     }// </editor-fold>//GEN-END:initComponents
 
     public void sendMail(String emailId)
@@ -297,11 +303,11 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JTextField txtmessage;
     // End of variables declaration//GEN-END:variables

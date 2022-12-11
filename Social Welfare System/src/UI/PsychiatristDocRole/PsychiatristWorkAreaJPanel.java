@@ -51,9 +51,9 @@ public class PsychiatristWorkAreaJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
         assignJButton2 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -67,34 +67,30 @@ public class PsychiatristWorkAreaJPanel extends javax.swing.JPanel {
         jPanel1.setBackground(new java.awt.Color(239, 241, 228));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jButton1.setBackground(new java.awt.Color(0, 0, 0));
-        jButton1.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Treat Patient");
-        jButton1.setBorder(null);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 142, 36));
-
-        assignJButton2.setBackground(new java.awt.Color(0, 0, 0));
+        assignJButton2.setBackground(new java.awt.Color(239, 241, 228));
         assignJButton2.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
-        assignJButton2.setForeground(new java.awt.Color(255, 255, 255));
         assignJButton2.setText("Assign to me");
-        assignJButton2.setBorder(null);
+        assignJButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         assignJButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 assignJButton2ActionPerformed(evt);
             }
         });
-        jPanel3.add(assignJButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 142, 39));
+        jPanel1.add(assignJButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 142, 39));
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 190, 200));
+        jButton1.setBackground(new java.awt.Color(239, 241, 228));
+        jButton1.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jButton1.setText("Treat Patient");
+        jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 142, 36));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/psychiatrist_logo.png"))); // NOI18N
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 100, 90));
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 920));
 
@@ -110,6 +106,8 @@ public class PsychiatristWorkAreaJPanel extends javax.swing.JPanel {
         jPanel2.setBackground(new java.awt.Color(239, 241, 228));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        labWorkRequestJTable.setBackground(new java.awt.Color(0, 0, 0));
+        labWorkRequestJTable.setForeground(new java.awt.Color(255, 255, 255));
         labWorkRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -136,6 +134,7 @@ public class PsychiatristWorkAreaJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        labWorkRequestJTable.setShowGrid(true);
         jScrollPane2.setViewportView(labWorkRequestJTable);
 
         jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 600, 220));
@@ -207,10 +206,10 @@ public class PsychiatristWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JButton assignJButton2;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable labWorkRequestJTable;

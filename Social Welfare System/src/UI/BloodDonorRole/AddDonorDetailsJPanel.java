@@ -102,7 +102,9 @@ public class AddDonorDetailsJPanel extends javax.swing.JPanel {
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(272, 30, 70, 20));
         jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(375, 26, 50, 30));
 
+        addDonorBtn.setBackground(new java.awt.Color(193, 212, 227));
         addDonorBtn.setText("ADD");
+        addDonorBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         addDonorBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addDonorBtnActionPerformed(evt);

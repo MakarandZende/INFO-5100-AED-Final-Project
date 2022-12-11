@@ -121,6 +121,8 @@ public class DoctorMedicalCampRequestJPanel extends javax.swing.JPanel {
         jScrollPane2.setBackground(new java.awt.Color(0, 0, 0));
         jScrollPane2.setForeground(new java.awt.Color(255, 255, 255));
 
+        campRequestJTable.setBackground(new java.awt.Color(0, 0, 0));
+        campRequestJTable.setForeground(new java.awt.Color(255, 255, 255));
         campRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},

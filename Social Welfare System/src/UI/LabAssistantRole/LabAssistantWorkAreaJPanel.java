@@ -155,6 +155,7 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        labWorkRequestJTable.setShowGrid(true);
         jScrollPane2.setViewportView(labWorkRequestJTable);
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 670, 210));

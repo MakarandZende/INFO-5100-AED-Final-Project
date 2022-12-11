@@ -60,8 +60,11 @@ public class treatJPanel extends javax.swing.JPanel {
         ddlmeetings = new javax.swing.JComboBox();
         btnsenddecision = new javax.swing.JButton();
         backJButton1 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -69,16 +72,16 @@ public class treatJPanel extends javax.swing.JPanel {
         jPanel3.setBackground(new java.awt.Color(239, 241, 228));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
         jLabel1.setText("Select meeting frequency");
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, -1, -1));
 
         ddlmeetings.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ddlmeetingsActionPerformed(evt);
             }
         });
-        jPanel3.add(ddlmeetings, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 199, -1));
+        jPanel3.add(ddlmeetings, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 360, 210, 40));
 
         btnsenddecision.setBackground(new java.awt.Color(239, 241, 228));
         btnsenddecision.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
@@ -89,7 +92,7 @@ public class treatJPanel extends javax.swing.JPanel {
                 btnsenddecisionActionPerformed(evt);
             }
         });
-        jPanel3.add(btnsenddecision, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, 60));
+        jPanel3.add(btnsenddecision, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 440, 170, 60));
 
         backJButton1.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         backJButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/back_button.png"))); // NOI18N
@@ -100,16 +103,27 @@ public class treatJPanel extends javax.swing.JPanel {
         });
         jPanel3.add(backJButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, -1, -1));
 
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/pharma_logo.png"))); // NOI18N
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 90, 100));
+
         add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 266, 869));
 
         jPanel6.setBackground(new java.awt.Color(193, 212, 227));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel7.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Century Gothic", 1, 22)); // NOI18N
         jLabel7.setText("Pharmacotherapist Work Area");
-        jPanel6.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 20, -1, -1));
+        jPanel6.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, -1, 50));
 
-        add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(266, 0, 1200, 68));
+        add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(266, 0, 1200, 80));
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/pharma2.jpg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, 960, 780));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnsenddecisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsenddecisionActionPerformed
@@ -139,7 +153,10 @@ public class treatJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnsenddecision;
     private javax.swing.JComboBox ddlmeetings;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel6;
     // End of variables declaration//GEN-END:variables
