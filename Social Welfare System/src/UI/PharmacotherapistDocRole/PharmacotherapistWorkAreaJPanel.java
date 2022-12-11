@@ -59,24 +59,28 @@ public class PharmacotherapistWorkAreaJPanel extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         assignJButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         physiotherapistJTable = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setForeground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel6.setBackground(new java.awt.Color(193, 212, 227));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel7.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Century Gothic", 1, 22)); // NOI18N
         jLabel7.setText("Pharmacotherapist Work Area");
-        jPanel6.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 800, 40));
+        jPanel6.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, 800, 40));
 
-        add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, -1, 50));
+        add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, -1, 70));
 
         jPanel1.setBackground(new java.awt.Color(239, 241, 228));
+        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         assignJButton2.setBackground(new java.awt.Color(239, 241, 228));
@@ -101,6 +105,9 @@ public class PharmacotherapistWorkAreaJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 238, 140, 50));
 
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/pharma_logo.png"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, 90, 100));
+
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 920));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
@@ -110,6 +117,8 @@ public class PharmacotherapistWorkAreaJPanel extends javax.swing.JPanel {
 
         jScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
 
+        physiotherapistJTable.setBackground(new java.awt.Color(0, 0, 0));
+        physiotherapistJTable.setForeground(new java.awt.Color(255, 255, 255));
         physiotherapistJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -136,6 +145,7 @@ public class PharmacotherapistWorkAreaJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        physiotherapistJTable.setShowGrid(true);
         jScrollPane2.setViewportView(physiotherapistJTable);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -151,11 +161,15 @@ public class PharmacotherapistWorkAreaJPanel extends javax.swing.JPanel {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(40, 40, 40)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 554, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(70, Short.MAX_VALUE))
         );
 
-        jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, -1, -1));
+        jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, -1, 500));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/pharma2.jpg"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, 1140, 870));
     }// </editor-fold>//GEN-END:initComponents
@@ -215,8 +229,9 @@ public class PharmacotherapistWorkAreaJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton assignJButton2;
-    private javax.swing.JButton backJButton;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

@@ -75,7 +75,9 @@ public class BloodReceiverWorkAreaJPanel extends javax.swing.JPanel {
         jPanel2.setBackground(new java.awt.Color(193, 212, 227));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        bloodReqTable.setBackground(new java.awt.Color(0, 0, 0));
         bloodReqTable.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        bloodReqTable.setForeground(new java.awt.Color(255, 255, 255));
         bloodReqTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -102,6 +104,7 @@ public class BloodReceiverWorkAreaJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        bloodReqTable.setShowGrid(true);
         jScrollPane1.setViewportView(bloodReqTable);
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 577, 135));

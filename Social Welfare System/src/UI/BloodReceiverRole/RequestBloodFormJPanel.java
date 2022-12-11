@@ -82,13 +82,13 @@ public class RequestBloodFormJPanel extends javax.swing.JPanel {
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, -1, -1));
 
         backJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        backJButton.setText("<<Back");
+        backJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/back_button.png"))); // NOI18N
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backJButtonActionPerformed(evt);
             }
         });
-        jPanel2.add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
+        jPanel2.add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, 30));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1360, 70));
 
@@ -98,14 +98,16 @@ public class RequestBloodFormJPanel extends javax.swing.JPanel {
         jPanel3.setBackground(new java.awt.Color(193, 212, 227));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        requestTestJButton.setBackground(new java.awt.Color(193, 212, 227));
         requestTestJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         requestTestJButton.setText("Request Blood");
+        requestTestJButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         requestTestJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 requestTestJButtonActionPerformed(evt);
             }
         });
-        jPanel3.add(requestTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, -1, -1));
+        jPanel3.add(requestTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, 130, 30));
 
         bloodGroupCombobox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel3.add(bloodGroupCombobox, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 190, 30));

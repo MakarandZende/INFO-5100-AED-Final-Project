@@ -122,6 +122,7 @@ public class FundsProviderWorkAreaJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        workRequestJTable.setShowGrid(true);
         jScrollPane1.setViewportView(workRequestJTable);
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 650, 250));
