@@ -124,6 +124,11 @@ public class RequestFundsJPanel extends javax.swing.JPanel {
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, -1, 26));
 
         amountTxtField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        amountTxtField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                amountTxtFieldActionPerformed(evt);
+            }
+        });
         jPanel2.add(amountTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 185, -1));
 
         requestTestJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -145,7 +150,7 @@ public class RequestFundsJPanel extends javax.swing.JPanel {
         try{
             if(EmpytyFieldValidation()){
 
-                if(RegexValidation()){
+                
                     String message = messageJTextField.getText();
         int amount = Integer.parseInt(amountTxtField.getText());
         FundsWorkRequest request = new FundsWorkRequest();
@@ -167,11 +172,8 @@ public class RequestFundsJPanel extends javax.swing.JPanel {
         }
         messageJTextField.setText("");
         amountTxtField.setText("");
-                }
-                else{
-                    JOptionPane.showMessageDialog(this,"Invalid details");
-                    validationCheck=true;
-                }
+                
+                
             }
             else{
                 JOptionPane.showMessageDialog(this,"Invalid details");
@@ -219,20 +221,24 @@ public class RequestFundsJPanel extends javax.swing.JPanel {
 
     }//GEN-LAST:event_backJButtonActionPerformed
 
-    private boolean RegexValidation() {
-        if(!amountTxtField.getText().matches("^[0-9]{15}$"))
-        {
-            amountTxtField.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
-            amountTxtField.setToolTipText("Please enter a valid amount");
-            validationCheck=false;
-        }
-        
-        if(amountTxtField.getText().matches("^[0-9]{15}$"))
-        {
-            amountTxtField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
-        }
-        return validationCheck;
-    }
+    private void amountTxtFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_amountTxtFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_amountTxtFieldActionPerformed
+
+//    private boolean RegexValidation() {
+//        if(!amountTxtField.getText().matches("^[0-9]$"))
+//        {
+//            amountTxtField.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+//            amountTxtField.setToolTipText("Please enter a valid amount");
+//            validationCheck=false;
+//        }
+//        
+//        if(amountTxtField.getText().matches("^[0-9]$"))
+//        {
+//            amountTxtField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+//        }
+//        return validationCheck;
+//    }
     
     private boolean EmpytyFieldValidation() {
         if(messageJTextField.getText().equals(null) || messageJTextField.getText().trim().isEmpty() )
