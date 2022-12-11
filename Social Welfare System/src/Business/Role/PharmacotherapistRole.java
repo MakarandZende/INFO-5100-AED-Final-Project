@@ -11,7 +11,7 @@ import Business.Network.NetworkSystem;
 import Business.Organization.Org;
 import Business.UserAccount.User_Account;
 import javax.swing.JPanel;
-import UI.PhysiotherapistDocRole.PhysiotherapistWorkAreaJPanel;
+import UI.PharmacotherapistDocRole.PharmacotherapistWorkAreaJPanel;
 
 /**
  *
@@ -21,7 +21,7 @@ public class PharmacotherapistRole extends Role {
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, User_Account account, Org organization, Enterprise enterprise, Ecosystem business, NetworkSystem network) {
-        return new PhysiotherapistWorkAreaJPanel(userProcessContainer, account, organization, enterprise, network);
+        return new PharmacotherapistWorkAreaJPanel(userProcessContainer, account, organization, enterprise, network);
     }
 
     @Override
