@@ -47,8 +47,8 @@ public class OrgDirectory {
                     organization = new PsychiatristOrg();
                     organizationList.add(organization);
                     break;
-                case Physiotherapist:
-                    organization = new PhysiotherapistOrg();
+                case Pharmacotherapist:
+                    organization = new PharmacotherapistOrg();
                     organizationList.add(organization);
                     break;
                 case Distributor:

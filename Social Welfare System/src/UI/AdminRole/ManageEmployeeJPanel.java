@@ -216,7 +216,9 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, -1, -1));
 
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 170, 500, 390));
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, 890, 770));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/ad3.jpg"))); // NOI18N
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, 1000, 770));
     }// </editor-fold>//GEN-END:initComponents
 
     private void deleteEmpBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteEmpBtnActionPerformed

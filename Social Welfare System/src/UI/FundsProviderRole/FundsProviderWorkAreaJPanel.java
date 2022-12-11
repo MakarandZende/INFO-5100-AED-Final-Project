@@ -72,8 +72,9 @@ public class FundsProviderWorkAreaJPanel extends javax.swing.JPanel {
         refreshJButton = new javax.swing.JButton();
         assignJButton = new javax.swing.JButton();
         processJButton = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(204, 204, 255));
+        setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1930, 1080));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -152,6 +153,10 @@ public class FundsProviderWorkAreaJPanel extends javax.swing.JPanel {
 
         jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 760, 390));
 
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/fund1.jpg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
         add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1190, 740));
     }// </editor-fold>//GEN-END:initComponents
 
@@ -206,6 +211,7 @@ public class FundsProviderWorkAreaJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton assignJButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

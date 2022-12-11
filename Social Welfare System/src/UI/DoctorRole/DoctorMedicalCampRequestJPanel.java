@@ -47,14 +47,16 @@ public class DoctorMedicalCampRequestJPanel extends javax.swing.JPanel {
         
         model.setRowCount(0);
         for (WorkRequest request : organization.getWorkStream().getWorkRequestList()){
-            Object[] row = new Object[5];
-            row[0] = request;
-            row[1] = request.getSender().getEmployee().getName();
-            row[2] = request.getReceiver() == null ? null : request.getReceiver().getEmployee().getName();
-            row[3] = request.getStatus();
-            row[4] = ((MedicalCampWorkRequest)request).getCampResult();
-            
-            model.addRow(row);
+            if(request instanceof MedicalCampWorkRequest){
+                Object[] row = new Object[5];
+                row[0] = request;
+                row[1] = request.getSender().getEmployee().getName();
+                row[2] = request.getReceiver() == null ? null : request.getReceiver().getEmployee().getName();
+                row[3] = request.getStatus();
+                row[4] = ((MedicalCampWorkRequest)request).getCampResult();
+
+                model.addRow(row);
+            }
         }
     }
     
@@ -165,6 +167,7 @@ public class DoctorMedicalCampRequestJPanel extends javax.swing.JPanel {
         int selectedRow = campRequestJTable.getSelectedRow();
 
         if (selectedRow < 0){
+            JOptionPane.showMessageDialog(null, "Select a request to proceed");
             return;
         }
 

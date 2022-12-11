@@ -71,21 +71,30 @@ public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        totalFundsTxt = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         workRequestJTable = new javax.swing.JTable();
         requestFundJButton = new javax.swing.JButton();
         refreshTestJButton = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        totalFundsTxt = new javax.swing.JLabel();
-        resReqBtn = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(204, 204, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Volunteer WorkArea JPanel");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, -1, -1));
+
+        totalFundsTxt.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        add(totalFundsTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 260, 220, 40));
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 990, 80));
+
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         workRequestJTable.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -116,7 +125,7 @@ public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(workRequestJTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 577, 135));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 577, 135));
 
         requestFundJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         requestFundJButton.setText("Request Funds");
@@ -125,7 +134,7 @@ public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
                 requestFundJButtonActionPerformed(evt);
             }
         });
-        add(requestFundJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 250, 161, -1));
+        jPanel2.add(requestFundJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 160, 161, -1));
 
         refreshTestJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         refreshTestJButton.setText("Refresh");
@@ -134,27 +143,16 @@ public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
                 refreshTestJButtonActionPerformed(evt);
             }
         });
-        add(refreshTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 290, 161, -1));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/volunteerimage.png"))); // NOI18N
-        jLabel2.setText("jLabel2");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(183, 368, 281, 130));
+        jPanel2.add(refreshTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 200, 161, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel3.setText("Total Funds Available");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 180, 40));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 180, 40));
 
-        totalFundsTxt.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        add(totalFundsTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 260, 220, 40));
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 710, 320));
 
-        resReqBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        resReqBtn.setText("Resolve Request");
-        resReqBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                resReqBtnActionPerformed(evt);
-            }
-        });
-        add(resReqBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 330, -1, -1));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 990, 440));
     }// </editor-fold>//GEN-END:initComponents
 
     private void requestFundJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestFundJButtonActionPerformed
@@ -170,23 +168,16 @@ public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
 
     }//GEN-LAST:event_refreshTestJButtonActionPerformed
 
-    private void resReqBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resReqBtnActionPerformed
-        // TODO add your handling code here:
-        // go to fundRequest Page
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        userProcessContainer.add("ResolveRequestsJPanel", new ResolveRequestsJPanel(userProcessContainer, userAccount,organization, enterprise, business));
-        layout.next(userProcessContainer);
-    }//GEN-LAST:event_resReqBtnActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton refreshTestJButton;
     private javax.swing.JButton requestFundJButton;
-    private javax.swing.JButton resReqBtn;
     private javax.swing.JLabel totalFundsTxt;
     private javax.swing.JTable workRequestJTable;
     // End of variables declaration//GEN-END:variables

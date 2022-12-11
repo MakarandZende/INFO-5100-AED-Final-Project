@@ -69,6 +69,7 @@ public class RequestBloodFormJPanel extends javax.swing.JPanel {
         valueLabel = new javax.swing.JLabel();
         enterpriseLabel = new javax.swing.JLabel();
         messageJTextField = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -123,12 +124,16 @@ public class RequestBloodFormJPanel extends javax.swing.JPanel {
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         enterpriseLabel.setText("EnterPrise :");
-        jPanel3.add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 120, 30));
+        jPanel3.add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 120, 30));
 
         messageJTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jPanel3.add(messageJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, 185, -1));
 
         jPanel4.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 120, 600, 220));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/bd.jpg"))); // NOI18N
+        jLabel4.setText("jLabel4");
+        jPanel4.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1370, 720));
 
@@ -174,6 +179,7 @@ public class RequestBloodFormJPanel extends javax.swing.JPanel {
         if (org!=null){
             org.getWorkStream().getWorkRequestList().add(request);
             userAccount.getWorkStream().getWorkRequestList().add(request);
+            JOptionPane.showMessageDialog(null,"Blood Request sent successfully");
         }
         messageJTextField.setText("");
             }
@@ -242,6 +248,7 @@ public class RequestBloodFormJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

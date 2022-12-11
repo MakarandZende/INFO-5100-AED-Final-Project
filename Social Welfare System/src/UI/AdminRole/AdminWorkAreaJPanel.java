@@ -62,6 +62,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         enterpriseLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        enterpriseLabel.setForeground(new java.awt.Color(255, 255, 255));
         enterpriseLabel.setText("ENTERPRISE :");
         add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 190, 200, 30));
 
@@ -122,8 +123,9 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
 
         add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 0, 890, 50));
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/ad3.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, 890, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, -50, 890, 870));
     }// </editor-fold>//GEN-END:initComponents
 
     private void userJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userJButtonActionPerformed

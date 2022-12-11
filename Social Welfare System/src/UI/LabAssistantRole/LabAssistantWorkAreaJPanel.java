@@ -68,6 +68,7 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
         labWorkRequestJTable = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         lblname = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -159,6 +160,10 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
         jPanel1.add(lblname, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 175, 20));
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 150, 760, 370));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/labb1.jpg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 60, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void assignJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButtonActionPerformed
@@ -207,7 +212,7 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
         int selectedRow = labWorkRequestJTable.getSelectedRow();
 
         if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(null, "Please select a lab request first", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Please select a lab request first");
             return;
         }
 
@@ -233,6 +238,7 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton assignJButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;

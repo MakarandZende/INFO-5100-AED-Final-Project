@@ -181,6 +181,8 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         jPanel2.add(organizationJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 144, -1));
 
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 230, 380, 320));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/ad3.jpg"))); // NOI18N
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 890, 880));
     }// </editor-fold>//GEN-END:initComponents
 

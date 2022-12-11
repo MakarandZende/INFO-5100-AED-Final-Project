@@ -52,8 +52,9 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         amountTxtField = new javax.swing.JTextField();
         submitJButton = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(204, 204, 255));
+        setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(239, 241, 228));
@@ -104,6 +105,10 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
         jPanel2.add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, -1, -1));
 
         jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, 550, 270));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/fund1.jpg"))); // NOI18N
+        jLabel4.setText("jLabel4");
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1160, 590));
     }// </editor-fold>//GEN-END:initComponents
@@ -194,6 +199,7 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

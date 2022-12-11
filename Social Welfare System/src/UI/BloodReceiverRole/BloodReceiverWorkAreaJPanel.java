@@ -56,6 +56,7 @@ public class BloodReceiverWorkAreaJPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         bloodReqTable = new javax.swing.JTable();
         requestBloodBtn = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -116,6 +117,10 @@ public class BloodReceiverWorkAreaJPanel extends javax.swing.JPanel {
 
         jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, 630, 290));
 
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/bd.jpg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
         add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1400, 700));
     }// </editor-fold>//GEN-END:initComponents
 
@@ -144,6 +149,7 @@ public class BloodReceiverWorkAreaJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable bloodReqTable;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
