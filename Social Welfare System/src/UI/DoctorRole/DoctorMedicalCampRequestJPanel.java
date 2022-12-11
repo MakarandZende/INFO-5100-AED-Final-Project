@@ -91,6 +91,7 @@ public class DoctorMedicalCampRequestJPanel extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(193, 212, 227));
 
+        assignJButton.setBackground(new java.awt.Color(83, 124, 142));
         assignJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         assignJButton.setText("Assign to me");
         assignJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -99,6 +100,7 @@ public class DoctorMedicalCampRequestJPanel extends javax.swing.JPanel {
             }
         });
 
+        processJButton.setBackground(new java.awt.Color(249, 248, 248));
         processJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         processJButton.setText("Process");
         processJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -107,6 +109,7 @@ public class DoctorMedicalCampRequestJPanel extends javax.swing.JPanel {
             }
         });
 
+        refreshJButton.setBackground(new java.awt.Color(83, 124, 142));
         refreshJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         refreshJButton.setText("Refresh");
         refreshJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -114,6 +117,9 @@ public class DoctorMedicalCampRequestJPanel extends javax.swing.JPanel {
                 refreshJButtonActionPerformed(evt);
             }
         });
+
+        jScrollPane2.setBackground(new java.awt.Color(0, 0, 0));
+        jScrollPane2.setForeground(new java.awt.Color(255, 255, 255));
 
         campRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

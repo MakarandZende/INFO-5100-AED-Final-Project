@@ -50,9 +50,11 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         medcampreqbtn = new javax.swing.JButton();
         btnViewStatistics = new javax.swing.JButton();
         viewaptreqbtn = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1170, 1080));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         medcampreqbtn.setBackground(new java.awt.Color(83, 124, 142));
         medcampreqbtn.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
@@ -63,6 +65,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
                 medcampreqbtnActionPerformed(evt);
             }
         });
+        add(medcampreqbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 270, 287, 50));
 
         btnViewStatistics.setBackground(new java.awt.Color(83, 124, 142));
         btnViewStatistics.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
@@ -73,6 +76,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
                 btnViewStatisticsActionPerformed(evt);
             }
         });
+        add(btnViewStatistics, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 444, 287, 50));
 
         viewaptreqbtn.setBackground(new java.awt.Color(249, 248, 248));
         viewaptreqbtn.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
@@ -82,33 +86,10 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
                 viewaptreqbtnActionPerformed(evt);
             }
         });
+        add(viewaptreqbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 354, 287, 50));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(440, 440, 440)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(medcampreqbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnViewStatistics, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(viewaptreqbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(443, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(270, 270, 270)
-                .addComponent(medcampreqbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
-                .addComponent(viewaptreqbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
-                .addComponent(btnViewStatistics)
-                .addContainerGap(586, Short.MAX_VALUE))
-        );
-
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnViewStatistics, medcampreqbtn});
-
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/doctor_backnew.jpg"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void assignJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButtonActionPerformed
@@ -154,6 +135,7 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnViewStatistics;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JButton medcampreqbtn;
     private javax.swing.JButton viewaptreqbtn;
     // End of variables declaration//GEN-END:variables

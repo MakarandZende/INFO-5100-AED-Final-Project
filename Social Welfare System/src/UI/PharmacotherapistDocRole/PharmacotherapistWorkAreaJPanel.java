@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UI.PhysiotherapistDocRole;
+package UI.PharmacotherapistDocRole;
 
 import Business.Enterprises.Enterprise;
 import Business.Network.NetworkSystem;
@@ -13,6 +13,7 @@ import Business.Organization.PharmacotherapistOrg;
 import Business.UserAccount.User_Account;
 import Business.WorkStream.WorkRequest;
 import java.awt.CardLayout;
+import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -22,10 +23,10 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Pranali
  */
-public class PhysiotherapistWorkAreaJPanel extends javax.swing.JPanel {
+public class PharmacotherapistWorkAreaJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form PhysiotherapistWorkAreaJPanel
+     * Creates new form PharmacotherapistWorkAreaJPanel
      */
     private JPanel userProcessContainer;
     private PharmacotherapistOrg organization;
@@ -33,14 +34,14 @@ public class PhysiotherapistWorkAreaJPanel extends javax.swing.JPanel {
     private User_Account userAccount;
     private NetworkSystem network;
 
-    public PhysiotherapistWorkAreaJPanel(JPanel userProcessContainer, User_Account account, Org organization, Enterprise enterprise, NetworkSystem network) {
+    public PharmacotherapistWorkAreaJPanel(JPanel userProcessContainer, User_Account account, Org organization, Enterprise enterprise, NetworkSystem network) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.organization = (PharmacotherapistOrg) organization;
         this.enterprise = enterprise;
         this.userAccount = account;
         this.network = network;
-        populatePhysiodata();
+        populatePharmadata();
 
     }
 
@@ -175,7 +176,7 @@ public class PhysiotherapistWorkAreaJPanel extends javax.swing.JPanel {
                 WorkRequest request = (WorkRequest) physiotherapistJTable.getValueAt(selectedRow, 0);
                 request.setReceiver(userAccount);
                 request.setStatus("Assigned to physiotherapist");
-                populatePhysiodata();
+                populatePharmadata();
                 
            
 
@@ -198,7 +199,7 @@ public class PhysiotherapistWorkAreaJPanel extends javax.swing.JPanel {
                 request = (WorkRequest) physiotherapistJTable.getValueAt(selectedRow, 0);
                 request.setReceiver(userAccount);
                 request.setStatus("Assigned to physiotherapist");
-                populatePhysiodata();
+                populatePharmadata();
                 
            
 
@@ -214,6 +215,7 @@ public class PhysiotherapistWorkAreaJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton assignJButton2;
+    private javax.swing.JButton backJButton;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
@@ -224,7 +226,7 @@ public class PhysiotherapistWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JTable physiotherapistJTable;
     // End of variables declaration//GEN-END:variables
 
-    private void populatePhysiodata() {
+    private void populatePharmadata() {
         DefaultTableModel model = (DefaultTableModel) physiotherapistJTable.getModel();
 
         model.setRowCount(0);
