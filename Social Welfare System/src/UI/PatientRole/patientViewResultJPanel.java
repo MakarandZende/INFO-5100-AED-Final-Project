@@ -40,7 +40,6 @@ public class patientViewResultJPanel extends javax.swing.JPanel {
 
         jPanel6 = new javax.swing.JPanel();
         enterpriseLabel = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -55,10 +54,6 @@ public class patientViewResultJPanel extends javax.swing.JPanel {
         enterpriseLabel.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         enterpriseLabel.setText("Patient Treatment Result ");
         jPanel6.add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, 1080, 60));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/back_button.png"))); // NOI18N
-        jLabel2.setText("jLabel2");
-        jPanel6.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 50, -1));
 
         add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -84,7 +79,6 @@ public class patientViewResultJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;

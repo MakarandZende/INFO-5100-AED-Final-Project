@@ -141,6 +141,11 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         submitJButton.setFont(new java.awt.Font("Century Gothic", 1, 11)); // NOI18N
         submitJButton.setText("Submit");
         submitJButton.setBorder(null);
+        submitJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitJButtonActionPerformed(evt);
+            }
+        });
         jPanel1.add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 440, 80, 31));
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 320, 960));
@@ -219,6 +224,50 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_backJButtonActionPerformed
+
+    private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
+        // TODO add your handling code here:
+        try{
+            if(EmpytyFieldValidation()){
+
+                if(RegexValidation()){
+                    NetworkSystem network = (NetworkSystem) networkJComboBox.getSelectedItem();
+                    Enterprise.EnterpriseType type = (Enterprise.EnterpriseType) enterpriseTypeJComboBox.getSelectedItem();
+                    String name = nameJTextField.getText();
+                    Enterprise enterprise = network.getEnterpriseDirectory().createAndAddEnterprise(name, type);
+                    populateTable();
+                    JOptionPane.showMessageDialog(this,"Enterprise created successfully!");
+                }
+                else{
+                    JOptionPane.showMessageDialog(this,"Invalid Enterprise name");
+                    validationCheck=true;
+                }
+            }
+            else{
+                JOptionPane.showMessageDialog(this,"Enterprise name cannot be empty");
+                emptyValidationStatus=true;
+            }
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this,"Enterprise not created, Try again");
+            System.out.println(e.toString());
+            emptyValidationStatus=true;
+        }
+        
+//        NetworkSystem network = (NetworkSystem) networkJComboBox.getSelectedItem();
+//        Enterprise.EnterpriseType type = (Enterprise.EnterpriseType) enterpriseTypeJComboBox.getSelectedItem();
+//
+//        if (network == null || type == null) {
+//            JOptionPane.showMessageDialog(null, "Invalid Input!");
+//            return;
+//        }
+//
+//        String name = nameJTextField.getText();
+//
+//        Enterprise enterprise = network.getEnterpriseDirectory().createAndAddEnterprise(name, type);
+//
+//        populateTable();
+    }//GEN-LAST:event_submitJButtonActionPerformed
 
     private boolean RegexValidation() {
         if(!nameJTextField.getText().matches("^[a-zA-Z ]+$"))

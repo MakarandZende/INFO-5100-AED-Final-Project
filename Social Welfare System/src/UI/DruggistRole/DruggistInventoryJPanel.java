@@ -37,6 +37,7 @@ public class DruggistInventoryJPanel extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jLabel20 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -70,6 +71,7 @@ public class DruggistInventoryJPanel extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(239, 241, 228));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/back_button.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -77,11 +79,13 @@ public class DruggistInventoryJPanel extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(108, 14, -1, 55));
 
         jButton2.setBackground(new java.awt.Color(239, 241, 228));
         jButton2.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         jButton2.setText("Request Supplier ");
         jButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, 176, 50));
 
         jButton3.setBackground(new java.awt.Color(239, 241, 228));
         jButton3.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
@@ -92,38 +96,12 @@ public class DruggistInventoryJPanel extends javax.swing.JPanel {
                 jButton3ActionPerformed(evt);
             }
         });
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 410, 176, 50));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(108, 108, 108)
-                        .addComponent(jButton1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(58, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(131, 131, 131)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(70, 70, 70)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(710, Short.MAX_VALUE))
-        );
+        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/pills_icon.png"))); // NOI18N
+        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, -1, -1));
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jButton2, jButton3});
-
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 1080));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, 1080));
 
         jPanel6.setBackground(new java.awt.Color(193, 212, 227));
 
@@ -137,7 +115,7 @@ public class DruggistInventoryJPanel extends javax.swing.JPanel {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(475, 475, 475)
                 .addComponent(jLabel1)
-                .addContainerGap(903, Short.MAX_VALUE))
+                .addContainerGap(963, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -147,7 +125,7 @@ public class DruggistInventoryJPanel extends javax.swing.JPanel {
                 .addContainerGap(39, Short.MAX_VALUE))
         );
 
-        add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(287, 0, 1640, 90));
+        add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(227, 0, 1700, 90));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -270,7 +248,7 @@ public class DruggistInventoryJPanel extends javax.swing.JPanel {
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/drug.jpg"))); // NOI18N
         jLabel14.setText("jLabel14");
-        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 1970, -1));
 
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 1650, 990));
     }// </editor-fold>//GEN-END:initComponents
@@ -317,6 +295,7 @@ public class DruggistInventoryJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
