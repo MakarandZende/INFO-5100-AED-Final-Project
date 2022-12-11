@@ -117,6 +117,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(239, 241, 228));
+        jPanel1.setPreferredSize(new java.awt.Dimension(256, 550));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         backjButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -219,7 +220,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/admin6.png"))); // NOI18N
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 100, 100));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 360, 860));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 340, 840));
 
         jPanel6.setBackground(new java.awt.Color(193, 212, 227));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -234,6 +235,8 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         jPanel3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        userJTable.setBackground(new java.awt.Color(0, 0, 0));
+        userJTable.setForeground(new java.awt.Color(255, 255, 255));
         userJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -257,6 +260,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        userJTable.setShowGrid(true);
         jScrollPane1.setViewportView(userJTable);
         if (userJTable.getColumnModel().getColumnCount() > 0) {
             userJTable.getColumnModel().getColumn(0).setResizable(false);
@@ -269,7 +273,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/ad3.jpg"))); // NOI18N
         jLabel8.setPreferredSize(new java.awt.Dimension(790, 800));
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, -50, 870, 1020));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, -40, 890, 1020));
     }// </editor-fold>//GEN-END:initComponents
 
     private void createUserJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createUserJButtonActionPerformed

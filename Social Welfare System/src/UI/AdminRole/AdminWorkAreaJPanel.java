@@ -85,7 +85,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
                 manageOrganizationJButtonActionPerformed(evt);
             }
         });
-        jPanel2.add(manageOrganizationJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, 196, 53));
+        jPanel2.add(manageOrganizationJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 196, 53));
 
         manageEmployeeJButton.setBackground(new java.awt.Color(193, 212, 227));
         manageEmployeeJButton.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
@@ -107,10 +107,10 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
                 userJButtonActionPerformed(evt);
             }
         });
-        jPanel2.add(userJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 500, 196, 50));
+        jPanel2.add(userJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 480, 196, 50));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/admin6.png"))); // NOI18N
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 100, 100));
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, 100, 100));
 
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 310, 840));
 

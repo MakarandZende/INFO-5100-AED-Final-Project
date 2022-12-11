@@ -87,6 +87,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(239, 241, 228));
+        jPanel1.setPreferredSize(new java.awt.Dimension(256, 550));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         backJButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -107,7 +108,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
                 deleteOrgBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(deleteOrgBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, 160, 50));
+        jPanel1.add(deleteOrgBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 430, 160, 50));
 
         addJButton1.setBackground(new java.awt.Color(239, 241, 228));
         addJButton1.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
@@ -118,12 +119,12 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
                 addJButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(addJButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 160, 50));
+        jPanel1.add(addJButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, 160, 50));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/admin6.png"))); // NOI18N
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 100, 100));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, 100, 100));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 233, 940));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 310, 840));
 
         jPanel6.setBackground(new java.awt.Color(193, 212, 227));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -142,6 +143,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         jLabel1.setText("Organization Type ");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, -1, -1));
 
+        organizationJTable.setBackground(new java.awt.Color(0, 0, 0));
         organizationJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
@@ -168,6 +170,8 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        organizationJTable.setSelectionBackground(new java.awt.Color(0, 0, 0));
+        organizationJTable.setShowGrid(true);
         jScrollPane1.setViewportView(organizationJTable);
         if (organizationJTable.getColumnModel().getColumnCount() > 0) {
             organizationJTable.getColumnModel().getColumn(0).setResizable(false);
@@ -183,7 +187,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 230, 380, 320));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/ad3.jpg"))); // NOI18N
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 890, 880));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 60, 920, 880));
     }// </editor-fold>//GEN-END:initComponents
 
     private void deleteOrgBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteOrgBtnActionPerformed
