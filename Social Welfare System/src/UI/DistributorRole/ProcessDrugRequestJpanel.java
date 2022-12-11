@@ -2,14 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package UI.DruggistRole;
+package UI.DistributorRole;
 
-import Business.Enterprises.DistributorsEnterprises;
+import UI.DruggistRole.*;
 import UI.DoctorRole.*;
 import Business.Enterprises.Enterprise;
 import Business.Enterprises.DrugStoresEnterprises;
 import Business.Network.NetworkSystem;
-import Business.Organization.DistributorOrg;
 import Business.Organization.DoctorConsultantOrg;
 import Business.Organization.Org;
 import Business.Organization.DruggistOrg;
@@ -24,23 +23,27 @@ import javax.swing.JPanel;
  *
  * @author Makarand
  */
-public class RequestSupplierJPanel extends javax.swing.JPanel {
+public class ProcessDrugRequestJpanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
     private DoctorConsultantOrg organization;
     private Enterprise enterprise;
     private User_Account userAccount;
     private NetworkSystem network;
+    private DrugDistributorWorkRequest drugDistributorWorkRequest;
     /**
      * Creates new form RequestDruggistForMedicineJPanel
      */
-    public RequestSupplierJPanel(JPanel userProcessContainer, NetworkSystem network, User_Account account, Enterprise enterprise ) {
+    public ProcessDrugRequestJpanel(JPanel userProcessContainer, NetworkSystem network, User_Account account, Enterprise enterprise, DrugDistributorWorkRequest drugDistributorWorkRequest ) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
+        this.organization = (DoctorConsultantOrg) organization;
         this.enterprise = enterprise;
         this.userAccount = account;
         this.network = network;
+        this.drugDistributorWorkRequest = drugDistributorWorkRequest;
         txtPatientName.setText(userAccount.getHuman().getName());
+        populateFields();
     }
 
     /**
@@ -176,23 +179,23 @@ public class RequestSupplierJPanel extends javax.swing.JPanel {
 
         jLabel3.setText("Count");
         jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 140, -1, -1));
-        jPanel3.add(vivTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 370, 150, -1));
+        jPanel3.add(vivTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 370, 110, -1));
 
         antTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 antTxtActionPerformed(evt);
             }
         });
-        jPanel3.add(antTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 320, 150, -1));
-        jPanel3.add(camTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, 150, -1));
-        jPanel3.add(disTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 220, 150, -1));
+        jPanel3.add(antTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 320, 110, -1));
+        jPanel3.add(camTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, 110, -1));
+        jPanel3.add(disTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 220, 110, -1));
 
         acaTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 acaTxtActionPerformed(evt);
             }
         });
-        jPanel3.add(acaTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 150, -1));
+        jPanel3.add(acaTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 110, -1));
 
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 110, 570, 520));
 
@@ -201,7 +204,19 @@ public class RequestSupplierJPanel extends javax.swing.JPanel {
 
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-4, 96, 1180, 990));
     }// </editor-fold>//GEN-END:initComponents
-
+    private void populateFields(){
+        acaTxt.setVisible(drugDistributorWorkRequest.isIsAca());
+        disTxt.setVisible(drugDistributorWorkRequest.isIsDis());
+        vivTxt.setVisible(drugDistributorWorkRequest.isIsViv());
+        antTxt.setVisible(drugDistributorWorkRequest.isIsAnt());
+        camTxt.setVisible(drugDistributorWorkRequest.isIsCam());
+        chkAca.setVisible(drugDistributorWorkRequest.isIsAca());
+        chkDis.setVisible(drugDistributorWorkRequest.isIsDis());
+        chkViv.setVisible(drugDistributorWorkRequest.isIsViv());
+        chkAnt.setVisible(drugDistributorWorkRequest.isIsAnt());
+        chkCam.setVisible(drugDistributorWorkRequest.isIsCam());
+    }
+    
     private void chkDisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkDisActionPerformed
         disTxt.setVisible(chkDis.isEnabled());
     }//GEN-LAST:event_chkDisActionPerformed
@@ -216,8 +231,6 @@ public class RequestSupplierJPanel extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        DrugDistributorWorkRequest drugDistributorWorkRequest = new DrugDistributorWorkRequest();
-        drugDistributorWorkRequest.setSender(userAccount);
         boolean isReqValid = false;
         
         if (chkAca.isSelected())
@@ -254,28 +267,15 @@ public class RequestSupplierJPanel extends javax.swing.JPanel {
             drugDistributorWorkRequest.setCountVivitrol(Integer.parseInt(vivTxt.getText()));
         }
 
-        
-        drugDistributorWorkRequest.setStatus("Drugs Requested from Distributor");
-        drugDistributorWorkRequest.setMessage("Need Supply ASAP!");
-
-        Org org = null;
-        for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()){
-            if (enterprise instanceof DistributorsEnterprises){
-                for (Org organization : enterprise.getOrganizationDirectory().getOrganizationList()){
-                    if (organization instanceof DistributorOrg){
-                        org = organization;
-                        break;
-                    }
-                }
-            }
-        }
-        if (org!=null){
-            org.getWorkStream().getWorkRequestList().add(drugDistributorWorkRequest);
-            userAccount.getWorkStream().getWorkRequestList().add(drugDistributorWorkRequest);
+        if(isReqValid){
+            drugDistributorWorkRequest.setSender(userAccount);
+            drugDistributorWorkRequest.setStatus("Drugs Sent");
+            drugDistributorWorkRequest.setMessage("Drugs Dispatched");
             JOptionPane.showMessageDialog(null, "Drug Supply request sent successfully");
         }
         else{
-            JOptionPane.showMessageDialog(null, "No Distributor  Available");
+            JOptionPane.showMessageDialog(null, "Nothing selected");
+            return;
         }
         
         
@@ -287,13 +287,11 @@ public class RequestSupplierJPanel extends javax.swing.JPanel {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        
         userProcessContainer.remove(this);
         Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
-        DruggistInventoryJPanel druggistInventoryJPanel = (DruggistInventoryJPanel)component;
-        druggistInventoryJPanel.populateDrugDistributorRequestData();
-        druggistInventoryJPanel.populateInventory();
+        DistributorWorkAreaPanel distributorWorkAreaPanel = (DistributorWorkAreaPanel)component;
+        distributorWorkAreaPanel.populateDrugReq();
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_jButton2ActionPerformed

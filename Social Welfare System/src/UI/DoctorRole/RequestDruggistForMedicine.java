@@ -226,13 +226,18 @@ public class RequestDruggistForMedicine extends javax.swing.JPanel {
                     }
                 }
             }
-            if (org!=null){
-                org.getWorkStream().getWorkRequestList().add(patientrequest);
-                patientrequest.setReceiver(null);
-                userAccount.getWorkStream().getWorkRequestList().add(patientrequest);
-            }
         }
-        JOptionPane.showMessageDialog(null, "Medical prescription sent to pharmacist successfully.");
+        if (org!=null){
+            org.getWorkStream().getWorkRequestList().add(patientrequest);
+            patientrequest.setReceiver(null);
+            userAccount.getWorkStream().getWorkRequestList().add(patientrequest);
+            JOptionPane.showMessageDialog(null, "Medical prescription sent to pharmacist successfully.");
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "No Druggist  Available");
+        }
+        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void chkAcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkAcaActionPerformed
