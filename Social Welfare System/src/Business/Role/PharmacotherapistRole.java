@@ -17,7 +17,7 @@ import UI.PhysiotherapistDocRole.PhysiotherapistWorkAreaJPanel;
  *
  * @author Aditya
  */
-public class PhysioTherapistRole extends Role {
+public class PharmacotherapistRole extends Role {
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, User_Account account, Org organization, Enterprise enterprise, Ecosystem business, NetworkSystem network) {

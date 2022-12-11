@@ -51,8 +51,9 @@ public class ProcessBloodDonationRequestJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         resultJTextField = new javax.swing.JTextField();
         submitJButton = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(204, 204, 255));
+        setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(239, 241, 228));
@@ -95,6 +96,10 @@ public class ProcessBloodDonationRequestJPanel extends javax.swing.JPanel {
         jPanel2.add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, -1, -1));
 
         jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 100, 480, 170));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/bdd3.jpg"))); // NOI18N
+        jLabel3.setText("jLabel3");
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1200, 630));
     }// </editor-fold>//GEN-END:initComponents
@@ -150,6 +155,7 @@ public class ProcessBloodDonationRequestJPanel extends javax.swing.JPanel {
     private javax.swing.JButton backJButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

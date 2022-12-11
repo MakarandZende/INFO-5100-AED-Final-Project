@@ -88,6 +88,7 @@ public class CollectedMedicalHistoryJPanel extends javax.swing.JPanel {
         txtMedConsum = new javax.swing.JTextArea();
         jLabel14 = new javax.swing.JLabel();
         resBtn = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -220,6 +221,10 @@ public class CollectedMedicalHistoryJPanel extends javax.swing.JPanel {
 
         jPanel5.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 980, 630));
 
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/labb1.jpg"))); // NOI18N
+        jLabel3.setText("jLabel3");
+        jPanel5.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
         add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 1640, 1030));
     }// </editor-fold>//GEN-END:initComponents
 
@@ -276,7 +281,7 @@ public class CollectedMedicalHistoryJPanel extends javax.swing.JPanel {
         /*-----------------------*/
         int b = request.getHashcode();
         System.out.println("b" + b);
-        //Dharati
+        
         Enterprise inEnterprise = null;
         Org inOrganization = null;
         NetworkSystem inNetwork = null;
@@ -474,6 +479,7 @@ public class CollectedMedicalHistoryJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

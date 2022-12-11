@@ -206,6 +206,12 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
             }
         });
         jPanel2.add(createUserJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 320, 117, 38));
+
+        passwordJTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passwordJTextFieldActionPerformed(evt);
+            }
+        });
         jPanel2.add(passwordJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, 140, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 300, 370));
@@ -261,6 +267,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
 
         add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 200, 580, 450));
 
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/ad3.jpg"))); // NOI18N
         jLabel8.setPreferredSize(new java.awt.Dimension(790, 800));
         add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, -50, 870, 1020));
     }// </editor-fold>//GEN-END:initComponents
@@ -337,6 +344,10 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
     private void txtemailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtemailActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtemailActionPerformed
+
+    private void passwordJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordJTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passwordJTextFieldActionPerformed
 
     private boolean RegexValidation() {
         if(!txtemail.getText().matches("^[A-Za-z0-9+_.-]+@(.+)$"))

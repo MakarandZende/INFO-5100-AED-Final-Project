@@ -60,6 +60,7 @@ public class BloodDonorWorkAreaJPanel extends javax.swing.JPanel {
         refreshJButton1 = new javax.swing.JButton();
         assignJButton = new javax.swing.JButton();
         processJButton = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -68,7 +69,7 @@ public class BloodDonorWorkAreaJPanel extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Blood Donor Work Area");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 20, -1, -1));
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 80));
 
@@ -107,7 +108,7 @@ public class BloodDonorWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(bloodRequestTable);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 491, 142));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 491, 142));
 
         addBloodGrpDetails.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         addBloodGrpDetails.setText("Add Blood Details");
@@ -116,7 +117,7 @@ public class BloodDonorWorkAreaJPanel extends javax.swing.JPanel {
                 addBloodGrpDetailsActionPerformed(evt);
             }
         });
-        jPanel2.add(addBloodGrpDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 180, 80));
+        jPanel2.add(addBloodGrpDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, 180, 80));
 
         refreshJButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         refreshJButton1.setText("Refresh");
@@ -125,7 +126,7 @@ public class BloodDonorWorkAreaJPanel extends javax.swing.JPanel {
                 refreshJButton1ActionPerformed(evt);
             }
         });
-        jPanel2.add(refreshJButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, 248, -1));
+        jPanel2.add(refreshJButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, 248, -1));
 
         assignJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         assignJButton.setText("Assign to me");
@@ -134,7 +135,7 @@ public class BloodDonorWorkAreaJPanel extends javax.swing.JPanel {
                 assignJButtonActionPerformed(evt);
             }
         });
-        jPanel2.add(assignJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 200, 248, -1));
+        jPanel2.add(assignJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, 248, -1));
 
         processJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         processJButton.setText("Process");
@@ -143,9 +144,13 @@ public class BloodDonorWorkAreaJPanel extends javax.swing.JPanel {
                 processJButtonActionPerformed(evt);
             }
         });
-        jPanel2.add(processJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, 248, -1));
+        jPanel2.add(processJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 290, 248, -1));
 
         jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 50, 620, 430));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/bdd3.jpg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1200, 710));
     }// </editor-fold>//GEN-END:initComponents
@@ -183,9 +188,21 @@ public class BloodDonorWorkAreaJPanel extends javax.swing.JPanel {
 
         WorkRequest request = (WorkRequest)bloodRequestTable.getValueAt(selectedRow, 0);
         if(request.getReceiver() == null){
-            request.setReceiver(userAccount);
-            request.setStatus("Pending");
-            populateTable();
+            if( ((BloodDonationWorkRequest)request).getBloodGroup() == userAccount.getHuman().getBloodGroup() &&
+                    ((BloodDonationWorkRequest)request).getBloodGroup() != null ){
+                request.setReceiver(userAccount);
+                request.setStatus("Pending");
+                populateTable();
+            }
+            else if (userAccount.getHuman().getBloodGroup() == null){
+                JOptionPane.showMessageDialog(null,"Add donor details first");
+                return;
+            }
+            else if(((BloodDonationWorkRequest)request).getBloodGroup() != userAccount.getHuman().getBloodGroup()){
+                JOptionPane.showMessageDialog(null,"Your Blood group does not match requested type! Please try with another request");
+                return;
+            }
+            
         }
         else{
             JOptionPane.showMessageDialog(null, "Already Assigned");
@@ -224,6 +241,7 @@ public class BloodDonorWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JButton assignJButton;
     private javax.swing.JTable bloodRequestTable;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

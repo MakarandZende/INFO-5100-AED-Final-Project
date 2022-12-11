@@ -9,7 +9,7 @@ import Business.Enterprises.Enterprise;
 import Business.Network.NetworkSystem;
 import Business.Organization.DoctorConsultantOrg;
 import Business.Organization.Org;
-import Business.Organization.PhysiotherapistOrg;
+import Business.Organization.PharmacotherapistOrg;
 import Business.UserAccount.User_Account;
 import Business.WorkStream.WorkRequest;
 import java.awt.CardLayout;
@@ -28,7 +28,7 @@ public class PhysiotherapistWorkAreaJPanel extends javax.swing.JPanel {
      * Creates new form PhysiotherapistWorkAreaJPanel
      */
     private JPanel userProcessContainer;
-    private PhysiotherapistOrg organization;
+    private PharmacotherapistOrg organization;
     private Enterprise enterprise;
     private User_Account userAccount;
     private NetworkSystem network;
@@ -36,7 +36,7 @@ public class PhysiotherapistWorkAreaJPanel extends javax.swing.JPanel {
     public PhysiotherapistWorkAreaJPanel(JPanel userProcessContainer, User_Account account, Org organization, Enterprise enterprise, NetworkSystem network) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
-        this.organization = (PhysiotherapistOrg) organization;
+        this.organization = (PharmacotherapistOrg) organization;
         this.enterprise = enterprise;
         this.userAccount = account;
         this.network = network;

@@ -15,6 +15,14 @@ import java.awt.Color;
 import java.awt.Component;
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.Properties;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -130,13 +138,49 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 1220, 800));
     }// </editor-fold>//GEN-END:initComponents
 
+    public void sendMail(String emailId)
+            
+    {
+    final String username = "code.crunch.sih@gmail.com";
+		final String password = "pksqhbdswlwsllfr";
+
+		Properties props = new Properties();
+		props.put("mail.smtp.auth", "true");
+		props.put("mail.smtp.starttls.enable", "true");
+		props.put("mail.smtp.host", "smtp.gmail.com");
+		props.put("mail.smtp.port", "587");
+
+		Session session = Session.getInstance(props,
+		  new javax.mail.Authenticator() {
+			protected PasswordAuthentication getPasswordAuthentication() {
+				return new PasswordAuthentication(username, password);
+			}
+		  });
+
+		try {
+
+			Message message = new MimeMessage(session);
+			message.setFrom(new InternetAddress("code.crunch.sih@gmail.com"));
+			message.setRecipients(Message.RecipientType.TO,
+				InternetAddress.parse(emailId));
+			message.setSubject("Appointment Request by "+userAccount);
+			message.setText("Appointment Request sent successfuly.");
+
+			Transport.send(message);
+
+
+		} catch (MessagingException e) {
+			throw new RuntimeException(e);
+		}
+	}
+    
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
 
         userProcessContainer.remove(this);
         Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
-       // PatientWorkAreaJPanel pwjp = (PatientWorkAreaJPanel) component;
-        //pwjp.populateAppointmentListTable();
+        PatientWorkAreaJPanel pwjp = (PatientWorkAreaJPanel) component;
+        pwjp.populateAppointmentListTable();
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
 
@@ -171,6 +215,8 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
                 int a = org.getWorkStream().getWorkRequestList().hashCode();
                 org.getWorkStream().getWorkRequestList().add(request);
                 userAccount.getWorkStream().getWorkRequestList().add(request);
+                String emailId = "code.crunch.sih@gmail.com";
+                sendMail(emailId);
         }
         JOptionPane.showMessageDialog(null, "Appointment booked successfully");
         txtmessage.setText("");

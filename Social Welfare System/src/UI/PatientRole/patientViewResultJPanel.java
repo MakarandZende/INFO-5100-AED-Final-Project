@@ -25,6 +25,7 @@ public class patientViewResultJPanel extends javax.swing.JPanel {
         this.userProcessContainer = userProcessContainer;
         this.request = request;
         txtDiagnose.setText(request.getDiagnose());
+        txtDiagnose.setEditable(false);
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -37,18 +38,15 @@ public class patientViewResultJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtDiagnose = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         enterpriseLabel = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtDiagnose = new javax.swing.JTextArea();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        txtDiagnose.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        txtDiagnose.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        add(txtDiagnose, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 200, 510, 150));
 
         jPanel6.setBackground(new java.awt.Color(239, 241, 228));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -68,6 +66,12 @@ public class patientViewResultJPanel extends javax.swing.JPanel {
         jLabel1.setOpaque(true);
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 80, 150, 50));
 
+        txtDiagnose.setColumns(20);
+        txtDiagnose.setRows(5);
+        jScrollPane1.setViewportView(txtDiagnose);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 140, 520, 170));
+
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1370, 760));
     }// </editor-fold>//GEN-END:initComponents
 
@@ -77,6 +81,7 @@ public class patientViewResultJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JLabel txtDiagnose;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea txtDiagnose;
     // End of variables declaration//GEN-END:variables
 }

@@ -5,7 +5,6 @@
  */
 package UI.CSRManagerRole;
 
-import UI.VolunteerRole.RequestMedicalCampjPanel;
 import Business.Ecosystem.Ecosystem;
 import Business.Enterprises.Enterprise;
 import Business.Organization.CSROrganization;
