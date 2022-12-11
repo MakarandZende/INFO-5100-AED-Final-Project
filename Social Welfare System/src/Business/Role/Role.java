@@ -25,7 +25,7 @@ public abstract class Role {
         Druggist("Druggist"),
         Physiotherapist("Physiotherapist"),
         Psychiatrist("Psychiatrist"),
-        SupplierManager("SupplierManager"),
+        Distributor("Distributor"),
         SysAdminRole("SysAdmin");
 
         private String value;

@@ -3,13 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UI.PhysiotherapistDocRole;
+package UI.PharmacotherapistDocRole;
 
 import Business.Enterprises.Enterprise;
 import Business.Network.NetworkSystem;
 import Business.Organization.PharmacotherapistOrg;
 import Business.UserAccount.User_Account;
 import Business.WorkStream.WorkRequest;
+import java.awt.CardLayout;
+import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -57,6 +59,7 @@ public class treatJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         ddlmeetings = new javax.swing.JComboBox();
         btnsenddecision = new javax.swing.JButton();
+        backJButton1 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
 
@@ -88,6 +91,15 @@ public class treatJPanel extends javax.swing.JPanel {
         });
         jPanel3.add(btnsenddecision, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, 60));
 
+        backJButton1.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        backJButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/back_button.png"))); // NOI18N
+        backJButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backJButton1ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(backJButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, -1, -1));
+
         add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 266, 869));
 
         jPanel6.setBackground(new java.awt.Color(193, 212, 227));
@@ -110,8 +122,20 @@ public class treatJPanel extends javax.swing.JPanel {
 
     }//GEN-LAST:event_ddlmeetingsActionPerformed
 
+    private void backJButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButton1ActionPerformed
+        userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        PharmacotherapistWorkAreaJPanel pcwjp= (PharmacotherapistWorkAreaJPanel) component;
+//        pcwjp.populatePharmadata();
+
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_backJButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton backJButton1;
     private javax.swing.JButton btnsenddecision;
     private javax.swing.JComboBox ddlmeetings;
     private javax.swing.JLabel jLabel1;
