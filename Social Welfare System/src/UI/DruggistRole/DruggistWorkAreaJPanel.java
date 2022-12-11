@@ -173,6 +173,8 @@ public class DruggistWorkAreaJPanel extends javax.swing.JPanel {
         jPanel2.setBackground(new java.awt.Color(239, 241, 228));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        DruggistMedRequestJTable.setBackground(new java.awt.Color(0, 0, 0));
+        DruggistMedRequestJTable.setForeground(new java.awt.Color(255, 255, 255));
         DruggistMedRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -199,6 +201,7 @@ public class DruggistWorkAreaJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        DruggistMedRequestJTable.setShowGrid(true);
         jScrollPane1.setViewportView(DruggistMedRequestJTable);
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 740, -1));

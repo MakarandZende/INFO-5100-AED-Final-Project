@@ -116,7 +116,7 @@ public class PatientWorkAreaJPanel extends javax.swing.JPanel {
 
         jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel3.setText("Patient Appointment Booking Requests");
-        jPanel6.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 20, -1, -1));
+        jPanel6.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 20, -1, -1));
 
         add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 1170, 70));
 
@@ -128,6 +128,8 @@ public class PatientWorkAreaJPanel extends javax.swing.JPanel {
         jPanel3.setForeground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        appointmentJTable.setBackground(new java.awt.Color(0, 0, 0));
+        appointmentJTable.setForeground(new java.awt.Color(255, 255, 255));
         appointmentJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -154,11 +156,12 @@ public class PatientWorkAreaJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        appointmentJTable.setShowGrid(true);
         jScrollPane1.setViewportView(appointmentJTable);
 
-        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 560, 290));
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 560, 290));
 
-        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, 630, 370));
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, 630, 370));
 
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, 920, 650));
     }// </editor-fold>//GEN-END:initComponents

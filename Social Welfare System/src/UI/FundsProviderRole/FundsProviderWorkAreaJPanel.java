@@ -93,7 +93,9 @@ public class FundsProviderWorkAreaJPanel extends javax.swing.JPanel {
         jPanel2.setBackground(new java.awt.Color(193, 212, 227));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        workRequestJTable.setBackground(new java.awt.Color(0, 0, 0));
         workRequestJTable.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        workRequestJTable.setForeground(new java.awt.Color(255, 255, 255));
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -151,7 +153,7 @@ public class FundsProviderWorkAreaJPanel extends javax.swing.JPanel {
         });
         jPanel2.add(processJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 320, 160, -1));
 
-        jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 760, 390));
+        jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 150, 760, 390));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/fund1.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
