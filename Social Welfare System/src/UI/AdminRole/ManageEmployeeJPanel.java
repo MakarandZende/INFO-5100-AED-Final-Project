@@ -101,6 +101,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(239, 241, 228));
+        jPanel1.setPreferredSize(new java.awt.Dimension(256, 550));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         deleteEmpBtn.setBackground(new java.awt.Color(239, 241, 228));
@@ -112,7 +113,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
                 deleteEmpBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(deleteEmpBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 158, 44));
+        jPanel1.add(deleteEmpBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 430, 210, 44));
 
         backJButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         backJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/back_button.png"))); // NOI18N
@@ -132,12 +133,12 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
                 addJButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(addJButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 158, 44));
+        jPanel1.add(addJButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 340, 210, 44));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images/admin6.png"))); // NOI18N
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, 100, 100));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, 100, 100));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 210, 800));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 310, 840));
 
         jPanel6.setBackground(new java.awt.Color(193, 212, 227));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -153,6 +154,8 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        organizationJTable.setBackground(new java.awt.Color(0, 0, 0));
+        organizationJTable.setForeground(new java.awt.Color(255, 255, 255));
         organizationJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
@@ -179,6 +182,8 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        organizationJTable.setSelectionBackground(new java.awt.Color(0, 0, 0));
+        organizationJTable.setShowGrid(true);
         jScrollPane1.setViewportView(organizationJTable);
         if (organizationJTable.getColumnModel().getColumnCount() > 0) {
             organizationJTable.getColumnModel().getColumn(0).setResizable(false);

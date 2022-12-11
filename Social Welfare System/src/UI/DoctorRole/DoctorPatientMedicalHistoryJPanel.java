@@ -235,6 +235,7 @@ public class DoctorPatientMedicalHistoryJPanel extends javax.swing.JPanel {
         depressionChk = new javax.swing.JCheckBox();
         anxietyChk = new javax.swing.JCheckBox();
         disruptSocialChk = new javax.swing.JCheckBox();
+        jLabel4 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -254,7 +255,7 @@ public class DoctorPatientMedicalHistoryJPanel extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(322, 322, 322)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 497, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(351, Short.MAX_VALUE))
+                .addContainerGap(371, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -264,9 +265,10 @@ public class DoctorPatientMedicalHistoryJPanel extends javax.swing.JPanel {
                 .addContainerGap(34, Short.MAX_VALUE))
         );
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1170, -1));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel3.setBackground(new java.awt.Color(193, 212, 227));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -276,6 +278,7 @@ public class DoctorPatientMedicalHistoryJPanel extends javax.swing.JPanel {
         jLabel10.setText("General Information :");
         jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 100, 230, 30));
 
+        jButton2.setBackground(new java.awt.Color(193, 212, 227));
         jButton2.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/back_button.png"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -488,24 +491,13 @@ public class DoctorPatientMedicalHistoryJPanel extends javax.swing.JPanel {
         disruptSocialChk.setText("Bad Social Relationships");
         jPanel3.add(disruptSocialChk, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 290, -1, -1));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(118, Short.MAX_VALUE)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 1013, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(52, 52, 52)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(398, Short.MAX_VALUE))
-        );
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(81, 69, 1013, 570));
 
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 96, 1170, 1020));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/doctor_backnew.jpg"))); // NOI18N
+        jLabel4.setText("jLabel4");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
+
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 96, 1190, 1020));
     }// </editor-fold>//GEN-END:initComponents
 
     private void livComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_livComboActionPerformed
@@ -731,6 +723,7 @@ public class DoctorPatientMedicalHistoryJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

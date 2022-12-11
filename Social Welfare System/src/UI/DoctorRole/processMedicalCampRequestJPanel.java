@@ -53,6 +53,7 @@ public class processMedicalCampRequestJPanel extends javax.swing.JPanel {
         resultJTextField = new javax.swing.JTextField();
         submitJButton = new javax.swing.JButton();
         backJButton = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -82,6 +83,7 @@ public class processMedicalCampRequestJPanel extends javax.swing.JPanel {
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(193, 212, 227));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -92,6 +94,7 @@ public class processMedicalCampRequestJPanel extends javax.swing.JPanel {
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, -1, -1));
         jPanel1.add(resultJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 181, -1));
 
+        submitJButton.setBackground(new java.awt.Color(83, 124, 142));
         submitJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         submitJButton.setText("Submit");
         submitJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -101,6 +104,7 @@ public class processMedicalCampRequestJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 210, -1, -1));
 
+        backJButton.setBackground(new java.awt.Color(193, 212, 227));
         backJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         backJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/back_button.png"))); // NOI18N
         backJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -108,24 +112,13 @@ public class processMedicalCampRequestJPanel extends javax.swing.JPanel {
                 backJButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 50, 30));
+        jPanel1.add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 60, 40));
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(294, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(89, 89, 89)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(101, Short.MAX_VALUE))
-        );
+        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(294, 89, 600, 310));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/doctor_background.jpg"))); // NOI18N
+        jLabel3.setText("jLabel3");
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 900, 500));
     }// </editor-fold>//GEN-END:initComponents
@@ -178,6 +171,7 @@ public class processMedicalCampRequestJPanel extends javax.swing.JPanel {
     private javax.swing.JButton backJButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
