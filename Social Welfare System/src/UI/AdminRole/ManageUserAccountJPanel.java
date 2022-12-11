@@ -267,6 +267,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
 
         add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 200, 580, 450));
 
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/ad3.jpg"))); // NOI18N
         jLabel8.setPreferredSize(new java.awt.Dimension(790, 800));
         add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, -50, 870, 1020));
     }// </editor-fold>//GEN-END:initComponents

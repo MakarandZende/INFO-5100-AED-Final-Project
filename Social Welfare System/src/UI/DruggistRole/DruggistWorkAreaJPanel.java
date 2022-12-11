@@ -82,6 +82,7 @@ public class DruggistWorkAreaJPanel extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         DruggistMedRequestJTable = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -148,7 +149,6 @@ public class DruggistWorkAreaJPanel extends javax.swing.JPanel {
         jPanel6.setBackground(new java.awt.Color(193, 212, 227));
 
         jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Lab Requests Received");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -204,6 +204,10 @@ public class DruggistWorkAreaJPanel extends javax.swing.JPanel {
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 740, -1));
 
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 150, 850, 510));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/drug.jpg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void checkInventoryBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkInventoryBtnActionPerformed
@@ -247,6 +251,7 @@ public class DruggistWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JButton assignDrugReqBtn;
     private javax.swing.JButton checkInventoryBtn;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel6;

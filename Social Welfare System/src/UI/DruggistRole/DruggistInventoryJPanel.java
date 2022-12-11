@@ -64,6 +64,7 @@ public class DruggistInventoryJPanel extends javax.swing.JPanel {
         jLabel8 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jCheckBox6 = new javax.swing.JCheckBox();
+        jLabel14 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -127,7 +128,6 @@ public class DruggistInventoryJPanel extends javax.swing.JPanel {
         jPanel6.setBackground(new java.awt.Color(193, 212, 227));
 
         jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Checking for Patient <name>");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -268,6 +268,10 @@ public class DruggistInventoryJPanel extends javax.swing.JPanel {
 
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 100, 650, 420));
 
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/drug.jpg"))); // NOI18N
+        jLabel14.setText("jLabel14");
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 1650, 990));
     }// </editor-fold>//GEN-END:initComponents
 
@@ -306,6 +310,7 @@ public class DruggistInventoryJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
