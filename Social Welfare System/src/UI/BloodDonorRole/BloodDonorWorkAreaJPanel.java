@@ -121,7 +121,7 @@ public class BloodDonorWorkAreaJPanel extends javax.swing.JPanel {
                 addBloodGrpDetailsActionPerformed(evt);
             }
         });
-        jPanel2.add(addBloodGrpDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, 180, 80));
+        jPanel2.add(addBloodGrpDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 180, 80));
 
         refreshJButton1.setBackground(new java.awt.Color(83, 124, 142));
         refreshJButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -132,7 +132,7 @@ public class BloodDonorWorkAreaJPanel extends javax.swing.JPanel {
                 refreshJButton1ActionPerformed(evt);
             }
         });
-        jPanel2.add(refreshJButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, 248, 40));
+        jPanel2.add(refreshJButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 220, 248, 40));
 
         assignJButton.setBackground(new java.awt.Color(83, 124, 142));
         assignJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -143,7 +143,7 @@ public class BloodDonorWorkAreaJPanel extends javax.swing.JPanel {
                 assignJButtonActionPerformed(evt);
             }
         });
-        jPanel2.add(assignJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 260, 248, 40));
+        jPanel2.add(assignJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 280, 248, 40));
 
         processJButton.setBackground(new java.awt.Color(83, 124, 142));
         processJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -154,7 +154,7 @@ public class BloodDonorWorkAreaJPanel extends javax.swing.JPanel {
                 processJButtonActionPerformed(evt);
             }
         });
-        jPanel2.add(processJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 320, 248, 40));
+        jPanel2.add(processJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 340, 248, 40));
 
         jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 50, 620, 430));
 
