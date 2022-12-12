@@ -351,18 +351,20 @@ public class DoctorAppointmentRequestsJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
         for (WorkRequest request : organization.getWorkStream().getWorkRequestList()) {
-            Object[] row = new Object[5];
-            //    row[0] = request.getMessage();
-            row[0] = request;
-            row[1] = request.getSender().getUsername();
-            row[2] = request.getReceiver();
-            String result = request.getStatus();
-            // System.out.println(result);
-            row[3] = result == null ? "Waiting" : result;
+            if(request instanceof PatientAppRequest){
+                Object[] row = new Object[5];
+                //    row[0] = request.getMessage();
+                row[0] = request;
+                row[1] = request.getSender().getUsername();
+                row[2] = request.getReceiver();
+                String result = request.getStatus();
+                // System.out.println(result);
+                row[3] = result == null ? "Waiting" : result;
 
-            row[4] = request.getRequestDate();
+                row[4] = request.getRequestDate();
 
-            model.addRow(row);
+                model.addRow(row);
+            }
 
         }
 

@@ -231,6 +231,7 @@ public class MainJFrame extends javax.swing.JFrame {
         userNameJTextField.setEnabled(true);
         passwordField.setEnabled(true);
         loginJButton.setEnabled(true);
+        
 
         userNameJTextField.setText("");
         passwordField.setText("");
