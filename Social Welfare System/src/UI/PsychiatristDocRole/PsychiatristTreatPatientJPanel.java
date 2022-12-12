@@ -68,6 +68,7 @@ public class PsychiatristTreatPatientJPanel extends javax.swing.JPanel {
         fromDate = new com.toedter.calendar.JDateChooser();
         jLabel4 = new javax.swing.JLabel();
         toDate = new com.toedter.calendar.JDateChooser();
+        jLabel5 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -80,7 +81,7 @@ public class PsychiatristTreatPatientJPanel extends javax.swing.JPanel {
         jLabel8.setText("Set Meeting With Patient");
         jPanel6.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, 300, 30));
 
-        add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 0, 1180, 50));
+        add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 0, 1180, 60));
 
         jPanel1.setBackground(new java.awt.Color(239, 241, 228));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -97,11 +98,10 @@ public class PsychiatristTreatPatientJPanel extends javax.swing.JPanel {
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton2.setBackground(new java.awt.Color(0, 0, 0));
+        jButton2.setBackground(new java.awt.Color(239, 241, 228));
         jButton2.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Send Decision to Patient");
-        jButton2.setBorder(null);
+        jButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -129,7 +129,10 @@ public class PsychiatristTreatPatientJPanel extends javax.swing.JPanel {
         toDate.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.add(toDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 130, 138, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 370, 350));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 370, 300));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/psychiatrist_logo.png"))); // NOI18N
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, 100, 90));
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 970));
 
@@ -184,6 +187,7 @@ public class PsychiatristTreatPatientJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

@@ -173,7 +173,15 @@
             </Component>
             <Component class="javax.swing.JButton" name="addDonorBtn">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="e4" green="f1" red="ef" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="ADD"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                    <LineBorder/>
+                  </Border>
+                </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addDonorBtnActionPerformed"/>
@@ -230,9 +238,9 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                   <Component id="backBtn" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="263" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="449" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" pref="240" max="-2" attributes="0"/>
-                  <EmptySpace pref="787" max="32767" attributes="0"/>
+                  <EmptySpace pref="601" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

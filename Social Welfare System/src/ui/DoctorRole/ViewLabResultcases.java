@@ -208,8 +208,8 @@ public class ViewLabResultcases extends javax.swing.JPanel {
                             .addComponent(txtResultType)
                             .addComponent(txtResultbyLab, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(224, 224, 224)
-                        .addComponent(btnPsyc, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(200, 200, 200)
+                        .addComponent(btnPsyc, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(44, 44, 44)
                         .addComponent(btnphrmaco, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(49, 49, 49)
@@ -244,9 +244,9 @@ public class ViewLabResultcases extends javax.swing.JPanel {
                     .addComponent(txtResultbyLab, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(45, 45, 45)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnPsyc, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnphrmaco, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnPrescription, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnPsyc, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnphrmaco, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnPrescription, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(43, Short.MAX_VALUE))
         );
 
@@ -328,7 +328,6 @@ public class ViewLabResultcases extends javax.swing.JPanel {
 
     private void btnphrmacoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnphrmacoActionPerformed
         // TODO add your handling code here:
-        System.out.println("aaa");
         emailId = "code.crunch.sih@gmail.com";
 
         String emailRegex = "^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$";
@@ -360,11 +359,8 @@ public class ViewLabResultcases extends javax.swing.JPanel {
         // //Email Sending part
         //
         //
-        // //pdf part
-        //pdf part
         Document document = new Document() {};
 
-        //pdf part
         Org org = null;
         for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()){
             if (enterprise instanceof RehabEnterprises){
@@ -404,7 +400,6 @@ public class ViewLabResultcases extends javax.swing.JPanel {
         if (org != null) {
             //int a =org.getWorkQueue().getWorkRequestList().hashCode();
             org.getWorkStream().getWorkRequestList().add(patientrequest);
-            patientrequest.setReceiver(null);
             userAccount.getWorkStream().getWorkRequestList().add(patientrequest);
         }
         patientrequest.setStatus("Assigned to psychiatrist");

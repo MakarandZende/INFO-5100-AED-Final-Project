@@ -70,33 +70,39 @@ public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        totalFundsTxt = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         workRequestJTable = new javax.swing.JTable();
         requestFundJButton = new javax.swing.JButton();
         refreshTestJButton = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
+        totalFundsTxt = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(204, 204, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel1.setBackground(new java.awt.Color(239, 241, 228));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Volunteer WorkArea JPanel");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, -1, -1));
 
-        totalFundsTxt.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        add(totalFundsTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 260, 220, 40));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1220, 80));
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 990, 80));
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel2.setBackground(new java.awt.Color(193, 212, 227));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        workRequestJTable.setBackground(new java.awt.Color(0, 0, 0));
         workRequestJTable.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        workRequestJTable.setForeground(new java.awt.Color(255, 255, 255));
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -123,36 +129,47 @@ public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        workRequestJTable.setShowGrid(true);
         jScrollPane1.setViewportView(workRequestJTable);
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 577, 135));
 
+        requestFundJButton.setBackground(new java.awt.Color(193, 212, 227));
         requestFundJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         requestFundJButton.setText("Request Funds");
+        requestFundJButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         requestFundJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 requestFundJButtonActionPerformed(evt);
             }
         });
-        jPanel2.add(requestFundJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 160, 161, -1));
+        jPanel2.add(requestFundJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 170, 161, 40));
 
+        refreshTestJButton.setBackground(new java.awt.Color(239, 241, 228));
         refreshTestJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         refreshTestJButton.setText("Refresh");
+        refreshTestJButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         refreshTestJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 refreshTestJButtonActionPerformed(evt);
             }
         });
-        jPanel2.add(refreshTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 200, 161, -1));
+        jPanel2.add(refreshTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 170, 161, 40));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel3.setText("Total Funds Available");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 180, 40));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 180, 40));
 
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 710, 320));
+        totalFundsTxt.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jPanel2.add(totalFundsTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 130, 40));
 
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 990, 440));
+        jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, 710, 320));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/vol_backnew.jpg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1220, 740));
     }// </editor-fold>//GEN-END:initComponents
 
     private void requestFundJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestFundJButtonActionPerformed
@@ -171,6 +188,7 @@ public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

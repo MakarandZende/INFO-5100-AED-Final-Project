@@ -61,15 +61,18 @@ public class RequestFundsJPanel extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         amountTxtField = new javax.swing.JTextField();
         requestTestJButton = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(239, 241, 228));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel2.setText("Request Funds");
 
         backJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        backJButton.setText("<<Back");
+        backJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/back_button.png"))); // NOI18N
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backJButtonActionPerformed(evt);
@@ -85,7 +88,7 @@ public class RequestFundsJPanel extends javax.swing.JPanel {
                 .addComponent(backJButton)
                 .addGap(264, 264, 264)
                 .addComponent(jLabel2)
-                .addContainerGap(607, Short.MAX_VALUE))
+                .addContainerGap(727, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -93,35 +96,36 @@ public class RequestFundsJPanel extends javax.swing.JPanel {
                 .addGap(14, 14, 14)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(backJButton))
-                .addContainerGap(14, Short.MAX_VALUE))
+                    .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 60));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 60));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel2.setBackground(new java.awt.Color(193, 212, 227));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         enterpriseLabel.setText("EnterPrise :");
-        jPanel2.add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 120, 30));
+        jPanel2.add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 120, 30));
 
         valueLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         valueLabel.setText("<value>");
-        jPanel2.add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 130, 30));
+        jPanel2.add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, 130, 30));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Message");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 135, 26));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 135, 26));
 
         messageJTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jPanel2.add(messageJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, 185, -1));
+        jPanel2.add(messageJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 60, 185, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel3.setText("Amount");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, -1, 26));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, -1, 26));
 
         amountTxtField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         amountTxtField.addActionListener(new java.awt.event.ActionListener() {
@@ -129,20 +133,26 @@ public class RequestFundsJPanel extends javax.swing.JPanel {
                 amountTxtFieldActionPerformed(evt);
             }
         });
-        jPanel2.add(amountTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 185, -1));
+        jPanel2.add(amountTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 110, 185, -1));
 
+        requestTestJButton.setBackground(new java.awt.Color(239, 241, 228));
         requestTestJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         requestTestJButton.setText("Request Funds");
+        requestTestJButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         requestTestJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 requestTestJButtonActionPerformed(evt);
             }
         });
-        jPanel2.add(requestTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, -1, -1));
+        jPanel2.add(requestTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, 140, 50));
 
-        jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, 630, 250));
+        jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 150, 630, 250));
 
-        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1200, 710));
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/vol_backnew.jpg"))); // NOI18N
+        jLabel5.setText("jLabel5");
+        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1300, 800));
     }// </editor-fold>//GEN-END:initComponents
 
     private void requestTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestTestJButtonActionPerformed
@@ -169,6 +179,7 @@ public class RequestFundsJPanel extends javax.swing.JPanel {
         if (org!=null){
             org.getWorkStream().getWorkRequestList().add(request);
             userAccount.getWorkStream().getWorkRequestList().add(request);
+            JOptionPane.showMessageDialog(this,"Fund Request Raised!");
         }
         messageJTextField.setText("");
         amountTxtField.setText("");
@@ -271,6 +282,7 @@ public class RequestFundsJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

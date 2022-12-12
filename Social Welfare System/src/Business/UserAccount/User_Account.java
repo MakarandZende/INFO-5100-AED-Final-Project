@@ -5,6 +5,7 @@
 package Business.UserAccount;
 
 
+import Business.Human.DruggistInventory;
 import Business.Human.Person;
 import Business.Role.Role;
 import Business.WorkStream.WorkStream;
@@ -37,9 +38,12 @@ public class User_Account {
     private Person Human;
     private Role role;
     private WorkStream workStream;
+    private DruggistInventory druggistInventory;
 
     public User_Account() {
         workStream = new WorkStream();
+        druggistInventory = new DruggistInventory();
+        
     }
     
     
@@ -79,6 +83,16 @@ public class User_Account {
     public WorkStream getWorkStream() {
         return workStream;
     }
+
+    public DruggistInventory getDruggistInventory() {
+        return druggistInventory;
+    }
+
+    public void setDruggistInventory(DruggistInventory druggistInventory) {
+        this.druggistInventory = druggistInventory;
+    }
+    
+    
 
     
     

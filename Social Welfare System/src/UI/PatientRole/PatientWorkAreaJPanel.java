@@ -65,6 +65,7 @@ public class PatientWorkAreaJPanel extends javax.swing.JPanel {
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         appointmentJTable = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -163,7 +164,11 @@ public class PatientWorkAreaJPanel extends javax.swing.JPanel {
 
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, 630, 370));
 
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, 920, 650));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/patient_new.jpg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, 1110, 720));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnReqBookAppointmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReqBookAppointmentActionPerformed
@@ -199,6 +204,7 @@ public class PatientWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JTable appointmentJTable;
     private javax.swing.JButton btnReqBookAppointment;
     private javax.swing.JButton btnViewDiagnose;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;

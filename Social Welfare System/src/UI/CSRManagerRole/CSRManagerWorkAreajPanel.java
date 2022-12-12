@@ -74,6 +74,7 @@ public class CSRManagerWorkAreajPanel extends javax.swing.JPanel {
         refreshTestJButton = new javax.swing.JButton();
         assignBtn = new javax.swing.JButton();
         reqNgoBtn = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(204, 204, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -83,9 +84,9 @@ public class CSRManagerWorkAreajPanel extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("CSR Work Area Panel");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 30, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 30, -1, -1));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1260, 90));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1220, 90));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -93,7 +94,9 @@ public class CSRManagerWorkAreajPanel extends javax.swing.JPanel {
         jPanel2.setBackground(new java.awt.Color(193, 212, 227));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        ReqFromNGOMedicalCamp.setBackground(new java.awt.Color(0, 0, 0));
         ReqFromNGOMedicalCamp.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        ReqFromNGOMedicalCamp.setForeground(new java.awt.Color(255, 255, 255));
         ReqFromNGOMedicalCamp.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -105,40 +108,50 @@ public class CSRManagerWorkAreajPanel extends javax.swing.JPanel {
                 "Message", "Sender", "Assigned To", "Status", "Camp result"
             }
         ));
+        ReqFromNGOMedicalCamp.setShowGrid(true);
         jScrollPane2.setViewportView(ReqFromNGOMedicalCamp);
 
-        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 519, 135));
+        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 519, 260));
 
+        refreshTestJButton.setBackground(new java.awt.Color(83, 124, 142));
         refreshTestJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         refreshTestJButton.setText("Refresh");
+        refreshTestJButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         refreshTestJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 refreshTestJButtonActionPerformed(evt);
             }
         });
-        jPanel2.add(refreshTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 175, -1));
+        jPanel2.add(refreshTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 175, 50));
 
         assignBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         assignBtn.setText("Assign to me");
+        assignBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         assignBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 assignBtnActionPerformed(evt);
             }
         });
-        jPanel2.add(assignBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, -1, -1));
+        jPanel2.add(assignBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 300, 140, 50));
 
+        reqNgoBtn.setBackground(new java.awt.Color(83, 124, 142));
         reqNgoBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         reqNgoBtn.setText("Request ");
+        reqNgoBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         reqNgoBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 reqNgoBtnActionPerformed(evt);
             }
         });
-        jPanel2.add(reqNgoBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 200, 141, -1));
+        jPanel2.add(reqNgoBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 300, 141, 50));
 
-        jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 130, 580, 290));
+        jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 130, 580, 360));
 
-        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 1260, 770));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/csr_backnew.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 1220, 710));
     }// </editor-fold>//GEN-END:initComponents
 
     private void refreshTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshTestJButtonActionPerformed
@@ -185,6 +198,7 @@ public class CSRManagerWorkAreajPanel extends javax.swing.JPanel {
     private javax.swing.JTable ReqFromNGOMedicalCamp;
     private javax.swing.JButton assignBtn;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

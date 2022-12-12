@@ -61,6 +61,7 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
         refreshJButton = new javax.swing.JButton();
         processJButton = new javax.swing.JButton();
         assignJButton = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
@@ -85,7 +86,7 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
                 refreshJButtonActionPerformed(evt);
             }
         });
-        jPanel3.add(refreshJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 153, 44));
+        jPanel3.add(refreshJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, 153, 44));
 
         processJButton.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         processJButton.setText("Process Medical History");
@@ -95,7 +96,7 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
                 processJButtonActionPerformed(evt);
             }
         });
-        jPanel3.add(processJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, 153, 43));
+        jPanel3.add(processJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 153, 43));
 
         assignJButton.setBackground(new java.awt.Color(239, 241, 228));
         assignJButton.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
@@ -106,7 +107,11 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
                 assignJButtonActionPerformed(evt);
             }
         });
-        jPanel3.add(assignJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 360, 153, 42));
+        jPanel3.add(assignJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 450, 153, 42));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/lab_logo.png"))); // NOI18N
+        jLabel3.setText("jLabel3");
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 90, 80));
 
         add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 800));
 
@@ -122,6 +127,8 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
         jPanel1.setBackground(new java.awt.Color(239, 241, 228));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        labWorkRequestJTable.setBackground(new java.awt.Color(0, 0, 0));
+        labWorkRequestJTable.setForeground(new java.awt.Color(255, 255, 255));
         labWorkRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -148,6 +155,7 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        labWorkRequestJTable.setShowGrid(true);
         jScrollPane2.setViewportView(labWorkRequestJTable);
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 670, 210));
@@ -159,7 +167,7 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
         lblname.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jPanel1.add(lblname, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 175, 20));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 150, 760, 370));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 170, 760, 370));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/labb1.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
@@ -239,6 +247,7 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JButton assignJButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;

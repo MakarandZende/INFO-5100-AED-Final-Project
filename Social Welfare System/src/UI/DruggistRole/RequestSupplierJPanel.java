@@ -1,27 +1,46 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package UI.DruggistRole;
 
+import Business.Enterprises.DistributorsEnterprises;
+import UI.DoctorRole.*;
+import Business.Enterprises.Enterprise;
+import Business.Enterprises.DrugStoresEnterprises;
+import Business.Network.NetworkSystem;
+import Business.Organization.DistributorOrg;
+import Business.Organization.DoctorConsultantOrg;
+import Business.Organization.Org;
+import Business.Organization.DruggistOrg;
+import Business.UserAccount.User_Account;
+import Business.WorkStream.DrugDistributorWorkRequest;
+import Business.WorkStream.WorkRequest;
 import java.awt.CardLayout;
+import java.awt.Component;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-
 /**
  *
  * @author Makarand
  */
 public class RequestSupplierJPanel extends javax.swing.JPanel {
 
-    JPanel userProcessContainer;
-
+    private JPanel userProcessContainer;
+    private DoctorConsultantOrg organization;
+    private Enterprise enterprise;
+    private User_Account userAccount;
+    private NetworkSystem network;
     /**
-     * Creates new form RequestSupplierJPanel
+     * Creates new form RequestDruggistForMedicineJPanel
      */
-    public RequestSupplierJPanel(JPanel userProcessContainer) {
+    public RequestSupplierJPanel(JPanel userProcessContainer, NetworkSystem network, User_Account account, Enterprise enterprise ) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
+        this.enterprise = enterprise;
+        this.userAccount = account;
+        this.network = network;
+        txtPatientName.setText(userAccount.getHuman().getName());
     }
 
     /**
@@ -33,201 +52,285 @@ public class RequestSupplierJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel3 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jLabel5 = new javax.swing.JLabel();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jLabel7 = new javax.swing.JLabel();
-        jCheckBox3 = new javax.swing.JCheckBox();
         jLabel6 = new javax.swing.JLabel();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jLabel9 = new javax.swing.JLabel();
-        jCheckBox5 = new javax.swing.JCheckBox();
-        jLabel8 = new javax.swing.JLabel();
-        jCheckBox6 = new javax.swing.JCheckBox();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        chkDis = new javax.swing.JCheckBox();
+        chkCam = new javax.swing.JCheckBox();
+        chkAnt = new javax.swing.JCheckBox();
+        chkViv = new javax.swing.JCheckBox();
+        jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        txtPatientName = new javax.swing.JTextField();
+        chkAca = new javax.swing.JCheckBox();
+        jButton2 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        vivTxt = new javax.swing.JTextField();
+        antTxt = new javax.swing.JTextField();
+        camTxt = new javax.swing.JTextField();
+        disTxt = new javax.swing.JTextField();
+        acaTxt = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(1170, 1080));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel3.setBackground(new java.awt.Color(239, 241, 228));
+        jPanel1.setBackground(new java.awt.Color(239, 241, 228));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1170, 100));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setBackground(new java.awt.Color(49, 84, 140));
-        jButton1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
+        jLabel6.setText("Prescription");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(497, 28, -1, -1));
+
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1180, -1));
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel3.setBackground(new java.awt.Color(193, 212, 227));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        chkDis.setBackground(new java.awt.Color(193, 212, 227));
+        chkDis.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        chkDis.setText("Disulfiram");
+        chkDis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkDisActionPerformed(evt);
+            }
+        });
+        jPanel3.add(chkDis, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 217, -1, -1));
+
+        chkCam.setBackground(new java.awt.Color(193, 212, 227));
+        chkCam.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        chkCam.setText("Campral");
+        chkCam.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkCamActionPerformed(evt);
+            }
+        });
+        jPanel3.add(chkCam, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 272, -1, -1));
+
+        chkAnt.setBackground(new java.awt.Color(193, 212, 227));
+        chkAnt.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        chkAnt.setText("Antabuse");
+        chkAnt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkAntActionPerformed(evt);
+            }
+        });
+        jPanel3.add(chkAnt, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 322, -1, -1));
+
+        chkViv.setBackground(new java.awt.Color(193, 212, 227));
+        chkViv.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        chkViv.setText(" Vivitrol");
+        chkViv.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkVivActionPerformed(evt);
+            }
+        });
+        jPanel3.add(chkViv, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 374, -1, -1));
+
+        jButton1.setBackground(new java.awt.Color(83, 124, 142));
+        jButton1.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Request Supplier");
-        jButton1.setBorder(null);
+        jButton1.setText("Request Distributor");
+        jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+        jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 440, 204, 48));
 
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("For Druggist :");
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 180, 60));
+
+        txtPatientName.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        txtPatientName.setEnabled(false);
+        jPanel3.add(txtPatientName, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 100, 205, 30));
+
+        chkAca.setBackground(new java.awt.Color(193, 212, 227));
+        chkAca.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        chkAca.setText("Acamprosate");
+        chkAca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkAcaActionPerformed(evt);
+            }
+        });
+        jPanel3.add(chkAca, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 164, -1, -1));
+
+        jButton2.setBackground(new java.awt.Color(193, 212, 227));
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/back_button.png"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
+        jPanel3.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 17, -1, -1));
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(63, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(57, 57, 57))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(98, 98, 98)
-                .addComponent(jButton2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(52, 52, 52)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(186, 186, 186)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jLabel3.setText("Count");
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 140, -1, -1));
+        jPanel3.add(vivTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 370, 150, -1));
 
-        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 1080));
-
-        jPanel1.setBackground(new java.awt.Color(193, 212, 227));
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setText("REQUEST SUPPLIER");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(613, 613, 613)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(763, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(21, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(253, 0, 1670, 100));
-
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel11.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jLabel11.setText("Drug List");
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, -1, 40));
-
-        jLabel10.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jLabel10.setText("Check Meds to Request");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 50, -1, -1));
-
-        jLabel4.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jLabel4.setText("Drug A");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, -1, -1));
-
-        jCheckBox1.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jPanel2.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 90, -1, -1));
-
-        jLabel5.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jLabel5.setText("Drug B");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, -1, -1));
-
-        jCheckBox2.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jPanel2.add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 130, -1, -1));
-
-        jLabel7.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jLabel7.setText("Drug C");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, -1, -1));
-
-        jCheckBox3.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jPanel2.add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 170, -1, -1));
-
-        jLabel6.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jLabel6.setText("Drug D");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 210, -1, -1));
-
-        jCheckBox4.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jPanel2.add(jCheckBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 210, -1, -1));
-
-        jLabel9.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jLabel9.setText("Drug E");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 250, -1, -1));
-
-        jCheckBox5.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jPanel2.add(jCheckBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 250, -1, -1));
-
-        jLabel8.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jLabel8.setText("Drug F");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 290, -1, -1));
-
-        jCheckBox6.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jCheckBox6.addActionListener(new java.awt.event.ActionListener() {
+        antTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox6ActionPerformed(evt);
+                antTxtActionPerformed(evt);
             }
         });
-        jPanel2.add(jCheckBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 290, -1, -1));
+        jPanel3.add(antTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 320, 150, -1));
+        jPanel3.add(camTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, 150, -1));
+        jPanel3.add(disTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 220, 150, -1));
 
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 170, 720, 370));
+        acaTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                acaTxtActionPerformed(evt);
+            }
+        });
+        jPanel3.add(acaTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 150, -1));
+
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 110, 570, 520));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/drug.jpg"))); // NOI18N
-        jLabel2.setText("jLabel2");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 100, -1, -1));
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
+
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-4, 96, 1180, 990));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void chkDisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkDisActionPerformed
+        disTxt.setVisible(chkDis.isEnabled());
+    }//GEN-LAST:event_chkDisActionPerformed
+
+    private void chkAntActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkAntActionPerformed
+        antTxt.setVisible(chkAnt.isEnabled());
+    }//GEN-LAST:event_chkAntActionPerformed
+
+    private void chkVivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkVivActionPerformed
+        vivTxt.setVisible(chkViv.isEnabled());
+    }//GEN-LAST:event_chkVivActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        DrugDistributorWorkRequest drugDistributorWorkRequest = new DrugDistributorWorkRequest();
+        drugDistributorWorkRequest.setSender(userAccount);
+        boolean isReqValid = false;
+        
+        if (chkAca.isSelected())
+        {
+            isReqValid = true;
+            drugDistributorWorkRequest.setIsAca(true);
+            drugDistributorWorkRequest.setCountAcamprosate(Integer.parseInt(acaTxt.getText()));
+
+        }
+        if (chkDis.isSelected())
+        {
+            isReqValid = true;
+            drugDistributorWorkRequest.setIsDis(true);
+            drugDistributorWorkRequest.setCountDisulfiram(Integer.parseInt(disTxt.getText()));
+
+        }
+
+        if(chkCam.isSelected())
+        {
+            isReqValid = true;
+            drugDistributorWorkRequest.setIsCam(true);
+            drugDistributorWorkRequest.setCountCampral(Integer.parseInt(camTxt.getText()));
+        }
+        if(chkAnt.isSelected())
+        {
+            isReqValid = true;
+            drugDistributorWorkRequest.setIsAnt(true);
+            drugDistributorWorkRequest.setCountAcamprosate(Integer.parseInt(antTxt.getText()));
+        }
+        if(chkViv.isSelected())
+        {
+            isReqValid = true;
+            drugDistributorWorkRequest.setIsViv(true);
+            drugDistributorWorkRequest.setCountVivitrol(Integer.parseInt(vivTxt.getText()));
+        }
+
+        
+        drugDistributorWorkRequest.setStatus("Drugs Requested from Distributor");
+        drugDistributorWorkRequest.setMessage("Need Supply ASAP!");
+
+        Org org = null;
+        for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()){
+            if (enterprise instanceof DistributorsEnterprises){
+                for (Org organization : enterprise.getOrganizationDirectory().getOrganizationList()){
+                    if (organization instanceof DistributorOrg){
+                        org = organization;
+                        break;
+                    }
+                }
+            }
+        }
+        if (org!=null){
+            org.getWorkStream().getWorkRequestList().add(drugDistributorWorkRequest);
+            userAccount.getWorkStream().getWorkRequestList().add(drugDistributorWorkRequest);
+            JOptionPane.showMessageDialog(null, "Drug Supply request sent successfully");
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "No Distributor  Available");
+        }
+        
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void chkAcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkAcaActionPerformed
+        acaTxt.setVisible(chkAca.isEnabled());
+    }//GEN-LAST:event_chkAcaActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        
         userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        DruggistInventoryJPanel druggistInventoryJPanel = (DruggistInventoryJPanel)component;
+        druggistInventoryJPanel.populateDrugDistributorRequestData();
+        druggistInventoryJPanel.populateInventory();
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jCheckBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox6ActionPerformed
+    private void acaTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acaTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox6ActionPerformed
+    }//GEN-LAST:event_acaTxtActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void antTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_antTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_antTxtActionPerformed
+
+    private void chkCamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkCamActionPerformed
+        camTxt.setVisible(chkCam.isEnabled());
+    }//GEN-LAST:event_chkCamActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField acaTxt;
+    private javax.swing.JTextField antTxt;
+    private javax.swing.JTextField camTxt;
+    private javax.swing.JCheckBox chkAca;
+    private javax.swing.JCheckBox chkAnt;
+    private javax.swing.JCheckBox chkCam;
+    private javax.swing.JCheckBox chkDis;
+    private javax.swing.JCheckBox chkViv;
+    private javax.swing.JTextField disTxt;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox6;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JTextField txtPatientName;
+    private javax.swing.JTextField vivTxt;
     // End of variables declaration//GEN-END:variables
 }

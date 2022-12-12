@@ -11,7 +11,14 @@ import Business.Organization.DoctorConsultantOrg;
 import Business.Organization.Org;
 import Business.Organization.DistributorOrg;
 import Business.UserAccount.User_Account;
+import Business.WorkStream.DrugDistributorWorkRequest;
+import Business.WorkStream.FundsWorkRequest;
+import Business.WorkStream.WorkRequest;
+import UI.FundsProviderRole.ProcessWorkRequestJPanel;
+import java.awt.CardLayout;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -26,6 +33,7 @@ public class DistributorWorkAreaPanel extends javax.swing.JPanel {
     private DistributorOrg organization;
     private Enterprise enterprise;
     private User_Account userAccount;
+    private NetworkSystem network;
 
     public DistributorWorkAreaPanel(JPanel userProcessContainer, User_Account account, Org organization, Enterprise enterprise, NetworkSystem network) {
         initComponents();
@@ -33,6 +41,8 @@ public class DistributorWorkAreaPanel extends javax.swing.JPanel {
         this.organization = (DistributorOrg) organization;
         this.enterprise = enterprise;
         this.userAccount = account;
+        this.network = network;
+        populateDrugReq();
     }
 
     /**
@@ -45,13 +55,16 @@ public class DistributorWorkAreaPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        docWorkRequestJTable = new javax.swing.JTable();
+        assignBtn = new javax.swing.JButton();
+        processDrugReq = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        drugDistributorRequestsTbl = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -59,73 +72,32 @@ public class DistributorWorkAreaPanel extends javax.swing.JPanel {
         jPanel1.setBackground(new java.awt.Color(239, 241, 228));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setBackground(new java.awt.Color(239, 241, 228));
-        jButton1.setFont(new java.awt.Font("Century Gothic", 1, 11)); // NOI18N
-        jButton1.setText("Assign To Me");
-        jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        assignBtn.setBackground(new java.awt.Color(239, 241, 228));
+        assignBtn.setFont(new java.awt.Font("Century Gothic", 1, 11)); // NOI18N
+        assignBtn.setText("Assign To Me");
+        assignBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        assignBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                assignBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 161, 35));
+        jPanel1.add(assignBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 265, 161, 50));
 
-        jButton2.setBackground(new java.awt.Color(239, 241, 228));
-        jButton2.setFont(new java.awt.Font("Century Gothic", 1, 11)); // NOI18N
-        jButton2.setText("Send Drug to Pharmacist");
-        jButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 161, 35));
+        processDrugReq.setBackground(new java.awt.Color(239, 241, 228));
+        processDrugReq.setFont(new java.awt.Font("Century Gothic", 1, 11)); // NOI18N
+        processDrugReq.setText("Send Drug to Pharmacist");
+        processDrugReq.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        processDrugReq.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                processDrugReqActionPerformed(evt);
+            }
+        });
+        jPanel1.add(processDrugReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 161, 50));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/dist_logo.png"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 110, 110));
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 226, 800));
-
-        jPanel2.setBackground(new java.awt.Color(239, 241, 228));
-
-        docWorkRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "Message", "Patient", "Doctor", "Status", "Date"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, true, true, false, true
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(docWorkRequestJTable);
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(80, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 479, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(51, 51, 51))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(96, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(93, 93, 93))
-        );
-
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 250, 610, 350));
 
         jPanel3.setBackground(new java.awt.Color(193, 212, 227));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -135,21 +107,120 @@ public class DistributorWorkAreaPanel extends javax.swing.JPanel {
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, 300, 30));
 
         add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 1220, 80));
+
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel2.setBackground(new java.awt.Color(239, 241, 228));
+
+        drugDistributorRequestsTbl.setBackground(new java.awt.Color(0, 0, 0));
+        drugDistributorRequestsTbl.setForeground(new java.awt.Color(255, 255, 255));
+        drugDistributorRequestsTbl.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Message", "Sender", "Reciever", "Status"
+            }
+        ));
+        drugDistributorRequestsTbl.setShowGrid(true);
+        jScrollPane2.setViewportView(drugDistributorRequestsTbl);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(35, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(54, 54, 54)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(86, Short.MAX_VALUE))
+        );
+
+        jPanel4.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 690, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/distributor_back.jpg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
+
+        add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 80, 1000, 720));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    public void populateDrugReq(){
+        DefaultTableModel model = (DefaultTableModel) drugDistributorRequestsTbl.getModel();
+        model.setRowCount(0);
+        
+        for (WorkRequest request : organization.getWorkStream().getWorkRequestList()) {
+            System.err.println(request instanceof DrugDistributorWorkRequest);
+            if(request instanceof DrugDistributorWorkRequest){
+                Object[] row = new Object[4];
+                row[0] = request;
+                row[1] = request.getSender().getUsername();
+                row[2] = request.getReceiver() == null? "" :request.getReceiver().getUsername();
+                String result = request.getStatus();
+                model.addRow(row);
+            }
+        }
+    }
+    private void assignBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignBtnActionPerformed
+        int selectedRow = drugDistributorRequestsTbl.getSelectedRow();
+
+        if (selectedRow < 0){
+            return;
+        }
+
+        WorkRequest request = (WorkRequest)drugDistributorRequestsTbl.getValueAt(selectedRow, 0);
+        if(request.getReceiver() == null){
+            request.setReceiver(userAccount);
+            request.setStatus("Pending");
+            populateDrugReq();
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Already Assigned");
+            return;
+        }
+    }//GEN-LAST:event_assignBtnActionPerformed
+
+    private void processDrugReqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processDrugReqActionPerformed
+        int selectedRow = drugDistributorRequestsTbl.getSelectedRow();
+
+        if (selectedRow < 0){
+            return;
+        }
+        
+        DrugDistributorWorkRequest request = (DrugDistributorWorkRequest)drugDistributorRequestsTbl.getValueAt(selectedRow, 0);
+        if(request.getStatus().equals("Completed")){
+            JOptionPane.showMessageDialog(null, "Already Completed");
+            return;
+        }
+        request.setStatus("Processing");
+
+        ProcessDrugRequestJpanel processDrugRequestJpanel = new ProcessDrugRequestJpanel(userProcessContainer,network,userAccount,enterprise, request);
+        userProcessContainer.add("ProcessDrugRequestJpanel", processDrugRequestJpanel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_processDrugReqActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable docWorkRequestJTable;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton assignBtn;
+    private javax.swing.JTable drugDistributorRequestsTbl;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JButton processDrugReq;
     // End of variables declaration//GEN-END:variables
 }

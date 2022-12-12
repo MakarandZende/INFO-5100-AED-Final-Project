@@ -79,7 +79,9 @@ public class BloodDonorWorkAreaJPanel extends javax.swing.JPanel {
         jPanel2.setBackground(new java.awt.Color(193, 212, 227));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        bloodRequestTable.setBackground(new java.awt.Color(0, 0, 0));
         bloodRequestTable.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        bloodRequestTable.setForeground(new java.awt.Color(255, 255, 255));
         bloodRequestTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -106,10 +108,12 @@ public class BloodDonorWorkAreaJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        bloodRequestTable.setShowGrid(true);
         jScrollPane1.setViewportView(bloodRequestTable);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 491, 142));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 22, 491, 170));
 
+        addBloodGrpDetails.setBackground(new java.awt.Color(239, 241, 228));
         addBloodGrpDetails.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         addBloodGrpDetails.setText("Add Blood Details");
         addBloodGrpDetails.addActionListener(new java.awt.event.ActionListener() {
@@ -117,34 +121,40 @@ public class BloodDonorWorkAreaJPanel extends javax.swing.JPanel {
                 addBloodGrpDetailsActionPerformed(evt);
             }
         });
-        jPanel2.add(addBloodGrpDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, 180, 80));
+        jPanel2.add(addBloodGrpDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 180, 80));
 
+        refreshJButton1.setBackground(new java.awt.Color(83, 124, 142));
         refreshJButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         refreshJButton1.setText("Refresh");
+        refreshJButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         refreshJButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 refreshJButton1ActionPerformed(evt);
             }
         });
-        jPanel2.add(refreshJButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, 248, -1));
+        jPanel2.add(refreshJButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 220, 248, 40));
 
+        assignJButton.setBackground(new java.awt.Color(83, 124, 142));
         assignJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         assignJButton.setText("Assign to me");
+        assignJButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         assignJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 assignJButtonActionPerformed(evt);
             }
         });
-        jPanel2.add(assignJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, 248, -1));
+        jPanel2.add(assignJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 280, 248, 40));
 
+        processJButton.setBackground(new java.awt.Color(83, 124, 142));
         processJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         processJButton.setText("Process");
+        processJButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         processJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 processJButtonActionPerformed(evt);
             }
         });
-        jPanel2.add(processJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 290, 248, -1));
+        jPanel2.add(processJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 340, 248, 40));
 
         jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 50, 620, 430));
 
