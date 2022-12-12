@@ -65,9 +65,11 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         dateChooserField = new com.toedter.calendar.JDateChooser();
-        jLabel1 = new javax.swing.JLabel();
+        emaillbl = new javax.swing.JLabel();
         txtmessage = new javax.swing.JTextField();
         btnsave = new javax.swing.JButton();
+        emailtxt = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -100,9 +102,9 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
         dateChooserField.setForeground(new java.awt.Color(255, 255, 255));
         jPanel2.add(dateChooserField, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 132, -1));
 
-        jLabel1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jLabel1.setText("Message");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
+        emaillbl.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        emaillbl.setText("Email");
+        jPanel2.add(emaillbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, -1));
 
         txtmessage.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jPanel2.add(txtmessage, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 132, -1));
@@ -117,7 +119,18 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
                 btnsaveActionPerformed(evt);
             }
         });
-        jPanel2.add(btnsave, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 154, 37));
+        jPanel2.add(btnsave, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 154, 37));
+
+        emailtxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                emailtxtActionPerformed(evt);
+            }
+        });
+        jPanel2.add(emailtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 130, -1));
+
+        jLabel4.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jLabel4.setText("Message");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 250, 230));
 
@@ -197,7 +210,7 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
         
         try{
             if(EmpytyFieldValidation()){
-
+                if(RegexValidation()){
                     String message = txtmessage.getText();
         
                     Date date = dateChooserField.getDate();
@@ -226,8 +239,8 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
         }
         JOptionPane.showMessageDialog(null, "Appointment booked successfully");
         txtmessage.setText("");
-//                    JOptionPane.showMessageDialog(this,"Enterprise Admin created successfully!");
-             
+//                   
+                }
             }
             else{
                 JOptionPane.showMessageDialog(this,"Please check details again");
@@ -271,6 +284,25 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
 
     }//GEN-LAST:event_btnsaveActionPerformed
 
+    private void emailtxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailtxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_emailtxtActionPerformed
+
+    private boolean RegexValidation() {
+        
+        if(!emailtxt.getText().matches("^[A-Za-z0-9+_.-]+@(.+)$"))
+        {
+            emailtxt.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            emailtxt.setToolTipText("Please enter a valid mobile number");
+            validationCheck=false;
+        }
+        
+        if(emailtxt.getText().matches("^[A-Za-z0-9+_.-]+@(.+)$"))
+        {
+            emailtxt.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        return validationCheck;
+    }
     
     private boolean EmpytyFieldValidation() {
         if(txtmessage.getText().equals(null) || txtmessage.getText().trim().isEmpty() )
@@ -282,6 +314,16 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
         if(!txtmessage.getText().equals(null) && !txtmessage.getText().trim().isEmpty() )
         {
             txtmessage.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        if(emailtxt.getText().equals(null) || emailtxt.getText().trim().isEmpty() )
+        {
+            emailtxt.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            emailtxt.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        if(!emailtxt.getText().equals(null) && !emailtxt.getText().trim().isEmpty() )
+        {
+            emailtxt.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
         }
         if(dateChooserField.getDate().equals(null) )
         {
@@ -300,9 +342,11 @@ public class BookAppointmentJPanel extends javax.swing.JPanel {
     private javax.swing.JButton backJButton;
     private javax.swing.JButton btnsave;
     private com.toedter.calendar.JDateChooser dateChooserField;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel emaillbl;
+    private javax.swing.JTextField emailtxt;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;

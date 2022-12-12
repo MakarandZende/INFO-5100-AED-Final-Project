@@ -124,9 +124,9 @@ public class BloodReceiverWorkAreaJPanel extends javax.swing.JPanel {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/bd.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 760));
 
-        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1400, 700));
+        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1400, 760));
     }// </editor-fold>//GEN-END:initComponents
 
     public void populateRequestTable(){

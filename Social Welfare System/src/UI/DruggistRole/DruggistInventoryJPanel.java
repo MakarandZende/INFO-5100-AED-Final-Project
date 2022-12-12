@@ -285,6 +285,7 @@ public class DruggistInventoryJPanel extends javax.swing.JPanel {
             userAccount.getDruggistInventory().setCountCampral(request.getCountCampral());
             userAccount.getDruggistInventory().setCountDisulfiram(request.getCountDisulfiram());
             userAccount.getDruggistInventory().setCountVivitrol(request.getCountVivitrol());
+            request.setStatus("Completed");
             populateInventory();
         }
         else{
