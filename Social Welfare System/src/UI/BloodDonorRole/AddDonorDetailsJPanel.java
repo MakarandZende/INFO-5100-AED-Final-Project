@@ -7,8 +7,11 @@ package UI.BloodDonorRole;
 import Business.Human.BloodGroup;
 import Business.UserAccount.User_Account;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Component;
 import java.util.Date;
+import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -22,6 +25,8 @@ public class AddDonorDetailsJPanel extends javax.swing.JPanel {
      */
     private User_Account userAccount;
     JPanel userProcessContainer;
+    boolean emptyValidationStatus = true;
+    boolean validationCheck = true;
     public AddDonorDetailsJPanel(JPanel userProcessContainer, User_Account userAccount) {
         initComponents();
         this.userAccount = userAccount;
@@ -144,9 +149,9 @@ public class AddDonorDetailsJPanel extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addGap(44, 44, 44)
                 .addComponent(backBtn)
-                .addGap(263, 263, 263)
+                .addGap(449, 449, 449)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(787, Short.MAX_VALUE))
+                .addContainerGap(601, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -173,10 +178,14 @@ public class AddDonorDetailsJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_backBtnActionPerformed
 
     private void addDonorBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addDonorBtnActionPerformed
-        Date donorDOB = dob.getDate();
-        String city = this.city.getText();
-        String email = this.email.getText();
-        long PhoneNo;
+        
+        try{
+            if(EmpytyFieldValidation()){
+                if(RegexValidation()){
+                    Date donorDOB = dob.getDate();
+                    String city = this.city.getText();
+                    String email = this.email.getText();
+                    long PhoneNo;
         try{
             PhoneNo = Long.parseLong(mobile.getText());
         }
@@ -188,14 +197,107 @@ public class AddDonorDetailsJPanel extends javax.swing.JPanel {
         if(donorDOB == null || city == null || email == null || bloodGroup == null) {
             return;
         }
-
+        JOptionPane.showMessageDialog(this,"Added details");
         userAccount.getHuman().setEmail(email);
         userAccount.getHuman().setDob(donorDOB);
         userAccount.getHuman().setCity(city);
         userAccount.getHuman().setPhoneNo(PhoneNo);
         userAccount.getHuman().setBloodGroup(bloodGroup);
+                }
+            }
+            else{
+                JOptionPane.showMessageDialog(this,"Invalid details");
+                emptyValidationStatus=true;
+            }
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this,"Request not created, Try again");
+            System.out.println(e.toString());
+            emptyValidationStatus=true;
+        }
+        
+//        Date donorDOB = dob.getDate();
+//        String city = this.city.getText();
+//        String email = this.email.getText();
+//        long PhoneNo;
+//        try{
+//            PhoneNo = Long.parseLong(mobile.getText());
+//        }
+//        catch(Exception e){
+//            return;
+//        }
+//        BloodGroup bloodGroup = BloodGroup.valueOf(bloodGroupComboBox.getSelectedItem().toString());
+//
+//        if(donorDOB == null || city == null || email == null || bloodGroup == null) {
+//            return;
+//        }
+//
+//        userAccount.getHuman().setEmail(email);
+//        userAccount.getHuman().setDob(donorDOB);
+//        userAccount.getHuman().setCity(city);
+//        userAccount.getHuman().setPhoneNo(PhoneNo);
+//        userAccount.getHuman().setBloodGroup(bloodGroup);
     }//GEN-LAST:event_addDonorBtnActionPerformed
 
+    private boolean RegexValidation() {
+        if(!mobile.getText().matches("^[0-9]{10}$"))
+        {
+            mobile.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            mobile.setToolTipText("Please enter a valid mobile number");
+            validationCheck=false;
+        }
+        
+        if(mobile.getText().matches("^[0-9]{10}$"))
+        {
+            mobile.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        if(!email.getText().matches("^[A-Za-z0-9+_.-]+@(.+)$"))
+        {
+            email.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            email.setToolTipText("Please enter a valid mobile number");
+            validationCheck=false;
+        }
+        
+        if(email.getText().matches("^[A-Za-z0-9+_.-]+@(.+)$"))
+        {
+            email.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        return validationCheck;
+    }
+    
+    private boolean EmpytyFieldValidation() {
+        if(mobile.getText().equals(null) || mobile.getText().trim().isEmpty() )
+        {
+            mobile.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            mobile.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        if(!mobile.getText().equals(null) && !mobile.getText().trim().isEmpty() )
+        {
+            mobile.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        if(city.getText().equals(null) || city.getText().trim().isEmpty() )
+        {
+            city.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            city.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        if(!city.getText().equals(null) && !city.getText().trim().isEmpty() )
+        {
+            city.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        if(email.getText().equals(null) || email.getText().trim().isEmpty() )
+        {
+            email.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+            email.setToolTipText("This Field Cannot be empty");
+            emptyValidationStatus= false;
+        }
+        if(!email.getText().equals(null) && !email.getText().trim().isEmpty() )
+        {
+            email.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        }
+        return emptyValidationStatus;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addDonorBtn;
