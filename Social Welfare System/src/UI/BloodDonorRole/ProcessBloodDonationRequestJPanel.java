@@ -86,14 +86,16 @@ public class ProcessBloodDonationRequestJPanel extends javax.swing.JPanel {
         resultJTextField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jPanel2.add(resultJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 201, 29));
 
+        submitJButton.setBackground(new java.awt.Color(239, 241, 228));
         submitJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         submitJButton.setText("Submit Result");
+        submitJButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         submitJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 submitJButtonActionPerformed(evt);
             }
         });
-        jPanel2.add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, -1, -1));
+        jPanel2.add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 140, 40));
 
         jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 100, 480, 170));
 

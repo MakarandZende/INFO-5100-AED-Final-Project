@@ -135,17 +135,16 @@ public class RequestFundsJPanel extends javax.swing.JPanel {
         });
         jPanel2.add(amountTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 110, 185, -1));
 
-        requestTestJButton.setBackground(new java.awt.Color(193, 212, 227));
+        requestTestJButton.setBackground(new java.awt.Color(239, 241, 228));
         requestTestJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        requestTestJButton.setForeground(new java.awt.Color(255, 255, 255));
         requestTestJButton.setText("Request Funds");
-        requestTestJButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        requestTestJButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         requestTestJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 requestTestJButtonActionPerformed(evt);
             }
         });
-        jPanel2.add(requestTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, 140, 40));
+        jPanel2.add(requestTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, 140, 50));
 
         jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 150, 630, 250));
 

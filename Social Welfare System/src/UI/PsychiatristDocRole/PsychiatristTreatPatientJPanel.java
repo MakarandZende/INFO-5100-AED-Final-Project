@@ -98,11 +98,10 @@ public class PsychiatristTreatPatientJPanel extends javax.swing.JPanel {
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton2.setBackground(new java.awt.Color(0, 0, 0));
+        jButton2.setBackground(new java.awt.Color(239, 241, 228));
         jButton2.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Send Decision to Patient");
-        jButton2.setBorder(null);
+        jButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);

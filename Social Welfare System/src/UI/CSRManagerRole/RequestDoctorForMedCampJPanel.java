@@ -96,14 +96,16 @@ public class RequestDoctorForMedCampJPanel extends javax.swing.JPanel {
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 135, 26));
         jPanel1.add(messageJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 261, -1));
 
+        requestDoctorJButton.setBackground(new java.awt.Color(239, 241, 228));
         requestDoctorJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         requestDoctorJButton.setText(" Request");
+        requestDoctorJButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         requestDoctorJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 requestDoctorJButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(requestDoctorJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 140, -1, -1));
+        jPanel1.add(requestDoctorJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 140, 110, 50));
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         enterpriseLabel.setText("Enterprise :");

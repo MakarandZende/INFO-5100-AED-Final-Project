@@ -69,25 +69,44 @@ public class DoctorMedicalCampRequestJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        enterpriseLabel = new javax.swing.JLabel();
-        valueLabel = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         assignJButton = new javax.swing.JButton();
         processJButton = new javax.swing.JButton();
         refreshJButton = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         campRequestJTable = new javax.swing.JTable();
+        enterpriseLabel = new javax.swing.JLabel();
+        valueLabel = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        enterpriseLabel.setText("Enterprise :");
-        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(117, 43, 127, 30));
+        jPanel2.setBackground(new java.awt.Color(239, 241, 228));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        valueLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        valueLabel.setText("<value>");
-        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, 140, 30));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
+        jLabel1.setText("Medical Camp Request");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 20, 290, 40));
+
+        jButton2.setBackground(new java.awt.Color(193, 212, 227));
+        jButton2.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/back_button.png"))); // NOI18N
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 60, 40));
+
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1170, 70));
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(193, 212, 227));
 
@@ -134,6 +153,7 @@ public class DoctorMedicalCampRequestJPanel extends javax.swing.JPanel {
                 "Message", "Sender", "Assigned To", "Status", "Camp result"
             }
         ));
+        campRequestJTable.setShowGrid(true);
         jScrollPane2.setViewportView(campRequestJTable);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -167,7 +187,21 @@ public class DoctorMedicalCampRequestJPanel extends javax.swing.JPanel {
                 .addGap(23, 23, 23))
         );
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 620, 360));
+        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 140, -1, -1));
+
+        enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        enterpriseLabel.setText("Enterprise :");
+        jPanel3.add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 127, 30));
+
+        valueLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        valueLabel.setText("<value>");
+        jPanel3.add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 90, 140, 30));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/doctor_backnew.jpg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1190, 1020));
     }// </editor-fold>//GEN-END:initComponents
 
     private void assignJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButtonActionPerformed
@@ -220,11 +254,22 @@ public class DoctorMedicalCampRequestJPanel extends javax.swing.JPanel {
         populateCampTable();
     }//GEN-LAST:event_refreshJButtonActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton assignJButton;
     private javax.swing.JTable campRequestJTable;
     private javax.swing.JLabel enterpriseLabel;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton processJButton;
     private javax.swing.JButton refreshJButton;
