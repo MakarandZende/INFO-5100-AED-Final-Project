@@ -144,6 +144,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, -1, -1));
 
         organizationJTable.setBackground(new java.awt.Color(0, 0, 0));
+        organizationJTable.setForeground(new java.awt.Color(255, 255, 255));
         organizationJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},

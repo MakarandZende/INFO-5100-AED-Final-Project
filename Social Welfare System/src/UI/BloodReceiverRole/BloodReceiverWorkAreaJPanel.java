@@ -109,14 +109,16 @@ public class BloodReceiverWorkAreaJPanel extends javax.swing.JPanel {
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 577, 135));
 
+        requestBloodBtn.setBackground(new java.awt.Color(239, 241, 228));
         requestBloodBtn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         requestBloodBtn.setText("Request Blood");
+        requestBloodBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         requestBloodBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 requestBloodBtnActionPerformed(evt);
             }
         });
-        jPanel2.add(requestBloodBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 220, 161, -1));
+        jPanel2.add(requestBloodBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 220, 161, 40));
 
         jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, 630, 290));
 

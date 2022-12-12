@@ -224,6 +224,8 @@ public class DruggistInventoryJPanel extends javax.swing.JPanel {
         vivTxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jPanel3.add(vivTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 310, 141, 35));
 
+        drugDistributorRequestsTbl.setBackground(new java.awt.Color(0, 0, 0));
+        drugDistributorRequestsTbl.setForeground(new java.awt.Color(255, 255, 255));
         drugDistributorRequestsTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -235,6 +237,7 @@ public class DruggistInventoryJPanel extends javax.swing.JPanel {
                 "Message", "Sender", "Reciever", "Status"
             }
         ));
+        drugDistributorRequestsTbl.setShowGrid(true);
         jScrollPane2.setViewportView(drugDistributorRequestsTbl);
 
         jPanel3.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 630, 210));

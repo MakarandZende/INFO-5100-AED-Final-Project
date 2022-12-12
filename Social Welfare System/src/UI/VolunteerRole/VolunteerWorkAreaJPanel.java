@@ -145,7 +145,7 @@ public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
         });
         jPanel2.add(requestFundJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 170, 161, 40));
 
-        refreshTestJButton.setBackground(new java.awt.Color(193, 212, 227));
+        refreshTestJButton.setBackground(new java.awt.Color(239, 241, 228));
         refreshTestJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         refreshTestJButton.setText("Refresh");
         refreshTestJButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
