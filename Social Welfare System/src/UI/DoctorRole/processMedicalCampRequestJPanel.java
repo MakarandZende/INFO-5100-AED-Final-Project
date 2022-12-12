@@ -92,7 +92,7 @@ public class processMedicalCampRequestJPanel extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Result :");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, -1, -1));
-        jPanel1.add(resultJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 181, -1));
+        jPanel1.add(resultJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, 181, -1));
 
         submitJButton.setBackground(new java.awt.Color(83, 124, 142));
         submitJButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -114,13 +114,13 @@ public class processMedicalCampRequestJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 60, 40));
 
-        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(294, 89, 600, 310));
+        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, 600, 310));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/doctor_background.jpg"))); // NOI18N
         jLabel3.setText("jLabel3");
-        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1160, 670));
 
-        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 900, 500));
+        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1110, 650));
     }// </editor-fold>//GEN-END:initComponents
 
     private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed

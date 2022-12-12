@@ -227,6 +227,7 @@ public class RequestDruggistForMedicine extends javax.swing.JPanel {
                 }
             }
         }
+        
         if (org!=null){
             org.getWorkStream().getWorkRequestList().add(patientrequest);
             patientrequest.setReceiver(null);
