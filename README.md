@@ -38,7 +38,7 @@
 - Pharmacotherapist
 - Psychiatrist
 - Volunteer
-![image](https://user-images.githubusercontent.com/114695880/206958543-3b996dce-228b-44cc-863a-1b3838f3b85b.png)
+
 
 # How to run the code?
 
