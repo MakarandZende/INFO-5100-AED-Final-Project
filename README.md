@@ -33,8 +33,8 @@
 - CSR
 - Distributor
 - Druggist
-- FundsProvider
-- MedicalCamp
+- Funds Provider
+- Medical Camp
 - Pharmacotherapist
 - Psychiatrist
 - Volunteer
